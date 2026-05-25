@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luo-sisters.local/harness/evidence_bundle.schema.json",
+  "title": "Harness Evidence Bundle Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "task_kind",
+    "status",
+    "checks_run",
+    "warnings",
+    "failures",
+    "artifacts",
+    "touched_paths"
+  ],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "task_kind": {
+      "type": "string",
+      "enum": ["docs", "page", "asset", "maintenance"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["passed", "passed_with_warnings", "failed", "skipped"]
+    },
+    "checks_run": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "failures": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "touched_paths": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

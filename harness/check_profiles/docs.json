@@ -1,0 +1,24 @@
+{
+  "id": "docs-default",
+  "task_kind": "docs",
+  "description": "Check entry-chain reachability, low-token HTML readability, and local link integrity for documentation tasks.",
+  "stages": {
+    "preflight": [
+      "validate-task-packet",
+      "validate-ownership-boundary",
+      "validate-input-presence"
+    ],
+    "verify": [
+      "document-catalog-reachability",
+      "link-audit",
+      "html-reader-structure-check"
+    ],
+    "bundle": [
+      "write-report-json",
+      "write-summary-md"
+    ],
+    "score": [
+      "doc-legibility"
+    ]
+  }
+}

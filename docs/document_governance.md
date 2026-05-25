@@ -13,6 +13,7 @@ This document defines how agents should read, write, split, merge, and link docu
 7. Every document must be reachable from `AGENTS.md` or `README.md`.
 8. Generated HTML is output. Edit source data, rebuild, then verify.
 9. Reusable lessons belong in CSV logs and, when repeated, in skills.
+10. Non-trivial work should move toward a harness task packet with declared boundaries and evidence.
 
 ## Entry Chain
 
@@ -23,6 +24,8 @@ AGENTS.md
 README.md
 docs/document_governance.md
 docs/content_map.md
+harness/golden_principles.md
+harness/ownership_map.json
 knowledge/navigation.html
 knowledge/assets.html or a linked child page
 ```
@@ -70,6 +73,15 @@ Do not place new public-facing copy directly in `tools/build_project_html.py`. P
 - changing a document's language role;
 - changing whether a document is generated or source-authored;
 - adding a new stable entrypoint.
+
+## Harness Interaction
+
+Human-facing governance still lives in Markdown, but machine-readable governance should live in `harness/`.
+
+- `harness/ownership_map.json` defines write-boundary domains.
+- `harness/check_profiles/` describes task-type verification bundles.
+- `harness/task_templates/task_packet.schema.json` defines executable task packets.
+- `harness/policies/` defines enforcement defaults and evidence structure.
 
 ## Split And Merge Rules
 

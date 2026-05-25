@@ -7,12 +7,14 @@ This repository is an original anime-style character project designed for long-r
 1. Read `AGENTS.md` for agent rules.
 2. Read `docs/document_governance.md` for documentation policy.
 3. Read `docs/content_map.md` for the content hierarchy.
-4. Open `index.html` for the Chinese public showcase.
-5. Open `en/index.html` for the English mirror.
-6. Open `knowledge/navigation.html` or `en/knowledge/navigation.html` for structured reading paths.
-7. Open `knowledge/assets.html` or `en/knowledge/assets.html` for asset lookup.
-8. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
-9. Read `docs/browser_automation.md` before visual smoke checks.
+4. Read `harness/golden_principles.md` for the harness model.
+5. Read `harness/ownership_map.json` for write boundaries.
+6. Open `index.html` for the Chinese public showcase.
+7. Open `en/index.html` for the English mirror.
+8. Open `knowledge/navigation.html` or `en/knowledge/navigation.html` for structured reading paths.
+9. Open `knowledge/assets.html` or `en/knowledge/assets.html` for asset lookup.
+10. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
+11. Read `docs/browser_automation.md` before visual smoke checks.
 
 ## Build The Website
 
@@ -87,6 +89,19 @@ See `docs/browser_automation.md` for the browser automation workflow.
 - `project_data/document_catalog.json`: machine-readable documentation registry.
 
 Keep internal maintenance docs in English. Keep public display copy in locale or data files. Do not hardcode public-facing copy in Python templates.
+
+## Harness Control Plane
+
+Harness engineering assets live under `harness/`.
+
+- `harness/golden_principles.md`: high-level harness model.
+- `harness/ownership_map.json`: ownership and write boundaries.
+- `harness/policies/`: policy and evidence schemas.
+- `harness/check_profiles/`: task-type check mappings.
+- `harness/task_templates/`: task packet schema and examples.
+- `harness/tasks/`: concrete executable task packets.
+
+The harness is the machine-readable governance layer; Markdown docs explain it, but future execution should rely on harness metadata.
 
 ## Asset Structure
 

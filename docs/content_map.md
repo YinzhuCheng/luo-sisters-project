@@ -15,6 +15,8 @@ AGENTS.md
 README.md
 docs/document_governance.md
 docs/content_map.md
+harness/golden_principles.md
+harness/ownership_map.json
 knowledge/navigation.html
 knowledge/assets.html
 knowledge/*.html
@@ -28,6 +30,11 @@ For English public pages, use the same generated structure under `en/`.
 - `README.md`: human quick start and build instructions.
 - `docs/document_governance.md`: documentation law, language separation, and HTML reading policy.
 - `docs/browser_automation.md`: browser automation setup and smoke-check workflow.
+- `harness/golden_principles.md`: harness model and enforcement direction.
+- `harness/ownership_map.json`: machine-readable write-boundary map.
+- `harness/check_profiles/`: task-type verification profiles.
+- `harness/task_templates/`: task packet schema and example packet.
+- `harness/tasks/`: executable task packets.
 - `project_data/document_catalog.json`: machine-readable document registry.
 
 ## Level 1: Public Showcase Pages

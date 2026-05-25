@@ -1,0 +1,24 @@
+{
+  "id": "asset-default",
+  "task_kind": "asset",
+  "description": "Check asset boundary integrity, registry/config consistency, and transparent-output lineage for asset tasks.",
+  "stages": {
+    "preflight": [
+      "validate-task-packet",
+      "validate-ownership-boundary",
+      "validate-input-presence"
+    ],
+    "verify": [
+      "asset-structure-validation",
+      "asset-registry-consistency",
+      "planned-output-boundary-check"
+    ],
+    "bundle": [
+      "write-report-json",
+      "write-summary-md"
+    ],
+    "score": [
+      "asset-lineage-completeness"
+    ]
+  }
+}

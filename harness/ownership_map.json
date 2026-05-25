@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "default_rule": "A task may write only inside paths declared by its ownership domain and task packet allowed_paths.",
+  "domains": [
+    {
+      "id": "docs-knowledge",
+      "description": "Governance docs, knowledge data, localized knowledge surfaces, and reader skills.",
+      "path_prefixes": [
+        "AGENTS.md",
+        "README.md",
+        "docs/",
+        "knowledge/",
+        "en/knowledge/",
+        "project_data/",
+        "locales/",
+        "skills/project-doc-governance/"
+      ]
+    },
+    {
+      "id": "frontend-html-build",
+      "description": "Public HTML outputs, build inputs, and browser QA tooling.",
+      "path_prefixes": [
+        "index.html",
+        "en/index.html",
+        "character_sheets/",
+        "en/character_sheets/",
+        "assets/styles/",
+        "tools/build_project_html.py",
+        "tools/browser_smoke_check.py",
+        "docs/browser_automation.md",
+        "requirements-browser.txt"
+      ]
+    },
+    {
+      "id": "qingyou-assets",
+      "description": "Qingyou asset roots, prompts, manifests, and config.",
+      "path_prefixes": [
+        "assets/characters/qingyou/",
+        "characters/qingyou.json"
+      ]
+    },
+    {
+      "id": "arisu-assets",
+      "description": "Arisu asset roots, prompts, manifests, and config.",
+      "path_prefixes": [
+        "assets/characters/arisu/",
+        "characters/arisu.json"
+      ]
+    },
+    {
+      "id": "governance-tools",
+      "description": "Shared verification, catalog, and harness support tools.",
+      "path_prefixes": [
+        "tools/audit_project_links.py",
+        "tools/validate_assets.py",
+        "tools/remove_chroma_batch.py",
+        "tools/crop_from_sheet.py",
+        "workflows/",
+        "logs/",
+        "manifest.json",
+        "harness/"
+      ]
+    }
+  ]
+}

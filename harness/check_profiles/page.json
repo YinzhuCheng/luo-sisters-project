@@ -1,0 +1,25 @@
+{
+  "id": "page-default",
+  "task_kind": "page",
+  "description": "Check generated pages, local link integrity, and browser smoke evidence for public page tasks.",
+  "stages": {
+    "preflight": [
+      "validate-task-packet",
+      "validate-ownership-boundary",
+      "validate-input-presence"
+    ],
+    "verify": [
+      "site-build",
+      "link-audit",
+      "browser-smoke-check"
+    ],
+    "bundle": [
+      "write-report-json",
+      "write-summary-md",
+      "capture-browser-artifacts"
+    ],
+    "score": [
+      "page-qa-coverage"
+    ]
+  }
+}

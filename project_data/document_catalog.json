@@ -5,6 +5,8 @@
     "README.md",
     "docs/document_governance.md",
     "docs/content_map.md",
+    "harness/golden_principles.md",
+    "harness/ownership_map.json",
     "docs/browser_automation.md",
     "knowledge/navigation.html",
     "knowledge/assets.html or a linked child page"
@@ -24,7 +26,7 @@
       "generated": false,
       "role": "agent entrypoint",
       "read_strategy": "read first",
-      "children": ["README.md", "docs/document_governance.md", "docs/content_map.md"]
+      "children": ["README.md", "docs/document_governance.md", "docs/content_map.md", "harness/golden_principles.md", "harness/ownership_map.json"]
     },
     {
       "path": "README.md",
@@ -33,7 +35,7 @@
       "generated": false,
       "role": "human quick start",
       "read_strategy": "read after AGENTS.md",
-      "children": ["docs/document_governance.md", "docs/browser_automation.md", "knowledge/navigation.html", "knowledge/assets.html"]
+      "children": ["docs/document_governance.md", "docs/browser_automation.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html"]
     },
     {
       "path": "docs/document_governance.md",
@@ -42,7 +44,25 @@
       "generated": false,
       "role": "documentation governance law",
       "read_strategy": "read before changing docs",
-      "children": ["docs/content_map.md", "docs/browser_automation.md", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
+      "children": ["docs/content_map.md", "docs/browser_automation.md", "harness/golden_principles.md", "harness/ownership_map.json", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
+    },
+    {
+      "path": "harness/golden_principles.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "harness governance model",
+      "read_strategy": "read before implementing or reviewing harness-based work",
+      "children": ["harness/ownership_map.json", "harness/check_profiles/docs.json", "harness/task_templates/task_packet.schema.json"]
+    },
+    {
+      "path": "harness/ownership_map.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "write-boundary map",
+      "read_strategy": "read before parallel work or task packet execution",
+      "children": ["harness/check_profiles/docs.json", "harness/check_profiles/page.json", "harness/check_profiles/asset.json", "harness/check_profiles/maintenance.json"]
     },
     {
       "path": "docs/browser_automation.md",
@@ -60,7 +80,7 @@
       "generated": false,
       "role": "content hierarchy map",
       "read_strategy": "read before assuming content is missing",
-      "children": ["knowledge/navigation.html", "knowledge/assets.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+      "children": ["harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
     },
     {
       "path": "skills/project-doc-governance/SKILL.md",
@@ -180,6 +200,51 @@
         "assets/characters/qingyou/prompts/asset_prompts.md",
         "assets/characters/arisu/prompts/asset_prompts.md"
       ]
+    },
+    {
+      "path": "harness/check_profiles/docs.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "docs harness check profile",
+      "read_strategy": "read before implementing docs task verification",
+      "children": ["harness/check_profiles/check_profile.schema.json", "harness/policies/evidence_bundle.schema.json"]
+    },
+    {
+      "path": "harness/check_profiles/page.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "page harness check profile",
+      "read_strategy": "read before implementing page task verification",
+      "children": ["harness/check_profiles/check_profile.schema.json", "harness/policies/evidence_bundle.schema.json"]
+    },
+    {
+      "path": "harness/check_profiles/asset.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "asset harness check profile",
+      "read_strategy": "read before implementing asset task verification",
+      "children": ["harness/check_profiles/check_profile.schema.json", "harness/policies/evidence_bundle.schema.json"]
+    },
+    {
+      "path": "harness/check_profiles/maintenance.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "maintenance harness check profile",
+      "read_strategy": "read before implementing maintenance task verification",
+      "children": ["harness/check_profiles/check_profile.schema.json", "harness/policies/evidence_bundle.schema.json", "harness/quality_score.json"]
+    },
+    {
+      "path": "harness/task_templates/task_packet.schema.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "task packet schema",
+      "read_strategy": "read before creating or validating task packets",
+      "children": ["harness/task_templates/task_packet.example.json", "harness/policies/evidence_bundle.schema.json", "harness/tasks/README.md"]
     }
   ]
 }

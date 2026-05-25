@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "status": "baseline",
+  "last_updated": null,
+  "total_score": 0,
+  "dimensions": {
+    "doc_legibility": {
+      "score": 0,
+      "status": "unknown",
+      "notes": "Not scored yet."
+    },
+    "task_packet_coverage": {
+      "score": 0,
+      "status": "unknown",
+      "notes": "Not scored yet."
+    },
+    "page_qa_coverage": {
+      "score": 0,
+      "status": "unknown",
+      "notes": "Not scored yet."
+    },
+    "asset_lineage_completeness": {
+      "score": 0,
+      "status": "unknown",
+      "notes": "Not scored yet."
+    },
+    "policy_compliance": {
+      "score": 0,
+      "status": "unknown",
+      "notes": "Not scored yet."
+    }
+  },
+  "scoring_defaults": {
+    "max_per_dimension": 20,
+    "passing_total": 75,
+    "warning_total": 55
+  }
+}

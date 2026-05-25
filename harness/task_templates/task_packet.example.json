@@ -1,0 +1,54 @@
+{
+  "id": "example-docs-governance-task",
+  "kind": "docs",
+  "intent": "Verify that entry docs still route agents toward the right knowledge and asset surfaces.",
+  "allowed_paths": [
+    "AGENTS.md",
+    "README.md",
+    "docs/",
+    "project_data/document_catalog.json",
+    "harness/"
+  ],
+  "forbidden_paths": [
+    "assets/characters/",
+    "characters/"
+  ],
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "kind": "entry-doc",
+      "required": true
+    },
+    {
+      "path": "docs/content_map.md",
+      "kind": "map-doc",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/harness_runs/<timestamp>-example-docs-governance-task/report.json",
+    "logs/harness_runs/<timestamp>-example-docs-governance-task/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "document-catalog-reachability",
+    "link-audit",
+    "html-reader-structure-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-example-docs-governance-task/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Keep internal maintenance docs in English.",
+    "Do not edit generated HTML directly for governance changes."
+  ],
+  "metadata": {
+    "owner_domain": "docs-knowledge",
+    "check_profile": "harness/check_profiles/docs.json"
+  }
+}

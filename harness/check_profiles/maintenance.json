@@ -1,0 +1,24 @@
+{
+  "id": "maintenance-default",
+  "task_kind": "maintenance",
+  "description": "Scan recurring governance drift, summarize policy coverage, and prepare convergence scoring inputs.",
+  "stages": {
+    "preflight": [
+      "validate-task-packet",
+      "validate-ownership-boundary"
+    ],
+    "verify": [
+      "link-audit",
+      "issue-memory-scan",
+      "score-input-scan"
+    ],
+    "bundle": [
+      "write-report-json",
+      "write-summary-md"
+    ],
+    "score": [
+      "policy-compliance",
+      "task-packet-coverage"
+    ]
+  }
+}

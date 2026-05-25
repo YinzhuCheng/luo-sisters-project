@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "mode": "warn-then-gate",
+  "blocking_rules": [
+    "task packet schema invalid",
+    "task packet writes outside ownership boundary",
+    "task packet allowed_paths and forbidden_paths conflict",
+    "public local links broken",
+    "asset config and registry cross character boundaries"
+  ],
+  "warning_rules": [
+    "quality score below threshold",
+    "missing evidence for non-critical maintenance tasks",
+    "docs coverage gaps",
+    "page QA coverage gaps",
+    "planned outputs not yet produced"
+  ],
+  "promotion_policy": {
+    "issue_to_policy_after_occurrences": 2,
+    "issue_to_verify_after_occurrences": 3,
+    "issue_to_blocking_gate": "repeat regressions after policy and verify coverage exist"
+  }
+}

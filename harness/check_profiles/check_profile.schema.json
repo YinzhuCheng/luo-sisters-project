@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luo-sisters.local/harness/check_profile.schema.json",
+  "title": "Harness Check Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "task_kind", "description", "stages"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "task_kind": {
+      "type": "string",
+      "enum": ["docs", "page", "asset", "maintenance"]
+    },
+    "description": { "type": "string", "minLength": 1 },
+    "stages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preflight", "verify", "bundle", "score"],
+      "properties": {
+        "preflight": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "verify": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "bundle": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "score": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

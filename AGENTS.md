@@ -17,9 +17,11 @@ Build a sustainable original anime-style character project:
 2. `README.md`
 3. `docs/document_governance.md`
 4. `docs/content_map.md`
-5. `knowledge/navigation.html`
-6. `knowledge/assets.html` or a linked child page
-7. `docs/browser_automation.md` before browser-based visual QA
+5. `harness/golden_principles.md`
+6. `harness/ownership_map.json`
+7. `knowledge/navigation.html`
+8. `knowledge/assets.html` or a linked child page
+9. `docs/browser_automation.md` before browser-based visual QA
 
 For HTML, use the low-token reader first:
 
@@ -35,6 +37,11 @@ Read one HTML page or anchor at a time. Treat images as placeholders until visua
 - `README.md`: human quick start and build commands.
 - `docs/document_governance.md`: documentation governance law, language policy, and reading rules.
 - `docs/content_map.md`: where content lives after the HTML-sheet restructure.
+- `harness/golden_principles.md`: harness engineering operating model.
+- `harness/ownership_map.json`: repository write-boundary map for task packets and parallel work.
+- `harness/check_profiles/`: task-type check definitions.
+- `harness/task_templates/`: task packet schema and examples.
+- `harness/tasks/`: executable task packets.
 - `project_data/document_catalog.json`: machine-readable document registry.
 - `skills/project-doc-governance/`: project skill for low-token HTML reading and doc governance.
 - `tools/build_project_html.py`: generates the Chinese root site and English `en/` mirror.
@@ -95,6 +102,7 @@ Run a browser smoke check:
 - Generated HTML is output, not the long-term editing source.
 - Every new document must be reachable from `AGENTS.md` or `README.md`.
 - Every new, moved, split, or merged document must be registered in `project_data/document_catalog.json`.
+- Every non-trivial task should move toward a harness task packet with declared boundaries and evidence.
 - When content looks missing, check `knowledge/navigation.html`, `knowledge/assets.html`, `project_data/knowledge_base*.json`, `logs/asset_registry.csv`, then `docs/content_map.md` before rewriting.
 
 ## Image Asset Rules
