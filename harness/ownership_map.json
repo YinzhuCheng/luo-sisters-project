@@ -53,7 +53,10 @@
       "description": "Shared verification, catalog, and harness support tools.",
       "path_prefixes": [
         "harness/",
+        ".github/",
         "tools/harness_cli.py",
+        "tools/run_harness_task.py",
+        "tools/harness_warn_then_gate.py",
         "tools/audit_project_links.py",
         "tools/validate_assets.py",
         "tools/remove_chroma_batch.py",

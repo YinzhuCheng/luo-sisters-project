@@ -32,6 +32,8 @@ knowledge/assets.html or a linked child page
 
 The same rule applies to the English mirror under `en/`.
 
+For GitHub Actions harness runs and artifact triage, read `docs/harness_ci.md`.
+
 ## HTML Reading Policy
 
 Before reading a large HTML file directly, run:

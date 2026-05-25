@@ -1,0 +1,46 @@
+name: Harness Maintenance
+
+on:
+  push:
+    paths:
+      - 'harness/**'
+      - 'tools/harness_*.py'
+      - 'tools/run_harness_task.py'
+      - 'logs/issue_memory.csv'
+      - 'logs/progress_updates.csv'
+      - 'manifest.json'
+      - '.github/workflows/harness-maintenance.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  maintenance-harness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run maintenance harness packet
+        id: maintenance_run
+        continue-on-error: true
+        run: |
+          python tools/run_harness_task.py harness/tasks/harness-maintenance.json --score --github-output "$GITHUB_OUTPUT"
+
+      - name: Apply warn-then-gate
+        if: always()
+        run: |
+          python tools/harness_warn_then_gate.py harness/tasks/harness-maintenance.json --run-dir "${{ steps.maintenance_run.outputs.run_dir }}"
+
+      - name: Upload harness artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-maintenance-${{ github.run_id }}
+          path: ${{ steps.maintenance_run.outputs.run_dir }}

@@ -35,7 +35,7 @@
       "generated": false,
       "role": "human quick start",
       "read_strategy": "read after AGENTS.md",
-      "children": ["docs/document_governance.md", "docs/browser_automation.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html"]
+      "children": ["docs/document_governance.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html"]
     },
     {
       "path": "docs/document_governance.md",
@@ -44,7 +44,7 @@
       "generated": false,
       "role": "documentation governance law",
       "read_strategy": "read before changing docs",
-      "children": ["docs/content_map.md", "docs/browser_automation.md", "harness/golden_principles.md", "harness/ownership_map.json", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
+      "children": ["docs/content_map.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
     },
     {
       "path": "harness/golden_principles.md",
@@ -72,6 +72,15 @@
       "role": "browser automation setup",
       "read_strategy": "read before Playwright-based visual QA",
       "children": ["requirements-browser.txt", "tools/browser_smoke_check.py", "index.html", "knowledge/navigation.html"]
+    },
+    {
+      "path": "docs/harness_ci.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "GitHub Actions harness guide",
+      "read_strategy": "read before changing CI workflows or triaging harness failures",
+      "children": [".github/workflows/harness-docs.yml", ".github/workflows/harness-pages.yml", ".github/workflows/harness-assets.yml", ".github/workflows/harness-maintenance.yml", "tools/run_harness_task.py", "tools/harness_warn_then_gate.py"]
     },
     {
       "path": "docs/content_map.md",

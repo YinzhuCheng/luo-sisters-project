@@ -22,6 +22,7 @@ Build a sustainable original anime-style character project:
 7. `knowledge/navigation.html`
 8. `knowledge/assets.html` or a linked child page
 9. `docs/browser_automation.md` before browser-based visual QA
+10. `docs/harness_ci.md` before changing GitHub Actions harness flows or interpreting CI failures
 
 For HTML, use the low-token reader first:
 
@@ -51,6 +52,7 @@ Read one HTML page or anchor at a time. Treat images as placeholders until visua
 - `assets/characters/qingyou/`, `assets/characters/arisu/`: strictly separated character asset roots.
 - `knowledge/assets.html`: unified public asset index.
 - `docs/browser_automation.md`: Playwright setup and smoke-check entrypoint.
+- `docs/harness_ci.md`: GitHub Actions harness routing, warnings, and failure reading order.
 - `workflows/asset_generation_workflow.md`: crop-to-transparent-asset workflow.
 - `workflows/agent_parallel_guide.md`: parallel-agent ownership rules.
 - `logs/progress_updates.csv`, `logs/asset_registry.csv`, `logs/issue_memory.csv`: project memory.
@@ -84,6 +86,12 @@ Run harness stages:
 & 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py bundle harness\task_templates\task_packet.example.json
 ```
 
+Run one packet end to end:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\run_harness_task.py harness\tasks\site-smoke-check.json
+```
+
 Validate assets:
 
 ```bash
@@ -111,6 +119,7 @@ Run a browser smoke check:
 - Every new document must be reachable from `AGENTS.md` or `README.md`.
 - Every new, moved, split, or merged document must be registered in `project_data/document_catalog.json`.
 - Every non-trivial task should move toward a harness task packet with declared boundaries and evidence.
+- CI warnings and failures should be read through `docs/harness_ci.md`, then the latest uploaded harness run bundle.
 - When content looks missing, check `knowledge/navigation.html`, `knowledge/assets.html`, `project_data/knowledge_base*.json`, `logs/asset_registry.csv`, then `docs/content_map.md` before rewriting.
 
 ## Image Asset Rules

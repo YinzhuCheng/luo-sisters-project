@@ -30,11 +30,13 @@ For English public pages, use the same generated structure under `en/`.
 - `README.md`: human quick start and build instructions.
 - `docs/document_governance.md`: documentation law, language separation, and HTML reading policy.
 - `docs/browser_automation.md`: browser automation setup and smoke-check workflow.
+- `docs/harness_ci.md`: GitHub Actions harness routing and failure-reading guide.
 - `harness/golden_principles.md`: harness model and enforcement direction.
 - `harness/ownership_map.json`: machine-readable write-boundary map.
 - `harness/check_profiles/`: task-type verification profiles.
 - `harness/task_templates/`: task packet schema and example packet.
 - `harness/tasks/`: executable task packets.
+- `.github/workflows/`: harness delivery-loop workflows.
 - `project_data/document_catalog.json`: machine-readable document registry.
 
 ## Level 1: Public Showcase Pages

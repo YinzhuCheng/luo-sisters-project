@@ -1,0 +1,62 @@
+name: Harness Assets
+
+on:
+  push:
+    paths:
+      - 'assets/characters/**'
+      - 'characters/*.json'
+      - 'logs/asset_registry.csv'
+      - '.github/workflows/harness-assets.yml'
+  pull_request:
+    paths:
+      - 'assets/characters/**'
+      - 'characters/*.json'
+      - 'logs/asset_registry.csv'
+      - '.github/workflows/harness-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  asset-harness:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: qingyou
+            packet: harness/tasks/qingyou-asset-batch.json
+          - name: arisu
+            packet: harness/tasks/arisu-asset-batch.json
+          - name: registry
+            packet: harness/tasks/asset-registry-sync.json
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install asset validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pillow
+
+      - name: Run asset harness packet
+        id: asset_run
+        continue-on-error: true
+        run: |
+          python tools/run_harness_task.py "${{ matrix.packet }}" --github-output "$GITHUB_OUTPUT"
+
+      - name: Apply warn-then-gate
+        if: always()
+        run: |
+          python tools/harness_warn_then_gate.py "${{ matrix.packet }}" --run-dir "${{ steps.asset_run.outputs.run_dir }}"
+
+      - name: Upload harness artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-assets-${{ github.run_id }}-${{ matrix.name }}
+          path: ${{ steps.asset_run.outputs.run_dir }}

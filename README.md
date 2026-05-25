@@ -15,6 +15,7 @@ This repository is an original anime-style character project designed for long-r
 9. Open `knowledge/assets.html` or `en/knowledge/assets.html` for asset lookup.
 10. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
 11. Read `docs/browser_automation.md` before visual smoke checks.
+12. Read `docs/harness_ci.md` for GitHub Actions harness runs and failure triage.
 
 ## Build The Website
 
@@ -103,6 +104,17 @@ Harness engineering assets live under `harness/`.
 
 The harness is the machine-readable governance layer; Markdown docs explain it, but future execution should rely on harness metadata.
 
+## Harness CI
+
+GitHub Actions runs the harness delivery loop through:
+
+- `.github/workflows/harness-docs.yml`
+- `.github/workflows/harness-pages.yml`
+- `.github/workflows/harness-assets.yml`
+- `.github/workflows/harness-maintenance.yml`
+
+Use `docs/harness_ci.md` when a run fails or warns. Start with the uploaded `report.json`, then `summary.md`, then the packet and check profile referenced by the report.
+
 ## Harness CLI
 
 The first harness execution entrypoint is:
@@ -114,6 +126,12 @@ The first harness execution entrypoint is:
 ```
 
 Harness run artifacts write to `logs/harness_runs/<timestamp>-<task-id>/`.
+
+For one-step local execution, use:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\run_harness_task.py harness\tasks\site-smoke-check.json
+```
 
 ## Asset Structure
 

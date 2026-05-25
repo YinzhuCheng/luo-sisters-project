@@ -1,0 +1,53 @@
+name: Harness Docs
+
+on:
+  push:
+    paths:
+      - 'AGENTS.md'
+      - 'README.md'
+      - 'docs/**'
+      - 'harness/**'
+      - 'project_data/document_catalog.json'
+      - 'skills/project-doc-governance/**'
+      - '.github/workflows/harness-docs.yml'
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'README.md'
+      - 'docs/**'
+      - 'harness/**'
+      - 'project_data/document_catalog.json'
+      - 'skills/project-doc-governance/**'
+      - '.github/workflows/harness-docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs-harness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run docs harness packet
+        id: docs_run
+        continue-on-error: true
+        run: |
+          python tools/run_harness_task.py harness/tasks/docs-governance-maintenance.json --github-output "$GITHUB_OUTPUT"
+
+      - name: Apply warn-then-gate
+        if: always()
+        run: |
+          python tools/harness_warn_then_gate.py harness/tasks/docs-governance-maintenance.json --run-dir "${{ steps.docs_run.outputs.run_dir }}"
+
+      - name: Upload harness artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-docs-${{ github.run_id }}
+          path: ${{ steps.docs_run.outputs.run_dir }}
