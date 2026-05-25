@@ -46,6 +46,7 @@
   "required_checks": [
     "validate-task-packet",
     "site-build",
+    "md-mirror-sync",
     "link-audit",
     "browser-smoke-check"
   ],

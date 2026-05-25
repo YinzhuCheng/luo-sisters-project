@@ -15,27 +15,32 @@ Build a sustainable original anime-style character project:
 
 1. `AGENTS.md`
 2. `README.md`
-3. `docs/document_governance.md`
-4. `docs/content_map.md`
-5. `harness/golden_principles.md`
-6. `harness/ownership_map.json`
-7. `knowledge/navigation.html`
-8. `knowledge/assets.html` or a linked child page
-9. `docs/browser_automation.md` before browser-based visual QA
-10. `docs/harness_ci.md` before changing GitHub Actions harness flows or interpreting CI failures
+3. `docs/skill_navigation.md`
+4. `docs/document_governance.md`
+5. `docs/content_map.md`
+6. `harness/golden_principles.md`
+7. `harness/ownership_map.json`
+8. `docs_mirror/knowledge/navigation.md`
+9. `docs_mirror/knowledge/assets.md` or a linked child page
+10. `docs/browser_automation.md` before browser-based visual QA
+11. `docs/harness_ci.md` before changing GitHub Actions harness flows or interpreting CI failures
 
-For HTML, use the low-token reader first:
+Default reading should stay in `docs_mirror/` whenever possible.
+Prefer repo-local skills before raw workflow docs or tool-by-tool execution when a matching skill exists.
+
+For raw HTML, use the low-token reader first:
 
 ```bash
 python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
 python skills/project-doc-governance/scripts/read_html_doc.py knowledge/assets.html
 ```
 
-Read one HTML page or anchor at a time. Treat images as placeholders until visual inspection is needed.
+Read one HTML page or anchor at a time. Treat images as placeholders until visual inspection is needed. Go back to raw HTML only for layout, interaction, or real-image judgment.
 
 ## Key Files
 
 - `README.md`: human quick start and build commands.
+- `docs/skill_navigation.md`: skill index and routing guide for repo-local skills.
 - `docs/document_governance.md`: documentation governance law, language policy, and reading rules.
 - `docs/content_map.md`: where content lives after the HTML-sheet restructure.
 - `harness/golden_principles.md`: harness engineering operating model.
@@ -44,8 +49,13 @@ Read one HTML page or anchor at a time. Treat images as placeholders until visua
 - `harness/task_templates/`: task packet schema and examples.
 - `harness/tasks/`: executable task packets.
 - `project_data/document_catalog.json`: machine-readable document registry.
-- `skills/project-doc-governance/`: project skill for low-token HTML reading and doc governance.
+- `docs_mirror/`: tracked Markdown mirrors for generated HTML pages; this is the default agent-readable layer.
+- `skills/project-doc-governance/`: use for doc reading, mirror-first navigation, and HTML audit.
+- `skills/character-asset-production/`: use for crop-to-transparent asset work and asset registry updates.
+- `skills/parallel-asset-ownership/`: use for multi-agent packet scoping, ownership boundaries, and handoff discipline.
+- `skills/harness-task-execution/`: use for packet preflight, verify, bundle, score, and CI-oriented harness reading.
 - `tools/build_project_html.py`: generates the Chinese root site and English `en/` mirror.
+- `tools/build_html_markdown_mirror.py`: generates tracked Markdown mirrors from project HTML.
 - `locales/zh-CN.json`, `locales/en.json`: public UI and page copy.
 - `project_data/knowledge_base.json`, `project_data/knowledge_base.en.json`: generated knowledge-page content.
 - `characters/qingyou.json`, `characters/arisu.json`: character asset slots, palettes, layout, and paths.
@@ -70,6 +80,7 @@ Build one locale:
 ```bash
 python tools/build_project_html.py --locale zh-CN
 python tools/build_project_html.py --locale en
+python tools/build_html_markdown_mirror.py
 ```
 
 If Windows resolves `python` to the Microsoft Store shim, use the bundled runtime:
@@ -98,10 +109,13 @@ Validate assets:
 python tools/validate_assets.py
 ```
 
-Validate the project skill:
+Validate the project skills:
 
 ```bash
 python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/project-doc-governance
+python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/character-asset-production
+python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/parallel-asset-ownership
+python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/harness-task-execution
 ```
 
 Run a browser smoke check:
@@ -116,11 +130,13 @@ Run a browser smoke check:
 - Keep internal maintenance documents in English.
 - Keep public page copy in locale or data files, not hardcoded inside Python templates.
 - Generated HTML is output, not the long-term editing source.
+- Markdown mirrors are also output, not the long-term editing source.
+- Prefer repo-local skills before opening raw workflow docs or manually composing repeated tool sequences.
 - Every new document must be reachable from `AGENTS.md` or `README.md`.
 - Every new, moved, split, or merged document must be registered in `project_data/document_catalog.json`.
 - Every non-trivial task should move toward a harness task packet with declared boundaries and evidence.
 - CI warnings and failures should be read through `docs/harness_ci.md`, then the latest uploaded harness run bundle.
-- When content looks missing, check `knowledge/navigation.html`, `knowledge/assets.html`, `project_data/knowledge_base*.json`, `logs/asset_registry.csv`, then `docs/content_map.md` before rewriting.
+- When content looks missing, check `docs_mirror/knowledge/navigation.md`, `docs_mirror/knowledge/assets.md`, `project_data/knowledge_base*.json`, `logs/asset_registry.csv`, then `docs/content_map.md` before rewriting.
 
 ## Image Asset Rules
 
@@ -143,7 +159,7 @@ Run a browser smoke check:
 
 ## Recommended Next Tasks
 
-1. Use the document governance skill for HTML structure reads and asset-path inspection.
+1. Use `docs/skill_navigation.md` to choose the narrowest matching repo-local skill first.
 2. Keep `knowledge/assets.html` and `logs/asset_registry.csv` synchronized with character JSON.
 3. Generate transparent character assets by character and asset type.
-4. Extract stable rules from `logs/issue_memory.csv` into reusable skills when patterns repeat.
+4. Continue extracting repeated rules from `logs/issue_memory.csv` into repo-local skills.

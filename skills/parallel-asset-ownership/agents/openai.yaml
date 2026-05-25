@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parallel Asset Ownership"
+  short_description: "Split multi-agent work by packet and path boundary."
+  default_prompt: "Use $parallel-asset-ownership to split Luo Sisters work across agents, keep packet boundaries clean, and prepare a safe handoff."

@@ -11,6 +11,7 @@
     "verify": [
       "document-catalog-reachability",
       "link-audit",
+      "md-mirror-sync",
       "html-reader-structure-check"
     ],
     "bundle": [

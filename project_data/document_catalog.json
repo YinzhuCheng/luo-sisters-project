@@ -3,19 +3,21 @@
   "entry_chain": [
     "AGENTS.md",
     "README.md",
+    "docs/skill_navigation.md",
     "docs/document_governance.md",
     "docs/content_map.md",
     "harness/golden_principles.md",
     "harness/ownership_map.json",
     "docs/browser_automation.md",
-    "knowledge/navigation.html",
-    "knowledge/assets.html or a linked child page"
+    "docs_mirror/knowledge/navigation.md",
+    "docs_mirror/knowledge/assets.md or a linked child page"
   ],
   "rules": [
     "Markdown and HTML are both documentation.",
     "Internal maintenance documents are English.",
     "Public web copy is localized through locale or data files.",
-    "Read HTML progressively with the project-doc-governance reader before opening raw HTML.",
+    "Prefer docs_mirror Markdown for agent reading and open raw HTML only for layout, interaction, or image inspection.",
+    "Read raw HTML progressively with the project-doc-governance reader before opening large generated pages directly.",
     "Generated HTML is output, not the long-term editing source."
   ],
   "documents": [
@@ -26,7 +28,7 @@
       "generated": false,
       "role": "agent entrypoint",
       "read_strategy": "read first",
-      "children": ["README.md", "docs/document_governance.md", "docs/content_map.md", "harness/golden_principles.md", "harness/ownership_map.json"]
+      "children": ["README.md", "docs/skill_navigation.md", "docs/document_governance.md", "docs/content_map.md", "harness/golden_principles.md", "harness/ownership_map.json"]
     },
     {
       "path": "README.md",
@@ -35,7 +37,16 @@
       "generated": false,
       "role": "human quick start",
       "read_strategy": "read after AGENTS.md",
-      "children": ["docs/document_governance.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html"]
+      "children": ["docs/skill_navigation.md", "docs/document_governance.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html"]
+    },
+    {
+      "path": "docs/skill_navigation.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "repo-local skill index",
+      "read_strategy": "read before opening raw workflows or manually chaining repeated tools",
+      "children": ["skills/project-doc-governance/SKILL.md", "skills/character-asset-production/SKILL.md", "skills/parallel-asset-ownership/SKILL.md", "skills/harness-task-execution/SKILL.md"]
     },
     {
       "path": "docs/document_governance.md",
@@ -44,7 +55,7 @@
       "generated": false,
       "role": "documentation governance law",
       "read_strategy": "read before changing docs",
-      "children": ["docs/content_map.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
+      "children": ["docs/skill_navigation.md", "docs/content_map.md", "docs/browser_automation.md", "docs/harness_ci.md", "harness/golden_principles.md", "harness/ownership_map.json", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md", "skills/character-asset-production/SKILL.md", "skills/parallel-asset-ownership/SKILL.md", "skills/harness-task-execution/SKILL.md"]
     },
     {
       "path": "harness/golden_principles.md",
@@ -89,7 +100,7 @@
       "generated": false,
       "role": "content hierarchy map",
       "read_strategy": "read before assuming content is missing",
-      "children": ["harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+      "children": ["docs/skill_navigation.md", "harness/golden_principles.md", "harness/ownership_map.json", "knowledge/navigation.html", "knowledge/assets.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
     },
     {
       "path": "skills/project-doc-governance/SKILL.md",
@@ -98,7 +109,70 @@
       "generated": false,
       "role": "project skill entrypoint",
       "read_strategy": "use for doc inspection and governance tasks",
-      "children": ["skills/project-doc-governance/references/document_governance.md", "skills/project-doc-governance/scripts/read_html_doc.py"]
+      "children": ["docs/skill_navigation.md", "skills/project-doc-governance/references/document_governance.md", "skills/project-doc-governance/scripts/read_html_doc.py"]
+    },
+    {
+      "path": "skills/project-doc-governance/references/document_governance.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "doc governance skill reference",
+      "read_strategy": "read when the doc skill needs deeper project policy detail",
+      "children": ["docs/document_governance.md", "docs/content_map.md"]
+    },
+    {
+      "path": "skills/character-asset-production/SKILL.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "asset production skill entrypoint",
+      "read_strategy": "use for crop-to-transparent asset work and registry-safe handoff",
+      "children": ["skills/character-asset-production/references/asset_production.md", "workflows/asset_generation_workflow.md", "tools/crop_from_sheet.py", "tools/remove_chroma_batch.py", "tools/validate_assets.py"]
+    },
+    {
+      "path": "skills/character-asset-production/references/asset_production.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "asset production skill reference",
+      "read_strategy": "read when the asset skill needs detailed production and logging rules",
+      "children": ["workflows/asset_generation_workflow.md", "logs/asset_registry.csv", "logs/issue_memory.csv"]
+    },
+    {
+      "path": "skills/parallel-asset-ownership/SKILL.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "parallel ownership skill entrypoint",
+      "read_strategy": "use for packet scoping, multi-agent boundaries, and handoff discipline",
+      "children": ["skills/parallel-asset-ownership/references/parallel_ownership.md", "workflows/agent_parallel_guide.md", "harness/ownership_map.json", "harness/tasks/asset-registry-sync.json"]
+    },
+    {
+      "path": "skills/parallel-asset-ownership/references/parallel_ownership.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "parallel ownership skill reference",
+      "read_strategy": "read when the ownership skill needs deeper split and serialization rules",
+      "children": ["workflows/agent_parallel_guide.md", "logs/progress_updates.csv", "logs/asset_registry.csv"]
+    },
+    {
+      "path": "skills/harness-task-execution/SKILL.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "harness execution skill entrypoint",
+      "read_strategy": "use for packet execution, run-bundle reading, and CI triage",
+      "children": ["skills/harness-task-execution/references/harness_execution.md", "tools/harness_cli.py", "tools/run_harness_task.py", "docs/harness_ci.md"]
+    },
+    {
+      "path": "skills/harness-task-execution/references/harness_execution.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "harness execution skill reference",
+      "read_strategy": "read when the harness skill needs deeper stage and evidence rules",
+      "children": ["docs/harness_ci.md", "harness/check_profiles/docs.json", "harness/check_profiles/page.json", "harness/check_profiles/asset.json", "harness/check_profiles/maintenance.json"]
     },
     {
       "path": "index.html",
@@ -107,8 +181,9 @@
       "generated": true,
       "source": "locales/zh-CN.json",
       "role": "Chinese public showcase",
-      "read_strategy": "summarize with read_html_doc.py",
-      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "knowledge/navigation.html", "knowledge/assets.html"]
+      "mirror_markdown": "docs_mirror/index.md",
+      "read_strategy": "prefer docs_mirror/index.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "knowledge/navigation.html", "knowledge/assets.html", "docs_mirror/index.md"]
     },
     {
       "path": "en/index.html",
@@ -117,8 +192,53 @@
       "generated": true,
       "source": "locales/en.json",
       "role": "English public showcase mirror",
-      "read_strategy": "summarize with read_html_doc.py",
-      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "en/knowledge/navigation.html", "en/knowledge/assets.html"]
+      "mirror_markdown": "docs_mirror/en/index.md",
+      "read_strategy": "prefer docs_mirror/en/index.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "en/knowledge/navigation.html", "en/knowledge/assets.html", "docs_mirror/en/index.md"]
+    },
+    {
+      "path": "character_sheets/qingyou.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "characters/qingyou.json + locales/zh-CN.json",
+      "role": "Chinese Qingyou character sheet",
+      "mirror_markdown": "docs_mirror/character_sheets/qingyou.md",
+      "read_strategy": "prefer docs_mirror/character_sheets/qingyou.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/assets.html", "characters/qingyou.json", "assets/characters/qingyou/workflow/crop_manifest.csv", "assets/characters/qingyou/prompts/asset_prompts.md", "workflows/asset_generation_workflow.md"]
+    },
+    {
+      "path": "character_sheets/arisu.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "characters/arisu.json + locales/zh-CN.json",
+      "role": "Chinese Arisu character sheet",
+      "mirror_markdown": "docs_mirror/character_sheets/arisu.md",
+      "read_strategy": "prefer docs_mirror/character_sheets/arisu.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/assets.html", "characters/arisu.json", "assets/characters/arisu/workflow/crop_manifest.csv", "assets/characters/arisu/prompts/asset_prompts.md", "workflows/asset_generation_workflow.md"]
+    },
+    {
+      "path": "en/character_sheets/qingyou.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "characters/qingyou.json + locales/en.json",
+      "role": "English Qingyou character sheet mirror",
+      "mirror_markdown": "docs_mirror/en/character_sheets/qingyou.md",
+      "read_strategy": "prefer docs_mirror/en/character_sheets/qingyou.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/assets.html", "characters/qingyou.json", "assets/characters/qingyou/workflow/crop_manifest.csv", "assets/characters/qingyou/prompts/asset_prompts.md", "workflows/asset_generation_workflow.md"]
+    },
+    {
+      "path": "en/character_sheets/arisu.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "characters/arisu.json + locales/en.json",
+      "role": "English Arisu character sheet mirror",
+      "mirror_markdown": "docs_mirror/en/character_sheets/arisu.md",
+      "read_strategy": "prefer docs_mirror/en/character_sheets/arisu.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/assets.html", "characters/arisu.json", "assets/characters/arisu/workflow/crop_manifest.csv", "assets/characters/arisu/prompts/asset_prompts.md", "workflows/asset_generation_workflow.md"]
     },
     {
       "path": "knowledge/navigation.html",
@@ -127,8 +247,9 @@
       "generated": true,
       "source": "project_data/knowledge_base.json",
       "role": "Chinese structured navigation page",
-      "read_strategy": "summarize with read_html_doc.py --structure-mode; choose the next link by task",
-      "children": ["knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+      "mirror_markdown": "docs_mirror/knowledge/navigation.md",
+      "read_strategy": "prefer docs_mirror/knowledge/navigation.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html", "docs_mirror/knowledge/navigation.md"]
     },
     {
       "path": "en/knowledge/navigation.html",
@@ -137,8 +258,9 @@
       "generated": true,
       "source": "project_data/knowledge_base.en.json",
       "role": "English structured navigation page",
-      "read_strategy": "summarize with read_html_doc.py --structure-mode; choose the next link by task",
-      "children": ["en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+      "mirror_markdown": "docs_mirror/en/knowledge/navigation.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/navigation.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html", "docs_mirror/en/knowledge/navigation.md"]
     },
     {
       "path": "knowledge/assets.html",
@@ -147,8 +269,9 @@
       "generated": true,
       "source": "characters/*.json + logs/asset_registry.csv",
       "role": "Chinese asset index",
-      "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
-      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json"]
+      "mirror_markdown": "docs_mirror/knowledge/assets.md",
+      "read_strategy": "prefer docs_mirror/knowledge/assets.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json", "docs_mirror/knowledge/assets.md"]
     },
     {
       "path": "en/knowledge/assets.html",
@@ -157,8 +280,9 @@
       "generated": true,
       "source": "characters/*.json + logs/asset_registry.csv",
       "role": "English asset index",
-      "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
-      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json"]
+      "mirror_markdown": "docs_mirror/en/knowledge/assets.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/assets.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json", "docs_mirror/en/knowledge/assets.md"]
     },
     {
       "path": "knowledge/index.html",
@@ -167,8 +291,9 @@
       "generated": true,
       "source": "project_data/knowledge_base.json",
       "role": "Chinese structured knowledge index",
-      "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["knowledge/navigation.html", "knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+      "mirror_markdown": "docs_mirror/knowledge/index.md",
+      "read_strategy": "prefer docs_mirror/knowledge/index.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html", "docs_mirror/knowledge/index.md"]
     },
     {
       "path": "en/knowledge/index.html",
@@ -177,8 +302,97 @@
       "generated": true,
       "source": "project_data/knowledge_base.en.json",
       "role": "English structured knowledge index",
-      "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+      "mirror_markdown": "docs_mirror/en/knowledge/index.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/index.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html", "docs_mirror/en/knowledge/index.md"]
+    },
+    {
+      "path": "knowledge/characters.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese character knowledge page",
+      "mirror_markdown": "docs_mirror/knowledge/characters.md",
+      "read_strategy": "prefer docs_mirror/knowledge/characters.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "docs_mirror/knowledge/characters.md"]
+    },
+    {
+      "path": "knowledge/story.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese story knowledge page",
+      "mirror_markdown": "docs_mirror/knowledge/story.md",
+      "read_strategy": "prefer docs_mirror/knowledge/story.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "docs_mirror/knowledge/story.md"]
+    },
+    {
+      "path": "knowledge/visual.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese visual knowledge page",
+      "mirror_markdown": "docs_mirror/knowledge/visual.md",
+      "read_strategy": "prefer docs_mirror/knowledge/visual.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "docs_mirror/knowledge/visual.md"]
+    },
+    {
+      "path": "knowledge/workflow.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese workflow knowledge page",
+      "mirror_markdown": "docs_mirror/knowledge/workflow.md",
+      "read_strategy": "prefer docs_mirror/knowledge/workflow.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "docs_mirror/knowledge/workflow.md"]
+    },
+    {
+      "path": "en/knowledge/characters.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English character knowledge page",
+      "mirror_markdown": "docs_mirror/en/knowledge/characters.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/characters.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "docs_mirror/en/knowledge/characters.md"]
+    },
+    {
+      "path": "en/knowledge/story.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English story knowledge page",
+      "mirror_markdown": "docs_mirror/en/knowledge/story.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/story.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "docs_mirror/en/knowledge/story.md"]
+    },
+    {
+      "path": "en/knowledge/visual.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English visual knowledge page",
+      "mirror_markdown": "docs_mirror/en/knowledge/visual.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/visual.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "docs_mirror/en/knowledge/visual.md"]
+    },
+    {
+      "path": "en/knowledge/workflow.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English workflow knowledge page",
+      "mirror_markdown": "docs_mirror/en/knowledge/workflow.md",
+      "read_strategy": "prefer docs_mirror/en/knowledge/workflow.md; open raw HTML only for layout, interaction, or image inspection",
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "docs_mirror/en/knowledge/workflow.md"]
     },
     {
       "path": "workflows/asset_generation_workflow.md",

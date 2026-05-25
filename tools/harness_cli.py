@@ -305,7 +305,10 @@ def latest_task_report(task_id: str) -> tuple[str, Path | None, dict[str, Any] |
 
 
 def verify_docs(packet: dict[str, Any], artifacts_dir: Path) -> list[dict[str, Any]]:
-    checks = [run_python_check("link-audit", "tools/audit_project_links.py", [], artifacts_dir)]
+    checks = [
+        run_python_check("link-audit", "tools/audit_project_links.py", [], artifacts_dir),
+        run_python_check("md-mirror-sync", "tools/build_html_markdown_mirror.py", ["--check"], artifacts_dir),
+    ]
     checks.extend(run_reader_targets(packet, artifacts_dir))
     return checks
 
@@ -313,6 +316,7 @@ def verify_docs(packet: dict[str, Any], artifacts_dir: Path) -> list[dict[str, A
 def verify_page(packet: dict[str, Any], artifacts_dir: Path) -> list[dict[str, Any]]:
     checks = [
         run_python_check("site-build", "tools/build_project_html.py", [], artifacts_dir),
+        run_python_check("md-mirror-sync", "tools/build_html_markdown_mirror.py", ["--check"], artifacts_dir),
         run_python_check("link-audit", "tools/audit_project_links.py", [], artifacts_dir),
     ]
     targets = list(packet.get("metadata", {}).get("targets", [])) or ["index.html"]

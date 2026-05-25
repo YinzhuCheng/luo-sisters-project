@@ -47,6 +47,7 @@
     "validate-task-packet",
     "document-catalog-reachability",
     "link-audit",
+    "md-mirror-sync",
     "html-reader-structure-check"
   ],
   "evidence_bundle": {

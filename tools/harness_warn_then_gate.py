@@ -33,6 +33,7 @@ def check_coverage(report: dict, packet: dict, check_profile: dict) -> list[str]
     coverage_map = {
         "document-catalog-reachability": has("link-audit"),
         "link-audit": has("link-audit"),
+        "md-mirror-sync": has("md-mirror-sync"),
         "html-reader-structure-check": has("html-reader-"),
         "site-build": has("site-build"),
         "browser-smoke-check": has("browser-smoke-"),

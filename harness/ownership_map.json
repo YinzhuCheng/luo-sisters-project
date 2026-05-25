@@ -9,6 +9,7 @@
         "AGENTS.md",
         "README.md",
         "docs/",
+        "docs_mirror/",
         "harness/",
         "knowledge/",
         "en/knowledge/",
@@ -27,6 +28,7 @@
         "en/character_sheets/",
         "assets/styles/",
         "tools/build_project_html.py",
+        "tools/build_html_markdown_mirror.py",
         "tools/browser_smoke_check.py",
         "docs/browser_automation.md",
         "requirements-browser.txt"
@@ -57,6 +59,7 @@
         "tools/harness_cli.py",
         "tools/run_harness_task.py",
         "tools/harness_warn_then_gate.py",
+        "tools/html_doc_utils.py",
         "tools/audit_project_links.py",
         "tools/validate_assets.py",
         "tools/remove_chroma_batch.py",

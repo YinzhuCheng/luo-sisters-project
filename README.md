@@ -5,17 +5,20 @@ This repository is an original anime-style character project designed for long-r
 ## Quick Entry
 
 1. Read `AGENTS.md` for agent rules.
-2. Read `docs/document_governance.md` for documentation policy.
-3. Read `docs/content_map.md` for the content hierarchy.
-4. Read `harness/golden_principles.md` for the harness model.
-5. Read `harness/ownership_map.json` for write boundaries.
-6. Open `index.html` for the Chinese public showcase.
-7. Open `en/index.html` for the English mirror.
-8. Open `knowledge/navigation.html` or `en/knowledge/navigation.html` for structured reading paths.
-9. Open `knowledge/assets.html` or `en/knowledge/assets.html` for asset lookup.
-10. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
-11. Read `docs/browser_automation.md` before visual smoke checks.
-12. Read `docs/harness_ci.md` for GitHub Actions harness runs and failure triage.
+2. Read `docs/skill_navigation.md` to choose the right repo-local skill.
+3. Read `docs/document_governance.md` for documentation policy.
+4. Read `docs/content_map.md` for the content hierarchy.
+5. Read `harness/golden_principles.md` for the harness model.
+6. Read `harness/ownership_map.json` for write boundaries.
+7. Read `docs_mirror/knowledge/navigation.md` or `docs_mirror/en/knowledge/navigation.md` for structured reading paths.
+8. Read `docs_mirror/knowledge/assets.md` or `docs_mirror/en/knowledge/assets.md` for asset lookup.
+9. Open `index.html` for the Chinese public showcase.
+10. Open `en/index.html` for the English mirror.
+11. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large raw HTML files.
+12. Read `docs/browser_automation.md` before visual smoke checks.
+13. Read `docs/harness_ci.md` for GitHub Actions harness runs and failure triage.
+
+Prefer a matching repo-local skill before reading raw workflow docs or manually chaining tools.
 
 ## Build The Website
 
@@ -30,6 +33,7 @@ Build one locale:
 ```bash
 python tools/build_project_html.py --locale zh-CN
 python tools/build_project_html.py --locale en
+python tools/build_html_markdown_mirror.py
 ```
 
 Generated outputs:
@@ -51,7 +55,7 @@ Generated outputs:
 
 ## Low-Token HTML Reading
 
-Do not open large HTML files directly unless the task is layout debugging. Summarize one page or one anchor first:
+Prefer `docs_mirror/` for normal reading. Do not open large raw HTML files directly unless the task is layout debugging. Summarize one page or one anchor first:
 
 ```bash
 python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
@@ -60,6 +64,26 @@ python skills/project-doc-governance/scripts/read_html_doc.py character_sheets/q
 ```
 
 The reader hides scripts, styles, navigation, headers, footers, SVG/canvas decoration, and image payloads. It also classifies links, checks local path existence, and summarizes asset references while keeping images as placeholders until visual inspection is needed.
+
+## Markdown Mirrors
+
+Generated Markdown mirrors live under `docs_mirror/` and track every project HTML page.
+
+- `docs_mirror/index.md`
+- `docs_mirror/character_sheets/*.md`
+- `docs_mirror/knowledge/*.md`
+- `docs_mirror/en/**/*.md`
+
+Use mirrors as the default agent-readable layer. They are derived output, not editing sources.
+
+## Repo-Local Skills
+
+Use `docs/skill_navigation.md` as the entrypoint.
+
+- `skills/project-doc-governance/`: doc reading, mirror-first navigation, and HTML audit
+- `skills/character-asset-production/`: crop-to-transparent asset production and asset registration
+- `skills/parallel-asset-ownership/`: multi-agent packet boundaries and handoff discipline
+- `skills/harness-task-execution/`: packet execution, evidence reading, and CI triage
 
 ## Browser Automation
 

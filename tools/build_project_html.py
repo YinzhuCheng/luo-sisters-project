@@ -19,6 +19,8 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
+from build_html_markdown_mirror import build_markdown_mirrors
+
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES_DIR = ROOT / "locales"
 CHARACTERS_DIR = ROOT / "characters"
@@ -930,27 +932,37 @@ def build(locale_code: str) -> list[Path]:
     return [path for path, _ in outputs]
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(description="Build Luo sisters static HTML pages.")
     parser.add_argument("--locale", help="Locale JSON name in locales/. Omit to build all public locales.")
+    parser.add_argument("--skip-md-mirror", action="store_true", help="Skip Markdown mirror generation for debugging.")
     parser.add_argument("--json-out", help="Optional JSON report path.")
     args = parser.parse_args()
     locales = (args.locale,) if args.locale else DEFAULT_LOCALES
     outputs: list[Path] = []
     for locale_code in locales:
         outputs.extend(build(locale_code))
+    mirror_outputs: list[str] = []
+    mirror_payload: dict[str, Any] = {"status": "skipped", "generated": [], "stale": [], "errors": []}
+    if not args.skip_md_mirror:
+        mirror_payload = build_markdown_mirrors(locales, check=False)
+        mirror_outputs = list(mirror_payload.get("generated", []))
     for path in outputs:
         print(f"Wrote {path}")
+    for item in mirror_outputs:
+        print(f"Wrote {ROOT / item}")
     if args.json_out:
         payload = {
-            "status": "passed",
+            "status": "failed" if mirror_payload.get("status") == "failed" else "passed",
             "locales": list(locales),
-            "outputs": [str(path) for path in outputs]
+            "outputs": [str(path) for path in outputs],
+            "markdown_mirrors": mirror_outputs,
         }
         json_path = Path(args.json_out).resolve()
         json_path.parent.mkdir(parents=True, exist_ok=True)
         json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return 1 if mirror_payload.get("status") == "failed" else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

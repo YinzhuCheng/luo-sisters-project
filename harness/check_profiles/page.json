@@ -10,6 +10,7 @@
     ],
     "verify": [
       "site-build",
+      "md-mirror-sync",
       "link-audit",
       "browser-smoke-check"
     ],

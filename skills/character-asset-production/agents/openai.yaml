@@ -1,0 +1,4 @@
+interface:
+  display_name: "Character Asset Production"
+  short_description: "Produce structured character assets from crop to transparent PNG."
+  default_prompt: "Use $character-asset-production to create or update Luo Sisters character assets within one character root and validate the results before handoff."

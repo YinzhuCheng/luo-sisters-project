@@ -25,6 +25,8 @@ The wrapper creates one stable run directory, then runs:
 3. `bundle`
 4. optional `score`
 
+Docs and page packets also run Markdown mirror synchronization checks through `tools/build_html_markdown_mirror.py --check`.
+
 You can also recompute the repository quality snapshot directly:
 
 ```powershell

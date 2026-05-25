@@ -10,18 +10,20 @@ Use this order unless the user points to a specific file:
 
 1. `AGENTS.md`
 2. `README.md`
-3. `docs/document_governance.md`
-4. `docs/content_map.md`
-5. `knowledge/navigation.html`
-6. `knowledge/assets.html` or a linked child page
+3. `docs/skill_navigation.md`
+4. `docs/document_governance.md`
+5. `docs/content_map.md`
+6. `docs_mirror/knowledge/navigation.md`
+7. `docs_mirror/knowledge/assets.md` or a linked child page
 
 ## Reading HTML
 
 Default behavior:
 
+- Prefer `docs_mirror/` before reading raw HTML.
 - Run `scripts/read_html_doc.py` before reading raw HTML.
 - Read one page or one anchor section at a time.
-- Prefer `knowledge/navigation.html` for structure and `knowledge/assets.html` for path lookup.
+- Prefer `docs_mirror/knowledge/navigation.md` for structure and `docs_mirror/knowledge/assets.md` for path lookup.
 - Treat images as placeholders.
 - Ignore decorative frontend layers unless debugging layout.
 - Open real images only when visual judgment is required.
@@ -55,3 +57,11 @@ When adding or changing documentation:
 - Keep generated HTML out of manual editing sources.
 - Rebuild generated pages after changing source data.
 - Log progress and reusable pitfalls in CSV.
+
+## Adjacent Skills
+
+If the task stops being doc-centric, route through `docs/skill_navigation.md` and switch to:
+
+- `character-asset-production` for asset work
+- `parallel-asset-ownership` for multi-agent scoping
+- `harness-task-execution` for packet execution and CI triage

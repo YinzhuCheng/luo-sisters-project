@@ -13,13 +13,14 @@ Use this chain for documentation discovery:
 ```text
 AGENTS.md
 README.md
+docs/skill_navigation.md
 docs/document_governance.md
 docs/content_map.md
 harness/golden_principles.md
 harness/ownership_map.json
-knowledge/navigation.html
-knowledge/assets.html
-knowledge/*.html
+docs_mirror/knowledge/navigation.md
+docs_mirror/knowledge/assets.md
+docs_mirror/knowledge/*.md
 ```
 
 For English public pages, use the same generated structure under `en/`.
@@ -28,6 +29,7 @@ For English public pages, use the same generated structure under `en/`.
 
 - `AGENTS.md`: agent operating rules and project entry map.
 - `README.md`: human quick start and build instructions.
+- `docs/skill_navigation.md`: repo-local skill routing guide.
 - `docs/document_governance.md`: documentation law, language separation, and HTML reading policy.
 - `docs/browser_automation.md`: browser automation setup and smoke-check workflow.
 - `docs/harness_ci.md`: GitHub Actions harness routing and failure-reading guide.
@@ -39,7 +41,22 @@ For English public pages, use the same generated structure under `en/`.
 - `.github/workflows/`: harness delivery-loop workflows.
 - `project_data/document_catalog.json`: machine-readable document registry.
 
+Prefer repo-local skills before reading raw workflow docs or manually assembling repeated tool sequences:
+
+- `skills/project-doc-governance/`
+- `skills/character-asset-production/`
+- `skills/parallel-asset-ownership/`
+- `skills/harness-task-execution/`
+
 ## Level 1: Public Showcase Pages
+
+Default agent-readable mirrors:
+
+- `docs_mirror/index.md`
+- `docs_mirror/character_sheets/qingyou.md`
+- `docs_mirror/character_sheets/arisu.md`
+- `docs_mirror/knowledge/*.md`
+- `docs_mirror/en/**/*.md`
 
 Chinese root site:
 
@@ -105,4 +122,4 @@ Source data:
 
 - Knowledge pages and asset pages carry the current working structure.
 - Edit source JSON and locale files, then run `tools/build_project_html.py`.
-- If content appears missing, check this order before rewriting it: generated page, asset index, character config, asset registry, earlier overview data, then the backup under `D:\original\...`.
+- If content appears missing, check this order before rewriting it: Markdown mirror, generated page, asset index, character config, asset registry, earlier overview data, then the backup under `D:\original\...`.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness Task Execution"
+  short_description: "Run task packets, checks, and evidence bundles safely."
+  default_prompt: "Use $harness-task-execution to run a Luo Sisters task packet, inspect the run bundle, and explain the outcome."

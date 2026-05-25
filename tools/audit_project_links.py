@@ -9,6 +9,9 @@ import re
 from pathlib import Path
 from urllib.parse import urldefrag
 
+from build_html_markdown_mirror import build_markdown_mirrors
+from html_doc_utils import default_mirror_markdown_path
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FORBIDDEN_SNIPPETS = (
@@ -88,6 +91,10 @@ def audit_document_catalog() -> list[str]:
         path = ROOT / entry["path"]
         if not path.exists():
             errors.append(f"document_catalog.json references missing file {entry['path']}")
+        if entry.get("type") == "html":
+            mirror = str(entry.get("mirror_markdown") or default_mirror_markdown_path(entry["path"]))
+            if not (ROOT / mirror).exists():
+                errors.append(f"document_catalog.json mirror missing: {entry['path']} -> {mirror}")
         for child in entry.get("children", []):
             child_path = strip_fragment(child)
             if not child_path or child_path.startswith("#"):
@@ -149,6 +156,8 @@ def main() -> None:
     errors.extend(audit_document_catalog())
     errors.extend(audit_character_configs())
     errors.extend(audit_registry())
+    mirror_payload = build_markdown_mirrors(("zh-CN", "en"), check=True)
+    errors.extend(mirror_payload.get("errors", []))
 
     payload = {
         "status": "failed" if errors else "passed",
