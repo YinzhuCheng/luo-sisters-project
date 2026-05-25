@@ -1,0 +1,73 @@
+{
+  "id": "knowledge-page-structure",
+  "kind": "page",
+  "intent": "Keep the structured knowledge pages, generated navigation, and asset index readable and linked from one another.",
+  "allowed_paths": [
+    "knowledge/",
+    "en/knowledge/",
+    "locales/",
+    "project_data/knowledge_base.json",
+    "project_data/knowledge_base.en.json",
+    "docs/content_map.md"
+  ],
+  "forbidden_paths": [
+    "assets/characters/",
+    "characters/",
+    "logs/asset_registry.csv"
+  ],
+  "inputs": [
+    {
+      "path": "project_data/knowledge_base.json",
+      "kind": "knowledge-data",
+      "required": true
+    },
+    {
+      "path": "project_data/knowledge_base.en.json",
+      "kind": "knowledge-data",
+      "required": true
+    },
+    {
+      "path": "locales/zh-CN.json",
+      "kind": "locale",
+      "required": true
+    },
+    {
+      "path": "locales/en.json",
+      "kind": "locale",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/harness_runs/<timestamp>-knowledge-page-structure/report.json",
+    "logs/harness_runs/<timestamp>-knowledge-page-structure/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "site-build",
+    "link-audit",
+    "browser-smoke-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-knowledge-page-structure/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Treat generated knowledge pages as build outputs and keep the editable sources in locales or project_data.",
+    "Use one-page reading in the HTML reader before opening child knowledge pages.",
+    "Keep the asset index connected to task packets, character config, and registry files."
+  ],
+  "metadata": {
+    "owner_domain": "docs-knowledge",
+    "check_profile": "harness/check_profiles/page.json",
+    "targets": [
+      "knowledge/navigation.html",
+      "knowledge/assets.html",
+      "en/knowledge/navigation.html",
+      "en/knowledge/assets.html"
+    ]
+  }
+}

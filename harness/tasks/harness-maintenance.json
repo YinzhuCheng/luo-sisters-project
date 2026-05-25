@@ -1,0 +1,71 @@
+{
+  "id": "harness-maintenance",
+  "kind": "maintenance",
+  "intent": "Review harness policies, run evidence-oriented maintenance checks, and keep convergence metadata current.",
+  "allowed_paths": [
+    "harness/",
+    "tools/harness_cli.py",
+    "workflows/",
+    "logs/",
+    "manifest.json"
+  ],
+  "forbidden_paths": [
+    "assets/characters/",
+    "character_sheets/",
+    "index.html"
+  ],
+  "inputs": [
+    {
+      "path": "harness/quality_score.json",
+      "kind": "score-file",
+      "required": true
+    },
+    {
+      "path": "harness/policies/warn_then_gate.json",
+      "kind": "policy-file",
+      "required": true
+    },
+    {
+      "path": "logs/issue_memory.csv",
+      "kind": "issue-log",
+      "required": true
+    },
+    {
+      "path": "logs/progress_updates.csv",
+      "kind": "progress-log",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/harness_runs/<timestamp>-harness-maintenance/report.json",
+    "logs/harness_runs/<timestamp>-harness-maintenance/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "link-audit",
+    "issue-memory-scan",
+    "score-input-scan"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-harness-maintenance/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Turn repeated operational issues into explicit harness rules instead of leaving them as folklore.",
+    "Update the quality score through the harness CLI rather than editing generated reports by hand.",
+    "Keep maintenance evidence inside logs/harness_runs for later CI upload."
+  ],
+  "metadata": {
+    "owner_domain": "governance-tools",
+    "check_profile": "harness/check_profiles/maintenance.json",
+    "focus": [
+      "policy-compliance",
+      "task-packet-coverage",
+      "issue-memory-scan"
+    ]
+  }
+}

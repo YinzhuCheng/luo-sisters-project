@@ -1,0 +1,76 @@
+{
+  "id": "arisu-asset-batch",
+  "kind": "asset",
+  "intent": "Generate or revise Arisu asset batches while keeping all outputs, prompts, and manifests inside the Arisu root.",
+  "allowed_paths": [
+    "assets/characters/arisu/",
+    "characters/arisu.json"
+  ],
+  "forbidden_paths": [
+    "assets/characters/qingyou/",
+    "characters/qingyou.json",
+    "logs/asset_registry.csv"
+  ],
+  "inputs": [
+    {
+      "path": "assets/characters/arisu/source_sheet/",
+      "kind": "source-sheet",
+      "required": true
+    },
+    {
+      "path": "assets/characters/arisu/workflow/crop_manifest.csv",
+      "kind": "crop-manifest",
+      "required": true
+    },
+    {
+      "path": "assets/characters/arisu/prompts/asset_prompts.md",
+      "kind": "prompt-doc",
+      "required": true
+    },
+    {
+      "path": "characters/arisu.json",
+      "kind": "character-config",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "assets/characters/arisu/generated/transparent/<type>/",
+    "logs/harness_runs/<timestamp>-arisu-asset-batch/report.json",
+    "logs/harness_runs/<timestamp>-arisu-asset-batch/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "asset-structure-validation",
+    "asset-registry-consistency",
+    "planned-output-boundary-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-arisu-asset-batch/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Registry writes happen in the shared asset-registry-sync packet, not inside the Arisu batch packet.",
+    "If a crop is skewed, generation may fall back to the complete source sheet according to the asset workflow.",
+    "Do not move Qingyou files into this packet even for paired outfit experiments."
+  ],
+  "metadata": {
+    "owner_domain": "arisu-assets",
+    "check_profile": "harness/check_profiles/asset.json",
+    "character": "arisu",
+    "asset_types": [
+      "standing",
+      "expressions",
+      "turnaround",
+      "clothing",
+      "accessories",
+      "props",
+      "details",
+      "poses",
+      "cg"
+    ]
+  }
+}

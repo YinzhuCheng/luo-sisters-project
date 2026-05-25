@@ -22,3 +22,4 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-25,Codex,project,knowledge_base,structured old archive into generated knowledge pages,done,knowledge/index.html,Added knowledge_base JSON plus characters story visual workflow pages with old archive anchors
 2026-05-25,Codex,project,doc_governance,added project documentation governance skill and bilingual build,done,skills/project-doc-governance,Internal docs are English and public pages now build Chinese root plus English mirror
 2026-05-25,Codex,project,knowledge_navigation,structured old archive navigation into dedicated knowledge page,done,knowledge/navigation.html,Old #navigation now maps to a generated navigation and reading paths page in both languages
+2026-05-26,Codex,project,harness,backfilled concrete task packets and packet-based asset/page links,done,harness/tasks,Phase 3 adds live packets plus asset-index and parallel-guide links to config registry and task packets

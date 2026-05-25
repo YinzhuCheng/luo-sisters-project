@@ -1,0 +1,76 @@
+{
+  "id": "qingyou-asset-batch",
+  "kind": "asset",
+  "intent": "Generate or revise Qingyou asset batches while keeping all outputs, prompts, and manifests inside the Qingyou root.",
+  "allowed_paths": [
+    "assets/characters/qingyou/",
+    "characters/qingyou.json"
+  ],
+  "forbidden_paths": [
+    "assets/characters/arisu/",
+    "characters/arisu.json",
+    "logs/asset_registry.csv"
+  ],
+  "inputs": [
+    {
+      "path": "assets/characters/qingyou/source_sheet/",
+      "kind": "source-sheet",
+      "required": true
+    },
+    {
+      "path": "assets/characters/qingyou/workflow/crop_manifest.csv",
+      "kind": "crop-manifest",
+      "required": true
+    },
+    {
+      "path": "assets/characters/qingyou/prompts/asset_prompts.md",
+      "kind": "prompt-doc",
+      "required": true
+    },
+    {
+      "path": "characters/qingyou.json",
+      "kind": "character-config",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "assets/characters/qingyou/generated/transparent/<type>/",
+    "logs/harness_runs/<timestamp>-qingyou-asset-batch/report.json",
+    "logs/harness_runs/<timestamp>-qingyou-asset-batch/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "asset-structure-validation",
+    "asset-registry-consistency",
+    "planned-output-boundary-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-qingyou-asset-batch/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Registry writes happen in the shared asset-registry-sync packet, not inside the Qingyou batch packet.",
+    "If a crop is skewed, generation may fall back to the complete source sheet according to the asset workflow.",
+    "Do not move Arisu files into this packet even for shared styling experiments."
+  ],
+  "metadata": {
+    "owner_domain": "qingyou-assets",
+    "check_profile": "harness/check_profiles/asset.json",
+    "character": "qingyou",
+    "asset_types": [
+      "standing",
+      "expressions",
+      "turnaround",
+      "clothing",
+      "accessories",
+      "props",
+      "details",
+      "poses",
+      "cg"
+    ]
+  }
+}

@@ -139,7 +139,7 @@
       "source": "characters/*.json + logs/asset_registry.csv",
       "role": "Chinese asset index",
       "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
-      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json"]
     },
     {
       "path": "en/knowledge/assets.html",
@@ -149,7 +149,7 @@
       "source": "characters/*.json + logs/asset_registry.csv",
       "role": "English asset index",
       "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
-      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json"]
     },
     {
       "path": "knowledge/index.html",
@@ -187,7 +187,7 @@
       "generated": false,
       "role": "parallel-agent ownership guide",
       "read_strategy": "read before assigning asset scopes",
-      "children": ["logs/progress_updates.csv", "logs/issue_memory.csv", "logs/asset_registry.csv"]
+      "children": ["harness/ownership_map.json", "harness/tasks/README.md", "logs/progress_updates.csv", "logs/issue_memory.csv", "logs/asset_registry.csv"]
     },
     {
       "path": "prompts/character_sheet_prompt_notes.md",
@@ -245,6 +245,78 @@
       "role": "task packet schema",
       "read_strategy": "read before creating or validating task packets",
       "children": ["harness/task_templates/task_packet.example.json", "harness/policies/evidence_bundle.schema.json", "harness/tasks/README.md"]
+    },
+    {
+      "path": "harness/tasks/README.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "task packet directory index",
+      "read_strategy": "read before selecting an existing packet",
+      "children": ["harness/tasks/docs-governance-maintenance.json", "harness/tasks/knowledge-page-structure.json", "harness/tasks/site-smoke-check.json", "harness/tasks/qingyou-asset-batch.json", "harness/tasks/arisu-asset-batch.json", "harness/tasks/asset-registry-sync.json", "harness/tasks/harness-maintenance.json"]
+    },
+    {
+      "path": "harness/tasks/docs-governance-maintenance.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "docs governance task packet",
+      "read_strategy": "read before changing entry docs or HTML reading rules",
+      "children": ["AGENTS.md", "docs/document_governance.md", "docs/content_map.md", "project_data/document_catalog.json"]
+    },
+    {
+      "path": "harness/tasks/knowledge-page-structure.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "knowledge-page structure task packet",
+      "read_strategy": "read before changing generated knowledge surfaces",
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "project_data/knowledge_base.json", "locales/zh-CN.json", "locales/en.json"]
+    },
+    {
+      "path": "harness/tasks/site-smoke-check.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "public page smoke-check task packet",
+      "read_strategy": "read before rebuilding or visually checking public pages",
+      "children": ["index.html", "character_sheets/qingyou.html", "character_sheets/arisu.html", "tools/browser_smoke_check.py"]
+    },
+    {
+      "path": "harness/tasks/qingyou-asset-batch.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "Qingyou asset batch packet",
+      "read_strategy": "read before producing or reorganizing Qingyou assets",
+      "children": ["characters/qingyou.json", "assets/characters/qingyou/workflow/crop_manifest.csv", "assets/characters/qingyou/prompts/asset_prompts.md"]
+    },
+    {
+      "path": "harness/tasks/arisu-asset-batch.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "Arisu asset batch packet",
+      "read_strategy": "read before producing or reorganizing Arisu assets",
+      "children": ["characters/arisu.json", "assets/characters/arisu/workflow/crop_manifest.csv", "assets/characters/arisu/prompts/asset_prompts.md"]
+    },
+    {
+      "path": "harness/tasks/asset-registry-sync.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "shared asset registry sync packet",
+      "read_strategy": "read before editing the shared asset registry or config-to-registry alignment",
+      "children": ["characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+    },
+    {
+      "path": "harness/tasks/harness-maintenance.json",
+      "type": "json",
+      "language": "en",
+      "generated": false,
+      "role": "harness maintenance packet",
+      "read_strategy": "read before changing harness policy, quality score, or maintenance scripts",
+      "children": ["harness/quality_score.json", "harness/policies/warn_then_gate.json", "tools/harness_cli.py", "logs/issue_memory.csv"]
     }
   ]
 }

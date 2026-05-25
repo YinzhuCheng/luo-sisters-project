@@ -1,0 +1,73 @@
+{
+  "id": "docs-governance-maintenance",
+  "kind": "docs",
+  "intent": "Keep the entry-document chain, HTML reading rules, and documentation catalog aligned with the current project structure.",
+  "allowed_paths": [
+    "AGENTS.md",
+    "README.md",
+    "docs/",
+    "harness/",
+    "project_data/document_catalog.json",
+    "skills/project-doc-governance/"
+  ],
+  "forbidden_paths": [
+    "index.html",
+    "en/",
+    "character_sheets/",
+    "assets/characters/",
+    "characters/"
+  ],
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "kind": "entry-doc",
+      "required": true
+    },
+    {
+      "path": "docs/document_governance.md",
+      "kind": "governance-doc",
+      "required": true
+    },
+    {
+      "path": "docs/content_map.md",
+      "kind": "content-map",
+      "required": true
+    },
+    {
+      "path": "project_data/document_catalog.json",
+      "kind": "document-catalog",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/harness_runs/<timestamp>-docs-governance-maintenance/report.json",
+    "logs/harness_runs/<timestamp>-docs-governance-maintenance/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "document-catalog-reachability",
+    "link-audit",
+    "html-reader-structure-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-docs-governance-maintenance/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Keep internal maintenance documents in English.",
+    "Start HTML reading with navigation or asset index pages before opening child pages.",
+    "Do not edit generated HTML directly for governance-only changes."
+  ],
+  "metadata": {
+    "owner_domain": "docs-knowledge",
+    "check_profile": "harness/check_profiles/docs.json",
+    "reader_targets": [
+      "knowledge/navigation.html",
+      "knowledge/assets.html"
+    ]
+  }
+}

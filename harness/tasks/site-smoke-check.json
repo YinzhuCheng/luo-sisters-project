@@ -1,0 +1,74 @@
+{
+  "id": "site-smoke-check",
+  "kind": "page",
+  "intent": "Rebuild the public showcase pages and capture smoke-check evidence for the home page and both character sheets.",
+  "allowed_paths": [
+    "index.html",
+    "en/index.html",
+    "character_sheets/",
+    "en/character_sheets/",
+    "assets/styles/",
+    "tools/build_project_html.py",
+    "tools/browser_smoke_check.py",
+    "docs/browser_automation.md"
+  ],
+  "forbidden_paths": [
+    "assets/characters/",
+    "characters/",
+    "logs/asset_registry.csv"
+  ],
+  "inputs": [
+    {
+      "path": "index.html",
+      "kind": "page",
+      "required": true
+    },
+    {
+      "path": "character_sheets/qingyou.html",
+      "kind": "page",
+      "required": true
+    },
+    {
+      "path": "character_sheets/arisu.html",
+      "kind": "page",
+      "required": true
+    },
+    {
+      "path": "tools/browser_smoke_check.py",
+      "kind": "browser-qa-tool",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/harness_runs/<timestamp>-site-smoke-check/report.json",
+    "logs/harness_runs/<timestamp>-site-smoke-check/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "site-build",
+    "link-audit",
+    "browser-smoke-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-site-smoke-check/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Run page tasks separately from docs tasks when multiple agents work in parallel.",
+    "Use browser smoke evidence from the harness run instead of editing generated HTML by hand.",
+    "Escalate layout overflow or broken references before asset-generation work continues."
+  ],
+  "metadata": {
+    "owner_domain": "frontend-html-build",
+    "check_profile": "harness/check_profiles/page.json",
+    "targets": [
+      "index.html",
+      "character_sheets/qingyou.html",
+      "character_sheets/arisu.html"
+    ]
+  }
+}

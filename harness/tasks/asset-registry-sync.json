@@ -1,0 +1,63 @@
+{
+  "id": "asset-registry-sync",
+  "kind": "asset",
+  "intent": "Sync the shared asset registry with the current character configs and keep planned and produced asset paths aligned.",
+  "allowed_paths": [
+    "characters/",
+    "logs/asset_registry.csv",
+    "logs/progress_updates.csv",
+    "logs/issue_memory.csv"
+  ],
+  "forbidden_paths": [
+    "index.html",
+    "character_sheets/",
+    "knowledge/",
+    "assets/styles/"
+  ],
+  "inputs": [
+    {
+      "path": "characters/qingyou.json",
+      "kind": "character-config",
+      "required": true
+    },
+    {
+      "path": "characters/arisu.json",
+      "kind": "character-config",
+      "required": true
+    },
+    {
+      "path": "logs/asset_registry.csv",
+      "kind": "registry",
+      "required": true
+    }
+  ],
+  "expected_outputs": [
+    "logs/asset_registry.csv",
+    "logs/harness_runs/<timestamp>-asset-registry-sync/report.json",
+    "logs/harness_runs/<timestamp>-asset-registry-sync/summary.md"
+  ],
+  "required_checks": [
+    "validate-task-packet",
+    "asset-structure-validation",
+    "asset-registry-consistency",
+    "planned-output-boundary-check"
+  ],
+  "evidence_bundle": {
+    "report_dir": "logs/harness_runs/<timestamp>-asset-registry-sync/",
+    "report_schema": "harness/policies/evidence_bundle.schema.json",
+    "artifact_expectations": [
+      "report.json",
+      "summary.md"
+    ]
+  },
+  "handoff_notes": [
+    "Run this packet after character-specific asset packets when registry rows need updates.",
+    "Treat the shared CSV files as serialized shared state rather than parallel work.",
+    "Escalate any cross-character path drift before rebuilding web pages."
+  ],
+  "metadata": {
+    "owner_domain": "governance-tools",
+    "check_profile": "harness/check_profiles/asset.json",
+    "scope": "shared-registry"
+  }
+}

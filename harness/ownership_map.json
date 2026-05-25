@@ -52,10 +52,13 @@
       "id": "governance-tools",
       "description": "Shared verification, catalog, and harness support tools.",
       "path_prefixes": [
+        "harness/",
+        "tools/harness_cli.py",
         "tools/audit_project_links.py",
         "tools/validate_assets.py",
         "tools/remove_chroma_batch.py",
         "tools/crop_from_sheet.py",
+        "characters/",
         "workflows/",
         "logs/",
         "manifest.json"

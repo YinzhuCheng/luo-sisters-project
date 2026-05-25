@@ -7,6 +7,18 @@ This directory stores executable task packets.
 - Phase 1 creates the control plane and schemas.
 - Phase 3 backfills real repository work into concrete task packets.
 
+## Current Packets
+
+- `docs-governance-maintenance.json`
+- `knowledge-page-structure.json`
+- `site-smoke-check.json`
+- `qingyou-asset-batch.json`
+- `arisu-asset-batch.json`
+- `asset-registry-sync.json`
+- `harness-maintenance.json`
+
+Read packet JSON directly when you need exact write boundaries or check requirements.
+
 ## Rule
 
 Every non-trivial docs, page, asset, or maintenance task should eventually land here as a packet that declares:

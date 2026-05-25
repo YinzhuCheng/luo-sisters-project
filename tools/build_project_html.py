@@ -487,6 +487,8 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
     crop_manifest_link = rel(config["crop_manifest"], page_path)
     prompt_link = rel(f"assets/characters/{character_id}/prompts/asset_prompts.md", page_path)
     workflow_link = rel("workflows/asset_generation_workflow.md", page_path)
+    registry_link = rel("logs/asset_registry.csv", page_path)
+    task_packet_link = rel(f"harness/tasks/{character_id}-asset-batch.json", page_path)
     clothing = asset_group_html(config, locale, page_path, "clothing", "", "asset-grid", 2)
     accessories = asset_group_html(config, locale, page_path, "accessories", "", "asset-grid", 2)
     props = asset_group_html(config, locale, page_path, "props", "", "asset-grid", 2)
@@ -511,8 +513,10 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
     </div>
     <div class="source-links">
       <a href="{e(config_link)}">{e(character_id)}.json</a>
+      <a href="{e(task_packet_link)}">{e(character_id)}-asset-batch.json</a>
       <a href="{e(crop_manifest_link)}">crop_manifest</a>
       <a href="{e(prompt_link)}">asset_prompts.md</a>
+      <a href="{e(registry_link)}">asset_registry.csv</a>
       <a href="{e(workflow_link)}">asset_generation_workflow.md</a>
     </div>
   </section>
@@ -542,8 +546,10 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
       <a href="{e(page_rel("knowledge/navigation.html", page_path, locale))}">knowledge/navigation.html</a>
       <a href="{e(page_rel("knowledge/assets.html", page_path, locale))}">knowledge/assets.html</a>
       <a href="{e(config_link)}">{e(character_id)}.json</a>
+      <a href="{e(task_packet_link)}">{e(character_id)}-asset-batch.json</a>
       <a href="{e(crop_manifest_link)}">crop_manifest</a>
       <a href="{e(prompt_link)}">asset_prompts.md</a>
+      <a href="{e(registry_link)}">asset_registry.csv</a>
       <a href="{e(workflow_link)}">asset_generation_workflow.md</a>
     </div>
   </section>
@@ -658,6 +664,8 @@ def render_assets_index(locale: dict[str, Any], configs: dict[str, dict[str, Any
   <h3><a href="{e(page_rel(f'character_sheets/{character_id}.html', page_path, locale))}">{e(copy['name'])}</a></h3>
   <p>{e(copy['short'])}</p>
   <div class="source-links">
+    <a href="{e(rel(f'characters/{character_id}.json', page_path))}">{e(character_id)}.json</a>
+    <a href="{e(rel(f'harness/tasks/{character_id}-asset-batch.json', page_path))}">{e(character_id)}-asset-batch.json</a>
     <a href="{e(rel(config['source_sheet'], page_path))}">source_sheet</a>
     <a href="{e(rel(config['crop_manifest'], page_path))}">crop_manifest</a>
     <a href="{e(rel(f'assets/characters/{character_id}/prompts/asset_prompts.md', page_path))}">asset_prompts.md</a>
@@ -675,6 +683,12 @@ def render_assets_index(locale: dict[str, Any], configs: dict[str, dict[str, Any
       <p class="eyebrow">{e(ui.get("asset_index_eyebrow", "Asset Index"))}</p>
       <h1>{e(ui["assets"])}</h1>
       <p class="lead">{e(ui.get("asset_index_summary", "Use one page to find character source sheets, crop handles, prompt notes, planned transparent outputs, and registry status."))}</p>
+      <div class="source-links">
+        <a href="{e(rel('logs/asset_registry.csv', page_path))}">asset_registry.csv</a>
+        <a href="{e(rel('harness/tasks/qingyou-asset-batch.json', page_path))}">qingyou-asset-batch.json</a>
+        <a href="{e(rel('harness/tasks/arisu-asset-batch.json', page_path))}">arisu-asset-batch.json</a>
+        <a href="{e(rel('harness/tasks/asset-registry-sync.json', page_path))}">asset-registry-sync.json</a>
+      </div>
     </div>
     <ol class="hierarchy-chain"><li>AGENTS.md</li><li>knowledge/navigation.html</li><li>knowledge/assets.html</li><li>character_sheets/*.html</li></ol>
   </section>
