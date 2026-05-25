@@ -10,3 +10,6 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-25,Codex,project,validation,ran asset validation,passed,tools/validate_assets.py,Transparent assets are still planned and placeholders are expected
 2026-05-25,Codex,project,responsive_css,fixed asset grid overflow,done,assets/styles/luo_sisters.css,Reset figure margins after browser QA found minor overflow
 2026-05-25,Codex,project,browser_qa,removed lazy loading from generated pages,done,tools/build_project_html.py,Avoid false broken-image reports during mobile visual QA
+2026-05-25,Codex,project,workflow,documented full-sheet fallback for imperfect crops,done,workflows/asset_generation_workflow.md,Crops can be skipped or corrected during generation by consulting source_sheet
+2026-05-25,Codex,project,content_map,created content preservation and hierarchy map,done,docs/content_map.md,Confirmed first-version archive and original backup hashes match
+2026-05-25,Codex,project,web,added hierarchical content links to generated index,done,index.html,Links now expose current pages archive data workflow and logs

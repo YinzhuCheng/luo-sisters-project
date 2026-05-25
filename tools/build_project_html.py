@@ -81,6 +81,8 @@ def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
     home_href = rel("index.html", page_path)
     qingyou_href = rel("character_sheets/qingyou.html", page_path)
     arisu_href = rel("character_sheets/arisu.html", page_path)
+    content_map_href = rel("docs/content_map.md", page_path)
+    archive_href = rel("docs/luo_sisters_project_guide_v2.html", page_path)
     workflow_href = rel("workflows/asset_generation_workflow.md", page_path)
     return f"""<header class="topbar">
   <div class="topbar-inner">
@@ -89,6 +91,8 @@ def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
       <a href="{e(home_href)}"{" aria-current=\"page\"" if active == "home" else ""}>{e(ui["home"])}</a>
       <a href="{e(qingyou_href)}"{" aria-current=\"page\"" if active == "qingyou" else ""}>洛青悠</a>
       <a href="{e(arisu_href)}"{" aria-current=\"page\"" if active == "arisu" else ""}>洛有栖</a>
+      <a href="{e(content_map_href)}">{e(ui["content_map"])}</a>
+      <a href="{e(archive_href)}">{e(ui["archive"])}</a>
       <a href="{e(workflow_href)}">{e(ui["workflow"])}</a>
     </nav>
   </div>
@@ -208,6 +212,27 @@ def character_card(
 </a>"""
 
 
+def content_map_html(locale: dict[str, Any], page_path: Path) -> str:
+    home = locale["home"]
+    groups = []
+    for group_data in home["content_map_groups"]:
+        links = "".join(
+            f"""<li>
+  <a href="{e(rel(item["href"], page_path))}">{e(item["label"])}</a>
+  <span>{e(item["note"])}</span>
+</li>"""
+            for item in group_data["links"]
+        )
+        groups.append(
+            f"""<article class="link-group">
+  <h3>{e(group_data["title"])}</h3>
+  <p>{e(group_data["text"])}</p>
+  <ul class="link-list">{links}</ul>
+</article>"""
+        )
+    return "<div class=\"link-tree\">" + "".join(groups) + "</div>"
+
+
 def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> str:
     page_path = INDEX_PATH
     ui = locale["ui"]
@@ -230,6 +255,7 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
         f"<li class=\"story-item\"><strong>{e(act['title'])}</strong><span>{e(act['text'])}</span></li>"
         for act in home["acts"]
     )
+    content_map = content_map_html(locale, page_path)
 
     return f"""{page_head(home["title"], stylesheet, locale)}
 <body>
@@ -278,6 +304,14 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
       <div><p class="eyebrow">Pipeline</p><h2>{e(home["pipeline_title"])}</h2></div>
     </div>
     <article class="panel">{pipeline}</article>
+  </section>
+
+  <section class="section" id="content-map">
+    <div class="section-head">
+      <div><p class="eyebrow">Content Map</p><h2>{e(home["content_map_title"])}</h2></div>
+      <p>{e(home["content_map_summary"])}</p>
+    </div>
+    {content_map}
   </section>
 
   <section class="section" id="story">

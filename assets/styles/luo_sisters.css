@@ -361,6 +361,64 @@ body.theme-arisu .tag,
   color: var(--muted);
 }
 
+.link-tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 14px;
+}
+
+.link-group {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: 0 10px 26px rgba(38, 48, 44, 0.08);
+}
+
+.link-group h3 {
+  margin: 0;
+  color: var(--green-deep);
+  font-size: 1.2rem;
+}
+
+body.theme-arisu .link-group h3 {
+  color: var(--blue-deep);
+}
+
+.link-group p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.link-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-list li {
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+  border: 1px solid rgba(73, 91, 82, 0.16);
+  border-radius: var(--radius);
+  background: rgba(247, 244, 238, 0.62);
+}
+
+.link-list a {
+  font-weight: 800;
+}
+
+.link-list span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .sheet-shell {
   display: grid;
   gap: 18px;

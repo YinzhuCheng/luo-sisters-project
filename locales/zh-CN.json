@@ -30,7 +30,9 @@
     "growth": "成长方向",
     "conflict": "隐藏矛盾",
     "reference_note": "当前页面先用参考截图和占位槽稳定版式；透明 PNG 生成后会自动替换进入对应槽位。",
-    "back_home": "返回总览"
+    "back_home": "返回总览",
+    "content_map": "资料地图",
+    "archive": "完整归档"
   },
   "home": {
     "eyebrow": "Character Bible · HTML Sheet System",
@@ -61,6 +63,53 @@
       { "title": "第三幕：把迷路也安排好", "text": "青悠误用 AI 优化邀请函与流程，有栖的奇怪句子被抹平。茶会越来越完整，也越来越失去心跳。" },
       { "title": "第四幕：重新选择门", "text": "青悠承认自己害怕失去价值，有栖承认自己害怕打开门。两人重新合作：AI 负责重复劳动，人物负责方向、保留、删改和关系。" },
       { "title": "终幕：不完美的茶会", "text": "茶会如期发生，也发生意外。雨、迟到、失焦照片和手账里的空白让这一天成为真正属于她们的记忆。" }
+    ],
+    "content_map_title": "资料层级地图",
+    "content_map_summary": "当前首页是轻量展示入口；第一版长内容没有删除，保存在完整归档和结构化数据里。下面按层级进入不同资料。",
+    "content_map_groups": [
+      {
+        "title": "0｜当前展示层",
+        "text": "面向浏览和展示，优先呈现美观网页与角色设定页。",
+        "links": [
+          { "label": "项目首页", "href": "index.html", "note": "当前导航与展示窗口" },
+          { "label": "洛青悠 HTML 设定页", "href": "character_sheets/qingyou.html", "note": "古风手账式设定页" },
+          { "label": "洛有栖 HTML 设定页", "href": "character_sheets/arisu.html", "note": "蓝白 Alice 资料页" }
+        ]
+      },
+      {
+        "title": "1｜第一版完整资料",
+        "text": "第一版长内容保留在归档页，适合查看完整人设、故事、提示词、制作规范与资产清单。",
+        "links": [
+          { "label": "完整归档总览", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "旧版完整 HTML，没有删除" },
+          { "label": "人设八层拆解", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "第一眼、日常、行为、能力、关系、焦虑、矛盾、成长" },
+          { "label": "故事与 AIGC 节奏", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "章节推进、配角功能、关键场景钩子" },
+          { "label": "视觉提示词组", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "线稿、立绘、三视图、表情、物件、CG" },
+          { "label": "制作规范与资产清单", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "日本二次元企划流程与 asset-list" }
+        ]
+      },
+      {
+        "title": "2｜数据与语言层",
+        "text": "当前网页由数据和模板生成，文案与前端分离。",
+        "links": [
+          { "label": "中文文案数据", "href": "locales/zh-CN.json", "note": "当前网页默认语言" },
+          { "label": "英文文案骨架", "href": "locales/en.json", "note": "后续语言切换准备" },
+          { "label": "洛青悠角色配置", "href": "characters/qingyou.json", "note": "色卡、版式、资产槽位" },
+          { "label": "洛有栖角色配置", "href": "characters/arisu.json", "note": "色卡、版式、资产槽位" },
+          { "label": "早期总览数据", "href": "project_data/luo_sisters_overview.json", "note": "保留第一阶段结构化内容" }
+        ]
+      },
+      {
+        "title": "3｜生产与记忆层",
+        "text": "给多 agent 并行、资产生成、坑点召回和后续 skill 沉淀使用。",
+        "links": [
+          { "label": "资产生成工作流", "href": "workflows/asset_generation_workflow.md", "note": "包含截图偏移时回看完整设定图规则" },
+          { "label": "并行 agent 指南", "href": "workflows/agent_parallel_guide.md", "note": "按角色与资产类型分工" },
+          { "label": "内容保全地图", "href": "docs/content_map.md", "note": "说明哪些内容移动到了哪里" },
+          { "label": "进度记录 CSV", "href": "logs/progress_updates.csv", "note": "每次工作追加记录" },
+          { "label": "坑点记忆 CSV", "href": "logs/issue_memory.csv", "note": "问题、原因、规避规则" },
+          { "label": "资产登记 CSV", "href": "logs/asset_registry.csv", "note": "资产状态与路径" }
+        ]
+      }
     ]
   },
   "asset_groups": {

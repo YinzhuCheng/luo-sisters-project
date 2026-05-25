@@ -37,7 +37,21 @@ Each crop is controlled by:
 
 If you adjust crop coordinates, update the manifest and append a row to `logs/progress_updates.csv`.
 
-## 3. Regenerate From Crops
+## 3. Crop Accuracy And Full-Sheet Fallback
+
+The first crop pass is a working reference layer, not a final truth layer. Some crops may be slightly skewed, too tight, or missing context. Do not stop the whole pipeline just to perfect every crop.
+
+When a generated asset fails because the crop is unclear:
+
+1. Open the full source sheet in `source_sheet/` and inspect the original context.
+2. Use the full sheet as a secondary reference image together with the crop.
+3. If the crop is too misleading, make a one-off corrected crop and save it with a new version suffix, for example `camera-v2.png`.
+4. Only edit `crop_manifest.csv` when the fix should become the new standard for future agents.
+5. Log the failure and recovery in `logs/issue_memory.csv`.
+
+This rule exists because the goal is stable asset production. Crops are useful handles, but the full sheet remains the visual authority for identity, outfit structure, and accessory placement.
+
+## 4. Regenerate From Crops
 
 Use each crop as a reference image. The generation target is a clean, textless, borderless asset on a flat `#ff00ff` background.
 
@@ -59,7 +73,7 @@ assets/characters/qingyou/generated/chroma/props/camera-v1.png
 assets/characters/arisu/generated/chroma/accessories/key-necklace-v1.png
 ```
 
-## 4. Remove Chroma Background
+## 5. Remove Chroma Background
 
 Run:
 
@@ -79,7 +93,7 @@ If an edge is dirty, keep the attempt and log the issue in `logs/issue_memory.cs
 assets/characters/<character>/generated/rejected/
 ```
 
-## 5. Register Assets
+## 6. Register Assets
 
 Every asset needs a row in `logs/asset_registry.csv`.
 
@@ -94,7 +108,7 @@ Use these statuses:
 
 The web pages can already render with missing assets. Finished transparent PNGs automatically replace crop previews during the next HTML build.
 
-## 6. Rebuild And Validate
+## 7. Rebuild And Validate
 
 Run:
 
@@ -105,7 +119,7 @@ python tools/validate_assets.py
 
 Use `--strict` only when the phase requires every transparent PNG to exist.
 
-## 7. Preserve Learnings
+## 8. Preserve Learnings
 
 Any reusable problem, fix, prompt rule, crop rule, or edge-removal note belongs in:
 

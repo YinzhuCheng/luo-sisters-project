@@ -20,6 +20,7 @@
 - `locales/zh-CN.json`、`locales/en.json`：网页文案数据。中文为默认，英文用于后续语言切换。
 - `assets/styles/luo_sisters.css`：首页与角色页共享样式。
 - `assets/characters/qingyou/`、`assets/characters/arisu/`：严格分离的角色资产根目录。
+- `docs/content_map.md`：内容层级与保全地图，说明第一版长内容移动到了哪里。
 - `workflows/asset_generation_workflow.md`：从设定图截图到透明 PNG 的流程。
 - `workflows/agent_parallel_guide.md`：多 agent 并行工作规则。
 - `logs/progress_updates.csv`：工作更新记录。
@@ -73,6 +74,8 @@ python tools/validate_assets.py
 - 更新网页文案时优先修改 `locales/zh-CN.json`。
 - 更新资产槽位、色卡、路径、版式时优先修改 `characters/*.json`。
 - 更新完成后运行生成脚本，不手改生成后的 HTML 作为长期来源。
+- 当前 `index.html` 是轻量展示入口；第一版完整长文保留在 `docs/luo_sisters_project_guide_v2.html`，不要误判为删除。
+- 新增或移动内容时同步更新 `docs/content_map.md` 和首页资料层级地图。
 
 ## 人设核心
 
@@ -103,6 +106,8 @@ python tools/validate_assets.py
 - 新的角色子资产必须进入 `assets/characters/<角色>/`，不要混放。
 - 青悠与有栖资产文件夹严格隔离；多个 agent 并行时按角色与资产类型分工。
 - 生图路线固定为：从整版设定图裁切参考截图 → 以截图为参考重新生成纯色背景图 → 本地抠图生成透明 PNG。
+- 参考截图是工作手柄，不是唯一真相。若截图歪、过紧、缺上下文或导致生图失败，优先回看 `source_sheet/` 中的完整设定图，并把完整设定图作为第二参考。
+- 只有当同一个截图反复阻碍生产时，才更新 `crop_manifest.csv`；临时修正图使用新版本号，不覆盖旧截图。
 - 纯色背景默认使用 `#ff00ff`，并保留 `generated/chroma/` 中的中间图。
 - 透明成品进入 `generated/transparent/<asset_type>/`，失败或不稳定版本进入 `generated/rejected/`。
 - 图像生成阶段尽量减少密集文字，把清晰中文说明交给 HTML、SVG 或 PIL 后期排版。
@@ -114,6 +119,7 @@ python tools/validate_assets.py
 - 每次新增、修改、生成、拒绝资产，都追加 `logs/progress_updates.csv`。
 - 每次资产状态变化，都追加或更新 `logs/asset_registry.csv`。
 - 遇到可复用的问题、失败原因、规避方式，追加 `logs/issue_memory.csv`。
+- 发现内容疑似缺失时，先查 `docs/content_map.md`、`docs/luo_sisters_project_guide_v2.html`、`project_data/luo_sisters_overview.json`；仍找不到再查 Git 或 `D:\original\luo_sisters_project_files\luo_sisters_project_files`。
 - CSV 是未来沉淀 skill 的入口材料，不要只把经验留在聊天记录里。
 
 ## 推荐下一步任务

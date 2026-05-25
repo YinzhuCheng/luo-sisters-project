@@ -30,7 +30,9 @@
     "growth": "Growth",
     "conflict": "Hidden Conflict",
     "reference_note": "The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.",
-    "back_home": "Back Home"
+    "back_home": "Back Home",
+    "content_map": "Content Map",
+    "archive": "Full Archive"
   },
   "home": {
     "eyebrow": "Character Bible · HTML Sheet System",
@@ -61,6 +63,53 @@
       { "title": "Act 3: Even Getting Lost Is Scheduled", "text": "Qingyou over-optimizes the invitation and process. Arisu feels her strange sentences have been flattened." },
       { "title": "Act 4: Choose the Door Again", "text": "Both admit their fears and reassign AI to repetitive work while they keep direction and relationships." },
       { "title": "Finale: An Imperfect Tea Party", "text": "Rain, lateness, soft-focus photos, and blank journal space make the day truly theirs." }
+    ],
+    "content_map_title": "Content Hierarchy",
+    "content_map_summary": "The current index is a lightweight display hub. The long first-version content is preserved in the full archive and structured data.",
+    "content_map_groups": [
+      {
+        "title": "0 | Current Showcase",
+        "text": "Pages for browsing and presentation.",
+        "links": [
+          { "label": "Index", "href": "index.html", "note": "Current navigation and display window" },
+          { "label": "Qingyou HTML Sheet", "href": "character_sheets/qingyou.html", "note": "Journal-style character sheet" },
+          { "label": "Arisu HTML Sheet", "href": "character_sheets/arisu.html", "note": "Blue Alice character sheet" }
+        ]
+      },
+      {
+        "title": "1 | Full First Archive",
+        "text": "Dense first-version content preserved as one HTML archive.",
+        "links": [
+          { "label": "Full Archive Overview", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "Original long guide" },
+          { "label": "Character Layers", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "Eight-layer character breakdown" },
+          { "label": "Story And AIGC", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "Story staging and scene hooks" },
+          { "label": "Visual Prompts", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "Prompt groups" },
+          { "label": "Workflow And Assets", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "Production workflow and asset list" }
+        ]
+      },
+      {
+        "title": "2 | Data And Locales",
+        "text": "Generated pages use separated data and localized copy.",
+        "links": [
+          { "label": "Chinese Locale", "href": "locales/zh-CN.json", "note": "Default web copy" },
+          { "label": "English Locale", "href": "locales/en.json", "note": "Future language switching" },
+          { "label": "Qingyou Config", "href": "characters/qingyou.json", "note": "Palette, layout, asset slots" },
+          { "label": "Arisu Config", "href": "characters/arisu.json", "note": "Palette, layout, asset slots" },
+          { "label": "Earlier Overview Data", "href": "project_data/luo_sisters_overview.json", "note": "Retained structured content" }
+        ]
+      },
+      {
+        "title": "3 | Production Memory",
+        "text": "Workflow, parallel-agent rules, logs, and reusable issue memory.",
+        "links": [
+          { "label": "Asset Workflow", "href": "workflows/asset_generation_workflow.md", "note": "Includes full-sheet fallback rule" },
+          { "label": "Parallel Agent Guide", "href": "workflows/agent_parallel_guide.md", "note": "Ownership and handoff rules" },
+          { "label": "Content Map", "href": "docs/content_map.md", "note": "Where content moved" },
+          { "label": "Progress CSV", "href": "logs/progress_updates.csv", "note": "Work log" },
+          { "label": "Issue Memory CSV", "href": "logs/issue_memory.csv", "note": "Pitfalls and mitigations" },
+          { "label": "Asset Registry CSV", "href": "logs/asset_registry.csv", "note": "Asset statuses" }
+        ]
+      }
     ]
   },
   "asset_groups": {

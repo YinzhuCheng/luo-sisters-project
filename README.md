@@ -8,8 +8,9 @@
 2. 打开 `character_sheets/qingyou.html` 查看洛青悠 HTML 设定页。
 3. 打开 `character_sheets/arisu.html` 查看洛有栖 HTML 设定页。
 4. 阅读 `AGENTS.md` 获取维护规则。
-5. 阅读 `workflows/asset_generation_workflow.md` 获取截图到透明资产的流程。
-6. 阅读 `workflows/agent_parallel_guide.md` 获取多 agent 并行规则。
+5. 阅读 `docs/content_map.md` 确认第一版长内容的位置与层级入口。
+6. 阅读 `workflows/asset_generation_workflow.md` 获取截图到透明资产的流程。
+7. 阅读 `workflows/agent_parallel_guide.md` 获取多 agent 并行规则。
 
 ## 生成网页
 
@@ -72,14 +73,15 @@ python tools/crop_from_sheet.py --character all --force
 ```
 
 2. 以 `crops/` 中的截图作为参考图重新生成无文字、无边框、纯 `#ff00ff` 背景图。
-3. 把生成图放入 `generated/chroma/<asset_type>/`。
-4. 批量抠图生成透明 PNG：
+3. 如果截图歪、过紧或信息不足，直接回看 `source_sheet/` 中的完整设定图，把完整设定图作为第二参考；只有反复影响生产时才返工 `crop_manifest.csv`。
+4. 把生成图放入 `generated/chroma/<asset_type>/`。
+5. 批量抠图生成透明 PNG：
 
 ```bash
 python tools/remove_chroma_batch.py --character qingyou --asset-type props
 ```
 
-5. 验证目录、路径边界和透明图：
+6. 验证目录、路径边界和透明图：
 
 ```bash
 python tools/validate_assets.py
@@ -91,6 +93,13 @@ python tools/validate_assets.py
 - `locales/zh-CN.json`：中文网页文案，当前默认。
 - `locales/en.json`：英文文案骨架，供后续语言切换使用。
 - `assets/styles/luo_sisters.css`：首页与角色页共享样式。
+
+## 内容层级与保全
+
+- `index.html` 是当前轻量展示入口，不承载第一版的全部长文。
+- `docs/luo_sisters_project_guide_v2.html` 保留第一版完整内容，包括人设八层、故事推进、AIGC 节奏、提示词组、制作规范、资产清单和下一步。
+- `docs/content_map.md` 记录当前网页、第一版归档、结构化数据、工作流和日志之间的层级关系。
+- 已核对 `docs/luo_sisters_project_guide_v2.html` 与 `D:\original\luo_sisters_project_files\luo_sisters_project_files\docs\luo_sisters_project_guide_v2.html` 哈希一致，确认旧版长内容没有删除。
 
 ## 日志与项目记忆
 
