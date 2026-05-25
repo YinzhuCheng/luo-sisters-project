@@ -1,0 +1,557 @@
+{
+  "version": "0.1-archive-skeleton",
+  "eyebrow": "Structured Archive",
+  "title": "洛氏姐妹知识库",
+  "summary": "把第一版完整归档拆成可导航、可生成、可核对的二级知识库。首页负责美观展示，知识库负责内容厚度，旧归档继续作为原始来源。",
+  "archive_path": "docs/luo_sisters_project_guide_v2.html",
+  "hierarchy": [
+    "index.html",
+    "knowledge/index.html",
+    "knowledge/*.html",
+    "docs/luo_sisters_project_guide_v2.html#anchor"
+  ],
+  "status_labels": {
+    "skeleton-linked": "骨架已迁移，原文锚点已接入",
+    "source-preserved": "原始归档保留",
+    "ready-for-refine": "可逐页精修"
+  },
+  "intro_cards": [
+    {
+      "title": "展示页与知识库分工",
+      "text": "首页和角色页保持轻量、美观、响应式；知识库页面承载人设、故事、提示词、制作规范和资产规划。旧归档不删除，作为完整核对来源。",
+      "tone": "green"
+    },
+    {
+      "title": "迁移不是逐字复制",
+      "text": "第一批采用全量骨架策略：先建立页面、章节、摘要和锚点，确认内容有去处；后续再把重点章节逐页扩写。",
+      "tone": "gold"
+    },
+    {
+      "title": "防止误判内容丢失",
+      "text": "每个知识库页面顶部都显示当前结构化内容、迁移状态和原归档锚点。发现内容缺失时先查知识库，再查旧归档和 docs/content_map.md。",
+      "tone": "blue"
+    }
+  ],
+  "pages": [
+    {
+      "id": "characters",
+      "href": "knowledge/characters.html",
+      "eyebrow": "Knowledge 01",
+      "title": "角色与人设层",
+      "summary": "两姐妹八层人设、关系公式、互动样例和可继续扩展的角色记忆点。",
+      "structured_content": "角色八层、姐妹关系公式、关系推进、互动样例",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "旧归档 #characters", "href": "docs/luo_sisters_project_guide_v2.html#characters" }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "type": "cards",
+          "eyebrow": "Role Frame",
+          "title": "角色定位",
+          "summary": "先保证角色作为人成立，再让主题从她们的选择里长出来。",
+          "items": [
+            {
+              "title": "洛青悠",
+              "text": "规划、记录、现实、古风 Lolita。她是用秩序保护梦想的人，记忆句是“那就给这场梦订个日期吧”。",
+              "tone": "green"
+            },
+            {
+              "title": "洛有栖",
+              "text": "幻想、入口、Alice、JK Lolita。她是用无序寻找梦想的人，记忆句是“姐姐，你有没有觉得，这扇门今天不太一样？”。",
+              "tone": "blue"
+            },
+            {
+              "title": "姐妹关系公式",
+              "text": "有栖给青悠一个梦，青悠给有栖一条路。一个给出现实抵达的可能，一个给出幻想与出发的理由。",
+              "tone": "gold"
+            }
+          ]
+        },
+        {
+          "id": "eight-layers",
+          "type": "details",
+          "eyebrow": "Eight Layers",
+          "title": "八层人设",
+          "summary": "使用可展开结构承接旧归档的人设厚度，后续可继续逐条扩写。",
+          "groups": [
+            {
+              "title": "洛青悠｜用秩序保护梦想的人",
+              "intro": "古风 Lolita、手账、相机、茶点、旧街、云肩、盘扣、青瓷色共同构成她的视觉与性格入口。",
+              "tone": "green",
+              "items": [
+                {
+                  "title": "1. 第一眼层",
+                  "text": "青绿色古风 Lolita、青衿感、云肩、盘扣、蕾丝、旧相机、手账、茶点。她给人的第一印象是温柔可靠。",
+                  "open": true
+                },
+                {
+                  "title": "2. 日常层",
+                  "text": "提前抵达，包里常备发夹、创可贴、胶带、便签与小剪刀。拍照前先看光，再看人；喜欢旧街、茶馆、布料店和文具店。"
+                },
+                {
+                  "title": "3. 行为记忆层",
+                  "text": "听到有栖的新点子，会先微微睁大眼，再翻开手账。紧张时整理袖口或相机带，写计划时会留一栏“意外”。"
+                },
+                {
+                  "title": "4. 能力层",
+                  "text": "擅长规划、统筹、审美判断、资料整理、拍摄记录、活动执行和风险预案，能把奇妙概念拆成可执行清单。"
+                },
+                {
+                  "title": "5. 关系层",
+                  "text": "有栖的幻想是青悠生活里最亮的意外。青悠会保护、准备、陪伴，也需要学习给有栖的梦保留呼吸空间。"
+                },
+                {
+                  "title": "6. 焦虑应对层",
+                  "text": "她用秩序对抗焦虑，相信整理、记录、路线与备用方案能让生活少一些散落感。温柔里带着疲惫。"
+                },
+                {
+                  "title": "7. 隐藏矛盾层",
+                  "text": "她早期反感 AIGC，表层是珍惜真实与手作，深层是价值感动摇：如果工具也能规划、整理、优化，她擅长的事还剩什么重量？"
+                },
+                {
+                  "title": "8. 成长层",
+                  "text": "从亲手完成全部步骤，走向选择该亲手保留的部分。她学会使用工具搬开重复劳动，把判断、关系、审美和共同经历留给自己。"
+                }
+              ]
+            },
+            {
+              "title": "洛有栖｜用无序寻找梦想的人",
+              "intro": "蓝白 JK Lolita、钥匙、白兔、怀表、旧图书室、秘密门、雏菊和 Alice 母题共同构成她的入口感。",
+              "tone": "blue",
+              "items": [
+                {
+                  "title": "1. 第一眼层",
+                  "text": "蓝白 JK Lolita、白衬衫、背带裙、领结、雏菊、钥匙项链、白兔挂件、怀表包和旧书。她像在校园里寻找兔子洞的 Alice 气质少女。",
+                  "open": true
+                },
+                {
+                  "title": "2. 日常层",
+                  "text": "会在走廊尽头停下来看门，书包挂件走路时轻响。喜欢旧图书室、天台门口、文具店和甜品店，日记常写成故事开头。"
+                },
+                {
+                  "title": "3. 行为记忆层",
+                  "text": "思考时捏钥匙项链，紧张时摸领结；看到门、镜子、楼梯和窗户会多看一眼。她会把普通物件说成童话线索。"
+                },
+                {
+                  "title": "4. 能力层",
+                  "text": "擅长概念创造、氛围命名、童话式表达和发现日常里的异常感。她能写出“请携带一枚迷路，在茶凉之前抵达”。"
+                },
+                {
+                  "title": "5. 关系层",
+                  "text": "她依赖青悠的执行力，也渴望自己的奇怪想法被保留下来。她希望姐姐相信她看见的门有意义。"
+                },
+                {
+                  "title": "6. 焦虑应对层",
+                  "text": "有栖用探索对抗焦虑。面对压力，她会绕路、发呆、看门、写奇怪的句子，让答案晚一点抵达。"
+                },
+                {
+                  "title": "7. 隐藏矛盾层",
+                  "text": "她害怕现实配不上想象。AIGC 生成的完美 Wonderland 会在中期吸引她，因为那里能让梦保持无风险的美丽。"
+                },
+                {
+                  "title": "8. 成长层",
+                  "text": "从等待白兔带路，走向自己选择门。她保留幻想，也开始承担结果；保留迷路感，也愿意写下第一张邀请函。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "relationship",
+          "type": "cards",
+          "eyebrow": "Relationship",
+          "title": "关系推进与互动样例",
+          "summary": "把姐妹互补、冲突与和解从设定句落到可写场景。",
+          "items": [
+            {
+              "title": "关系推进",
+              "text": "前期是轻喜剧式互补；中期可爱的习惯变成压力；后期一个学会留空白，一个学会做选择。",
+              "tone": "gold"
+            },
+            {
+              "title": "互动样例",
+              "text": "有栖提出“只有迷路的人才能参加的茶会”，青悠回应“那就给这场梦订个日期吧”。冲突点在于：迷路如何被安排，安排如何不关上门。",
+              "tone": "green"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "href": "knowledge/story.html",
+      "eyebrow": "Knowledge 02",
+      "title": "故事梗概与主题层",
+      "summary": "兔子洞茶会主线、章节推进、AIGC 登场节奏、配角功能和关键场景钩子。",
+      "structured_content": "故事三线、章节推进表、AIGC 节奏、配角功能、关键场景钩子",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "旧归档 #story", "href": "docs/luo_sisters_project_guide_v2.html#story" }
+      ],
+      "sections": [
+        {
+          "id": "story-lines",
+          "type": "cards",
+          "eyebrow": "Three Lines",
+          "title": "故事三线",
+          "summary": "表层是茶会，中层是姐妹关系，深层是 AIGC 时代的焦虑与选择。",
+          "items": [
+            {
+              "title": "表层主线",
+              "text": "姐妹要举办一场带 Alice 气质的小型主题茶会。准备过程包含找场地、设计服装、写邀请函、拍宣传照、做点心、布置入口与路线。",
+              "tone": "green"
+            },
+            {
+              "title": "情感主线",
+              "text": "青悠希望茶会安全落地，有栖希望茶会保留神秘。一个想把梦稳稳托住，一个想让门后继续发光。",
+              "tone": "blue"
+            },
+            {
+              "title": "时代暗线",
+              "text": "AIGC 作为工具、陪伴、顾问、推荐系统逐渐显影。它帮助角色，也放大每个人面对焦虑时的习惯。",
+              "tone": "gold"
+            }
+          ]
+        },
+        {
+          "id": "chapters",
+          "type": "table",
+          "eyebrow": "Chapter Table",
+          "title": "章节推进",
+          "summary": "用表格保存台前事件、人物变化和 AIGC 露出方式，方便后续扩写正文。",
+          "headers": ["阶段", "台前事件", "人物变化", "AIGC 露出方式"],
+          "rows": [
+            ["开篇", "有栖提出“迷路茶会”，青悠开始记录。", "姐妹互补关系建立，读者先喜欢她们的日常。", "同学随口用 AI 生成海报，像日常工具。"],
+            ["筹备前期", "找旧图书室、做邀请函、设计蓝白与青绿两套服装。", "青悠的可靠与有栖的灵气同时发光。", "白兔系统给出参考图与路线建议。"],
+            ["小刺痛", "青悠手作草稿被 AI 版本轻松压过。", "青悠轻微沉默，价值焦虑埋线。", "AIGC 成为效率对照。"],
+            ["分歧", "青悠用 LLM 优化邀请函，童话句子被改得标准。", "有栖感到自己的“门”被关上；青悠感到被误解。", "工具成为误会导火线。"],
+            ["中段危机", "茶会越来越完美，也越来越空。有栖短暂沉入生成 Wonderland。", "青悠困在任务清单，有栖困在完美梦境。", "AIGC 作为生成、陪伴、顾问全面浮现。"],
+            ["转折", "青悠承认害怕失去价值；有栖承认害怕打开门。", "两人开始共同写提示词与规则。", "AI 回到辅助位置，边界由角色决定。"],
+            ["结尾", "雨天茶会开场，流程有意外，记忆因此成立。", "青悠留空白，有栖做选择。", "工具退到后台，真实经历站回台前。"]
+          ]
+        },
+        {
+          "id": "aigc-rhythm",
+          "type": "cards",
+          "eyebrow": "AIGC Rhythm",
+          "title": "AIGC 登场节奏",
+          "summary": "AIGC 不抢走台前故事，而是在中后期成为焦虑放大器。",
+          "items": [
+            { "title": "前期｜5%", "text": "作为生活空气：海报、参考图、时间表，轻轻出现。" },
+            { "title": "中前期｜15%", "text": "成为效率对比：青悠感到轻微刺痛。" },
+            { "title": "中期｜35%", "text": "配角展示陪伴、顾问、生成三种用法。" },
+            { "title": "中后期｜45%", "text": "直接放大姐妹冲突，推动观念转换。" },
+            { "title": "后期｜20%", "text": "退回工具位置，人物关系与真实经历收束主题。" }
+          ]
+        },
+        {
+          "id": "supporting-cast",
+          "type": "cards",
+          "eyebrow": "Cast Function",
+          "title": "配角与 AI 使用风格",
+          "summary": "配角承载陪伴、顾问与系统入口三种侧面。",
+          "items": [
+            {
+              "title": "南星｜AI 作为陪伴",
+              "text": "她有一个长期聊天对象“茶匙先生”。它稳定、记得她说过的话、给她安慰。成长方向是从稳定回应走向真实关系的轻微冒险。",
+              "tone": "blue"
+            },
+            {
+              "title": "明夏｜AI 作为顾问",
+              "text": "学生会型角色，习惯让系统评估风险、流量与路线。她代表“最优解”的诱惑，帮助青悠意识到最稳的路未必最想走。",
+              "tone": "green"
+            },
+            {
+              "title": "白兔系统｜时代入口",
+              "text": "推荐、生成、提醒、引导的集合体。它很有用，也很会催促，可以用轻快口吻制造时代压力。",
+              "tone": "gold"
+            }
+          ]
+        },
+        {
+          "id": "hooks",
+          "type": "checklist",
+          "eyebrow": "Scene Hooks",
+          "title": "关键场景钩子",
+          "summary": "这些句子和场面是后续章节、CG 与网页展示都能复用的核心记忆点。",
+          "items": [
+            "有栖写下邀请函：“请携带一枚迷路，在茶凉之前抵达。”",
+            "青悠用 LLM 润色后，句子变得正式清楚；有栖说：“它把我的门关上了。”",
+            "有栖对青悠说：“姐姐，你把迷路也安排好了。”",
+            "青悠第一次承认：“我怕这些都能被替代以后，我也变得可有可无。”",
+            "姐妹共同改写提示词：保留迷路感，保证客人可以安全回来。",
+            "雨天茶会当天，原计划之外的水洼、伞、错路与笑声成为真正的记忆。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visual",
+      "href": "knowledge/visual.html",
+      "eyebrow": "Knowledge 03",
+      "title": "视觉方向与提示词库",
+      "summary": "美术方向、文字后期规则、表情规范、双人 KV 和两姐妹提示词组。",
+      "structured_content": "统一美术方向、提示词组、表情规范、双人 KV",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "旧归档 #visual", "href": "docs/luo_sisters_project_guide_v2.html#visual" }
+      ],
+      "sections": [
+        {
+          "id": "art-direction",
+          "type": "cards",
+          "eyebrow": "Art Direction",
+          "title": "统一美术方向",
+          "summary": "图像先服务角色识别和后续复刻，文字交给网页或后期排版。",
+          "items": [
+            {
+              "title": "风格",
+              "text": "日本二次元角色设定图，清洁线稿，柔和赛璐璐上色，细节清楚，色彩低饱和，带轻小说封面与角色设定资料感。",
+              "tone": "gold"
+            },
+            {
+              "title": "画面控制",
+              "text": "服装结构清晰、配饰可复用、发型剪影稳定、颜色用途明确；每张设定图优先服务后续复刻与统一。",
+              "tone": "green"
+            },
+            {
+              "title": "文字制作规范",
+              "text": "生成阶段优先生成角色、服装、装饰与留白；标题、信息栏、表情标签、物件说明和长段文字由 HTML / SVG / PIL 后期叠加。",
+              "tone": "blue"
+            },
+            {
+              "title": "表情差分硬性规范",
+              "text": "每个表情必须同时改变眉形、眼神、嘴型、头部角度、手势或肩部姿态，避免只改标签与轻微嘴角。",
+              "tone": "gold"
+            }
+          ]
+        },
+        {
+          "id": "prompt-base",
+          "type": "prompts",
+          "eyebrow": "Prompt Base",
+          "title": "通用提示词骨架",
+          "summary": "提示词类内容使用代码块样式，方便复制、版本化和后续精修。",
+          "items": [
+            {
+              "title": "通用基础 Prompt",
+              "source_id": "base-prompt",
+              "code": "Japanese anime character design sheet, clean precise lineart, soft cel shading, elegant pastel color palette, high detail outfit construction, readable accessories, full body, balanced proportions, expressive eyes, gentle light, character reference sheet style, white or warm neutral background, clear silhouette, organized layout, production-ready design"
+            }
+          ]
+        },
+        {
+          "id": "qingyou-prompts",
+          "type": "prompts",
+          "eyebrow": "Luo Qingyou",
+          "title": "洛青悠提示词组",
+          "summary": "青绿色、米白、青瓷、古风 Lolita、云肩、盘扣、蕾丝、梅枝、旧相机、手账、茶具。",
+          "items": [
+            {
+              "title": "线稿探索",
+              "source_id": "qy-line",
+              "code": "Luo Qingyou, gentle older sister character, Chinese-inspired classic Lolita, sage green and ivory outfit, yun-jian collar capelet, frog buttons, lace sleeves, long dark hair, small plum blossom hairpin, vintage camera strap, project journal in hand, clean black and white lineart, three silhouette variations, fashion design exploration sheet, readable garment layers"
+            },
+            {
+              "title": "标准立绘",
+              "source_id": "qy-stand",
+              "code": "Luo Qingyou full body standard standing pose, Chinese classic Lolita dress, sage green skirt, ivory blouse, delicate lace cuffs, cloud shoulder inspired collar, subtle embroidery, vintage camera at her side, green project journal, warm calm smile, elegant and reliable aura, Japanese anime character reference, soft cel shading, clean background, production-ready character sheet"
+            },
+            {
+              "title": "三视图",
+              "source_id": "qy-turnaround",
+              "code": "Luo Qingyou character turnaround sheet, front view side view back view, Chinese-inspired classic Lolita outfit, consistent hairstyle and accessories, visible cloud collar structure, frog buttons, skirt layers, camera strap placement, journal pouch, clean lineart with flat color, annotation-friendly layout"
+            },
+            {
+              "title": "表情差分",
+              "source_id": "qy-exp",
+              "code": "洛青悠表情差分设定图，8个清晰不同的半身表情。每格保持同一角色识别点：黑色长发、青绿色发饰、古风 Lolita 领结与米白衬衫。表情必须明显区分眉形、眼神、嘴型、头部角度与手势：温柔倾听、闭眼微笑、专注记录、侧目思索、轻微惊讶、困扰微笑、疲惫温柔、雨后释然。"
+            },
+            {
+              "title": "配饰与物件",
+              "source_id": "qy-props",
+              "code": "Luo Qingyou prop sheet, vintage camera, sage green project journal, dried flower bookmark, plum blossom hairpin, small tea cup, invitation card, lace ribbon, spare hair clips, camera strap details, clean object design sheet, labeled layout, soft colors"
+            },
+            {
+              "title": "代表 CG｜旧街光影",
+              "source_id": "qy-cg1",
+              "code": "Luo Qingyou in an old street tea shop, warm afternoon light through wooden window lattice, sage green Chinese classic Lolita dress, vintage camera raised gently, project journal open on the table with dried flowers, calm reliable expression, cinematic anime illustration, soft nostalgic atmosphere, detailed but readable background"
+            },
+            {
+              "title": "代表 CG｜雨天计划空白",
+              "source_id": "qy-cg2",
+              "code": "Luo Qingyou under a transparent umbrella on a rainy tea party day, holding a green journal with an empty section titled unexpected, gentle smile after accepting the rain, Chinese classic Lolita outfit with lace and cloud collar, wet stone path, warm lantern reflections, emotional anime key visual"
+            }
+          ]
+        },
+        {
+          "id": "arisu-prompts",
+          "type": "prompts",
+          "eyebrow": "Luo Arisu",
+          "title": "洛有栖提示词组",
+          "summary": "蓝白、JK Lolita、白衬衫、背带裙、领结、雏菊、钥匙项链、白兔挂件、怀表包、旧书。",
+          "items": [
+            {
+              "title": "线稿探索",
+              "source_id": "ar-line",
+              "code": "Luo Arisu, blue white JK Lolita girl, Alice motif, white blouse, blue pinafore dress, school ribbon tie, key necklace, rabbit charm bag, pocket watch accessory, daisy hair ornament, long dark hair with soft braids, clean black and white lineart, three silhouette variations, fashion design exploration sheet"
+            },
+            {
+              "title": "标准立绘",
+              "source_id": "ar-stand",
+              "code": "Luo Arisu full body standard standing pose, blue and white JK Lolita outfit, white blouse, blue pinafore skirt with soft volume, school ribbon, daisy hair accessory, key necklace, rabbit pocket watch bag, white socks and mary jane shoes, curious gentle expression, Japanese anime character reference, soft cel shading, clean background"
+            },
+            {
+              "title": "三视图",
+              "source_id": "ar-turnaround",
+              "code": "Luo Arisu character turnaround sheet, front view side view back view, blue white JK Lolita outfit, consistent key necklace, rabbit bag, ribbon tie, skirt volume, socks and shoes, readable back bow and school bag details, clean lineart with flat color, annotation-friendly layout"
+            },
+            {
+              "title": "表情差分",
+              "source_id": "ar-exp",
+              "code": "Luo Arisu expression sheet, curious smile, surprised discovery, dreamy gaze, shy hesitation, nervous while holding key necklace, playful secret, almost crying, brave determined smile, Japanese anime expression reference, consistent face and hairstyle, cropped busts"
+            },
+            {
+              "title": "配饰与物件",
+              "source_id": "ar-props",
+              "code": "Luo Arisu prop sheet, key necklace, rabbit charm, pocket watch bag, small old storybook, music box, daisy hairpin, blue ribbon, tea cup charm, playing card hair clip, school bag with many charms, clean object design sheet, labeled layout, pastel blue palette"
+            },
+            {
+              "title": "代表 CG｜走廊的门",
+              "source_id": "ar-cg1",
+              "code": "Luo Arisu standing in a quiet school corridor after class, blue white JK Lolita outfit, holding a key necklace, looking at an ordinary door glowing softly, rabbit charm swinging from her bag, dreamy Alice-inspired atmosphere, gentle curiosity, cinematic anime illustration, soft blue light"
+            },
+            {
+              "title": "代表 CG｜茶凉之前抵达",
+              "source_id": "ar-cg2",
+              "code": "Luo Arisu writing a strange tea party invitation, text mood says bring one piece of getting lost before the tea turns cold, blue white JK Lolita outfit, old books, keys, rabbit and pocket watch motifs on the desk, warm lamp and cool evening window, emotional anime key visual"
+            }
+          ]
+        },
+        {
+          "id": "duo-kv",
+          "type": "prompts",
+          "eyebrow": "Key Visual",
+          "title": "双人视觉提示词",
+          "summary": "保留“门与手账”作为第一张双人 KV 的优先方向。",
+          "items": [
+            {
+              "title": "双人 KV｜门与手账",
+              "source_id": "duo-kv",
+              "code": "Two girls, Luo Qingyou and Luo Arisu, sister-like pair, one in sage green Chinese classic Lolita holding a project journal and vintage camera, one in blue white JK Lolita holding a key necklace and rabbit pocket watch bag, standing before a half-open door to a tea party garden, warm rain afterglow, balance of order and wonder, Japanese anime key visual, elegant composition, detailed outfits, emotional storytelling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "href": "knowledge/workflow.html",
+      "eyebrow": "Knowledge 04",
+      "title": "制作规范与资产规划",
+      "summary": "日本二次元角色企划制作流程、资产清单、统一检查表和下一步建议。",
+      "structured_content": "制作流程、资产清单、统一检查表、下一步建议",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "旧归档 #workflow", "href": "docs/luo_sisters_project_guide_v2.html#workflow" },
+        { "label": "旧归档 #asset-list", "href": "docs/luo_sisters_project_guide_v2.html#asset-list" },
+        { "label": "旧归档 #next", "href": "docs/luo_sisters_project_guide_v2.html#next" }
+      ],
+      "sections": [
+        {
+          "id": "production-flow",
+          "type": "table",
+          "eyebrow": "Production Workflow",
+          "title": "日本二次元角色企划制作规范",
+          "summary": "按“概念 -> 线稿 -> 立绘 -> 设定图 -> CG -> 应用素材”的顺序推进。",
+          "headers": ["阶段", "产出", "检查重点"],
+          "rows": [
+            ["0. 角色圣经", "姓名、核心句、主题功能、关系、禁改识别点。", "一句话能讲清她是谁，三处记忆点稳定。"],
+            ["1. Moodboard", "服装、发型、配色、材质、道具、场景参考。", "青悠偏青绿古风与茶；有栖偏蓝白校园与 Alice。"],
+            ["2. 剪影草案", "每人 3-6 个小剪影。", "遮住细节后仍能区分两人。"],
+            ["3. 线稿探索", "发型、裙摆、领口、袖口、鞋袜、包袋结构。", "服装层次清楚，配饰位置稳定。"],
+            ["4. 彩色小稿", "3 组配色与明暗测试。", "主色、辅助色、点缀色用途明确。"],
+            ["5. 标准立绘", "全身立绘，正面站姿，透明或浅色背景。", "可作为后续所有图的母版。"],
+            ["6. 三视图", "正面、侧面、背面，含关键结构说明。", "裙摆、发饰、包带、鞋袜、背面蝴蝶结完整。"],
+            ["7. 表情差分", "每人 8-12 个表情。", "眉、眼、口、头部角度、手势同时拉开。"],
+            ["8. 姿势设定", "站姿、坐姿、拍照、写手账、看门、递邀请函。", "动作服务角色。"],
+            ["9. 服装变体", "标准服、日常服、茶会服、雨天服、冬季服、轻便校园服。", "换装后保留核心识别点。"],
+            ["10. 配饰物件", "相机、手账、钥匙、怀表包、邀请函、茶杯、书包。", "道具能独立讲故事。"],
+            ["11. 代表 CG", "每人 2 张个人 CG，加 1-2 张双人 KV。", "CG 表现角色主题、关系与成长瞬间。"],
+            ["12. 应用素材", "头像、Q版、表情包、社媒横幅、Live2D 拆件草案。", "用于宣传与后续迭代。"]
+          ]
+        },
+        {
+          "id": "asset-list",
+          "type": "cards",
+          "eyebrow": "Asset List",
+          "title": "旧归档资产清单",
+          "summary": "第一批先挂入新网页层级，后续再拆到 asset_registry.csv 和角色资产槽位。",
+          "items": [
+            {
+              "title": "洛青悠资产清单",
+              "text": "标准立绘、三视图、表情、拍照/翻手账/递茶/准备雨伞/整理领结姿势、旧相机、青绿色手账、茶杯、干花书签、备用发夹、旧街茶馆光影、雨天计划空白。",
+              "tone": "green"
+            },
+            {
+              "title": "洛有栖资产清单",
+              "text": "标准立绘、三视图、好奇/惊讶/梦游/害羞/委屈/勇敢表情、看门/捏钥匙/写邀请函/晃挂件/踏入门槛姿势、钥匙项链、怀表包、白兔挂件、旧书、音乐盒、蓝色墨水、走廊的门、茶凉之前抵达。",
+              "tone": "blue"
+            }
+          ]
+        },
+        {
+          "id": "checklist",
+          "type": "checklist",
+          "eyebrow": "Unified Checklist",
+          "title": "统一检查表",
+          "summary": "后续生成、归档和网页引用时反复检查这些规则。",
+          "items": [
+            "青悠换装时保留：青绿色、手账或相机、古风结构线索。",
+            "有栖换装时保留：蓝白、钥匙或兔子、校园与 Alice 线索。",
+            "每张图都能回答一个问题：这张图让角色更清楚了吗？",
+            "每件道具都有叙事功能：能推动关系、表现性格或承载主题。",
+            "CG 优先选择“发生了什么”的瞬间，而非单纯站桩展示。",
+            "截图歪、过紧或信息不足时，生成阶段可回看完整 source_sheet；只有反复失败才返工 crop_manifest。"
+          ]
+        },
+        {
+          "id": "next",
+          "type": "cards",
+          "eyebrow": "Next Step",
+          "title": "下一步建议",
+          "summary": "从标准化资料开始，再进入图像生成和人工修正。",
+          "items": [
+            {
+              "title": "1. 固定角色卡",
+              "text": "确认年龄、身高、生日、学校/社团、家庭关系、说话方式和常用道具。"
+            },
+            {
+              "title": "2. 做第一版三视图",
+              "text": "优先生成线稿或低色彩草图，先看剪影与结构，再逐步增加材质细节。"
+            },
+            {
+              "title": "3. 确定第一张双人 CG",
+              "text": "建议从“门与手账”开始：有栖发现门，青悠记录并准备退路。"
+            }
+          ]
+        },
+        {
+          "id": "related-workflows",
+          "type": "links",
+          "eyebrow": "Related Files",
+          "title": "相关生产文件",
+          "summary": "知识库承接旧归档，实际生产仍以工作流、脚本和 CSV 为准。",
+          "items": [
+            { "label": "资产生成工作流", "href": "workflows/asset_generation_workflow.md", "note": "截图到透明资产的完整流程" },
+            { "label": "并行 agent 指南", "href": "workflows/agent_parallel_guide.md", "note": "角色和资产类型严格分工" },
+            { "label": "资产登记 CSV", "href": "logs/asset_registry.csv", "note": "记录资产来源、提示词、输出和状态" },
+            { "label": "坑点记忆 CSV", "href": "logs/issue_memory.csv", "note": "沉淀可召回规避规则" }
+          ]
+        }
+      ]
+    }
+  ]
+}

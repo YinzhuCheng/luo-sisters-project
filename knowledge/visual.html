@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>视觉方向与提示词库 | 洛氏姐妹知识库</title>
+  <link rel="stylesheet" href="../assets/styles/luo_sisters.css">
+</head>
+<body class="theme-knowledge">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">洛氏姐妹企划</a>
+    <nav class="nav-links" aria-label="角色页">
+      <a href="../index.html">总览</a>
+      <a href="../character_sheets/qingyou.html">洛青悠</a>
+      <a href="../character_sheets/arisu.html">洛有栖</a>
+      <a href="index.html" aria-current="page">知识库</a>
+      <a href="../docs/content_map.md">资料地图</a>
+      <a href="../docs/luo_sisters_project_guide_v2.html">完整归档</a>
+      <a href="../workflows/asset_generation_workflow.md">工作流</a>
+    </nav>
+  </div>
+</header>
+<main class="page knowledge-shell">
+  <section class="knowledge-hero">
+    <div>
+      <p class="eyebrow">Knowledge 03</p>
+      <h1>视觉方向与提示词库</h1>
+      <p class="lead">美术方向、文字后期规则、表情规范、双人 KV 和两姐妹提示词组。</p>
+    </div>
+    <div class="knowledge-meta">
+      <div><b>当前结构化内容</b><span>统一美术方向、提示词组、表情规范、双人 KV</span></div>
+      <div><b>迁移状态</b><span class="status-pill">骨架已迁移，原文锚点已接入</span></div>
+      <div><b>原归档锚点</b><div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#visual">旧归档 #visual</a></div></div>
+    </div>
+  </section>
+
+  <section class="knowledge-section" id="art-direction">
+  <div class="section-head">
+    <div><p class="eyebrow">Art Direction</p><h2>统一美术方向</h2></div>
+    <p>图像先服务角色识别和后续复刻，文字交给网页或后期排版。</p>
+  </div>
+  <div class="knowledge-card-grid"><article class="knowledge-card gold">
+  <h3>风格</h3>
+  <p>日本二次元角色设定图，清洁线稿，柔和赛璐璐上色，细节清楚，色彩低饱和，带轻小说封面与角色设定资料感。</p>
+  
+</article><article class="knowledge-card green">
+  <h3>画面控制</h3>
+  <p>服装结构清晰、配饰可复用、发型剪影稳定、颜色用途明确；每张设定图优先服务后续复刻与统一。</p>
+  
+</article><article class="knowledge-card blue">
+  <h3>文字制作规范</h3>
+  <p>生成阶段优先生成角色、服装、装饰与留白；标题、信息栏、表情标签、物件说明和长段文字由 HTML / SVG / PIL 后期叠加。</p>
+  
+</article><article class="knowledge-card gold">
+  <h3>表情差分硬性规范</h3>
+  <p>每个表情必须同时改变眉形、眼神、嘴型、头部角度、手势或肩部姿态，避免只改标签与轻微嘴角。</p>
+  
+</article></div>
+</section><section class="knowledge-section" id="prompt-base">
+  <div class="section-head">
+    <div><p class="eyebrow">Prompt Base</p><h2>通用提示词骨架</h2></div>
+    <p>提示词类内容使用代码块样式，方便复制、版本化和后续精修。</p>
+  </div>
+  <div class="prompt-grid"><article class="prompt-card">
+  <div class="prompt-head"><b>通用基础 Prompt</b><span>base-prompt</span></div>
+  <pre><code>Japanese anime character design sheet, clean precise lineart, soft cel shading, elegant pastel color palette, high detail outfit construction, readable accessories, full body, balanced proportions, expressive eyes, gentle light, character reference sheet style, white or warm neutral background, clear silhouette, organized layout, production-ready design</code></pre>
+</article></div>
+</section><section class="knowledge-section" id="qingyou-prompts">
+  <div class="section-head">
+    <div><p class="eyebrow">Luo Qingyou</p><h2>洛青悠提示词组</h2></div>
+    <p>青绿色、米白、青瓷、古风 Lolita、云肩、盘扣、蕾丝、梅枝、旧相机、手账、茶具。</p>
+  </div>
+  <div class="prompt-grid"><article class="prompt-card">
+  <div class="prompt-head"><b>线稿探索</b><span>qy-line</span></div>
+  <pre><code>Luo Qingyou, gentle older sister character, Chinese-inspired classic Lolita, sage green and ivory outfit, yun-jian collar capelet, frog buttons, lace sleeves, long dark hair, small plum blossom hairpin, vintage camera strap, project journal in hand, clean black and white lineart, three silhouette variations, fashion design exploration sheet, readable garment layers</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>标准立绘</b><span>qy-stand</span></div>
+  <pre><code>Luo Qingyou full body standard standing pose, Chinese classic Lolita dress, sage green skirt, ivory blouse, delicate lace cuffs, cloud shoulder inspired collar, subtle embroidery, vintage camera at her side, green project journal, warm calm smile, elegant and reliable aura, Japanese anime character reference, soft cel shading, clean background, production-ready character sheet</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>三视图</b><span>qy-turnaround</span></div>
+  <pre><code>Luo Qingyou character turnaround sheet, front view side view back view, Chinese-inspired classic Lolita outfit, consistent hairstyle and accessories, visible cloud collar structure, frog buttons, skirt layers, camera strap placement, journal pouch, clean lineart with flat color, annotation-friendly layout</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>表情差分</b><span>qy-exp</span></div>
+  <pre><code>洛青悠表情差分设定图，8个清晰不同的半身表情。每格保持同一角色识别点：黑色长发、青绿色发饰、古风 Lolita 领结与米白衬衫。表情必须明显区分眉形、眼神、嘴型、头部角度与手势：温柔倾听、闭眼微笑、专注记录、侧目思索、轻微惊讶、困扰微笑、疲惫温柔、雨后释然。</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>配饰与物件</b><span>qy-props</span></div>
+  <pre><code>Luo Qingyou prop sheet, vintage camera, sage green project journal, dried flower bookmark, plum blossom hairpin, small tea cup, invitation card, lace ribbon, spare hair clips, camera strap details, clean object design sheet, labeled layout, soft colors</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>代表 CG｜旧街光影</b><span>qy-cg1</span></div>
+  <pre><code>Luo Qingyou in an old street tea shop, warm afternoon light through wooden window lattice, sage green Chinese classic Lolita dress, vintage camera raised gently, project journal open on the table with dried flowers, calm reliable expression, cinematic anime illustration, soft nostalgic atmosphere, detailed but readable background</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>代表 CG｜雨天计划空白</b><span>qy-cg2</span></div>
+  <pre><code>Luo Qingyou under a transparent umbrella on a rainy tea party day, holding a green journal with an empty section titled unexpected, gentle smile after accepting the rain, Chinese classic Lolita outfit with lace and cloud collar, wet stone path, warm lantern reflections, emotional anime key visual</code></pre>
+</article></div>
+</section><section class="knowledge-section" id="arisu-prompts">
+  <div class="section-head">
+    <div><p class="eyebrow">Luo Arisu</p><h2>洛有栖提示词组</h2></div>
+    <p>蓝白、JK Lolita、白衬衫、背带裙、领结、雏菊、钥匙项链、白兔挂件、怀表包、旧书。</p>
+  </div>
+  <div class="prompt-grid"><article class="prompt-card">
+  <div class="prompt-head"><b>线稿探索</b><span>ar-line</span></div>
+  <pre><code>Luo Arisu, blue white JK Lolita girl, Alice motif, white blouse, blue pinafore dress, school ribbon tie, key necklace, rabbit charm bag, pocket watch accessory, daisy hair ornament, long dark hair with soft braids, clean black and white lineart, three silhouette variations, fashion design exploration sheet</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>标准立绘</b><span>ar-stand</span></div>
+  <pre><code>Luo Arisu full body standard standing pose, blue and white JK Lolita outfit, white blouse, blue pinafore skirt with soft volume, school ribbon, daisy hair accessory, key necklace, rabbit pocket watch bag, white socks and mary jane shoes, curious gentle expression, Japanese anime character reference, soft cel shading, clean background</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>三视图</b><span>ar-turnaround</span></div>
+  <pre><code>Luo Arisu character turnaround sheet, front view side view back view, blue white JK Lolita outfit, consistent key necklace, rabbit bag, ribbon tie, skirt volume, socks and shoes, readable back bow and school bag details, clean lineart with flat color, annotation-friendly layout</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>表情差分</b><span>ar-exp</span></div>
+  <pre><code>Luo Arisu expression sheet, curious smile, surprised discovery, dreamy gaze, shy hesitation, nervous while holding key necklace, playful secret, almost crying, brave determined smile, Japanese anime expression reference, consistent face and hairstyle, cropped busts</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>配饰与物件</b><span>ar-props</span></div>
+  <pre><code>Luo Arisu prop sheet, key necklace, rabbit charm, pocket watch bag, small old storybook, music box, daisy hairpin, blue ribbon, tea cup charm, playing card hair clip, school bag with many charms, clean object design sheet, labeled layout, pastel blue palette</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>代表 CG｜走廊的门</b><span>ar-cg1</span></div>
+  <pre><code>Luo Arisu standing in a quiet school corridor after class, blue white JK Lolita outfit, holding a key necklace, looking at an ordinary door glowing softly, rabbit charm swinging from her bag, dreamy Alice-inspired atmosphere, gentle curiosity, cinematic anime illustration, soft blue light</code></pre>
+</article><article class="prompt-card">
+  <div class="prompt-head"><b>代表 CG｜茶凉之前抵达</b><span>ar-cg2</span></div>
+  <pre><code>Luo Arisu writing a strange tea party invitation, text mood says bring one piece of getting lost before the tea turns cold, blue white JK Lolita outfit, old books, keys, rabbit and pocket watch motifs on the desk, warm lamp and cool evening window, emotional anime key visual</code></pre>
+</article></div>
+</section><section class="knowledge-section" id="duo-kv">
+  <div class="section-head">
+    <div><p class="eyebrow">Key Visual</p><h2>双人视觉提示词</h2></div>
+    <p>保留“门与手账”作为第一张双人 KV 的优先方向。</p>
+  </div>
+  <div class="prompt-grid"><article class="prompt-card">
+  <div class="prompt-head"><b>双人 KV｜门与手账</b><span>duo-kv</span></div>
+  <pre><code>Two girls, Luo Qingyou and Luo Arisu, sister-like pair, one in sage green Chinese classic Lolita holding a project journal and vintage camera, one in blue white JK Lolita holding a key necklace and rabbit pocket watch bag, standing before a half-open door to a tea party garden, warm rain afterglow, balance of order and wonder, Japanese anime key visual, elegant composition, detailed outfits, emotional storytelling</code></pre>
+</article></div>
+</section>
+</main>
+</body>
+</html>

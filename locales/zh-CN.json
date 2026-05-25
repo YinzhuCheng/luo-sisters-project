@@ -11,6 +11,7 @@
     "characters": "角色页",
     "story": "故事",
     "workflow": "工作流",
+    "knowledge": "知识库",
     "assets": "资产",
     "open_sheet": "打开设定页",
     "open_source": "查看整版参考图",
@@ -73,11 +74,23 @@
         "links": [
           { "label": "项目首页", "href": "index.html", "note": "当前导航与展示窗口" },
           { "label": "洛青悠 HTML 设定页", "href": "character_sheets/qingyou.html", "note": "古风手账式设定页" },
-          { "label": "洛有栖 HTML 设定页", "href": "character_sheets/arisu.html", "note": "蓝白 Alice 资料页" }
+          { "label": "洛有栖 HTML 设定页", "href": "character_sheets/arisu.html", "note": "蓝白 Alice 资料页" },
+          { "label": "结构化知识库", "href": "knowledge/index.html", "note": "旧归档拆分后的二级入口" }
         ]
       },
       {
-        "title": "1｜第一版完整资料",
+        "title": "1｜结构化知识库",
+        "text": "从旧归档拆出的二级页面，先保留完整骨架、摘要和原始锚点，后续逐页精修。",
+        "links": [
+          { "label": "知识库总目录", "href": "knowledge/index.html", "note": "index -> knowledge -> archive anchors" },
+          { "label": "角色与人设层", "href": "knowledge/characters.html", "note": "两姐妹八层人设与互动关系" },
+          { "label": "故事梗概与主题层", "href": "knowledge/story.html", "note": "章节推进、AIGC 节奏和场景钩子" },
+          { "label": "视觉方向与提示词库", "href": "knowledge/visual.html", "note": "美术方向、提示词组和双人 KV" },
+          { "label": "制作规范与资产规划", "href": "knowledge/workflow.html", "note": "流程、资产清单、检查表和下一步" }
+        ]
+      },
+      {
+        "title": "2｜第一版完整资料",
         "text": "第一版长内容保留在归档页，适合查看完整人设、故事、提示词、制作规范与资产清单。",
         "links": [
           { "label": "完整归档总览", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "旧版完整 HTML，没有删除" },
@@ -88,18 +101,19 @@
         ]
       },
       {
-        "title": "2｜数据与语言层",
+        "title": "3｜数据与语言层",
         "text": "当前网页由数据和模板生成，文案与前端分离。",
         "links": [
           { "label": "中文文案数据", "href": "locales/zh-CN.json", "note": "当前网页默认语言" },
           { "label": "英文文案骨架", "href": "locales/en.json", "note": "后续语言切换准备" },
           { "label": "洛青悠角色配置", "href": "characters/qingyou.json", "note": "色卡、版式、资产槽位" },
           { "label": "洛有栖角色配置", "href": "characters/arisu.json", "note": "色卡、版式、资产槽位" },
+          { "label": "知识库数据源", "href": "project_data/knowledge_base.json", "note": "旧归档层级、页面、锚点和迁移状态" },
           { "label": "早期总览数据", "href": "project_data/luo_sisters_overview.json", "note": "保留第一阶段结构化内容" }
         ]
       },
       {
-        "title": "3｜生产与记忆层",
+        "title": "4｜生产与记忆层",
         "text": "给多 agent 并行、资产生成、坑点召回和后续 skill 沉淀使用。",
         "links": [
           { "label": "资产生成工作流", "href": "workflows/asset_generation_workflow.md", "note": "包含截图偏移时回看完整设定图规则" },

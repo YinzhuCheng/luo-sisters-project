@@ -7,10 +7,11 @@
 1. 打开 `index.html` 查看项目总览。
 2. 打开 `character_sheets/qingyou.html` 查看洛青悠 HTML 设定页。
 3. 打开 `character_sheets/arisu.html` 查看洛有栖 HTML 设定页。
-4. 阅读 `AGENTS.md` 获取维护规则。
-5. 阅读 `docs/content_map.md` 确认第一版长内容的位置与层级入口。
-6. 阅读 `workflows/asset_generation_workflow.md` 获取截图到透明资产的流程。
-7. 阅读 `workflows/agent_parallel_guide.md` 获取多 agent 并行规则。
+4. 打开 `knowledge/index.html` 查看旧归档拆分后的二级知识库。
+5. 阅读 `AGENTS.md` 获取维护规则。
+6. 阅读 `docs/content_map.md` 确认第一版长内容的位置与层级入口。
+7. 阅读 `workflows/asset_generation_workflow.md` 获取截图到透明资产的流程。
+8. 阅读 `workflows/agent_parallel_guide.md` 获取多 agent 并行规则。
 
 ## 生成网页
 
@@ -31,6 +32,11 @@ python tools/build_project_html.py
 - `index.html`
 - `character_sheets/qingyou.html`
 - `character_sheets/arisu.html`
+- `knowledge/index.html`
+- `knowledge/characters.html`
+- `knowledge/story.html`
+- `knowledge/visual.html`
+- `knowledge/workflow.html`
 
 ## 结构化资产目录
 
@@ -92,11 +98,13 @@ python tools/validate_assets.py
 - `characters/qingyou.json` 与 `characters/arisu.json`：角色资产槽位、色卡、版式、路径。
 - `locales/zh-CN.json`：中文网页文案，当前默认。
 - `locales/en.json`：英文文案骨架，供后续语言切换使用。
+- `project_data/knowledge_base.json`：第一版归档拆分后的知识库层级、页面、锚点、摘要与迁移状态。
 - `assets/styles/luo_sisters.css`：首页与角色页共享样式。
 
 ## 内容层级与保全
 
 - `index.html` 是当前轻量展示入口，不承载第一版的全部长文。
+- `knowledge/index.html` 与 `knowledge/*.html` 是第一版长内容的结构化二级知识库入口。
 - `docs/luo_sisters_project_guide_v2.html` 保留第一版完整内容，包括人设八层、故事推进、AIGC 节奏、提示词组、制作规范、资产清单和下一步。
 - `docs/content_map.md` 记录当前网页、第一版归档、结构化数据、工作流和日志之间的层级关系。
 - 已核对 `docs/luo_sisters_project_guide_v2.html` 与 `D:\original\luo_sisters_project_files\luo_sisters_project_files\docs\luo_sisters_project_guide_v2.html` 哈希一致，确认旧版长内容没有删除。

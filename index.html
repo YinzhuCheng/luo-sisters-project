@@ -14,6 +14,7 @@
       <a href="index.html" aria-current="page">总览</a>
       <a href="character_sheets/qingyou.html">洛青悠</a>
       <a href="character_sheets/arisu.html">洛有栖</a>
+      <a href="knowledge/index.html">知识库</a>
       <a href="docs/content_map.md">资料地图</a>
       <a href="docs/luo_sisters_project_guide_v2.html">完整归档</a>
       <a href="workflows/asset_generation_workflow.md">工作流</a>
@@ -23,12 +24,13 @@
 <main class="page">
   <section class="hero" id="overview">
     <div>
-      <p class="eyebrow">Character Bible · HTML Sheet System · 0.4-html-sheets</p>
+      <p class="eyebrow">Character Bible · HTML Sheet System | 0.4-html-sheets</p>
       <h1>洛青悠 × 洛有栖</h1>
       <p class="lead">先让网页成为稳定、美观的展示窗口，再把每一个服饰、配饰、表情和物件拆成可复用透明资产。</p>
       <div class="hero-actions">
         <a class="action-link" href="character_sheets/qingyou.html">洛青悠</a>
         <a class="action-link" href="character_sheets/arisu.html">洛有栖</a>
+        <a class="action-link" href="knowledge/index.html">知识库</a>
       </div>
     </div>
     <div class="source-duo" aria-label="整版参考图">
@@ -101,9 +103,31 @@
 </li><li>
   <a href="character_sheets/arisu.html">洛有栖 HTML 设定页</a>
   <span>蓝白 Alice 资料页</span>
+</li><li>
+  <a href="knowledge/index.html">结构化知识库</a>
+  <span>旧归档拆分后的二级入口</span>
 </li></ul>
 </article><article class="link-group">
-  <h3>1｜第一版完整资料</h3>
+  <h3>1｜结构化知识库</h3>
+  <p>从旧归档拆出的二级页面，先保留完整骨架、摘要和原始锚点，后续逐页精修。</p>
+  <ul class="link-list"><li>
+  <a href="knowledge/index.html">知识库总目录</a>
+  <span>index -&gt; knowledge -&gt; archive anchors</span>
+</li><li>
+  <a href="knowledge/characters.html">角色与人设层</a>
+  <span>两姐妹八层人设与互动关系</span>
+</li><li>
+  <a href="knowledge/story.html">故事梗概与主题层</a>
+  <span>章节推进、AIGC 节奏和场景钩子</span>
+</li><li>
+  <a href="knowledge/visual.html">视觉方向与提示词库</a>
+  <span>美术方向、提示词组和双人 KV</span>
+</li><li>
+  <a href="knowledge/workflow.html">制作规范与资产规划</a>
+  <span>流程、资产清单、检查表和下一步</span>
+</li></ul>
+</article><article class="link-group">
+  <h3>2｜第一版完整资料</h3>
   <p>第一版长内容保留在归档页，适合查看完整人设、故事、提示词、制作规范与资产清单。</p>
   <ul class="link-list"><li>
   <a href="docs/luo_sisters_project_guide_v2.html#overview">完整归档总览</a>
@@ -122,7 +146,7 @@
   <span>日本二次元企划流程与 asset-list</span>
 </li></ul>
 </article><article class="link-group">
-  <h3>2｜数据与语言层</h3>
+  <h3>3｜数据与语言层</h3>
   <p>当前网页由数据和模板生成，文案与前端分离。</p>
   <ul class="link-list"><li>
   <a href="locales/zh-CN.json">中文文案数据</a>
@@ -137,11 +161,14 @@
   <a href="characters/arisu.json">洛有栖角色配置</a>
   <span>色卡、版式、资产槽位</span>
 </li><li>
+  <a href="project_data/knowledge_base.json">知识库数据源</a>
+  <span>旧归档层级、页面、锚点和迁移状态</span>
+</li><li>
   <a href="project_data/luo_sisters_overview.json">早期总览数据</a>
   <span>保留第一阶段结构化内容</span>
 </li></ul>
 </article><article class="link-group">
-  <h3>3｜生产与记忆层</h3>
+  <h3>4｜生产与记忆层</h3>
   <p>给多 agent 并行、资产生成、坑点召回和后续 skill 沉淀使用。</p>
   <ul class="link-list"><li>
   <a href="workflows/asset_generation_workflow.md">资产生成工作流</a>

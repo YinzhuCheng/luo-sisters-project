@@ -11,6 +11,7 @@
     "characters": "Character Sheets",
     "story": "Story",
     "workflow": "Workflow",
+    "knowledge": "Knowledge",
     "assets": "Assets",
     "open_sheet": "Open Sheet",
     "open_source": "Open Source Sheet",
@@ -73,11 +74,23 @@
         "links": [
           { "label": "Index", "href": "index.html", "note": "Current navigation and display window" },
           { "label": "Qingyou HTML Sheet", "href": "character_sheets/qingyou.html", "note": "Journal-style character sheet" },
-          { "label": "Arisu HTML Sheet", "href": "character_sheets/arisu.html", "note": "Blue Alice character sheet" }
+          { "label": "Arisu HTML Sheet", "href": "character_sheets/arisu.html", "note": "Blue Alice character sheet" },
+          { "label": "Structured Knowledge Base", "href": "knowledge/index.html", "note": "Second-level archive entry" }
         ]
       },
       {
-        "title": "1 | Full First Archive",
+        "title": "1 | Structured Knowledge",
+        "text": "Second-level pages split from the old archive with skeletons, summaries, and source anchors first.",
+        "links": [
+          { "label": "Knowledge Index", "href": "knowledge/index.html", "note": "index -> knowledge -> archive anchors" },
+          { "label": "Characters", "href": "knowledge/characters.html", "note": "Eight-layer character notes and sister relationship" },
+          { "label": "Story", "href": "knowledge/story.html", "note": "Chapter flow, AIGC rhythm, and scene hooks" },
+          { "label": "Visual Prompts", "href": "knowledge/visual.html", "note": "Art direction, prompt groups, and duo key visual" },
+          { "label": "Workflow And Assets", "href": "knowledge/workflow.html", "note": "Production flow, asset list, checklist, and next steps" }
+        ]
+      },
+      {
+        "title": "2 | Full First Archive",
         "text": "Dense first-version content preserved as one HTML archive.",
         "links": [
           { "label": "Full Archive Overview", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "Original long guide" },
@@ -88,18 +101,19 @@
         ]
       },
       {
-        "title": "2 | Data And Locales",
+        "title": "3 | Data And Locales",
         "text": "Generated pages use separated data and localized copy.",
         "links": [
           { "label": "Chinese Locale", "href": "locales/zh-CN.json", "note": "Default web copy" },
           { "label": "English Locale", "href": "locales/en.json", "note": "Future language switching" },
           { "label": "Qingyou Config", "href": "characters/qingyou.json", "note": "Palette, layout, asset slots" },
           { "label": "Arisu Config", "href": "characters/arisu.json", "note": "Palette, layout, asset slots" },
+          { "label": "Knowledge Data", "href": "project_data/knowledge_base.json", "note": "Archive hierarchy, pages, anchors, and migration status" },
           { "label": "Earlier Overview Data", "href": "project_data/luo_sisters_overview.json", "note": "Retained structured content" }
         ]
       },
       {
-        "title": "3 | Production Memory",
+        "title": "4 | Production Memory",
         "text": "Workflow, parallel-agent rules, logs, and reusable issue memory.",
         "links": [
           { "label": "Asset Workflow", "href": "workflows/asset_generation_workflow.md", "note": "Includes full-sheet fallback rule" },

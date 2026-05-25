@@ -1,6 +1,6 @@
 # AGENTS.md｜洛青悠 × 洛有栖角色企划导航
 
-本文件给 Codex / 自动化代理提供项目入口、维护原则与创作边界。请优先阅读本文件，再查看 `README.md`、`index.html`、`character_sheets/`、`workflows/` 与 `logs/`。
+本文件给 Codex / 自动化代理提供项目入口、维护原则与创作边界。请优先阅读本文件，再查看 `README.md`、`index.html`、`character_sheets/`、`knowledge/`、`workflows/` 与 `logs/`。
 
 ## 项目目标
 
@@ -16,8 +16,11 @@
 - `index.html`：项目中文导航页，面向人类阅读。
 - `character_sheets/qingyou.html`：洛青悠 HTML 设定页，古风手账式风格。
 - `character_sheets/arisu.html`：洛有栖 HTML 设定页，蓝白 Alice 资料页风格。
+- `knowledge/index.html`：旧归档拆分后的知识库总目录。
+- `knowledge/characters.html`、`knowledge/story.html`、`knowledge/visual.html`、`knowledge/workflow.html`：人设、故事、视觉提示词、制作规范与资产规划页面。
 - `characters/qingyou.json`、`characters/arisu.json`：角色资产槽位、色卡、版式与路径配置。
 - `locales/zh-CN.json`、`locales/en.json`：网页文案数据。中文为默认，英文用于后续语言切换。
+- `project_data/knowledge_base.json`：知识库数据源，记录旧归档内容的层级、页面、锚点、摘要、迁移状态与来源。
 - `assets/styles/luo_sisters.css`：首页与角色页共享样式。
 - `assets/characters/qingyou/`、`assets/characters/arisu/`：严格分离的角色资产根目录。
 - `docs/content_map.md`：内容层级与保全地图，说明第一版长内容移动到了哪里。
@@ -27,8 +30,8 @@
 - `logs/asset_registry.csv`：资产登记。
 - `logs/issue_memory.csv`：坑点、原因与规避方式。
 - `docs/luo_sisters_project_guide_v2.html`：上一版中文 HTML 归档。
-- `project_data/luo_sisters_overview.json`：HTML 的主要内容数据源。
-- `tools/build_project_html.py`：读取 `characters/` 与 `locales/` 并生成首页和两张角色页。
+- `project_data/luo_sisters_overview.json`：早期总览数据源，继续保留。
+- `tools/build_project_html.py`：读取 `characters/`、`locales/` 与 `project_data/knowledge_base.json`，生成首页、两张角色页和知识库页面。
 - `tools/crop_from_sheet.py`：从整版设定图裁切参考截图。
 - `tools/remove_chroma_batch.py`：批量把纯色背景生成图转为透明 PNG。
 - `tools/validate_assets.py`：检查角色目录、资产路径边界和透明图质量。
@@ -44,7 +47,7 @@
 python tools/build_project_html.py
 ```
 
-生成结果会写入根目录 `index.html` 与 `character_sheets/`。
+生成结果会写入根目录 `index.html`、`character_sheets/` 与 `knowledge/`。
 
 如果 `python` 在 Windows 上指向 Microsoft Store shim，使用当前 Codex 工作区 bundled Python：
 
@@ -73,8 +76,10 @@ python tools/validate_assets.py
 - HTML 保持自适应：`max-width: 100%`、`overflow-wrap: anywhere`、`auto-fit/minmax` 网格，避免文字和图片溢出卡片。
 - 更新网页文案时优先修改 `locales/zh-CN.json`。
 - 更新资产槽位、色卡、路径、版式时优先修改 `characters/*.json`。
+- 更新知识库层级、旧归档锚点、迁移状态和页面内容骨架时优先修改 `project_data/knowledge_base.json`。
 - 更新完成后运行生成脚本，不手改生成后的 HTML 作为长期来源。
 - 当前 `index.html` 是轻量展示入口；第一版完整长文保留在 `docs/luo_sisters_project_guide_v2.html`，不要误判为删除。
+- `knowledge/*.html` 是旧归档的结构化入口；发现首页内容变少时，先确认内容是否移动到知识库或旧归档锚点。
 - 新增或移动内容时同步更新 `docs/content_map.md` 和首页资料层级地图。
 
 ## 人设核心
@@ -119,7 +124,7 @@ python tools/validate_assets.py
 - 每次新增、修改、生成、拒绝资产，都追加 `logs/progress_updates.csv`。
 - 每次资产状态变化，都追加或更新 `logs/asset_registry.csv`。
 - 遇到可复用的问题、失败原因、规避方式，追加 `logs/issue_memory.csv`。
-- 发现内容疑似缺失时，先查 `docs/content_map.md`、`docs/luo_sisters_project_guide_v2.html`、`project_data/luo_sisters_overview.json`；仍找不到再查 Git 或 `D:\original\luo_sisters_project_files\luo_sisters_project_files`。
+- 发现内容疑似缺失时，先查 `knowledge/index.html`、`project_data/knowledge_base.json`、`docs/content_map.md`、`docs/luo_sisters_project_guide_v2.html`、`project_data/luo_sisters_overview.json`；仍找不到再查 Git 或 `D:\original\luo_sisters_project_files\luo_sisters_project_files`。
 - CSV 是未来沉淀 skill 的入口材料，不要只把经验留在聊天记录里。
 
 ## 推荐下一步任务

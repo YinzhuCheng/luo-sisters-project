@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>洛氏姐妹知识库</title>
+  <link rel="stylesheet" href="../assets/styles/luo_sisters.css">
+</head>
+<body class="theme-knowledge">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">洛氏姐妹企划</a>
+    <nav class="nav-links" aria-label="角色页">
+      <a href="../index.html">总览</a>
+      <a href="../character_sheets/qingyou.html">洛青悠</a>
+      <a href="../character_sheets/arisu.html">洛有栖</a>
+      <a href="index.html" aria-current="page">知识库</a>
+      <a href="../docs/content_map.md">资料地图</a>
+      <a href="../docs/luo_sisters_project_guide_v2.html">完整归档</a>
+      <a href="../workflows/asset_generation_workflow.md">工作流</a>
+    </nav>
+  </div>
+</header>
+<main class="page knowledge-shell">
+  <section class="knowledge-hero">
+    <div>
+      <p class="eyebrow">Structured Archive</p>
+      <h1>洛氏姐妹知识库</h1>
+      <p class="lead">把第一版完整归档拆成可导航、可生成、可核对的二级知识库。首页负责美观展示，知识库负责内容厚度，旧归档继续作为原始来源。</p>
+    </div>
+    <ol class="hierarchy-chain"><li>index.html</li><li>knowledge/index.html</li><li>knowledge/*.html</li><li>docs/luo_sisters_project_guide_v2.html#anchor</li></ol>
+  </section>
+
+  <section class="knowledge-section">
+    <div class="section-head">
+      <div><p class="eyebrow">Knowledge Pages</p><h2>结构化入口</h2></div>
+      <p>每页都保留原归档锚点和迁移状态，方便后续核对与逐页精修。</p>
+    </div>
+    <div class="knowledge-card-grid"><article class="knowledge-card">
+  <p class="eyebrow">Knowledge 01</p>
+  <h3><a href="characters.html">角色与人设层</a></h3>
+  <p>两姐妹八层人设、关系公式、互动样例和可继续扩展的角色记忆点。</p>
+  <span class="status-pill">骨架已迁移，原文锚点已接入</span>
+  <div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#characters">旧归档 #characters</a></div>
+</article><article class="knowledge-card">
+  <p class="eyebrow">Knowledge 02</p>
+  <h3><a href="story.html">故事梗概与主题层</a></h3>
+  <p>兔子洞茶会主线、章节推进、AIGC 登场节奏、配角功能和关键场景钩子。</p>
+  <span class="status-pill">骨架已迁移，原文锚点已接入</span>
+  <div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#story">旧归档 #story</a></div>
+</article><article class="knowledge-card">
+  <p class="eyebrow">Knowledge 03</p>
+  <h3><a href="visual.html">视觉方向与提示词库</a></h3>
+  <p>美术方向、文字后期规则、表情规范、双人 KV 和两姐妹提示词组。</p>
+  <span class="status-pill">骨架已迁移，原文锚点已接入</span>
+  <div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#visual">旧归档 #visual</a></div>
+</article><article class="knowledge-card">
+  <p class="eyebrow">Knowledge 04</p>
+  <h3><a href="workflow.html">制作规范与资产规划</a></h3>
+  <p>日本二次元角色企划制作流程、资产清单、统一检查表和下一步建议。</p>
+  <span class="status-pill">骨架已迁移，原文锚点已接入</span>
+  <div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#workflow">旧归档 #workflow</a><a href="../docs/luo_sisters_project_guide_v2.html#asset-list">旧归档 #asset-list</a><a href="../docs/luo_sisters_project_guide_v2.html#next">旧归档 #next</a></div>
+</article></div>
+  </section>
+
+  <section class="knowledge-section">
+    <div class="section-head">
+      <div><p class="eyebrow">Migration Rule</p><h2>迁移原则</h2></div>
+    </div>
+    <div class="knowledge-card-grid"><article class="knowledge-card green">
+  <h3>展示页与知识库分工</h3>
+  <p>首页和角色页保持轻量、美观、响应式；知识库页面承载人设、故事、提示词、制作规范和资产规划。旧归档不删除，作为完整核对来源。</p>
+  
+</article><article class="knowledge-card gold">
+  <h3>迁移不是逐字复制</h3>
+  <p>第一批采用全量骨架策略：先建立页面、章节、摘要和锚点，确认内容有去处；后续再把重点章节逐页扩写。</p>
+  
+</article><article class="knowledge-card blue">
+  <h3>防止误判内容丢失</h3>
+  <p>每个知识库页面顶部都显示当前结构化内容、迁移状态和原归档锚点。发现内容缺失时先查知识库，再查旧归档和 docs/content_map.md。</p>
+  
+</article></div>
+  </section>
+</main>
+</body>
+</html>

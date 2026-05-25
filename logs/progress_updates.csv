@@ -13,3 +13,4 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-25,Codex,project,workflow,documented full-sheet fallback for imperfect crops,done,workflows/asset_generation_workflow.md,Crops can be skipped or corrected during generation by consulting source_sheet
 2026-05-25,Codex,project,content_map,created content preservation and hierarchy map,done,docs/content_map.md,Confirmed first-version archive and original backup hashes match
 2026-05-25,Codex,project,web,added hierarchical content links to generated index,done,index.html,Links now expose current pages archive data workflow and logs
+2026-05-25,Codex,project,knowledge_base,structured old archive into generated knowledge pages,done,knowledge/index.html,Added knowledge_base JSON plus characters story visual workflow pages with old archive anchors
