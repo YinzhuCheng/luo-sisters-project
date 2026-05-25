@@ -12,8 +12,8 @@ Use this order unless the user points to a specific file:
 2. `README.md`
 3. `docs/document_governance.md`
 4. `docs/content_map.md`
-5. `knowledge/index.html`
-6. A linked child page or source archive anchor
+5. `knowledge/navigation.html`
+6. `knowledge/assets.html` or a linked child page
 
 ## Reading HTML
 
@@ -21,11 +21,12 @@ Default behavior:
 
 - Run `scripts/read_html_doc.py` before reading raw HTML.
 - Read one page or one anchor section at a time.
+- Prefer `knowledge/navigation.html` for structure and `knowledge/assets.html` for path lookup.
 - Treat images as placeholders.
 - Ignore decorative frontend layers unless debugging layout.
 - Open real images only when visual judgment is required.
 
-Use `--include-images` only when asset paths matter. Use image or browser tools only when the user asks for visual inspection or when layout/asset correctness is the task.
+Use `--structure-mode` when you need the reading route first. In that mode, the reader groups links by category and makes planned transparent outputs visible without treating them as broken. Use `--include-images` only when asset paths matter. Use image or browser tools only when the user asks for visual inspection or when layout/asset correctness is the task.
 
 ## Language Policy
 
@@ -33,7 +34,6 @@ Use `--include-images` only when asset paths matter. Use image or browser tools 
 - Public display copy is localized.
 - The Chinese root site is generated from `locales/zh-CN.json` and Chinese content data.
 - The English mirror is generated under `en/`.
-- The historical Chinese archive remains untouched as a source record.
 
 ## Ownership
 
@@ -43,6 +43,7 @@ Use `--include-images` only when asset paths matter. Use image or browser tools 
 - `docs/content_map.md`: where content lives after restructuring.
 - `project_data/document_catalog.json`: machine-readable document registry.
 - `project_data/knowledge_base*.json`: generated knowledge-page content.
+- `knowledge/assets.html`: public asset lookup surface.
 - `locales/*.json`: public UI copy and localized homepage/character copy.
 
 ## Update Rules

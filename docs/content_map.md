@@ -1,14 +1,10 @@
 # Project Content Map
 
-This document records where project content lives after the HTML-sheet, knowledge-base, and documentation-governance restructures.
+This document records where project content lives after the HTML-sheet, knowledge-base, asset-index, and documentation-governance restructures.
 
-## Preservation Status
+## Current State
 
-The first long-form Chinese guide is preserved at:
-
-- `docs/luo_sisters_project_guide_v2.html`
-
-The current showcase is intentionally lighter. Long-form material now lives in generated knowledge pages and source data, while the historical archive remains available for verification.
+Project content is organized across generated knowledge pages, character configuration, prompt notes, workflows, and the shared asset registry.
 
 ## Reading Hierarchy
 
@@ -19,10 +15,9 @@ AGENTS.md
 README.md
 docs/document_governance.md
 docs/content_map.md
-knowledge/index.html
 knowledge/navigation.html
+knowledge/assets.html
 knowledge/*.html
-docs/luo_sisters_project_guide_v2.html#anchor
 ```
 
 For English public pages, use the same generated structure under `en/`.
@@ -32,6 +27,7 @@ For English public pages, use the same generated structure under `en/`.
 - `AGENTS.md`: agent operating rules and project entry map.
 - `README.md`: human quick start and build instructions.
 - `docs/document_governance.md`: documentation law, language separation, and HTML reading policy.
+- `docs/browser_automation.md`: browser automation setup and smoke-check workflow.
 - `project_data/document_catalog.json`: machine-readable document registry.
 
 ## Level 1: Public Showcase Pages
@@ -54,6 +50,7 @@ Chinese root knowledge pages:
 
 - `knowledge/index.html`
 - `knowledge/navigation.html`
+- `knowledge/assets.html`
 - `knowledge/characters.html`
 - `knowledge/story.html`
 - `knowledge/visual.html`
@@ -63,6 +60,7 @@ English mirror:
 
 - `en/knowledge/index.html`
 - `en/knowledge/navigation.html`
+- `en/knowledge/assets.html`
 - `en/knowledge/characters.html`
 - `en/knowledge/story.html`
 - `en/knowledge/visual.html`
@@ -73,22 +71,7 @@ Source data:
 - `project_data/knowledge_base.json`
 - `project_data/knowledge_base.en.json`
 
-## Level 3: Historical Archive
-
-Use `docs/luo_sisters_project_guide_v2.html` when source verification or dense first-version content is needed.
-
-Important anchors:
-
-- `#overview`: original overview.
-- `#navigation`: maps to `knowledge/navigation.html`.
-- `#characters`: maps to `knowledge/characters.html`.
-- `#story`: maps to `knowledge/story.html`.
-- `#visual`: maps to `knowledge/visual.html`.
-- `#workflow`: maps to `knowledge/workflow.html`.
-- `#asset-list`: maps to `knowledge/workflow.html#asset-list`.
-- `#next`: maps to `knowledge/workflow.html#next`.
-
-## Level 4: Data And Locales
+## Level 3: Data And Locales
 
 - `locales/zh-CN.json`: Chinese public UI and page copy.
 - `locales/en.json`: English public UI and page copy.
@@ -96,22 +79,21 @@ Important anchors:
 - `characters/arisu.json`: Arisu layout, palette, and asset slots.
 - `project_data/luo_sisters_overview.json`: earlier structured overview retained for continuity.
 
-## Level 5: Production Workflow
+## Level 4: Production Workflow
 
 - `workflows/asset_generation_workflow.md`: crop-to-transparent-asset workflow.
 - `workflows/agent_parallel_guide.md`: multi-agent ownership and handoff rules.
 - `assets/characters/qingyou/workflow/crop_manifest.csv`: Qingyou crop coordinates.
 - `assets/characters/arisu/workflow/crop_manifest.csv`: Arisu crop coordinates.
 
-## Level 6: Memory And Audit Logs
+## Level 5: Memory And Audit Logs
 
 - `logs/progress_updates.csv`: work progress.
 - `logs/asset_registry.csv`: asset status registry.
 - `logs/issue_memory.csv`: reusable pitfalls and mitigations.
 
-## Migration Notes
+## Working Notes
 
-- Generated pages do not duplicate every paragraph from the first archive.
-- Knowledge pages link back to original archive anchors.
+- Knowledge pages and asset pages carry the current working structure.
 - Edit source JSON and locale files, then run `tools/build_project_html.py`.
-- If content appears missing, check this order before rewriting it: generated page, knowledge source data, historical archive, earlier overview data, then the backup under `D:\original\...`.
+- If content appears missing, check this order before rewriting it: generated page, asset index, character config, asset registry, earlier overview data, then the backup under `D:\original\...`.

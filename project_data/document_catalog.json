@@ -1,12 +1,13 @@
 {
-  "version": "0.1-doc-governance",
+  "version": "0.2-structured-assets",
   "entry_chain": [
     "AGENTS.md",
     "README.md",
     "docs/document_governance.md",
     "docs/content_map.md",
-    "knowledge/index.html",
-    "linked child page or archive anchor"
+    "docs/browser_automation.md",
+    "knowledge/navigation.html",
+    "knowledge/assets.html or a linked child page"
   ],
   "rules": [
     "Markdown and HTML are both documentation.",
@@ -32,7 +33,7 @@
       "generated": false,
       "role": "human quick start",
       "read_strategy": "read after AGENTS.md",
-      "children": ["docs/document_governance.md", "knowledge/index.html"]
+      "children": ["docs/document_governance.md", "docs/browser_automation.md", "knowledge/navigation.html", "knowledge/assets.html"]
     },
     {
       "path": "docs/document_governance.md",
@@ -41,7 +42,16 @@
       "generated": false,
       "role": "documentation governance law",
       "read_strategy": "read before changing docs",
-      "children": ["docs/content_map.md", "project_data/document_catalog.json"]
+      "children": ["docs/content_map.md", "docs/browser_automation.md", "project_data/document_catalog.json", "skills/project-doc-governance/SKILL.md"]
+    },
+    {
+      "path": "docs/browser_automation.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "browser automation setup",
+      "read_strategy": "read before Playwright-based visual QA",
+      "children": ["requirements-browser.txt", "tools/browser_smoke_check.py", "index.html", "knowledge/navigation.html"]
     },
     {
       "path": "docs/content_map.md",
@@ -50,7 +60,7 @@
       "generated": false,
       "role": "content hierarchy map",
       "read_strategy": "read before assuming content is missing",
-      "children": ["knowledge/index.html", "docs/luo_sisters_project_guide_v2.html"]
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
     },
     {
       "path": "skills/project-doc-governance/SKILL.md",
@@ -59,7 +69,7 @@
       "generated": false,
       "role": "project skill entrypoint",
       "read_strategy": "use for doc inspection and governance tasks",
-      "children": ["skills/project-doc-governance/references/document_governance.md"]
+      "children": ["skills/project-doc-governance/references/document_governance.md", "skills/project-doc-governance/scripts/read_html_doc.py"]
     },
     {
       "path": "index.html",
@@ -69,7 +79,7 @@
       "source": "locales/zh-CN.json",
       "role": "Chinese public showcase",
       "read_strategy": "summarize with read_html_doc.py",
-      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "knowledge/index.html"]
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "knowledge/navigation.html", "knowledge/assets.html"]
     },
     {
       "path": "en/index.html",
@@ -79,7 +89,47 @@
       "source": "locales/en.json",
       "role": "English public showcase mirror",
       "read_strategy": "summarize with read_html_doc.py",
-      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "en/knowledge/index.html"]
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "en/knowledge/navigation.html", "en/knowledge/assets.html"]
+    },
+    {
+      "path": "knowledge/navigation.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese structured navigation page",
+      "read_strategy": "summarize with read_html_doc.py --structure-mode; choose the next link by task",
+      "children": ["knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+    },
+    {
+      "path": "en/knowledge/navigation.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English structured navigation page",
+      "read_strategy": "summarize with read_html_doc.py --structure-mode; choose the next link by task",
+      "children": ["en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+    },
+    {
+      "path": "knowledge/assets.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "characters/*.json + logs/asset_registry.csv",
+      "role": "Chinese asset index",
+      "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
+    },
+    {
+      "path": "en/knowledge/assets.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "characters/*.json + logs/asset_registry.csv",
+      "role": "English asset index",
+      "read_strategy": "summarize with read_html_doc.py; use for path and asset lookup",
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "characters/qingyou.json", "characters/arisu.json", "logs/asset_registry.csv"]
     },
     {
       "path": "knowledge/index.html",
@@ -89,7 +139,7 @@
       "source": "project_data/knowledge_base.json",
       "role": "Chinese structured knowledge index",
       "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["knowledge/navigation.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+      "children": ["knowledge/navigation.html", "knowledge/assets.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
     },
     {
       "path": "en/knowledge/index.html",
@@ -99,36 +149,7 @@
       "source": "project_data/knowledge_base.en.json",
       "role": "English structured knowledge index",
       "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["en/knowledge/navigation.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
-    },
-    {
-      "path": "knowledge/navigation.html",
-      "type": "html",
-      "language": "zh-CN",
-      "generated": true,
-      "source": "project_data/knowledge_base.json",
-      "role": "Chinese structured navigation page",
-      "read_strategy": "summarize with read_html_doc.py; choose the next link by task",
-      "children": ["knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html", "docs/luo_sisters_project_guide_v2.html#navigation"]
-    },
-    {
-      "path": "en/knowledge/navigation.html",
-      "type": "html",
-      "language": "en",
-      "generated": true,
-      "source": "project_data/knowledge_base.en.json",
-      "role": "English structured navigation page",
-      "read_strategy": "summarize with read_html_doc.py; choose the next link by task",
-      "children": ["en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html", "docs/luo_sisters_project_guide_v2.html#navigation"]
-    },
-    {
-      "path": "docs/luo_sisters_project_guide_v2.html",
-      "type": "html",
-      "language": "zh-CN",
-      "generated": false,
-      "role": "preserved historical archive",
-      "read_strategy": "summarize one anchor with read_html_doc.py before opening raw HTML",
-      "children": ["#characters", "#story", "#visual", "#workflow", "#asset-list", "#next"]
+      "children": ["en/knowledge/navigation.html", "en/knowledge/assets.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
     },
     {
       "path": "workflows/asset_generation_workflow.md",
@@ -137,7 +158,7 @@
       "generated": false,
       "role": "asset production workflow",
       "read_strategy": "read before generating or validating assets",
-      "children": ["workflows/agent_parallel_guide.md", "tools/validate_assets.py"]
+      "children": ["workflows/agent_parallel_guide.md", "tools/validate_assets.py", "tools/remove_chroma_batch.py", "tools/crop_from_sheet.py"]
     },
     {
       "path": "workflows/agent_parallel_guide.md",

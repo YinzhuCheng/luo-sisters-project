@@ -10,10 +10,9 @@ This document defines how agents should read, write, split, merge, and link docu
 4. Images in HTML are placeholders during text review. Inspect real images only when the task requires visual judgment.
 5. Internal maintenance documents are English.
 6. Public web copy is localized through locale or data files.
-7. The Chinese historical archive is preserved as source evidence and must not be overwritten by translation.
-8. Every document must be reachable from `AGENTS.md` or `README.md`.
-9. Generated HTML is output. Edit source data, rebuild, then verify.
-10. Reusable lessons belong in CSV logs and, when repeated, in skills.
+7. Every document must be reachable from `AGENTS.md` or `README.md`.
+8. Generated HTML is output. Edit source data, rebuild, then verify.
+9. Reusable lessons belong in CSV logs and, when repeated, in skills.
 
 ## Entry Chain
 
@@ -24,8 +23,8 @@ AGENTS.md
 README.md
 docs/document_governance.md
 docs/content_map.md
-knowledge/index.html
-linked child page or old archive anchor
+knowledge/navigation.html
+knowledge/assets.html or a linked child page
 ```
 
 The same rule applies to the English mirror under `en/`.
@@ -41,14 +40,16 @@ python skills/project-doc-governance/scripts/read_html_doc.py <html-path>
 Examples:
 
 ```bash
-python skills/project-doc-governance/scripts/read_html_doc.py index.html
-python skills/project-doc-governance/scripts/read_html_doc.py knowledge/visual.html --anchor prompt-base
-python skills/project-doc-governance/scripts/read_html_doc.py docs/luo_sisters_project_guide_v2.html#characters
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/assets.html
+python skills/project-doc-governance/scripts/read_html_doc.py character_sheets/qingyou.html --anchor workflow
 ```
 
-Default output includes title, readable structure, links, anchors, and image placeholders. It does not recursively follow links.
+Default output includes title, readable structure, link classification, path existence checks, asset references, anchors, and image placeholders. In `--structure-mode`, links are grouped by category and planned transparent outputs remain visible without being treated as broken targets. The reader does not recursively follow links.
 
 Use raw HTML or browser inspection when the task is frontend layout, responsive behavior, image rendering, accessibility, or link behavior.
+
+For browser inspection, use the Playwright setup documented in `docs/browser_automation.md`.
 
 ## Language Separation
 
@@ -56,7 +57,6 @@ Use raw HTML or browser inspection when the task is frontend layout, responsive 
 - Skill docs and references: English.
 - Public Chinese site: generated at repository root from `locales/zh-CN.json` and Chinese content data.
 - Public English site: generated under `en/` from `locales/en.json` and English content data.
-- Historical archive: Chinese, preserved at `docs/luo_sisters_project_guide_v2.html`.
 
 Do not place new public-facing copy directly in `tools/build_project_html.py`. Put it in locale or project data files.
 

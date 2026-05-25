@@ -17,7 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 CHARACTER_IDS = ("qingyou", "arisu")
-ASSET_TYPES = ("standing", "expressions", "turnaround", "clothing", "accessories", "props", "details", "cg")
+ASSET_TYPES = ("standing", "expressions", "poses", "turnaround", "clothing", "accessories", "props", "details", "cg")
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 
 

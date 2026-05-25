@@ -17,14 +17,15 @@ Build a sustainable original anime-style character project:
 2. `README.md`
 3. `docs/document_governance.md`
 4. `docs/content_map.md`
-5. `knowledge/index.html`
-6. A linked child page or source archive anchor
+5. `knowledge/navigation.html`
+6. `knowledge/assets.html` or a linked child page
+7. `docs/browser_automation.md` before browser-based visual QA
 
 For HTML, use the low-token reader first:
 
 ```bash
-python skills/project-doc-governance/scripts/read_html_doc.py knowledge/index.html
-python skills/project-doc-governance/scripts/read_html_doc.py docs/luo_sisters_project_guide_v2.html#characters
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/assets.html
 ```
 
 Read one HTML page or anchor at a time. Treat images as placeholders until visual inspection is needed.
@@ -41,7 +42,8 @@ Read one HTML page or anchor at a time. Treat images as placeholders until visua
 - `project_data/knowledge_base.json`, `project_data/knowledge_base.en.json`: generated knowledge-page content.
 - `characters/qingyou.json`, `characters/arisu.json`: character asset slots, palettes, layout, and paths.
 - `assets/characters/qingyou/`, `assets/characters/arisu/`: strictly separated character asset roots.
-- `docs/luo_sisters_project_guide_v2.html`: preserved historical Chinese archive.
+- `knowledge/assets.html`: unified public asset index.
+- `docs/browser_automation.md`: Playwright setup and smoke-check entrypoint.
 - `workflows/asset_generation_workflow.md`: crop-to-transparent-asset workflow.
 - `workflows/agent_parallel_guide.md`: parallel-agent ownership rules.
 - `logs/progress_updates.csv`, `logs/asset_registry.csv`, `logs/issue_memory.csv`: project memory.
@@ -79,16 +81,21 @@ Validate the project skill:
 python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate.py skills/project-doc-governance
 ```
 
+Run a browser smoke check:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\browser_smoke_check.py index.html
+```
+
 ## Governance Rules
 
 - Treat `.md` and `.html` as documentation.
 - Keep internal maintenance documents in English.
 - Keep public page copy in locale or data files, not hardcoded inside Python templates.
-- Preserve the historical Chinese archive; do not translate over it.
 - Generated HTML is output, not the long-term editing source.
 - Every new document must be reachable from `AGENTS.md` or `README.md`.
 - Every new, moved, split, or merged document must be registered in `project_data/document_catalog.json`.
-- When content looks missing, check `knowledge/index.html`, `project_data/knowledge_base*.json`, `docs/content_map.md`, then the historical archive before rewriting.
+- When content looks missing, check `knowledge/navigation.html`, `knowledge/assets.html`, `project_data/knowledge_base*.json`, `logs/asset_registry.csv`, then `docs/content_map.md` before rewriting.
 
 ## Image Asset Rules
 
@@ -96,6 +103,7 @@ python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate
 - Qingyou and Arisu folders must remain strictly isolated for parallel-agent work.
 - Generation route: crop from full sheet -> regenerate clean `#ff00ff` chroma image -> remove background locally -> save transparent PNG.
 - Crops are working handles, not the visual truth. If a crop is skewed, tight, or missing context, inspect the full `source_sheet/` image before changing manifests.
+- Planned assets can exist without crops; track them in `characters/*.json` and `logs/asset_registry.csv` until reference crops are created.
 - Finished transparent PNGs go to `generated/transparent/<asset_type>/`.
 - Failed or unstable attempts go to `generated/rejected/`.
 - Final Chinese and English labels belong to the web layer, not image generation.
@@ -109,7 +117,7 @@ python C:\Users\cyz19\.codex\skills\.system\skill-creator\scripts\quick_validate
 
 ## Recommended Next Tasks
 
-1. Use the document governance skill for all HTML and documentation inspection.
-2. Continue refining the English mirror and locale separation.
+1. Use the document governance skill for HTML structure reads and asset-path inspection.
+2. Keep `knowledge/assets.html` and `logs/asset_registry.csv` synchronized with character JSON.
 3. Generate transparent character assets by character and asset type.
 4. Extract stable rules from `logs/issue_memory.csv` into reusable skills when patterns repeat.

@@ -1,34 +1,28 @@
-{
-  "version": "0.1-archive-skeleton",
-  "eyebrow": "Structured Archive",
+﻿{
+  "version": "0.2-structured-assets",
+  "eyebrow": "Structured Knowledge",
   "title": "Luo Sisters Knowledge Base",
-  "summary": "The first long archive is split into a navigable, generated, auditable knowledge layer. Showcase pages stay visual; knowledge pages carry the content depth; the old archive remains the source record.",
-  "archive_path": "docs/luo_sisters_project_guide_v2.html",
+  "summary": "Showcase pages, knowledge pages, asset indexing, workflows, and logs now form one unified project knowledge layer.",
   "hierarchy": [
     "index.html",
-    "knowledge/index.html",
-    "knowledge/*.html",
-    "docs/luo_sisters_project_guide_v2.html#anchor"
+    "knowledge/navigation.html",
+    "knowledge/assets.html",
+    "knowledge/*.html"
   ],
-  "status_labels": {
-    "skeleton-linked": "Skeleton migrated; source anchors linked",
-    "source-preserved": "Source archive preserved",
-    "ready-for-refine": "Ready for page-level refinement"
-  },
   "intro_cards": [
     {
       "title": "Showcase And Knowledge Separation",
-      "text": "The index and character sheets stay lightweight, attractive, and responsive. Knowledge pages carry character, story, prompt, workflow, and asset-planning depth. The old archive stays intact as the source record.",
+      "text": "The index and character sheets stay lightweight, attractive, and responsive. Knowledge pages carry character, story, prompt, workflow, and asset-planning depth. The asset index owns path discovery.",
       "tone": "green"
     },
     {
-      "title": "Migration Is Not Verbatim Copying",
-      "text": "The first pass builds full navigation, summaries, and source anchors. Later passes can expand individual pages without losing the original archive.",
+      "title": "Build Structure First",
+      "text": "Stabilize entrypoints, asset paths, and workflows first. Then deepen story, persona, and prompt detail page by page.",
       "tone": "gold"
     },
     {
-      "title": "Prevent False Content Loss",
-      "text": "Each knowledge page shows structured content, migration status, and old archive anchors. If something looks missing, check knowledge pages, then the old archive, then docs/content_map.md.",
+      "title": "Follow Stable Entry Points",
+      "text": "Each knowledge page points toward character sheets, the asset index, or workflows. When you need more detail, continue one level deeper instead of scanning the whole site.",
       "tone": "blue"
     }
   ],
@@ -38,13 +32,8 @@
       "href": "knowledge/navigation.html",
       "eyebrow": "Knowledge 00",
       "title": "Navigation And Reading Paths",
-      "summary": "The old project navigation page is promoted into a structured knowledge-base entry that explains how showcase pages, knowledge pages, archive anchors, and production docs connect.",
-      "structured_content": "Showcase entry, knowledge reading paths, old archive anchor map, production documentation entry",
-      "migration_status": "skeleton-linked",
-      "source_anchors": [
-        { "label": "Old archive #overview", "href": "docs/luo_sisters_project_guide_v2.html#overview" },
-        { "label": "Old archive #navigation", "href": "docs/luo_sisters_project_guide_v2.html#navigation" }
-      ],
+      "summary": "Explains how showcase pages, knowledge pages, the asset index, and production docs connect.",
+      "structured_content": "Showcase entry, knowledge reading paths, asset index entry, production documentation entry",
       "sections": [
         {
           "id": "route-map",
@@ -55,7 +44,7 @@
           "items": [
             { "title": "Showcase Entry", "text": "Use the index and character sheets to inspect visual presentation, character sheets, and asset slots.", "tone": "green" },
             { "title": "Knowledge Entry", "text": "Use the knowledge index for navigation, characters, story, visual prompts, production rules, and asset planning.", "tone": "blue" },
-            { "title": "Archive Entry", "text": "Use the old HTML archive as the full source record. Open source anchors only when original wording is needed.", "tone": "gold" },
+            { "title": "Asset Entry", "text": "Use the asset index to inspect character roots, crop handles, prompt notes, planned outputs, and registry status.", "tone": "gold" },
             { "title": "Production Entry", "text": "Asset generation, parallel ownership, issue memory, and asset registry live in workflows, tools, and logs.", "tone": "green" }
           ]
         },
@@ -68,11 +57,11 @@
           "headers": ["Task", "Read First", "Next Hop", "Note"],
           "rows": [
             ["Understand the project quickly", "index.html", "knowledge/navigation.html", "The index is visual; the navigation page is structural."],
-            ["Find character design", "knowledge/navigation.html", "knowledge/characters.html", "Use old #characters only for source verification."],
+            ["Find character design", "knowledge/navigation.html", "knowledge/characters.html", "Character memory layers and relationship notes live on the character page."],
             ["Find story structure", "knowledge/navigation.html", "knowledge/story.html", "Story flow and AIGC rhythm live on the story page."],
             ["Find prompts", "knowledge/navigation.html", "knowledge/visual.html", "Prompt code blocks live on the visual page."],
-            ["Find production rules", "knowledge/navigation.html", "knowledge/workflow.html", "Asset list and next steps live on the workflow page."],
-            ["Verify full old content", "docs/luo_sisters_project_guide_v2.html#navigation", "matching old anchor", "Summarize with read_html_doc.py before opening raw HTML."]
+            ["Find asset paths", "knowledge/navigation.html", "knowledge/assets.html", "Character roots, crop handles, prompt notes, and planned outputs live on the asset index page."],
+            ["Find production rules", "knowledge/navigation.html", "knowledge/workflow.html", "Workflow rules, checklist, and next steps live on the workflow page."]
           ]
         },
         {
@@ -80,27 +69,26 @@
           "type": "links",
           "eyebrow": "Structured Pages",
           "title": "Structured Knowledge Pages",
-          "summary": "The old navigation modules now map to these generated pages.",
+          "summary": "Project knowledge now maps to these generated pages.",
           "items": [
-            { "label": "Character Layer", "href": "knowledge/characters.html", "note": "Structured successor to old #characters" },
-            { "label": "Story Layer", "href": "knowledge/story.html", "note": "Structured successor to old #story" },
-            { "label": "Visual Prompt Layer", "href": "knowledge/visual.html", "note": "Structured successor to old #visual" },
-            { "label": "Workflow And Asset Planning", "href": "knowledge/workflow.html", "note": "Structured successor to old #workflow, #asset-list, and #next" }
+            { "label": "Asset Index", "href": "knowledge/assets.html", "note": "Single entry for character roots, crops, prompts, and planned outputs" },
+            { "label": "Character Layer", "href": "knowledge/characters.html", "note": "Eight-layer character notes and sister relationship" },
+            { "label": "Story Layer", "href": "knowledge/story.html", "note": "Chapter flow, themes, and AIGC rhythm" },
+            { "label": "Visual Prompt Layer", "href": "knowledge/visual.html", "note": "Art direction, prompt groups, and duo key visual" },
+            { "label": "Workflow And Asset Planning", "href": "knowledge/workflow.html", "note": "Production flow, asset scope, checklist, and next steps" }
           ]
         },
         {
-          "id": "archive-anchors",
+          "id": "related-files",
           "type": "links",
-          "eyebrow": "Archive Anchors",
-          "title": "Old Archive Fallback",
-          "summary": "These links preserve the original source record for verification and content recovery.",
+          "eyebrow": "Related Files",
+          "title": "Related Entry Points",
+          "summary": "Use these when you need to jump from structure to production files.",
           "items": [
-            { "label": "Old Overview", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "Original overview and project introduction" },
-            { "label": "Old Project Navigation", "href": "docs/luo_sisters_project_guide_v2.html#navigation", "note": "Old navigation source" },
-            { "label": "Old Character Layer", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "Original eight-layer character text" },
-            { "label": "Old Story Layer", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "Original story and AIGC rhythm text" },
-            { "label": "Old Visual Layer", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "Original prompt groups" },
-            { "label": "Old Workflow", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "Original production rules, asset list, and next steps" }
+            { "label": "Asset Index", "href": "knowledge/assets.html", "note": "Character roots, crops, prompt notes, and planned outputs" },
+            { "label": "Asset Generation Workflow", "href": "workflows/asset_generation_workflow.md", "note": "Crop-to-transparent-asset process" },
+            { "label": "Parallel Agent Guide", "href": "workflows/agent_parallel_guide.md", "note": "Strict character and asset-type ownership" },
+            { "label": "Asset Registry CSV", "href": "logs/asset_registry.csv", "note": "Asset source, prompt, output, and status" }
           ]
         }
       ]
@@ -108,14 +96,10 @@
     {
       "id": "characters",
       "href": "knowledge/characters.html",
-      "eyebrow": "Knowledge 01",
+      "eyebrow": "Knowledge 02",
       "title": "Characters And Persona Layer",
       "summary": "The sisters' eight-layer personas, relationship formula, interaction examples, and reusable character memory points.",
       "structured_content": "Eight-layer personas, sister relationship formula, relationship progression, interaction example",
-      "migration_status": "skeleton-linked",
-      "source_anchors": [
-        { "label": "Old archive #characters", "href": "docs/luo_sisters_project_guide_v2.html#characters" }
-      ],
       "sections": [
         {
           "id": "overview",
@@ -146,7 +130,7 @@
           "type": "details",
           "eyebrow": "Eight Layers",
           "title": "Eight-Layer Personas",
-          "summary": "Expandable details preserve the depth of the old archive while keeping the page easy to scan.",
+          "summary": "Expandable details preserve character depth while keeping the page easy to scan.",
           "groups": [
             {
               "title": "Luo Qingyou | Protecting Dreams Through Order",
@@ -196,14 +180,10 @@
     {
       "id": "story",
       "href": "knowledge/story.html",
-      "eyebrow": "Knowledge 02",
+      "eyebrow": "Knowledge 03",
       "title": "Story Outline And Theme Layer",
       "summary": "Rabbit Hole Tea Party plot, chapter progression, AIGC rhythm, supporting character functions, and key scene hooks.",
       "structured_content": "Three story lines, chapter table, AIGC rhythm, supporting cast functions, scene hooks",
-      "migration_status": "skeleton-linked",
-      "source_anchors": [
-        { "label": "Old archive #story", "href": "docs/luo_sisters_project_guide_v2.html#story" }
-      ],
       "sections": [
         {
           "id": "story-lines",
@@ -280,14 +260,10 @@
     {
       "id": "visual",
       "href": "knowledge/visual.html",
-      "eyebrow": "Knowledge 03",
+      "eyebrow": "Knowledge 04",
       "title": "Visual Direction And Prompt Library",
       "summary": "Art direction, post-layout text rules, expression rules, duo key visual, and prompt groups for both sisters.",
       "structured_content": "Art direction, prompt groups, expression rules, duo key visual",
-      "migration_status": "skeleton-linked",
-      "source_anchors": [
-        { "label": "Old archive #visual", "href": "docs/luo_sisters_project_guide_v2.html#visual" }
-      ],
       "sections": [
         {
           "id": "art-direction",
@@ -363,16 +339,10 @@
     {
       "id": "workflow",
       "href": "knowledge/workflow.html",
-      "eyebrow": "Knowledge 04",
+      "eyebrow": "Knowledge 05",
       "title": "Production Rules And Asset Planning",
       "summary": "Japanese anime character-project production flow, asset list, unified checklist, and next-step suggestions.",
       "structured_content": "Production flow, asset list, unified checklist, next steps",
-      "migration_status": "skeleton-linked",
-      "source_anchors": [
-        { "label": "Old archive #workflow", "href": "docs/luo_sisters_project_guide_v2.html#workflow" },
-        { "label": "Old archive #asset-list", "href": "docs/luo_sisters_project_guide_v2.html#asset-list" },
-        { "label": "Old archive #next", "href": "docs/luo_sisters_project_guide_v2.html#next" }
-      ],
       "sections": [
         {
           "id": "production-flow",
@@ -401,8 +371,8 @@
           "id": "asset-list",
           "type": "cards",
           "eyebrow": "Asset List",
-          "title": "Old Archive Asset List",
-          "summary": "The first pass links the old asset list into the new hierarchy; later passes can split it into asset_registry.csv and character slots.",
+          "title": "Unified Asset Scope",
+          "summary": "These items now live in character config, the asset index page, and asset_registry.csv instead of a legacy summary block.",
           "items": [
             { "title": "Luo Qingyou Asset List", "text": "Standard standing art, turnaround, expressions, photographing/journaling/serving tea/umbrella/adjusting bow poses, old camera, sage journal, tea cup, dried flower bookmark, spare clips, old street tea-shop light, rainy plan blank.", "tone": "green" },
             { "title": "Luo Arisu Asset List", "text": "Standard standing art, turnaround, curious/surprised/dreamy/shy/hurt/brave expressions, door-looking/key-holding/invitation-writing/charm-swinging/threshold poses, key necklace, pocket-watch bag, rabbit charm, old book, music box, blue ink, corridor door, before-tea-cools scene.", "tone": "blue" }
@@ -440,8 +410,9 @@
           "type": "links",
           "eyebrow": "Related Files",
           "title": "Related Production Files",
-          "summary": "Knowledge pages carry the old archive structure; production still follows workflows, scripts, and CSV logs.",
+          "summary": "Knowledge pages explain structure; production still follows workflows, scripts, and CSV logs.",
           "items": [
+            { "label": "Asset Index", "href": "knowledge/assets.html", "note": "Single entry for character roots, crops, prompts, and planned outputs" },
             { "label": "Asset Generation Workflow", "href": "workflows/asset_generation_workflow.md", "note": "Crop-to-transparent-asset process" },
             { "label": "Parallel Agent Guide", "href": "workflows/agent_parallel_guide.md", "note": "Strict character and asset-type ownership" },
             { "label": "Asset Registry CSV", "href": "logs/asset_registry.csv", "note": "Asset source, prompt, output, and status" },
@@ -452,3 +423,4 @@
     }
   ]
 }
+

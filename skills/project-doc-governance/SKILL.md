@@ -14,18 +14,17 @@ Use this skill for repository documentation work. Treat `.md` and `.html` as doc
 3. For HTML, run the bundled reader before opening the raw file:
 
 ```bash
-python skills/project-doc-governance/scripts/read_html_doc.py index.html
-python skills/project-doc-governance/scripts/read_html_doc.py knowledge/visual.html --anchor prompt-base
-python skills/project-doc-governance/scripts/read_html_doc.py docs/luo_sisters_project_guide_v2.html#characters
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/assets.html
+python skills/project-doc-governance/scripts/read_html_doc.py character_sheets/qingyou.html --anchor workflow
 ```
 
-The reader strips scripts, styles, navigation, headers, footers, and SVG/canvas decoration. Images appear as placeholders unless `--include-images` is passed.
+The reader strips scripts, styles, navigation, headers, footers, and SVG/canvas decoration. It classifies links, checks local path existence, marks planned transparent outputs as `planned`, groups links by category in `--structure-mode`, and summarizes asset references. Images appear as placeholders unless `--include-images` is passed.
 
 ## Governance Rules
 
 - Keep internal maintenance docs in English.
 - Keep public web display copy in locale/data sources, not hardcoded in Python templates.
-- Preserve the historical Chinese archive at `docs/luo_sisters_project_guide_v2.html`.
 - Make every new doc reachable from `AGENTS.md` or `README.md`.
 - Update `project_data/document_catalog.json` when adding, moving, splitting, or merging docs.
 - Append reusable issues to `logs/issue_memory.csv` and progress to `logs/progress_updates.csv`.

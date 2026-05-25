@@ -17,6 +17,7 @@ REQUIRED_DIRS = (
     "crops",
     "generated/chroma/standing",
     "generated/chroma/expressions",
+    "generated/chroma/poses",
     "generated/chroma/turnaround",
     "generated/chroma/clothing",
     "generated/chroma/accessories",
@@ -25,6 +26,7 @@ REQUIRED_DIRS = (
     "generated/chroma/cg",
     "generated/transparent/standing",
     "generated/transparent/expressions",
+    "generated/transparent/poses",
     "generated/transparent/turnaround",
     "generated/transparent/clothing",
     "generated/transparent/accessories",
@@ -38,7 +40,7 @@ REQUIRED_DIRS = (
 
 
 def read_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def transparent_corner_ok(path: Path) -> tuple[bool, str]:
@@ -56,6 +58,11 @@ def transparent_corner_ok(path: Path) -> tuple[bool, str]:
 
 
 def read_manifest(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def read_registry(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
 
@@ -89,10 +96,40 @@ def validate_character(character: str, strict: bool) -> tuple[list[str], list[st
             if not row_output.exists():
                 warnings.append(f"{character}: crop not generated yet {row_output.relative_to(ROOT)}")
 
+    registry_path = ROOT / "logs" / "asset_registry.csv"
+    registry = read_registry(registry_path)
+    registry_map = {
+        (row["character"], row["asset_type"], row["asset_name"]): row
+        for row in registry
+        if row["character"] == character
+    }
+
     missing_transparent = 0
     checked_transparent = 0
+    seen_registry_keys: set[tuple[str, str, str]] = set()
     for asset_group in config["asset_groups"]:
         for item in asset_group["items"]:
+            registry_key = (character, asset_group["id"], item["id"])
+            seen_registry_keys.add(registry_key)
+            registry_row = registry_map.get(registry_key)
+            if not registry_row:
+                errors.append(f"{character}: missing asset registry row for {asset_group['id']}/{item['id']}")
+            else:
+                if item.get("crop", "") != registry_row["source_crop"]:
+                    errors.append(
+                        f"{character}: registry source_crop mismatch for {item['id']} "
+                        f"({registry_row['source_crop']} != {item.get('crop', '')})"
+                    )
+                if item.get("prompt", "") != registry_row["prompt_path"]:
+                    errors.append(
+                        f"{character}: registry prompt_path mismatch for {item['id']} "
+                        f"({registry_row['prompt_path']} != {item.get('prompt', '')})"
+                    )
+                if item.get("transparent", "") != registry_row["output_path"]:
+                    errors.append(
+                        f"{character}: registry output_path mismatch for {item['id']} "
+                        f"({registry_row['output_path']} != {item.get('transparent', '')})"
+                    )
             for key in ("crop", "transparent", "prompt"):
                 value = item.get(key, "")
                 if value and not value.startswith(f"assets/characters/{character}/"):
@@ -110,6 +147,13 @@ def validate_character(character: str, strict: bool) -> tuple[list[str], list[st
             ok, message = transparent_corner_ok(transparent_path)
             if not ok:
                 errors.append(f"{character}: {transparent_path.relative_to(ROOT)} {message}")
+
+    for registry_key in registry_map:
+        if registry_key not in seen_registry_keys:
+            errors.append(
+                f"{character}: asset registry has no matching config item for "
+                f"{registry_key[1]}/{registry_key[2]}"
+            )
 
     warnings.append(
         f"{character}: {checked_transparent} transparent assets checked; {missing_transparent} transparent assets still planned"

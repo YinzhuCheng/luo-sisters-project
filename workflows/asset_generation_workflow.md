@@ -9,7 +9,7 @@ Each agent must work inside one character root:
 - `assets/characters/qingyou/`
 - `assets/characters/arisu/`
 
-Do not place generated assets in `assets/images/` unless the asset is a legacy whole-sheet archive or a final project-wide visual.
+Do not place generated assets in `assets/images/`; reusable character assets must stay inside the character root or a clearly named project-wide output folder.
 
 ## 2. Crop Reference Images
 

@@ -15,8 +15,8 @@
       <a href="../character_sheets/qingyou.html">洛青悠</a>
       <a href="../character_sheets/arisu.html">洛有栖</a>
       <a href="index.html" aria-current="page">知识库</a>
+      <a href="assets.html">资产</a>
       <a href="../docs/content_map.md">资料地图</a>
-      <a href="../docs/luo_sisters_project_guide_v2.html">完整归档</a>
       <a href="../workflows/asset_generation_workflow.md">工作流</a>
       <a href="../en/knowledge/navigation.html">English</a>
     </nav>
@@ -27,12 +27,10 @@
     <div>
       <p class="eyebrow">Knowledge 00</p>
       <h1>导航与阅读路径</h1>
-      <p class="lead">把旧版项目导航页升级为新版知识库的结构化入口，明确从展示页、知识库、旧归档和生产文档之间如何跳转。</p>
+      <p class="lead">说明展示页、知识库、资产索引和生产文档之间如何跳转与分工。</p>
     </div>
     <div class="knowledge-meta">
-      <div><b>当前结构化内容</b><span>展示入口、知识库阅读路径、旧归档锚点映射、生产文档入口</span></div>
-      <div><b>迁移状态</b><span class="status-pill">骨架已迁移，原文锚点已接入</span></div>
-      <div><b>原归档锚点</b><div class="source-links"><a href="../docs/luo_sisters_project_guide_v2.html#overview">旧归档 #overview</a><a href="../docs/luo_sisters_project_guide_v2.html#navigation">旧归档 #navigation</a></div></div>
+      <div><b>当前范围</b><span>展示入口、知识库阅读路径、资产索引入口、生产文档入口</span></div>
     </div>
   </section>
 
@@ -50,8 +48,8 @@
   <p>从知识库总目录进入导航、人设、故事、视觉提示词、制作规范。适合阅读和扩写内容。</p>
   
 </article><article class="knowledge-card gold">
-  <h3>归档入口</h3>
-  <p>旧版 HTML 只作为完整原文和核对来源。需要查第一版原句时再打开对应锚点。</p>
+  <h3>资产入口</h3>
+  <p>从资产索引页集中查看角色根目录、截图、提示词、计划输出和登记状态。</p>
   
 </article><article class="knowledge-card green">
   <h3>生产入口</h3>
@@ -66,50 +64,47 @@
   <div class="knowledge-table-wrap">
   <table class="knowledge-table">
     <thead><tr><th>任务</th><th>先读页面</th><th>下一跳</th><th>备注</th></tr></thead>
-    <tbody><tr><td>快速了解项目</td><td>index.html</td><td>knowledge/navigation.html</td><td>首页负责展示，导航页负责结构。</td></tr><tr><td>找角色设定</td><td>knowledge/navigation.html</td><td>knowledge/characters.html</td><td>需要原文时再跳 #characters。</td></tr><tr><td>找故事主线</td><td>knowledge/navigation.html</td><td>knowledge/story.html</td><td>章节推进和 AIGC 节奏在故事页。</td></tr><tr><td>找提示词</td><td>knowledge/navigation.html</td><td>knowledge/visual.html</td><td>提示词代码块集中在视觉页。</td></tr><tr><td>找制作规范</td><td>knowledge/navigation.html</td><td>knowledge/workflow.html</td><td>资产清单和下一步在工作流页。</td></tr><tr><td>核对旧版完整内容</td><td>docs/luo_sisters_project_guide_v2.html#navigation</td><td>对应旧锚点</td><td>先用 read_html_doc.py 摘要，不直接通读大 HTML。</td></tr></tbody>
+    <tbody><tr><td>快速了解项目</td><td>index.html</td><td>knowledge/navigation.html</td><td>首页负责展示，导航页负责结构。</td></tr><tr><td>找角色设定</td><td>knowledge/navigation.html</td><td>knowledge/characters.html</td><td>需要原文时再跳 #characters。</td></tr><tr><td>找故事主线</td><td>knowledge/navigation.html</td><td>knowledge/story.html</td><td>章节推进和 AIGC 节奏在故事页。</td></tr><tr><td>找提示词</td><td>knowledge/navigation.html</td><td>knowledge/visual.html</td><td>提示词代码块集中在视觉页。</td></tr><tr><td>找资产路径</td><td>knowledge/navigation.html</td><td>knowledge/assets.html</td><td>角色根目录、截图、提示词和计划输出都在资产索引页。</td></tr><tr><td>找制作规范</td><td>knowledge/navigation.html</td><td>knowledge/workflow.html</td><td>制作规则、检查表和下一步在工作流页。</td></tr></tbody>
   </table>
 </div>
 </section><section class="knowledge-section" id="structured-pages">
   <div class="section-head">
     <div><p class="eyebrow">Structured Pages</p><h2>结构化知识库页面</h2></div>
-    <p>旧导航里的模块已经拆到这些新版页面。</p>
+    <p>项目内容已经拆到这些新版页面。</p>
   </div>
   <ul class="link-list knowledge-links"><li>
+  <a href="assets.html">统一资产索引</a>
+  <span>角色根目录、截图、提示词与计划输出总入口</span>
+</li><li>
   <a href="characters.html">人设层</a>
-  <span>旧 #characters 的结构化承接页</span>
+  <span>两姐妹八层人设与互动关系</span>
 </li><li>
   <a href="story.html">故事梗概层</a>
-  <span>旧 #story 的结构化承接页</span>
+  <span>章节推进、主题与 AIGC 节奏</span>
 </li><li>
   <a href="visual.html">视觉提示词层</a>
-  <span>旧 #visual 的结构化承接页</span>
+  <span>美术方向、提示词组与双人 KV</span>
 </li><li>
   <a href="workflow.html">制作规范与资产规划</a>
-  <span>旧 #workflow、#asset-list、#next 的结构化承接页</span>
+  <span>制作流程、资产范围、检查表和下一步</span>
 </li></ul>
-</section><section class="knowledge-section" id="archive-anchors">
+</section><section class="knowledge-section" id="related-files">
   <div class="section-head">
-    <div><p class="eyebrow">Archive Anchors</p><h2>旧归档备用入口</h2></div>
-    <p>这些链接保留原始来源，用于核对或找回未细化内容。</p>
+    <div><p class="eyebrow">Related Files</p><h2>相关入口</h2></div>
+    <p>需要落到实际资产或生产资料时，从这些入口继续。</p>
   </div>
   <ul class="link-list knowledge-links"><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#overview">旧版总览</a>
-  <span>第一版完整导言与项目概述</span>
+  <a href="assets.html">统一资产索引</a>
+  <span>角色根目录、截图、提示词与计划输出</span>
 </li><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#navigation">旧版项目导航</a>
-  <span>旧导航源头</span>
+  <a href="../workflows/asset_generation_workflow.md">资产生成工作流</a>
+  <span>截图到透明资产的完整流程</span>
 </li><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#characters">旧版人设层</a>
-  <span>两姐妹八层人设原文</span>
+  <a href="../workflows/agent_parallel_guide.md">并行 agent 指南</a>
+  <span>角色和资产类型严格分工</span>
 </li><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#story">旧版故事层</a>
-  <span>故事推进和 AIGC 节奏原文</span>
-</li><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#visual">旧版视觉层</a>
-  <span>提示词组原文</span>
-</li><li>
-  <a href="../docs/luo_sisters_project_guide_v2.html#workflow">旧版制作规范</a>
-  <span>制作流程、资产清单和下一步原文</span>
+  <a href="../logs/asset_registry.csv">资产登记 CSV</a>
+  <span>记录资产来源、提示词、输出和状态</span>
 </li></ul>
 </section>
 </main>

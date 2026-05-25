@@ -6,6 +6,10 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-25,Codex,arisu,source_sheet,copied whole sheet into character root,done,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,Legacy asset remains in assets/images
 2026-05-25,Codex,qingyou,crops,generated first reference crops,done,assets/characters/qingyou/crops,28 crops generated from manifest
 2026-05-25,Codex,arisu,crops,generated first reference crops,done,assets/characters/arisu/crops,28 crops generated from manifest
+2026-05-25,Codex,project,knowledge,removed legacy archive entrypoints and added structured asset index,done,knowledge/assets.html,Public navigation now flows through knowledge navigation and asset index pages instead of the old archive
+2026-05-25,Codex,project,governance,upgraded HTML reader and link audit for structured documentation,done,skills/project-doc-governance/scripts/read_html_doc.py,Reader now groups links in structure mode and audit_project_links.py accepts planned transparent outputs
+2026-05-26,Codex,project,browser_automation,installed Playwright Chromium runtime and added smoke-check script,done,tools/browser_smoke_check.py,Visual QA can now run through bundled Python plus docs/browser_automation.md
+2026-05-26,Codex,project,knowledge,removed migration and source-anchor wording from knowledge surfaces,done,project_data/knowledge_base.json,Knowledge pages now describe current structure only and no longer foreground archive-era migration status
 2026-05-25,Codex,project,web,built index and character sheets,done,index.html,Generated index plus qingyou and arisu character_sheets
 2026-05-25,Codex,project,validation,ran asset validation,passed,tools/validate_assets.py,Transparent assets are still planned and placeholders are expected
 2026-05-25,Codex,project,responsive_css,fixed asset grid overflow,done,assets/styles/luo_sisters.css,Reset figure margins after browser QA found minor overflow

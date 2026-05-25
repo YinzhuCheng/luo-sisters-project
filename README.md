@@ -9,8 +9,10 @@ This repository is an original anime-style character project designed for long-r
 3. Read `docs/content_map.md` for the content hierarchy.
 4. Open `index.html` for the Chinese public showcase.
 5. Open `en/index.html` for the English mirror.
-6. Open `knowledge/index.html` or `en/knowledge/index.html` for structured knowledge pages.
-7. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
+6. Open `knowledge/navigation.html` or `en/knowledge/navigation.html` for structured reading paths.
+7. Open `knowledge/assets.html` or `en/knowledge/assets.html` for asset lookup.
+8. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
+9. Read `docs/browser_automation.md` before visual smoke checks.
 
 ## Build The Website
 
@@ -33,6 +35,7 @@ Generated outputs:
 - `character_sheets/qingyou.html`
 - `character_sheets/arisu.html`
 - `knowledge/index.html`
+- `knowledge/assets.html`
 - `knowledge/characters.html`
 - `knowledge/story.html`
 - `knowledge/visual.html`
@@ -40,6 +43,7 @@ Generated outputs:
 - `en/index.html`
 - `en/character_sheets/qingyou.html`
 - `en/character_sheets/arisu.html`
+- `en/knowledge/assets.html`
 - `en/knowledge/*.html`
 
 ## Low-Token HTML Reading
@@ -47,12 +51,31 @@ Generated outputs:
 Do not open large HTML files directly unless the task is layout debugging. Summarize one page or one anchor first:
 
 ```bash
-python skills/project-doc-governance/scripts/read_html_doc.py index.html
-python skills/project-doc-governance/scripts/read_html_doc.py knowledge/visual.html --anchor prompt-base
-python skills/project-doc-governance/scripts/read_html_doc.py docs/luo_sisters_project_guide_v2.html#characters
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/navigation.html --structure-mode
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/assets.html
+python skills/project-doc-governance/scripts/read_html_doc.py character_sheets/qingyou.html --anchor workflow
 ```
 
-The reader hides scripts, styles, navigation, headers, footers, SVG/canvas decoration, and image payloads. Images are represented as placeholders until visual inspection is needed.
+The reader hides scripts, styles, navigation, headers, footers, SVG/canvas decoration, and image payloads. It also classifies links, checks local path existence, and summarizes asset references while keeping images as placeholders until visual inspection is needed.
+
+## Browser Automation
+
+Browser automation is available through Python Playwright with Chromium installed.
+
+Install or repair with the bundled runtime:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pip install -r requirements-browser.txt
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m playwright install chromium
+```
+
+Quick smoke check:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\browser_smoke_check.py index.html
+```
+
+See `docs/browser_automation.md` for the browser automation workflow.
 
 ## Data And Localization
 
@@ -90,6 +113,7 @@ Current asset types:
 
 - `standing`
 - `expressions`
+- `poses`
 - `turnaround`
 - `clothing`
 - `accessories`
@@ -122,9 +146,9 @@ python tools/validate_assets.py
 
 ## Content Preservation
 
-- `index.html` is a lightweight public showcase, not the complete long-form archive.
+- `index.html` is a lightweight public showcase, not the complete long-form knowledge layer.
 - `knowledge/*.html` and `en/knowledge/*.html` are generated structured knowledge pages.
-- `docs/luo_sisters_project_guide_v2.html` is the preserved historical Chinese archive.
+- `knowledge/assets.html` and `en/knowledge/assets.html` are the unified asset lookup pages.
 - `docs/content_map.md` explains where old and new content live.
 
 ## Project Memory

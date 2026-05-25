@@ -32,6 +32,15 @@ Style/medium: Japanese anime expression reference, clean lineart, soft cel shadi
 Composition/framing: bust or half-body, centered, enough hair padding for cutout.  
 Constraints: no text, no label, no frame, no shadow, flat `#ff00ff` background.
 
+## poses
+
+Use case: stylized-concept  
+Asset type: transparent full-body pose asset  
+Primary request: regenerate one Luo Arisu action pose that preserves her blue-white Alice identity and curious exploratory mood.  
+Pose options: looking at a door, pinching the key, writing an invitation, swinging the bag charm, stepping into a threshold.  
+Composition/framing: full body, centered, enough skirt and hair padding for cutout.  
+Constraints: no text, no frame, no extra scene furniture beyond the chosen action cue, flat `#ff00ff` background.
+
 ## turnaround
 
 Use case: stylized-concept  

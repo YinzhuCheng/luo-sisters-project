@@ -32,6 +32,15 @@ Style/medium: Japanese anime expression reference, clean lineart, soft cel shadi
 Composition/framing: bust or half-body, centered, enough hair padding for cutout.  
 Constraints: no text, no label, no frame, no shadow, flat `#ff00ff` background.
 
+## poses
+
+Use case: stylized-concept  
+Asset type: transparent full-body pose asset  
+Primary request: regenerate one Luo Qingyou action pose that preserves her sage classic Lolita silhouette and gentle planner identity.  
+Pose options: photo taking, flipping journal, offering tea, preparing umbrella, adjusting Arisu's bow tie.  
+Composition/framing: full body, centered, enough skirt and hair padding for cutout.  
+Constraints: no text, no frame, no extra props beyond the chosen action, flat `#ff00ff` background.
+
 ## turnaround
 
 Use case: stylized-concept  

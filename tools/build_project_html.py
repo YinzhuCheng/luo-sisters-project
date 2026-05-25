@@ -12,6 +12,7 @@ English mirror under en/. Generated HTML is not the long-term editing source.
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import os
 from html import escape
@@ -24,10 +25,16 @@ CHARACTERS_DIR = ROOT / "characters"
 PROJECT_DATA_DIR = ROOT / "project_data"
 CHARACTER_IDS = ("qingyou", "arisu")
 DEFAULT_LOCALES = ("zh-CN", "en")
+ASSET_GROUP_ORDER = ("standing", "expressions", "poses", "turnaround", "clothing", "accessories", "props", "details", "cg")
 
 
 def read_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def read_csv_rows(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
 
 
 def e(value: Any) -> str:
@@ -140,13 +147,14 @@ def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
     qingyou_href = page_rel("character_sheets/qingyou.html", page_path, locale)
     arisu_href = page_rel("character_sheets/arisu.html", page_path, locale)
     knowledge_href = page_rel("knowledge/index.html", page_path, locale)
+    assets_href = page_rel("knowledge/assets.html", page_path, locale)
     content_map_href = rel("docs/content_map.md", page_path)
-    archive_href = rel("docs/luo_sisters_project_guide_v2.html", page_path)
     workflow_href = rel("workflows/asset_generation_workflow.md", page_path)
     home_current = ' aria-current="page"' if active == "home" else ""
     qingyou_current = ' aria-current="page"' if active == "qingyou" else ""
     arisu_current = ' aria-current="page"' if active == "arisu" else ""
     knowledge_current = ' aria-current="page"' if active == "knowledge" else ""
+    assets_current = ' aria-current="page"' if active == "assets" else ""
     return f"""<header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="{e(home_href)}">{e(ui["brand"])}</a>
@@ -155,8 +163,8 @@ def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
       <a href="{e(qingyou_href)}"{qingyou_current}>{e(qingyou_name)}</a>
       <a href="{e(arisu_href)}"{arisu_current}>{e(arisu_name)}</a>
       <a href="{e(knowledge_href)}"{knowledge_current}>{e(ui["knowledge"])}</a>
+      <a href="{e(assets_href)}"{assets_current}>{e(ui["assets"])}</a>
       <a href="{e(content_map_href)}">{e(ui["content_map"])}</a>
-      <a href="{e(archive_href)}">{e(ui["archive"])}</a>
       <a href="{e(workflow_href)}">{e(ui["workflow"])}</a>
       <a href="{e(language_href(page_path, locale))}">{e(ui["language_switch"])}</a>
     </nav>
@@ -337,6 +345,7 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> t
         <a class="action-link" href="{e(page_rel("character_sheets/qingyou.html", page_path, locale))}">{e(qingyou_copy["name"])}</a>
         <a class="action-link" href="{e(page_rel("character_sheets/arisu.html", page_path, locale))}">{e(arisu_copy["name"])}</a>
         <a class="action-link" href="{e(page_rel("knowledge/index.html", page_path, locale))}">{e(ui["knowledge"])}</a>
+        <a class="action-link" href="{e(page_rel("knowledge/assets.html", page_path, locale))}">{e(ui["assets"])}</a>
       </div>
     </div>
     <div class="source-duo" aria-label="{e(ui["source_reference"])}">
@@ -408,6 +417,7 @@ def render_journal_board(config: dict[str, Any], copy: dict[str, Any], locale: d
   </section>
   {asset_group_html(config, locale, page_path, "standing", "area-asset", "asset-grid", 2)}
   {asset_group_html(config, locale, page_path, "expressions", "area-expressions", "asset-strip", 2)}
+  {asset_group_html(config, locale, page_path, "poses", "area-poses", "asset-strip", 2)}
   {asset_group_html(config, locale, page_path, "turnaround", "area-turnaround", "turnaround-grid", 2)}
   <section class="board-block area-palette">
     <h2>{e(ui["palette"])}</h2>
@@ -448,6 +458,7 @@ def render_alice_board(config: dict[str, Any], copy: dict[str, Any], locale: dic
   {asset_group_html(config, locale, page_path, "props", "area-props", "asset-strip", 2)}
   {asset_group_html(config, locale, page_path, "standing", "area-asset", "asset-grid", 2)}
   {asset_group_html(config, locale, page_path, "expressions", "area-expressions", "asset-strip", 2)}
+  {asset_group_html(config, locale, page_path, "poses", "area-poses", "asset-strip", 2)}
   <section class="board-block area-palette">
     <h2>{e(ui["palette"])}</h2>
     {palette_grid(config, locale)}
@@ -472,9 +483,14 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
         else render_alice_board(config, copy, locale, page_path)
     )
     source_link = rel(config["source_sheet"], page_path)
+    config_link = rel(f"characters/{character_id}.json", page_path)
+    crop_manifest_link = rel(config["crop_manifest"], page_path)
+    prompt_link = rel(f"assets/characters/{character_id}/prompts/asset_prompts.md", page_path)
+    workflow_link = rel("workflows/asset_generation_workflow.md", page_path)
     clothing = asset_group_html(config, locale, page_path, "clothing", "", "asset-grid", 2)
     accessories = asset_group_html(config, locale, page_path, "accessories", "", "asset-grid", 2)
     props = asset_group_html(config, locale, page_path, "props", "", "asset-grid", 2)
+    poses = asset_group_html(config, locale, page_path, "poses", "", "asset-grid", 2)
     cg = asset_group_html(config, locale, page_path, "cg", "", "asset-grid", 2)
     title = f"{copy['name']} | {copy['board_title']}"
 
@@ -482,7 +498,7 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
 <body class="{e(body_class)}">
 {topbar(locale, page_path, character_id)}
 <main class="page sheet-shell">
-  <section class="sheet-hero">
+  <section class="sheet-hero" id="overview">
     <div class="sheet-title">
       <p class="eyebrow">{e(copy["board_title"])}</p>
       <h1>{e(copy["name"])}</h1>
@@ -491,12 +507,19 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
     <div class="sheet-actions">
       <a class="action-link" href="{e(page_rel("index.html", page_path, locale))}">{e(ui["back_home"])}</a>
       <a class="action-link" href="{e(source_link)}">{e(ui["open_source"])}</a>
+      <a class="action-link" href="{e(page_rel("knowledge/assets.html", page_path, locale))}">{e(ui["assets"])}</a>
+    </div>
+    <div class="source-links">
+      <a href="{e(config_link)}">{e(character_id)}.json</a>
+      <a href="{e(crop_manifest_link)}">crop_manifest</a>
+      <a href="{e(prompt_link)}">asset_prompts.md</a>
+      <a href="{e(workflow_link)}">asset_generation_workflow.md</a>
     </div>
   </section>
 
   {board}
 
-  <section class="section">
+  <section class="section" id="assets">
     <div class="section-head">
       <div><p class="eyebrow">{e(ui["asset_expansion"])}</p><h2>{e(ui["asset_slots"])}</h2></div>
       <p>{e(ui["reference_note"])}</p>
@@ -505,11 +528,27 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
       <article class="asset-section">{clothing}</article>
       <article class="asset-section">{accessories}</article>
       <article class="asset-section">{props}</article>
+      <article class="asset-section">{poses}</article>
       <article class="asset-section">{cg}</article>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="workflow">
+    <div class="section-head">
+      <div><p class="eyebrow">{e(ui["workflow"])}</p><h2>{e(ui["workflow"])}</h2></div>
+      <p>{e(config["asset_root"])}</p>
+    </div>
+    <div class="source-links">
+      <a href="{e(page_rel("knowledge/navigation.html", page_path, locale))}">knowledge/navigation.html</a>
+      <a href="{e(page_rel("knowledge/assets.html", page_path, locale))}">knowledge/assets.html</a>
+      <a href="{e(config_link)}">{e(character_id)}.json</a>
+      <a href="{e(crop_manifest_link)}">crop_manifest</a>
+      <a href="{e(prompt_link)}">asset_prompts.md</a>
+      <a href="{e(workflow_link)}">asset_generation_workflow.md</a>
+    </div>
+  </section>
+
+  <section class="section" id="notes">
     <div class="grid two">
       <article class="panel">
         <h2>{e(ui["daily"])}</h2>
@@ -530,16 +569,130 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
     return page_path, content
 
 
-def status_label(knowledge: dict[str, Any], status: str) -> str:
-    return str(knowledge.get("status_labels", {}).get(status, status))
+def asset_registry_map() -> dict[tuple[str, str, str], dict[str, str]]:
+    path = ROOT / "logs" / "asset_registry.csv"
+    rows = read_csv_rows(path)
+    return {(row["character"], row["asset_type"], row["asset_name"]): row for row in rows}
 
 
-def source_anchor_links(source_anchors: list[dict[str, str]], page_path: Path) -> str:
-    links = "".join(
-        f"<a href=\"{e(rel(anchor['href'], page_path))}\">{e(anchor['label'])}</a>"
-        for anchor in source_anchors
-    )
-    return f"<div class=\"source-links\">{links}</div>"
+def registry_status(row: dict[str, str] | None) -> str:
+    return row["status"] if row else "untracked"
+
+
+def path_cell(path: str, page_path: Path, label_text: str | None = None) -> str:
+    if not path:
+        return "<span class=\"asset-state\">planned</span>"
+    href = rel(path, page_path)
+    text = label_text or path
+    return f"<a href=\"{e(href)}\">{e(text)}</a>"
+
+
+def asset_aliases(item: dict[str, Any]) -> str:
+    aliases = item.get("aliases", [])
+    if not aliases:
+        return ""
+    return " / ".join(str(alias) for alias in aliases)
+
+
+def asset_index_table(
+    character_id: str,
+    config: dict[str, Any],
+    locale: dict[str, Any],
+    page_path: Path,
+    registry: dict[tuple[str, str, str], dict[str, str]],
+) -> str:
+    sections: list[str] = []
+    for group_id in ASSET_GROUP_ORDER:
+        asset_group = group(config, group_id)
+        if not asset_group["items"]:
+            continue
+        rows: list[str] = []
+        for item in asset_group["items"]:
+            row = registry.get((character_id, group_id, item["id"]))
+            label_text = label(locale, item["label_key"], item["id"])
+            aliases = asset_aliases(item)
+            label_block = f"<b>{e(label_text)}</b>"
+            if aliases:
+                label_block += f"<span class=\"asset-state\">{e(aliases)}</span>"
+            rows.append(
+                "<tr>"
+                f"<td>{label_block}</td>"
+                f"<td>{path_cell(item.get('crop', ''), page_path, item.get('crop', '') or None)}</td>"
+                f"<td>{path_cell(item.get('prompt', ''), page_path, item.get('prompt', '') or None)}</td>"
+                f"<td>{path_cell(item.get('transparent', ''), page_path, item.get('transparent', '') or None)}</td>"
+                f"<td><span class=\"status-pill\">{e(registry_status(row))}</span></td>"
+                f"<td>{path_cell('logs/asset_registry.csv', page_path, row['asset_name'] if row else 'asset_registry.csv')}</td>"
+                "</tr>"
+            )
+        sections.append(
+            f"""<section class="knowledge-section" id="{e(group_id)}">
+  <div class="section-head">
+    <div><p class="eyebrow">{e(config['id'])}</p><h2>{e(group_name(locale, group_id))}</h2></div>
+    <p>{e(config['asset_root'])}</p>
+  </div>
+  <div class="knowledge-table-wrap">
+    <table class="knowledge-table">
+      <thead><tr><th>{e(locale['ui']['assets'])}</th><th>{e(locale['ui'].get('asset_crop_header', 'crop'))}</th><th>{e(locale['ui'].get('asset_prompt_header', 'prompt'))}</th><th>{e(locale['ui'].get('asset_output_header', 'output'))}</th><th>{e(locale['ui'].get('asset_status_header', 'status'))}</th><th>{e(locale['ui'].get('asset_registry_header', 'registry'))}</th></tr></thead>
+      <tbody>{''.join(rows)}</tbody>
+    </table>
+  </div>
+</section>"""
+        )
+    return "".join(sections)
+
+
+def render_assets_index(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> tuple[Path, str]:
+    page_path = output_path("knowledge/assets.html", locale)
+    stylesheet = rel("assets/styles/luo_sisters.css", page_path)
+    registry = asset_registry_map()
+    ui = locale["ui"]
+    characters = locale["characters"]
+    cards: list[str] = []
+    sections: list[str] = []
+    for character_id in CHARACTER_IDS:
+        config = configs[character_id]
+        copy = characters[character_id]
+        cards.append(
+            f"""<article class="knowledge-card">
+  <p class="eyebrow">{e(copy['roman'])}</p>
+  <h3><a href="{e(page_rel(f'character_sheets/{character_id}.html', page_path, locale))}">{e(copy['name'])}</a></h3>
+  <p>{e(copy['short'])}</p>
+  <div class="source-links">
+    <a href="{e(rel(config['source_sheet'], page_path))}">source_sheet</a>
+    <a href="{e(rel(config['crop_manifest'], page_path))}">crop_manifest</a>
+    <a href="{e(rel(f'assets/characters/{character_id}/prompts/asset_prompts.md', page_path))}">asset_prompts.md</a>
+  </div>
+</article>"""
+        )
+        sections.append(asset_index_table(character_id, config, locale, page_path, registry))
+
+    content = f"""{page_head(f"{ui['assets']} | {ui['knowledge']}", stylesheet, locale)}
+<body class="theme-knowledge">
+{topbar(locale, page_path, "assets")}
+<main class="page knowledge-shell">
+  <section class="knowledge-hero">
+    <div>
+      <p class="eyebrow">{e(ui.get("asset_index_eyebrow", "Asset Index"))}</p>
+      <h1>{e(ui["assets"])}</h1>
+      <p class="lead">{e(ui.get("asset_index_summary", "Use one page to find character source sheets, crop handles, prompt notes, planned transparent outputs, and registry status."))}</p>
+    </div>
+    <ol class="hierarchy-chain"><li>AGENTS.md</li><li>knowledge/navigation.html</li><li>knowledge/assets.html</li><li>character_sheets/*.html</li></ol>
+  </section>
+
+  <section class="knowledge-section">
+    <div class="section-head">
+      <div><p class="eyebrow">{e(ui["assets"])}</p><h2>{e(ui["asset_slots"])}</h2></div>
+      <p>{e(ui.get("asset_index_locator", "Every asset path stays inside its character root and links to prompts, crops, planned outputs, and the shared CSV registry."))}</p>
+    </div>
+    <div class="knowledge-card-grid">{''.join(cards)}</div>
+  </section>
+
+  {''.join(sections)}
+</main>
+</body>
+</html>
+"""
+    return page_path, content
 
 
 def paragraphs(value: str | list[str]) -> str:
@@ -654,16 +807,21 @@ def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) ->
     ui = locale["ui"]
     stylesheet = rel("assets/styles/luo_sisters.css", page_path)
     cards = []
+    cards.append(
+        f"""<article class="knowledge-card">
+  <p class="eyebrow">Knowledge 01</p>
+  <h3><a href="{e(page_rel('knowledge/assets.html', page_path, locale))}">{e(ui['assets'])}</a></h3>
+  <p>{e(ui.get('asset_index_card_summary', 'Character roots, source sheets, crop handles, prompt notes, planned transparent outputs, and registry status.'))}</p>
+  <span class="status-pill">active</span>
+</article>"""
+    )
     for page in knowledge["pages"]:
         href = page_rel(page["href"], page_path, locale)
-        anchors = source_anchor_links(page.get("source_anchors", []), page_path)
         cards.append(
             f"""<article class="knowledge-card">
   <p class="eyebrow">{e(page["eyebrow"])}</p>
   <h3><a href="{e(href)}">{e(page["title"])}</a></h3>
   <p>{e(page["summary"])}</p>
-  <span class="status-pill">{e(status_label(knowledge, page["migration_status"]))}</span>
-  {anchors}
 </article>"""
         )
     chain = "".join(f"<li>{e(item)}</li>" for item in knowledge.get("hierarchy", []))
@@ -691,7 +849,7 @@ def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) ->
 
   <section class="knowledge-section">
     <div class="section-head">
-      <div><p class="eyebrow">{e(ui["migration_rule_eyebrow"])}</p><h2>{e(ui["migration_rule_title"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["structure_rule_eyebrow"])}</p><h2>{e(ui["structure_rule_title"])}</h2></div>
     </div>
     {intro_cards}
   </section>
@@ -706,7 +864,6 @@ def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], pag
     page_path = output_path(page["href"], locale)
     ui = locale["ui"]
     stylesheet = rel("assets/styles/luo_sisters.css", page_path)
-    source_links = source_anchor_links(page.get("source_anchors", []), page_path)
     sections = "".join(render_knowledge_section(section, page_path, locale) for section in page.get("sections", []))
     title = f"{page['title']} | {knowledge['title']}"
     content = f"""{page_head(title, stylesheet, locale)}
@@ -721,8 +878,6 @@ def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], pag
     </div>
     <div class="knowledge-meta">
       <div><b>{e(ui["structured_content"])}</b><span>{e(page["structured_content"])}</span></div>
-      <div><b>{e(ui["migration_status"])}</b><span class="status-pill">{e(status_label(knowledge, page["migration_status"]))}</span></div>
-      <div><b>{e(ui["source_anchors"])}</b>{source_links}</div>
     </div>
   </section>
 
@@ -752,6 +907,7 @@ def build(locale_code: str) -> list[Path]:
         render_character_page("qingyou", locale, configs["qingyou"]),
         render_character_page("arisu", locale, configs["arisu"]),
         render_knowledge_index(locale, knowledge),
+        render_assets_index(locale, configs),
     ]
     outputs.extend(render_knowledge_page(locale, knowledge, page) for page in knowledge["pages"])
     for path, content in outputs:

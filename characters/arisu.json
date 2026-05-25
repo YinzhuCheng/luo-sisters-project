@@ -4,7 +4,6 @@
   "layout": "alice-board",
   "asset_root": "assets/characters/arisu",
   "source_sheet": "assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png",
-  "legacy_sheet": "assets/images/luo_arisu_character_sheet_v1.png",
   "crop_manifest": "assets/characters/arisu/workflow/crop_manifest.csv",
   "palette": [
     { "name_key": "palette.midnight_blue", "hex": "#153B70" },
@@ -39,7 +38,20 @@
         { "id": "thinking", "label_key": "arisu.asset.expression_thinking", "crop": "assets/characters/arisu/crops/expression-thinking-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/thinking-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
         { "id": "troubled", "label_key": "arisu.asset.expression_troubled", "crop": "assets/characters/arisu/crops/expression-troubled-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/troubled-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
         { "id": "shy", "label_key": "arisu.asset.expression_shy", "crop": "assets/characters/arisu/crops/expression-shy-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/shy-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
-        { "id": "relieved", "label_key": "arisu.asset.expression_relieved", "crop": "assets/characters/arisu/crops/expression-relieved-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/relieved-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" }
+        { "id": "relieved", "label_key": "arisu.asset.expression_relieved", "crop": "assets/characters/arisu/crops/expression-relieved-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/relieved-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "sleepwalking", "label_key": "arisu.asset.expression_sleepwalking", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/expressions/sleepwalking-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "aggrieved", "label_key": "arisu.asset.expression_aggrieved", "aliases": ["wronged"], "crop": "", "transparent": "assets/characters/arisu/generated/transparent/expressions/aggrieved-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "brave", "label_key": "arisu.asset.expression_brave", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/expressions/brave-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" }
+      ]
+    },
+    {
+      "id": "poses",
+      "items": [
+        { "id": "look-at-door", "label_key": "arisu.asset.pose_look_at_door", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/poses/look-at-door-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#poses" },
+        { "id": "pinch-key", "label_key": "arisu.asset.pose_pinch_key", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/poses/pinch-key-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#poses" },
+        { "id": "write-invitation", "label_key": "arisu.asset.pose_write_invitation", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/poses/write-invitation-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#poses" },
+        { "id": "swing-charm", "label_key": "arisu.asset.pose_swing_charm", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/poses/swing-charm-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#poses" },
+        { "id": "step-into-threshold", "label_key": "arisu.asset.pose_step_into_threshold", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/poses/step-into-threshold-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#poses" }
       ]
     },
     {
@@ -71,10 +83,13 @@
       "items": [
         { "id": "key", "label_key": "arisu.asset.key", "crop": "assets/characters/arisu/crops/prop-key-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/key-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
         { "id": "pocket-watch", "label_key": "arisu.asset.pocket_watch", "crop": "assets/characters/arisu/crops/prop-pocket-watch-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "pocket-watch-bag", "label_key": "arisu.asset.pocket_watch_bag", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/props/pocket-watch-bag-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
         { "id": "rabbit-charm", "label_key": "arisu.asset.rabbit_charm", "crop": "assets/characters/arisu/crops/prop-rabbit-charm-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
         { "id": "notebook", "label_key": "arisu.asset.notebook", "crop": "assets/characters/arisu/crops/prop-notebook-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/notebook-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
         { "id": "school-bag", "label_key": "arisu.asset.school_bag", "crop": "assets/characters/arisu/crops/prop-school-bag-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/school-bag-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
-        { "id": "storybook", "label_key": "arisu.asset.storybook", "crop": "assets/characters/arisu/crops/prop-storybook-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/storybook-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" }
+        { "id": "storybook", "label_key": "arisu.asset.storybook", "aliases": ["old book"], "crop": "assets/characters/arisu/crops/prop-storybook-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/storybook-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "music-box", "label_key": "arisu.asset.music_box", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/props/music-box-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "blue-ink", "label_key": "arisu.asset.blue_ink", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/props/blue-ink-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" }
       ]
     },
     {

@@ -17,6 +17,15 @@
     "language_switch": "English",
     "assets": "资产",
     "asset_expansion": "资产扩展",
+    "asset_index_eyebrow": "资产索引",
+    "asset_index_summary": "用一个页面集中查看角色整图、截图参考、提示词、计划透明输出和登记状态。",
+    "asset_index_locator": "所有资产路径都保持在角色根目录内，并链接到提示词、截图、计划输出和共享 CSV 登记。",
+    "asset_index_card_summary": "角色根目录、整图、截图参考、提示词、计划透明输出和登记状态。",
+    "asset_crop_header": "截图",
+    "asset_prompt_header": "提示词",
+    "asset_output_header": "输出",
+    "asset_status_header": "状态",
+    "asset_registry_header": "登记",
     "open_sheet": "打开设定页",
     "open_source": "查看整版参考图",
     "source_reference": "整版参考图",
@@ -37,16 +46,13 @@
     "reference_note": "当前页面先用参考截图和占位槽稳定版式；透明 PNG 生成后会自动替换进入对应槽位。",
     "back_home": "返回总览",
     "content_map": "资料地图",
-    "archive": "完整归档",
     "site_footer": "HTML / CSS / asset workflow generated from structured data. Public pages are Chinese-first with an English mirror and locale separation.",
     "knowledge_pages_eyebrow": "Knowledge Pages",
     "knowledge_pages_title": "结构化入口",
-    "knowledge_pages_summary": "每页都保留原归档锚点和迁移状态，方便后续核对与逐页精修。",
-    "migration_rule_eyebrow": "Migration Rule",
-    "migration_rule_title": "迁移原则",
-    "structured_content": "当前结构化内容",
-    "migration_status": "迁移状态",
-    "source_anchors": "原归档锚点"
+    "knowledge_pages_summary": "每页都有明确职责，方便后续按任务进入，不必一次扫完整站。",
+    "structure_rule_eyebrow": "Structure Rules",
+    "structure_rule_title": "结构原则",
+    "structured_content": "当前范围"
   },
   "home": {
     "eyebrow": "Character Bible · HTML Sheet System",
@@ -80,7 +86,7 @@
       { "title": "终幕：不完美的茶会", "text": "茶会如期发生，也发生意外。雨、迟到、失焦照片和手账里的空白让这一天成为真正属于她们的记忆。" }
     ],
     "content_map_title": "资料层级地图",
-    "content_map_summary": "当前首页是轻量展示入口；第一版长内容没有删除，保存在完整归档和结构化数据里。下面按层级进入不同资料。",
+    "content_map_summary": "当前首页是轻量展示入口；长内容已经分布到结构化页面、角色数据、工作流和资产登记里。下面按层级进入不同资料。",
     "content_map_groups": [
       {
         "title": "0｜当前展示层",
@@ -89,15 +95,17 @@
           { "label": "项目首页", "href": "index.html", "note": "当前导航与展示窗口" },
           { "label": "洛青悠 HTML 设定页", "href": "character_sheets/qingyou.html", "note": "古风手账式设定页" },
           { "label": "洛有栖 HTML 设定页", "href": "character_sheets/arisu.html", "note": "蓝白 Alice 资料页" },
-          { "label": "结构化知识库", "href": "knowledge/index.html", "note": "旧归档拆分后的二级入口" }
+          { "label": "结构化知识库", "href": "knowledge/index.html", "note": "结构化阅读与规划入口" },
+          { "label": "资产索引页", "href": "knowledge/assets.html", "note": "角色根目录、槽位、提示词与输出路径" }
         ]
       },
       {
         "title": "1｜结构化知识库",
-        "text": "从旧归档拆出的二级页面，先保留完整骨架、摘要和原始锚点，后续逐页精修。",
+        "text": "按任务拆分的知识页与统一资产索引，供结构化阅读和生产定位使用。",
         "links": [
-          { "label": "知识库总目录", "href": "knowledge/index.html", "note": "index -> knowledge -> archive anchors" },
-          { "label": "导航与阅读路径", "href": "knowledge/navigation.html", "note": "旧导航结构化承接页，说明该先读哪里、下一跳去哪里" },
+          { "label": "知识库总目录", "href": "knowledge/index.html", "note": "结构化项目页面入口" },
+          { "label": "导航与阅读路径", "href": "knowledge/navigation.html", "note": "说明该先读哪里、下一跳去哪里" },
+          { "label": "统一资产索引", "href": "knowledge/assets.html", "note": "所有角色、资产类型、提示词和计划输出" },
           { "label": "角色与人设层", "href": "knowledge/characters.html", "note": "两姐妹八层人设与互动关系" },
           { "label": "故事梗概与主题层", "href": "knowledge/story.html", "note": "章节推进、AIGC 节奏和场景钩子" },
           { "label": "视觉方向与提示词库", "href": "knowledge/visual.html", "note": "美术方向、提示词组和双人 KV" },
@@ -105,30 +113,19 @@
         ]
       },
       {
-        "title": "2｜第一版完整资料",
-        "text": "第一版长内容保留在归档页，适合查看完整人设、故事、提示词、制作规范与资产清单。",
-        "links": [
-          { "label": "完整归档总览", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "旧版完整 HTML，没有删除" },
-          { "label": "人设八层拆解", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "第一眼、日常、行为、能力、关系、焦虑、矛盾、成长" },
-          { "label": "故事与 AIGC 节奏", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "章节推进、配角功能、关键场景钩子" },
-          { "label": "视觉提示词组", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "线稿、立绘、三视图、表情、物件、CG" },
-          { "label": "制作规范与资产清单", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "日本二次元企划流程与 asset-list" }
-        ]
-      },
-      {
-        "title": "3｜数据与语言层",
+        "title": "2｜数据与语言层",
         "text": "当前网页由数据和模板生成，文案与前端分离。",
         "links": [
           { "label": "中文文案数据", "href": "locales/zh-CN.json", "note": "当前网页默认语言" },
           { "label": "英文文案骨架", "href": "locales/en.json", "note": "后续语言切换准备" },
           { "label": "洛青悠角色配置", "href": "characters/qingyou.json", "note": "色卡、版式、资产槽位" },
           { "label": "洛有栖角色配置", "href": "characters/arisu.json", "note": "色卡、版式、资产槽位" },
-          { "label": "知识库数据源", "href": "project_data/knowledge_base.json", "note": "旧归档层级、页面、锚点和迁移状态" },
+          { "label": "知识库数据源", "href": "project_data/knowledge_base.json", "note": "结构化页面摘要与工作流文案" },
           { "label": "早期总览数据", "href": "project_data/luo_sisters_overview.json", "note": "保留第一阶段结构化内容" }
         ]
       },
       {
-        "title": "4｜生产与记忆层",
+        "title": "3｜生产与记忆层",
         "text": "给多 agent 并行、资产生成、坑点召回和后续 skill 沉淀使用。",
         "links": [
           { "label": "资产生成工作流", "href": "workflows/asset_generation_workflow.md", "note": "包含截图偏移时回看完整设定图规则" },
@@ -144,6 +141,7 @@
   "asset_groups": {
     "standing": "标准立绘",
     "expressions": "表情差分",
+    "poses": "姿势设定",
     "turnaround": "三视图",
     "clothing": "服饰拆解",
     "accessories": "穿戴配饰",
@@ -179,12 +177,19 @@
     "qingyou.asset.expression_troubled": "困扰",
     "qingyou.asset.expression_tired": "疲惫",
     "qingyou.asset.expression_relieved": "释然",
+    "qingyou.asset.expression_light_scold": "轻责备",
+    "qingyou.asset.pose_photo_taking": "拍照姿势",
+    "qingyou.asset.pose_flip_journal": "翻手账姿势",
+    "qingyou.asset.pose_offer_tea": "递茶姿势",
+    "qingyou.asset.pose_prepare_umbrella": "准备雨伞姿势",
+    "qingyou.asset.pose_adjust_bow_tie": "整理领结姿势",
     "qingyou.asset.classic_lolita_dress": "古风 Lolita 主裙",
     "qingyou.asset.cloud_collar": "云肩结构",
     "qingyou.asset.embroidered_skirt": "刺绣裙摆",
     "qingyou.asset.plum_hairpin": "梅花发饰",
     "qingyou.asset.frog_buttons": "盘扣",
     "qingyou.asset.lace_cuffs": "蕾丝袖口",
+    "qingyou.asset.spare_hairclip": "备用发夹",
     "qingyou.asset.journal": "手账本",
     "qingyou.asset.camera": "复古相机",
     "qingyou.asset.tea_cup": "茶杯",
@@ -206,6 +211,14 @@
     "arisu.asset.expression_troubled": "困扰",
     "arisu.asset.expression_shy": "害羞",
     "arisu.asset.expression_relieved": "释然",
+    "arisu.asset.expression_sleepwalking": "梦游",
+    "arisu.asset.expression_aggrieved": "委屈",
+    "arisu.asset.expression_brave": "勇敢",
+    "arisu.asset.pose_look_at_door": "看门姿势",
+    "arisu.asset.pose_pinch_key": "捏钥匙姿势",
+    "arisu.asset.pose_write_invitation": "写邀请函姿势",
+    "arisu.asset.pose_swing_charm": "晃挂件姿势",
+    "arisu.asset.pose_step_into_threshold": "踏入门槛姿势",
     "arisu.asset.jk_lolita_dress": "蓝白 JK Lolita",
     "arisu.asset.daily_cardigan": "日常针织衫",
     "arisu.asset.blue_pinafore": "蓝色背带裙",
@@ -214,10 +227,13 @@
     "arisu.asset.ribbon_tie": "红色领结",
     "arisu.asset.key": "钥匙",
     "arisu.asset.pocket_watch": "怀表",
+    "arisu.asset.pocket_watch_bag": "怀表包",
     "arisu.asset.rabbit_charm": "白兔挂件",
     "arisu.asset.notebook": "小记事本",
     "arisu.asset.school_bag": "书包",
     "arisu.asset.storybook": "童话绘本",
+    "arisu.asset.music_box": "音乐盒",
+    "arisu.asset.blue_ink": "蓝色墨水",
     "arisu.asset.braid_detail": "发辫细节",
     "arisu.asset.skirt_detail": "裙摆褶皱",
     "arisu.asset.sock_shoe_detail": "鞋袜细节",
