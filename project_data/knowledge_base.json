@@ -34,6 +34,94 @@
   ],
   "pages": [
     {
+      "id": "navigation",
+      "href": "knowledge/navigation.html",
+      "eyebrow": "Knowledge 00",
+      "title": "导航与阅读路径",
+      "summary": "把旧版项目导航页升级为新版知识库的结构化入口，明确从展示页、知识库、旧归档和生产文档之间如何跳转。",
+      "structured_content": "展示入口、知识库阅读路径、旧归档锚点映射、生产文档入口",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "旧归档 #overview", "href": "docs/luo_sisters_project_guide_v2.html#overview" },
+        { "label": "旧归档 #navigation", "href": "docs/luo_sisters_project_guide_v2.html#navigation" }
+      ],
+      "sections": [
+        {
+          "id": "route-map",
+          "type": "cards",
+          "eyebrow": "Route Map",
+          "title": "新版入口分工",
+          "summary": "新版允许跳转和拆页，但每个入口要有清楚职责。",
+          "items": [
+            {
+              "title": "展示入口",
+              "text": "从首页和两张角色页快速看到项目视觉、角色设定页和资产槽位。适合浏览和检查网页观感。",
+              "tone": "green"
+            },
+            {
+              "title": "知识库入口",
+              "text": "从知识库总目录进入导航、人设、故事、视觉提示词、制作规范。适合阅读和扩写内容。",
+              "tone": "blue"
+            },
+            {
+              "title": "归档入口",
+              "text": "旧版 HTML 只作为完整原文和核对来源。需要查第一版原句时再打开对应锚点。",
+              "tone": "gold"
+            },
+            {
+              "title": "生产入口",
+              "text": "资产生成、并行分工、坑点记忆和资产登记走 workflows/、tools/ 和 logs/，不塞回展示页。",
+              "tone": "green"
+            }
+          ]
+        },
+        {
+          "id": "reading-table",
+          "type": "table",
+          "eyebrow": "Reading Paths",
+          "title": "按任务选择入口",
+          "summary": "agent 不需要一次读完整站；按目标进入对应页面，再按链接继续。",
+          "headers": ["任务", "先读页面", "下一跳", "备注"],
+          "rows": [
+            ["快速了解项目", "index.html", "knowledge/navigation.html", "首页负责展示，导航页负责结构。"],
+            ["找角色设定", "knowledge/navigation.html", "knowledge/characters.html", "需要原文时再跳 #characters。"],
+            ["找故事主线", "knowledge/navigation.html", "knowledge/story.html", "章节推进和 AIGC 节奏在故事页。"],
+            ["找提示词", "knowledge/navigation.html", "knowledge/visual.html", "提示词代码块集中在视觉页。"],
+            ["找制作规范", "knowledge/navigation.html", "knowledge/workflow.html", "资产清单和下一步在工作流页。"],
+            ["核对旧版完整内容", "docs/luo_sisters_project_guide_v2.html#navigation", "对应旧锚点", "先用 read_html_doc.py 摘要，不直接通读大 HTML。"]
+          ]
+        },
+        {
+          "id": "structured-pages",
+          "type": "links",
+          "eyebrow": "Structured Pages",
+          "title": "结构化知识库页面",
+          "summary": "旧导航里的模块已经拆到这些新版页面。",
+          "items": [
+            { "label": "人设层", "href": "knowledge/characters.html", "note": "旧 #characters 的结构化承接页" },
+            { "label": "故事梗概层", "href": "knowledge/story.html", "note": "旧 #story 的结构化承接页" },
+            { "label": "视觉提示词层", "href": "knowledge/visual.html", "note": "旧 #visual 的结构化承接页" },
+            { "label": "制作规范与资产规划", "href": "knowledge/workflow.html", "note": "旧 #workflow、#asset-list、#next 的结构化承接页" }
+          ]
+        },
+        {
+          "id": "archive-anchors",
+          "type": "links",
+          "eyebrow": "Archive Anchors",
+          "title": "旧归档备用入口",
+          "summary": "这些链接保留原始来源，用于核对或找回未细化内容。",
+          "items": [
+            { "label": "旧版总览", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "第一版完整导言与项目概述" },
+            { "label": "旧版项目导航", "href": "docs/luo_sisters_project_guide_v2.html#navigation", "note": "旧导航源头" },
+            { "label": "旧版人设层", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "两姐妹八层人设原文" },
+            { "label": "旧版故事层", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "故事推进和 AIGC 节奏原文" },
+            { "label": "旧版视觉层", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "提示词组原文" },
+            { "label": "旧版制作规范", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "制作流程、资产清单和下一步原文" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "characters",
       "href": "knowledge/characters.html",
       "eyebrow": "Knowledge 01",

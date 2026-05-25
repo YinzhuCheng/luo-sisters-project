@@ -20,6 +20,7 @@ README.md
 docs/document_governance.md
 docs/content_map.md
 knowledge/index.html
+knowledge/navigation.html
 knowledge/*.html
 docs/luo_sisters_project_guide_v2.html#anchor
 ```
@@ -52,6 +53,7 @@ English mirror:
 Chinese root knowledge pages:
 
 - `knowledge/index.html`
+- `knowledge/navigation.html`
 - `knowledge/characters.html`
 - `knowledge/story.html`
 - `knowledge/visual.html`
@@ -60,6 +62,7 @@ Chinese root knowledge pages:
 English mirror:
 
 - `en/knowledge/index.html`
+- `en/knowledge/navigation.html`
 - `en/knowledge/characters.html`
 - `en/knowledge/story.html`
 - `en/knowledge/visual.html`
@@ -77,7 +80,7 @@ Use `docs/luo_sisters_project_guide_v2.html` when source verification or dense f
 Important anchors:
 
 - `#overview`: original overview.
-- `#navigation`: original project navigation.
+- `#navigation`: maps to `knowledge/navigation.html`.
 - `#characters`: maps to `knowledge/characters.html`.
 - `#story`: maps to `knowledge/story.html`.
 - `#visual`: maps to `knowledge/visual.html`.

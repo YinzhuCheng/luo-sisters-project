@@ -97,6 +97,7 @@
         "text": "从旧归档拆出的二级页面，先保留完整骨架、摘要和原始锚点，后续逐页精修。",
         "links": [
           { "label": "知识库总目录", "href": "knowledge/index.html", "note": "index -> knowledge -> archive anchors" },
+          { "label": "导航与阅读路径", "href": "knowledge/navigation.html", "note": "旧导航结构化承接页，说明该先读哪里、下一跳去哪里" },
           { "label": "角色与人设层", "href": "knowledge/characters.html", "note": "两姐妹八层人设与互动关系" },
           { "label": "故事梗概与主题层", "href": "knowledge/story.html", "note": "章节推进、AIGC 节奏和场景钩子" },
           { "label": "视觉方向与提示词库", "href": "knowledge/visual.html", "note": "美术方向、提示词组和双人 KV" },

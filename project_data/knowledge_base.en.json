@@ -34,6 +34,78 @@
   ],
   "pages": [
     {
+      "id": "navigation",
+      "href": "knowledge/navigation.html",
+      "eyebrow": "Knowledge 00",
+      "title": "Navigation And Reading Paths",
+      "summary": "The old project navigation page is promoted into a structured knowledge-base entry that explains how showcase pages, knowledge pages, archive anchors, and production docs connect.",
+      "structured_content": "Showcase entry, knowledge reading paths, old archive anchor map, production documentation entry",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "Old archive #overview", "href": "docs/luo_sisters_project_guide_v2.html#overview" },
+        { "label": "Old archive #navigation", "href": "docs/luo_sisters_project_guide_v2.html#navigation" }
+      ],
+      "sections": [
+        {
+          "id": "route-map",
+          "type": "cards",
+          "eyebrow": "Route Map",
+          "title": "New Entry Responsibilities",
+          "summary": "The new site can jump across pages and split content, but every entry must have a clear job.",
+          "items": [
+            { "title": "Showcase Entry", "text": "Use the index and character sheets to inspect visual presentation, character sheets, and asset slots.", "tone": "green" },
+            { "title": "Knowledge Entry", "text": "Use the knowledge index for navigation, characters, story, visual prompts, production rules, and asset planning.", "tone": "blue" },
+            { "title": "Archive Entry", "text": "Use the old HTML archive as the full source record. Open source anchors only when original wording is needed.", "tone": "gold" },
+            { "title": "Production Entry", "text": "Asset generation, parallel ownership, issue memory, and asset registry live in workflows, tools, and logs.", "tone": "green" }
+          ]
+        },
+        {
+          "id": "reading-table",
+          "type": "table",
+          "eyebrow": "Reading Paths",
+          "title": "Choose Entry By Task",
+          "summary": "Agents should not read the whole site at once. Enter by task, then follow the next link.",
+          "headers": ["Task", "Read First", "Next Hop", "Note"],
+          "rows": [
+            ["Understand the project quickly", "index.html", "knowledge/navigation.html", "The index is visual; the navigation page is structural."],
+            ["Find character design", "knowledge/navigation.html", "knowledge/characters.html", "Use old #characters only for source verification."],
+            ["Find story structure", "knowledge/navigation.html", "knowledge/story.html", "Story flow and AIGC rhythm live on the story page."],
+            ["Find prompts", "knowledge/navigation.html", "knowledge/visual.html", "Prompt code blocks live on the visual page."],
+            ["Find production rules", "knowledge/navigation.html", "knowledge/workflow.html", "Asset list and next steps live on the workflow page."],
+            ["Verify full old content", "docs/luo_sisters_project_guide_v2.html#navigation", "matching old anchor", "Summarize with read_html_doc.py before opening raw HTML."]
+          ]
+        },
+        {
+          "id": "structured-pages",
+          "type": "links",
+          "eyebrow": "Structured Pages",
+          "title": "Structured Knowledge Pages",
+          "summary": "The old navigation modules now map to these generated pages.",
+          "items": [
+            { "label": "Character Layer", "href": "knowledge/characters.html", "note": "Structured successor to old #characters" },
+            { "label": "Story Layer", "href": "knowledge/story.html", "note": "Structured successor to old #story" },
+            { "label": "Visual Prompt Layer", "href": "knowledge/visual.html", "note": "Structured successor to old #visual" },
+            { "label": "Workflow And Asset Planning", "href": "knowledge/workflow.html", "note": "Structured successor to old #workflow, #asset-list, and #next" }
+          ]
+        },
+        {
+          "id": "archive-anchors",
+          "type": "links",
+          "eyebrow": "Archive Anchors",
+          "title": "Old Archive Fallback",
+          "summary": "These links preserve the original source record for verification and content recovery.",
+          "items": [
+            { "label": "Old Overview", "href": "docs/luo_sisters_project_guide_v2.html#overview", "note": "Original overview and project introduction" },
+            { "label": "Old Project Navigation", "href": "docs/luo_sisters_project_guide_v2.html#navigation", "note": "Old navigation source" },
+            { "label": "Old Character Layer", "href": "docs/luo_sisters_project_guide_v2.html#characters", "note": "Original eight-layer character text" },
+            { "label": "Old Story Layer", "href": "docs/luo_sisters_project_guide_v2.html#story", "note": "Original story and AIGC rhythm text" },
+            { "label": "Old Visual Layer", "href": "docs/luo_sisters_project_guide_v2.html#visual", "note": "Original prompt groups" },
+            { "label": "Old Workflow", "href": "docs/luo_sisters_project_guide_v2.html#workflow", "note": "Original production rules, asset list, and next steps" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "characters",
       "href": "knowledge/characters.html",
       "eyebrow": "Knowledge 01",

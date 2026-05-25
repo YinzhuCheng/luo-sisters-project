@@ -89,7 +89,7 @@
       "source": "project_data/knowledge_base.json",
       "role": "Chinese structured knowledge index",
       "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+      "children": ["knowledge/navigation.html", "knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
     },
     {
       "path": "en/knowledge/index.html",
@@ -99,7 +99,27 @@
       "source": "project_data/knowledge_base.en.json",
       "role": "English structured knowledge index",
       "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
-      "children": ["en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+      "children": ["en/knowledge/navigation.html", "en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+    },
+    {
+      "path": "knowledge/navigation.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese structured navigation page",
+      "read_strategy": "summarize with read_html_doc.py; choose the next link by task",
+      "children": ["knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html", "docs/luo_sisters_project_guide_v2.html#navigation"]
+    },
+    {
+      "path": "en/knowledge/navigation.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English structured navigation page",
+      "read_strategy": "summarize with read_html_doc.py; choose the next link by task",
+      "children": ["en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html", "docs/luo_sisters_project_guide_v2.html#navigation"]
     },
     {
       "path": "docs/luo_sisters_project_guide_v2.html",
