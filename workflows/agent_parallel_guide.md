@@ -2,6 +2,8 @@
 
 The project is designed for multiple agents to work without stepping on each other.
 
+Read `AGENTS.md`, `docs/document_governance.md`, and this guide before taking ownership of an asset scope. For HTML context, use `skills/project-doc-governance/scripts/read_html_doc.py` and follow one page at a time.
+
 ## Ownership Boundaries
 
 One agent should own one of these scopes at a time:
@@ -62,7 +64,7 @@ Append to `logs/asset_registry.csv` when a planned asset changes status.
 
 The web layer owns:
 
-- Chinese and future English text
+- Chinese and English localized text
 - labels
 - borders
 - color swatches

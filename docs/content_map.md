@@ -1,52 +1,78 @@
 # Project Content Map
 
-This document records where the project content lives after the HTML-sheet restructure.
+This document records where project content lives after the HTML-sheet, knowledge-base, and documentation-governance restructures.
 
 ## Preservation Status
 
-The current repository is not missing the first long-form guide. The first-version archive is still present at:
+The first long-form Chinese guide is preserved at:
 
 - `docs/luo_sisters_project_guide_v2.html`
 
-It was compared against the backup copy at:
+The current showcase is intentionally lighter. Long-form material now lives in generated knowledge pages and source data, while the historical archive remains available for verification.
 
-- `D:\original\luo_sisters_project_files\luo_sisters_project_files\docs\luo_sisters_project_guide_v2.html`
+## Reading Hierarchy
 
-The file hashes match. The structured overview data was also compared against:
+Use this chain for documentation discovery:
 
-- `D:\original\luo_sisters_project_files\luo_sisters_project_files\project_data\luo_sisters_overview.json`
+```text
+AGENTS.md
+README.md
+docs/document_governance.md
+docs/content_map.md
+knowledge/index.html
+knowledge/*.html
+docs/luo_sisters_project_guide_v2.html#anchor
+```
 
-Those hashes match too. The current `index.html` is intentionally lighter because it now acts as the top-level display window and navigation hub.
+For English public pages, use the same generated structure under `en/`.
 
-## Navigation Hierarchy
+## Level 0: Source Entry Documents
 
-### Level 0: Current Showcase Pages
+- `AGENTS.md`: agent operating rules and project entry map.
+- `README.md`: human quick start and build instructions.
+- `docs/document_governance.md`: documentation law, language separation, and HTML reading policy.
+- `project_data/document_catalog.json`: machine-readable document registry.
 
-- `index.html`: current project landing page and top-level navigation.
-- `character_sheets/qingyou.html`: Luo Qingyou HTML character sheet.
-- `character_sheets/arisu.html`: Luo Arisu HTML character sheet.
+## Level 1: Public Showcase Pages
 
-### Level 1: Structured Knowledge Base
+Chinese root site:
 
-New generated knowledge pages split the old archive into a navigable second level:
+- `index.html`
+- `character_sheets/qingyou.html`
+- `character_sheets/arisu.html`
 
-- `knowledge/index.html`: knowledge base index.
-- `knowledge/characters.html`: eight-layer character breakdown, sister relationship, interaction examples.
-- `knowledge/story.html`: story outline, chapter flow, AIGC rhythm, supporting character functions, scene hooks.
-- `knowledge/visual.html`: art direction, prompt groups, expression rules, duo key visual.
-- `knowledge/workflow.html`: production workflow, asset list, unified checklist, next steps.
+English mirror:
 
-The data source is:
+- `en/index.html`
+- `en/character_sheets/qingyou.html`
+- `en/character_sheets/arisu.html`
 
-- `project_data/knowledge_base.json`: page hierarchy, summaries, source anchors, and migration status.
+## Level 2: Structured Knowledge Base
 
-Required chain:
+Chinese root knowledge pages:
 
-- `index.html -> knowledge/index.html -> knowledge/*.html -> docs/luo_sisters_project_guide_v2.html#anchor`
+- `knowledge/index.html`
+- `knowledge/characters.html`
+- `knowledge/story.html`
+- `knowledge/visual.html`
+- `knowledge/workflow.html`
 
-### Level 2: Full First-Version Archive
+English mirror:
 
-Use `docs/luo_sisters_project_guide_v2.html` when you need the dense first-version content.
+- `en/knowledge/index.html`
+- `en/knowledge/characters.html`
+- `en/knowledge/story.html`
+- `en/knowledge/visual.html`
+- `en/knowledge/workflow.html`
+
+Source data:
+
+- `project_data/knowledge_base.json`
+- `project_data/knowledge_base.en.json`
+
+## Level 3: Historical Archive
+
+Use `docs/luo_sisters_project_guide_v2.html` when source verification or dense first-version content is needed.
 
 Important anchors:
 
@@ -59,32 +85,30 @@ Important anchors:
 - `#asset-list`: maps to `knowledge/workflow.html#asset-list`.
 - `#next`: maps to `knowledge/workflow.html#next`.
 
-### Level 3: Structured Data And Locales
+## Level 4: Data And Locales
 
-- `locales/zh-CN.json`: Chinese page text for the current generated pages.
-- `locales/en.json`: English page text scaffold for future language switching.
+- `locales/zh-CN.json`: Chinese public UI and page copy.
+- `locales/en.json`: English public UI and page copy.
 - `characters/qingyou.json`: Qingyou layout, palette, and asset slots.
 - `characters/arisu.json`: Arisu layout, palette, and asset slots.
-- `project_data/knowledge_base.json`: structured knowledge base source.
 - `project_data/luo_sisters_overview.json`: earlier structured overview retained for continuity.
 
-### Level 4: Production Workflow
+## Level 5: Production Workflow
 
 - `workflows/asset_generation_workflow.md`: crop-to-transparent-asset workflow.
 - `workflows/agent_parallel_guide.md`: multi-agent ownership and handoff rules.
 - `assets/characters/qingyou/workflow/crop_manifest.csv`: Qingyou crop coordinates.
 - `assets/characters/arisu/workflow/crop_manifest.csv`: Arisu crop coordinates.
 
-### Level 5: Memory And Audit Logs
+## Level 6: Memory And Audit Logs
 
 - `logs/progress_updates.csv`: work progress.
 - `logs/asset_registry.csv`: asset status registry.
 - `logs/issue_memory.csv`: reusable pitfalls and mitigations.
 
-## Content Migration Notes
+## Migration Notes
 
-- The current web pages do not duplicate every paragraph from the first archive. They link to `knowledge/`, and knowledge pages link back to the original archive anchors.
-- The first archive remains the place to read the full story, prompt, workflow, and asset-list text in one page.
-- `knowledge/*.html` is generated from `project_data/knowledge_base.json`; edit the JSON, then run `tools/build_project_html.py`.
-- New generated pages prioritize visual presentation, responsive layout, and asset-slot tracking.
-- If content appears missing, check this order before rewriting it: current page link, `knowledge/index.html`, `project_data/knowledge_base.json`, `docs/luo_sisters_project_guide_v2.html`, `project_data/luo_sisters_overview.json`, then the backup under `D:\original\...`.
+- Generated pages do not duplicate every paragraph from the first archive.
+- Knowledge pages link back to original archive anchors.
+- Edit source JSON and locale files, then run `tools/build_project_html.py`.
+- If content appears missing, check this order before rewriting it: generated page, knowledge source data, historical archive, earlier overview data, then the backup under `D:\original\...`.

@@ -1,53 +1,56 @@
-# 角色设定图提示词与制作规范
+# Character Sheet Prompt And Production Notes
 
-## 总原则
+## General Rules
 
-- 保持中文项目设定，提示词可中英混合，最终 HTML 与说明使用中文。
-- 画面文字优先由 HTML、SVG 或 PIL 后期排版；图像生成阶段适合保留标题框、说明框、留白和装饰。
-- 角色识别点稳定，版本之间只调整具体表现，保留核心视觉符号。
+- Keep internal prompt notes in English.
+- Keep final public page text in locale or project data files.
+- During image generation, leave dense labels and long text out of the image. Render readable Chinese and English copy with HTML, SVG, or PIL later.
+- Preserve stable identity marks across versions. Adjust expression, pose, framing, and details without losing the core visual symbols.
 
-## 表情差分规则
+## Expression Difference Rules
 
-为避免“表情标签不同、画面几乎一样”的问题，每个表情都要明确指定：
+To avoid expression sheets where only labels change, every expression must specify visible changes in:
 
-- 眼睛：睁大、半垂、闭眼笑、视线偏移、眼神集中等。
-- 眉毛：放松、上扬、轻皱、八字眉、压低等。
-- 嘴型：浅笑、开口笑、抿唇、微张、无奈笑等。
-- 头部角度：正面、微低头、侧偏、抬头、回头等。
-- 手势：捧手账、扶额、摸钥匙、整理领结、捏袖口等。
-- 身体姿态：肩膀放松、前倾、后退、转身、抱书等。
+- eyes: widened, half-lidded, closed-eye smile, shifted gaze, focused gaze;
+- brows: relaxed, raised, lightly furrowed, worried, lowered;
+- mouth: soft smile, open smile, pressed lips, slight open mouth, resigned smile;
+- head angle: front, slight lowered head, tilted, raised, turned back;
+- gesture: holding journal, touching forehead, touching key, adjusting bow, pinching cuff;
+- body posture: relaxed shoulders, leaning forward, stepping back, turning, holding books.
 
-示例提示：
+Example:
 
-> 表情展示区包含 8 个头像或半身像，每个表情拥有明显不同的眼睛、眉毛、嘴型、头部角度、手势与身体姿态，避免仅凭微小嘴角变化区分。中文标签留白，后期排版。
+```text
+Expression sheet with 8 bust or half-body panels. Each expression must visibly change eyes, brows, mouth, head angle, gesture, and body posture. Leave label areas blank for later layout.
+```
 
-## 洛青悠视觉提示
+## Luo Qingyou Visual Prompt Notes
 
-- 青绿色古风 Lolita，米白衬衫，盘扣、云肩、蕾丝袖口、青瓷色裙摆。
-- 长黑发，金绿色花形发饰，温柔稳重气质。
-- 道具：手账本、复古相机、茶杯、便携收纳包、钢笔、书签。
-- 氛围：旧街、茶会、窗影、青笺、梅枝、慢生活。
-- 代表句：那就给这场梦订个日期吧。茶和退路，我来准备。
+- Sage Chinese-inspired classic Lolita, ivory blouse, frog buttons, cloud collar, lace cuffs, celadon skirt.
+- Long dark hair, gold-green floral hair ornament, gentle and grounded older-sister mood.
+- Props: project journal, vintage camera, tea cup, portable pouch, pen, bookmark.
+- Atmosphere: old street, tea party, window light, paper notes, plum branch, slow-life mood.
+- Signature lines for layout copy: "Then let us give this dream a date." / "I will prepare the tea, and the way back."
 
-## 洛有栖视觉提示
+## Luo Arisu Visual Prompt Notes
 
-- 蓝白 JK Lolita，白衬衫、蓝色背带裙、领结、蕾丝袜、小皮鞋。
-- 长黑发或深色长发，雏菊发饰，Alice 母题但保持原创东方少女感。
-- 道具：钥匙项链、白兔挂件、怀表、旧书、书包、茶杯、扑克牌小物。
-- 氛围：校园走廊、旧图书室、秘密门、花草、下午茶、Wonderland 入口。
-- 代表句：姐姐，你有没有觉得，这扇门今天不太一样？钥匙还在，所以门一定也在。
+- Blue-white JK Lolita, white blouse, blue pinafore, bow, lace socks, mary jane shoes.
+- Long dark hair, daisy hair ornament, Alice motif, original East Asian girl mood.
+- Props: key necklace, rabbit charm, pocket watch, old book, school bag, tea cup, card-like small items.
+- Atmosphere: school corridor, old library, secret door, plants, afternoon tea, Wonderland entrance.
+- Signature lines for layout copy: "Sister, do you feel like this door is different today?" / "The key is still here, so the door must be here too."
 
-## 日系二次元创作管线
+## Anime Character Production Pipeline
 
-1. 关键词与 moodboard。
-2. 轮廓草图与 A/B/C 方案。
-3. 线稿与服装结构确认。
-4. 固有色与色卡。
-5. 标准立绘。
-6. 三视图：正面、侧面、背面。
-7. 表情差分：至少 8 个，拉开表情与姿态。
-8. 衣着差分：标准服、常服、茶会服、雨天服、轻装。
-9. 配饰与物件拆解。
-10. 姿势表：站、坐、递物、拍照、开门、整理裙摆。
-11. 代表 CG：每人两张。
-12. 最终排版设定图：图片 + HTML/SVG/PIL 文字。
+1. Keywords and moodboard.
+2. Silhouette sketches and A/B/C options.
+3. Line art and outfit-structure confirmation.
+4. Local colors and palette.
+5. Standard standing art.
+6. Turnaround: front, side, back.
+7. Expression variants: at least 8, with distinct expressions and gestures.
+8. Outfit variants: standard, casual, tea-party, rainy-day, light outfit.
+9. Accessories and prop breakdown.
+10. Pose sheet: standing, sitting, handing item, photographing, opening door, adjusting skirt.
+11. Representative key art: two per character.
+12. Final layout sheet: image assets plus HTML/SVG/PIL text.

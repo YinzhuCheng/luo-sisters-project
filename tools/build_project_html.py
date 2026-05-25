@@ -4,13 +4,10 @@
 Usage:
     python tools/build_project_html.py
     python tools/build_project_html.py --locale zh-CN
+    python tools/build_project_html.py --locale en
 
-The builder keeps presentation, character asset structure, archive knowledge,
-and localized copy separate:
-- characters/*.json describes page layout, colors, and asset slots.
-- locales/*.json provides user-facing text.
-- project_data/knowledge_base.json maps the first archive into knowledge pages.
-- assets/styles/luo_sisters.css owns the visual system.
+The default build writes the Chinese site at the repository root and the
+English mirror under en/. Generated HTML is not the long-term editing source.
 """
 from __future__ import annotations
 
@@ -24,11 +21,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES_DIR = ROOT / "locales"
 CHARACTERS_DIR = ROOT / "characters"
-KNOWLEDGE_DATA_PATH = ROOT / "project_data" / "knowledge_base.json"
-INDEX_PATH = ROOT / "index.html"
-SHEETS_DIR = ROOT / "character_sheets"
-KNOWLEDGE_DIR = ROOT / "knowledge"
+PROJECT_DATA_DIR = ROOT / "project_data"
 CHARACTER_IDS = ("qingyou", "arisu")
+DEFAULT_LOCALES = ("zh-CN", "en")
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -46,6 +41,63 @@ def rel(path: str, from_file: Path) -> str:
         return path
     target = ROOT / path
     return os.path.relpath(target, from_file.parent).replace("\\", "/")
+
+
+def site_dir(locale: dict[str, Any]) -> str:
+    return str(locale.get("meta", {}).get("site_dir", "")).strip("/")
+
+
+def localized_path(path: str, locale: dict[str, Any]) -> str:
+    directory = site_dir(locale)
+    return f"{directory}/{path}" if directory else path
+
+
+def output_path(path: str, locale: dict[str, Any]) -> Path:
+    return ROOT / localized_path(path, locale)
+
+
+def page_rel(path: str, page_path: Path, locale: dict[str, Any]) -> str:
+    return rel(localized_path(path, locale), page_path)
+
+
+def is_generated_page(path: str) -> bool:
+    return (
+        path == "index.html"
+        or path.startswith("character_sheets/")
+        or path.startswith("knowledge/")
+    )
+
+
+def doc_href(path: str, page_path: Path, locale: dict[str, Any], root_link: bool = False) -> str:
+    if path.startswith(("#", "http://", "https://", "mailto:")):
+        return path
+    if root_link or not is_generated_page(path):
+        return rel(path, page_path)
+    return page_rel(path, page_path, locale)
+
+
+def canonical_generated_path(page_path: Path, locale: dict[str, Any]) -> str:
+    root_relative = os.path.relpath(page_path, ROOT).replace("\\", "/")
+    directory = site_dir(locale)
+    if directory and root_relative.startswith(f"{directory}/"):
+        return root_relative[len(directory) + 1 :]
+    return root_relative
+
+
+def site_dir_for_locale(locale_code: str) -> str:
+    if locale_code == "zh-CN":
+        return ""
+    if locale_code == "en":
+        return "en"
+    return locale_code
+
+
+def language_href(page_path: Path, locale: dict[str, Any]) -> str:
+    alternate = str(locale.get("meta", {}).get("alternate_locale", "en"))
+    current = canonical_generated_path(page_path, locale)
+    alternate_dir = site_dir_for_locale(alternate)
+    target = f"{alternate_dir}/{current}" if alternate_dir else current
+    return rel(target, page_path)
 
 
 def label(locale: dict[str, Any], key: str, fallback: str | None = None) -> str:
@@ -82,12 +134,12 @@ def page_head(title: str, stylesheet: str, locale: dict[str, Any]) -> str:
 def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
     ui = locale["ui"]
     characters = locale.get("characters", {})
-    qingyou_name = characters.get("qingyou", {}).get("name", "洛青悠")
-    arisu_name = characters.get("arisu", {}).get("name", "洛有栖")
-    home_href = rel("index.html", page_path)
-    qingyou_href = rel("character_sheets/qingyou.html", page_path)
-    arisu_href = rel("character_sheets/arisu.html", page_path)
-    knowledge_href = rel("knowledge/index.html", page_path)
+    qingyou_name = characters.get("qingyou", {}).get("name", "Luo Qingyou")
+    arisu_name = characters.get("arisu", {}).get("name", "Luo Arisu")
+    home_href = page_rel("index.html", page_path, locale)
+    qingyou_href = page_rel("character_sheets/qingyou.html", page_path, locale)
+    arisu_href = page_rel("character_sheets/arisu.html", page_path, locale)
+    knowledge_href = page_rel("knowledge/index.html", page_path, locale)
     content_map_href = rel("docs/content_map.md", page_path)
     archive_href = rel("docs/luo_sisters_project_guide_v2.html", page_path)
     workflow_href = rel("workflows/asset_generation_workflow.md", page_path)
@@ -102,10 +154,11 @@ def topbar(locale: dict[str, Any], page_path: Path, active: str = "") -> str:
       <a href="{e(home_href)}"{home_current}>{e(ui["home"])}</a>
       <a href="{e(qingyou_href)}"{qingyou_current}>{e(qingyou_name)}</a>
       <a href="{e(arisu_href)}"{arisu_current}>{e(arisu_name)}</a>
-      <a href="{e(knowledge_href)}"{knowledge_current}>{e(ui.get("knowledge", "知识库"))}</a>
+      <a href="{e(knowledge_href)}"{knowledge_current}>{e(ui["knowledge"])}</a>
       <a href="{e(content_map_href)}">{e(ui["content_map"])}</a>
       <a href="{e(archive_href)}">{e(ui["archive"])}</a>
       <a href="{e(workflow_href)}">{e(ui["workflow"])}</a>
+      <a href="{e(language_href(page_path, locale))}">{e(ui["language_switch"])}</a>
     </nav>
   </div>
 </header>"""
@@ -209,7 +262,7 @@ def character_card(
     page_path: Path,
 ) -> str:
     ui = locale["ui"]
-    href = rel(f"character_sheets/{character_id}.html", page_path)
+    href = page_rel(f"character_sheets/{character_id}.html", page_path, locale)
     source = rel(config["source_sheet"], page_path)
     blue = character_id == "arisu"
     return f"""<a class="character-link" href="{e(href)}">
@@ -230,7 +283,7 @@ def content_map_html(locale: dict[str, Any], page_path: Path) -> str:
     for group_data in home["content_map_groups"]:
         links = "".join(
             f"""<li>
-  <a href="{e(rel(item["href"], page_path))}">{e(item["label"])}</a>
+  <a href="{e(doc_href(item["href"], page_path, locale, bool(item.get("root_link"))))}">{e(item["label"])}</a>
   <span>{e(item["note"])}</span>
 </li>"""
             for item in group_data["links"]
@@ -245,8 +298,8 @@ def content_map_html(locale: dict[str, Any], page_path: Path) -> str:
     return "<div class=\"link-tree\">" + "".join(groups) + "</div>"
 
 
-def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> str:
-    page_path = INDEX_PATH
+def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> tuple[Path, str]:
+    page_path = output_path("index.html", locale)
     ui = locale["ui"]
     home = locale["home"]
     characters = locale["characters"]
@@ -271,7 +324,7 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
     )
     content_map = content_map_html(locale, page_path)
 
-    return f"""{page_head(home["title"], stylesheet, locale)}
+    content = f"""{page_head(home["title"], stylesheet, locale)}
 <body>
 {topbar(locale, page_path, "home")}
 <main class="page">
@@ -281,9 +334,9 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
       <h1>{e(home["title"])}</h1>
       <p class="lead">{e(home["subtitle"])}</p>
       <div class="hero-actions">
-        <a class="action-link" href="{e(rel("character_sheets/qingyou.html", page_path))}">{e(qingyou_copy["name"])}</a>
-        <a class="action-link" href="{e(rel("character_sheets/arisu.html", page_path))}">{e(arisu_copy["name"])}</a>
-        <a class="action-link" href="{e(rel("knowledge/index.html", page_path))}">{e(ui.get("knowledge", "知识库"))}</a>
+        <a class="action-link" href="{e(page_rel("character_sheets/qingyou.html", page_path, locale))}">{e(qingyou_copy["name"])}</a>
+        <a class="action-link" href="{e(page_rel("character_sheets/arisu.html", page_path, locale))}">{e(arisu_copy["name"])}</a>
+        <a class="action-link" href="{e(page_rel("knowledge/index.html", page_path, locale))}">{e(ui["knowledge"])}</a>
       </div>
     </div>
     <div class="source-duo" aria-label="{e(ui["source_reference"])}">
@@ -300,7 +353,7 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
 
   <section class="section">
     <div class="section-head">
-      <div><p class="eyebrow">Stage 01</p><h2>{e(home["summary_title"])}</h2></div>
+      <div><p class="eyebrow">{e(home["summary_eyebrow"])}</p><h2>{e(home["summary_title"])}</h2></div>
       <p>{e(home["summary"])}</p>
     </div>
     <div class="grid">{theme_cards}</div>
@@ -308,7 +361,7 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
 
   <section class="section" id="characters">
     <div class="section-head">
-      <div><p class="eyebrow">Character Sheets</p><h2>{e(ui["characters"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["characters"])}</p><h2>{e(ui["characters"])}</h2></div>
       <p>{e(ui["reference_note"])}</p>
     </div>
     <div class="grid two">{character_cards}</div>
@@ -316,14 +369,14 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
 
   <section class="section" id="workflow">
     <div class="section-head">
-      <div><p class="eyebrow">Pipeline</p><h2>{e(home["pipeline_title"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["workflow"])}</p><h2>{e(home["pipeline_title"])}</h2></div>
     </div>
     <article class="panel">{pipeline}</article>
   </section>
 
   <section class="section" id="content-map">
     <div class="section-head">
-      <div><p class="eyebrow">Content Map</p><h2>{e(home["content_map_title"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["content_map"])}</p><h2>{e(home["content_map_title"])}</h2></div>
       <p>{e(home["content_map_summary"])}</p>
     </div>
     {content_map}
@@ -331,17 +384,18 @@ def render_home(locale: dict[str, Any], configs: dict[str, dict[str, Any]]) -> s
 
   <section class="section" id="story">
     <div class="section-head">
-      <div><p class="eyebrow">Story</p><h2>{e(home["story_title"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["story"])}</p><h2>{e(home["story_title"])}</h2></div>
       <p><strong>{e(home["story_surface"])}</strong><br>{e(home["story_summary"])}</p>
     </div>
     <ol class="story-list">{acts}</ol>
   </section>
 
-  <p class="footer">HTML / CSS / asset workflow generated from structured JSON. Final public pages are Chinese-first with locale separation for future languages.</p>
+  <p class="footer">{e(ui["site_footer"])}</p>
 </main>
 </body>
 </html>
 """
+    return page_path, content
 
 
 def render_journal_board(config: dict[str, Any], copy: dict[str, Any], locale: dict[str, Any], page_path: Path) -> str:
@@ -406,8 +460,8 @@ def render_alice_board(config: dict[str, Any], copy: dict[str, Any], locale: dic
 </section>"""
 
 
-def render_character_page(character_id: str, locale: dict[str, Any], config: dict[str, Any]) -> str:
-    page_path = SHEETS_DIR / f"{character_id}.html"
+def render_character_page(character_id: str, locale: dict[str, Any], config: dict[str, Any]) -> tuple[Path, str]:
+    page_path = output_path(f"character_sheets/{character_id}.html", locale)
     ui = locale["ui"]
     copy = locale["characters"][character_id]
     stylesheet = rel("assets/styles/luo_sisters.css", page_path)
@@ -424,7 +478,7 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
     cg = asset_group_html(config, locale, page_path, "cg", "", "asset-grid", 2)
     title = f"{copy['name']} | {copy['board_title']}"
 
-    return f"""{page_head(title, stylesheet, locale)}
+    content = f"""{page_head(title, stylesheet, locale)}
 <body class="{e(body_class)}">
 {topbar(locale, page_path, character_id)}
 <main class="page sheet-shell">
@@ -435,7 +489,7 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
       <p class="lead">{e(copy["role"])} | {e(copy["short"])}</p>
     </div>
     <div class="sheet-actions">
-      <a class="action-link" href="{e(rel("index.html", page_path))}">{e(ui["back_home"])}</a>
+      <a class="action-link" href="{e(page_rel("index.html", page_path, locale))}">{e(ui["back_home"])}</a>
       <a class="action-link" href="{e(source_link)}">{e(ui["open_source"])}</a>
     </div>
   </section>
@@ -444,7 +498,7 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
 
   <section class="section">
     <div class="section-head">
-      <div><p class="eyebrow">Asset Expansion</p><h2>{e(ui["asset_slots"])}</h2></div>
+      <div><p class="eyebrow">{e(ui["asset_expansion"])}</p><h2>{e(ui["asset_slots"])}</h2></div>
       <p>{e(ui["reference_note"])}</p>
     </div>
     <div class="grid two">
@@ -473,6 +527,7 @@ def render_character_page(character_id: str, locale: dict[str, Any], config: dic
 </body>
 </html>
 """
+    return page_path, content
 
 
 def status_label(knowledge: dict[str, Any], status: str) -> str:
@@ -559,10 +614,10 @@ def render_prompt_grid(section: dict[str, Any]) -> str:
     return f"<div class=\"prompt-grid\">{''.join(prompts)}</div>"
 
 
-def render_link_list(section: dict[str, Any], page_path: Path) -> str:
+def render_link_list(section: dict[str, Any], page_path: Path, locale: dict[str, Any]) -> str:
     items = "".join(
         f"""<li>
-  <a href="{e(rel(item["href"], page_path))}">{e(item["label"])}</a>
+  <a href="{e(doc_href(item["href"], page_path, locale, bool(item.get("root_link"))))}">{e(item["label"])}</a>
   <span>{e(item.get("note", ""))}</span>
 </li>"""
         for item in section.get("items", [])
@@ -570,7 +625,7 @@ def render_link_list(section: dict[str, Any], page_path: Path) -> str:
     return f"<ul class=\"link-list knowledge-links\">{items}</ul>"
 
 
-def render_knowledge_section(section: dict[str, Any], page_path: Path) -> str:
+def render_knowledge_section(section: dict[str, Any], page_path: Path, locale: dict[str, Any]) -> str:
     section_type = section.get("type", "cards")
     if section_type == "details":
         body = render_detail_groups(section)
@@ -581,7 +636,7 @@ def render_knowledge_section(section: dict[str, Any], page_path: Path) -> str:
     elif section_type == "prompts":
         body = render_prompt_grid(section)
     elif section_type == "links":
-        body = render_link_list(section, page_path)
+        body = render_link_list(section, page_path, locale)
     else:
         body = render_cards(section)
 
@@ -594,12 +649,13 @@ def render_knowledge_section(section: dict[str, Any], page_path: Path) -> str:
 </section>"""
 
 
-def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) -> str:
-    page_path = KNOWLEDGE_DIR / "index.html"
+def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) -> tuple[Path, str]:
+    page_path = output_path("knowledge/index.html", locale)
+    ui = locale["ui"]
     stylesheet = rel("assets/styles/luo_sisters.css", page_path)
     cards = []
     for page in knowledge["pages"]:
-        href = rel(page["href"], page_path)
+        href = page_rel(page["href"], page_path, locale)
         anchors = source_anchor_links(page.get("source_anchors", []), page_path)
         cards.append(
             f"""<article class="knowledge-card">
@@ -612,7 +668,7 @@ def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) ->
         )
     chain = "".join(f"<li>{e(item)}</li>" for item in knowledge.get("hierarchy", []))
     intro_cards = render_cards({"items": knowledge.get("intro_cards", [])})
-    return f"""{page_head(knowledge["title"], stylesheet, locale)}
+    content = f"""{page_head(knowledge["title"], stylesheet, locale)}
 <body class="theme-knowledge">
 {topbar(locale, page_path, "knowledge")}
 <main class="page knowledge-shell">
@@ -627,15 +683,15 @@ def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) ->
 
   <section class="knowledge-section">
     <div class="section-head">
-      <div><p class="eyebrow">Knowledge Pages</p><h2>结构化入口</h2></div>
-      <p>每页都保留原归档锚点和迁移状态，方便后续核对与逐页精修。</p>
+      <div><p class="eyebrow">{e(ui["knowledge_pages_eyebrow"])}</p><h2>{e(ui["knowledge_pages_title"])}</h2></div>
+      <p>{e(ui["knowledge_pages_summary"])}</p>
     </div>
     <div class="knowledge-card-grid">{''.join(cards)}</div>
   </section>
 
   <section class="knowledge-section">
     <div class="section-head">
-      <div><p class="eyebrow">Migration Rule</p><h2>迁移原则</h2></div>
+      <div><p class="eyebrow">{e(ui["migration_rule_eyebrow"])}</p><h2>{e(ui["migration_rule_title"])}</h2></div>
     </div>
     {intro_cards}
   </section>
@@ -643,15 +699,17 @@ def render_knowledge_index(locale: dict[str, Any], knowledge: dict[str, Any]) ->
 </body>
 </html>
 """
+    return page_path, content
 
 
-def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], page: dict[str, Any]) -> str:
-    page_path = ROOT / page["href"]
+def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], page: dict[str, Any]) -> tuple[Path, str]:
+    page_path = output_path(page["href"], locale)
+    ui = locale["ui"]
     stylesheet = rel("assets/styles/luo_sisters.css", page_path)
     source_links = source_anchor_links(page.get("source_anchors", []), page_path)
-    sections = "".join(render_knowledge_section(section, page_path) for section in page.get("sections", []))
+    sections = "".join(render_knowledge_section(section, page_path, locale) for section in page.get("sections", []))
     title = f"{page['title']} | {knowledge['title']}"
-    return f"""{page_head(title, stylesheet, locale)}
+    content = f"""{page_head(title, stylesheet, locale)}
 <body class="theme-knowledge">
 {topbar(locale, page_path, "knowledge")}
 <main class="page knowledge-shell">
@@ -662,9 +720,9 @@ def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], pag
       <p class="lead">{e(page["summary"])}</p>
     </div>
     <div class="knowledge-meta">
-      <div><b>当前结构化内容</b><span>{e(page["structured_content"])}</span></div>
-      <div><b>迁移状态</b><span class="status-pill">{e(status_label(knowledge, page["migration_status"]))}</span></div>
-      <div><b>原归档锚点</b>{source_links}</div>
+      <div><b>{e(ui["structured_content"])}</b><span>{e(page["structured_content"])}</span></div>
+      <div><b>{e(ui["migration_status"])}</b><span class="status-pill">{e(status_label(knowledge, page["migration_status"]))}</span></div>
+      <div><b>{e(ui["source_anchors"])}</b>{source_links}</div>
     </div>
   </section>
 
@@ -673,26 +731,29 @@ def render_knowledge_page(locale: dict[str, Any], knowledge: dict[str, Any], pag
 </body>
 </html>
 """
+    return page_path, content
+
+
+def load_knowledge(locale_code: str) -> dict[str, Any]:
+    localized = PROJECT_DATA_DIR / f"knowledge_base.{locale_code}.json"
+    if localized.exists():
+        return read_json(localized)
+    return read_json(PROJECT_DATA_DIR / "knowledge_base.json")
 
 
 def build(locale_code: str) -> list[Path]:
     locale_path = LOCALES_DIR / f"{locale_code}.json"
     locale = read_json(locale_path)
     configs = {character_id: read_json(CHARACTERS_DIR / f"{character_id}.json") for character_id in CHARACTER_IDS}
-    knowledge = read_json(KNOWLEDGE_DATA_PATH)
-    SHEETS_DIR.mkdir(exist_ok=True)
-    KNOWLEDGE_DIR.mkdir(exist_ok=True)
+    knowledge = load_knowledge(locale_code)
 
     outputs = [
-        (INDEX_PATH, render_home(locale, configs)),
-        (SHEETS_DIR / "qingyou.html", render_character_page("qingyou", locale, configs["qingyou"])),
-        (SHEETS_DIR / "arisu.html", render_character_page("arisu", locale, configs["arisu"])),
-        (KNOWLEDGE_DIR / "index.html", render_knowledge_index(locale, knowledge)),
+        render_home(locale, configs),
+        render_character_page("qingyou", locale, configs["qingyou"]),
+        render_character_page("arisu", locale, configs["arisu"]),
+        render_knowledge_index(locale, knowledge),
     ]
-    outputs.extend(
-        (ROOT / page["href"], render_knowledge_page(locale, knowledge, page))
-        for page in knowledge["pages"]
-    )
+    outputs.extend(render_knowledge_page(locale, knowledge, page) for page in knowledge["pages"])
     for path, content in outputs:
         path.parent.mkdir(exist_ok=True)
         path.write_text(content, encoding="utf-8")
@@ -701,9 +762,12 @@ def build(locale_code: str) -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build Luo sisters static HTML pages.")
-    parser.add_argument("--locale", default="zh-CN", help="Locale JSON name in locales/, default zh-CN.")
+    parser.add_argument("--locale", help="Locale JSON name in locales/. Omit to build all public locales.")
     args = parser.parse_args()
-    outputs = build(args.locale)
+    locales = (args.locale,) if args.locale else DEFAULT_LOCALES
+    outputs: list[Path] = []
+    for locale_code in locales:
+        outputs.extend(build(locale_code))
     for path in outputs:
         print(f"Wrote {path}")
 

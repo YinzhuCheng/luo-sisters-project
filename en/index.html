@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luo Qingyou x Luo Arisu</title>
+  <link rel="stylesheet" href="../assets/styles/luo_sisters.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">Luo Sisters Project</a>
+    <nav class="nav-links" aria-label="Character Sheets">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="character_sheets/qingyou.html">Luo Qingyou</a>
+      <a href="character_sheets/arisu.html">Luo Arisu</a>
+      <a href="knowledge/index.html">Knowledge</a>
+      <a href="../docs/content_map.md">Content Map</a>
+      <a href="../docs/luo_sisters_project_guide_v2.html">Full Archive</a>
+      <a href="../workflows/asset_generation_workflow.md">Workflow</a>
+      <a href="../index.html">中文</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <section class="hero" id="overview">
+    <div>
+      <p class="eyebrow">Character Bible · HTML Sheet System | 0.5-doc-governance</p>
+      <h1>Luo Qingyou x Luo Arisu</h1>
+      <p class="lead">Build the website as a stable display window first, then regenerate clothing, accessories, expressions, and props as transparent reusable assets.</p>
+      <div class="hero-actions">
+        <a class="action-link" href="character_sheets/qingyou.html">Luo Qingyou</a>
+        <a class="action-link" href="character_sheets/arisu.html">Luo Arisu</a>
+        <a class="action-link" href="knowledge/index.html">Knowledge</a>
+      </div>
+    </div>
+    <div class="source-duo" aria-label="Source Sheet">
+      <figure class="source-card">
+        <img src="../assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png" alt="Luo Qingyou">
+        <figcaption><b>Luo Qingyou</b></figcaption>
+      </figure>
+      <figure class="source-card">
+        <img src="../assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png" alt="Luo Arisu">
+        <figcaption><b>Luo Arisu</b></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><p class="eyebrow">Stage 01</p><h2>Current Goal</h2></div>
+      <p>This stage separates the original full-sheet images into structured web pages and an asset pipeline. HTML/CSS owns text, frames, palettes, and labels; generated images own characters, outfits, accessories, and props.</p>
+    </div>
+    <div class="grid"><article class="panel"><h3>Surface</h3><p>The sisters prepare a Rabbit Hole Tea Party through outfits, journals, photography, old libraries, invitations, and small props.</p></article><article class="panel"><h3>Character</h3><p>Qingyou protects dreams through order; Arisu searches for dreams through exploration. Their complementarity becomes conflict and then co-creation.</p></article><article class="panel"><h3>Core</h3><p>AIGC gradually amplifies anxieties about replacement, perfect dreams, and outsourced choices. The ending returns tools to their proper place while people keep direction, judgment, and relationships.</p></article></div>
+  </section>
+
+  <section class="section" id="characters">
+    <div class="section-head">
+      <div><p class="eyebrow">Character Sheets</p><h2>Character Sheets</h2></div>
+      <p>The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.</p>
+    </div>
+    <div class="grid two"><a class="character-link" href="character_sheets/qingyou.html">
+  <div class="character-thumb"><img src="../assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png" alt="Luo Qingyou"></div>
+  <div class="character-summary">
+    <p class="eyebrow">Classic Lolita | Planner | Archivist | Gentle Older Sister</p>
+    <h3>Luo Qingyou<span class="roman">Luo Qingyou</span></h3>
+    <p>A person who protects dreams through order.</p>
+    <div class="tag-row"><span class="tag">Sage classic Lolita</span><span class="tag">Journal and vintage camera</span><span class="tag">Cloud collar, frog buttons, lace</span><span class="tag">Old street, tea party, window light</span></div>
+    <span class="action-link">Open Sheet</span>
+  </div>
+</a><a class="character-link" href="character_sheets/arisu.html">
+  <div class="character-thumb"><img src="../assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png" alt="Luo Arisu"></div>
+  <div class="character-summary">
+    <p class="eyebrow">JK Lolita | Alice Motif | Explorer | Doorway to Dreams</p>
+    <h3>Luo Arisu<span class="roman">Luo Arisu</span></h3>
+    <p>A person who searches for dreams through disorder.</p>
+    <div class="tag-row"><span class="tag blue">Blue-white JK Lolita</span><span class="tag blue">Key necklace, rabbit charm, pocket watch</span><span class="tag blue">Daisy, old books, school bag</span><span class="tag blue">School hallway, old library, secret door</span></div>
+    <span class="action-link">Open Sheet</span>
+  </div>
+</a></div>
+  </section>
+
+  <section class="section" id="workflow">
+    <div class="section-head">
+      <div><p class="eyebrow">Workflow</p><h2>Web And Asset Pipeline</h2></div>
+    </div>
+    <article class="panel"><ul class="ordered-list"><li>Build the index page and two HTML character sheets first.</li><li>Crop references from the existing full character sheets into strict character folders.</li><li>Regenerate textless, borderless, solid-background versions from those crops.</li><li>Remove the chroma key locally to produce transparent PNG assets and log them in CSV.</li><li>Replace page placeholders with transparent assets while the web layer keeps final typography and labels.</li></ul></article>
+  </section>
+
+  <section class="section" id="content-map">
+    <div class="section-head">
+      <div><p class="eyebrow">Content Map</p><h2>Content Hierarchy</h2></div>
+      <p>The current index is a lightweight display hub. The long first-version content is preserved in the full archive and structured data.</p>
+    </div>
+    <div class="link-tree"><article class="link-group">
+  <h3>0 | Current Showcase</h3>
+  <p>Pages for browsing and presentation.</p>
+  <ul class="link-list"><li>
+  <a href="index.html">Index</a>
+  <span>Current navigation and display window</span>
+</li><li>
+  <a href="character_sheets/qingyou.html">Qingyou HTML Sheet</a>
+  <span>Journal-style character sheet</span>
+</li><li>
+  <a href="character_sheets/arisu.html">Arisu HTML Sheet</a>
+  <span>Blue Alice character sheet</span>
+</li><li>
+  <a href="knowledge/index.html">Structured Knowledge Base</a>
+  <span>Second-level archive entry</span>
+</li></ul>
+</article><article class="link-group">
+  <h3>1 | Structured Knowledge</h3>
+  <p>Second-level pages split from the old archive with skeletons, summaries, and source anchors first.</p>
+  <ul class="link-list"><li>
+  <a href="knowledge/index.html">Knowledge Index</a>
+  <span>index -&gt; knowledge -&gt; archive anchors</span>
+</li><li>
+  <a href="knowledge/characters.html">Characters</a>
+  <span>Eight-layer character notes and sister relationship</span>
+</li><li>
+  <a href="knowledge/story.html">Story</a>
+  <span>Chapter flow, AIGC rhythm, and scene hooks</span>
+</li><li>
+  <a href="knowledge/visual.html">Visual Prompts</a>
+  <span>Art direction, prompt groups, and duo key visual</span>
+</li><li>
+  <a href="knowledge/workflow.html">Workflow And Assets</a>
+  <span>Production flow, asset list, checklist, and next steps</span>
+</li></ul>
+</article><article class="link-group">
+  <h3>2 | Full First Archive</h3>
+  <p>Dense first-version content preserved as one HTML archive.</p>
+  <ul class="link-list"><li>
+  <a href="../docs/luo_sisters_project_guide_v2.html#overview">Full Archive Overview</a>
+  <span>Original long guide</span>
+</li><li>
+  <a href="../docs/luo_sisters_project_guide_v2.html#characters">Character Layers</a>
+  <span>Eight-layer character breakdown</span>
+</li><li>
+  <a href="../docs/luo_sisters_project_guide_v2.html#story">Story And AIGC</a>
+  <span>Story staging and scene hooks</span>
+</li><li>
+  <a href="../docs/luo_sisters_project_guide_v2.html#visual">Visual Prompts</a>
+  <span>Prompt groups</span>
+</li><li>
+  <a href="../docs/luo_sisters_project_guide_v2.html#workflow">Workflow And Assets</a>
+  <span>Production workflow and asset list</span>
+</li></ul>
+</article><article class="link-group">
+  <h3>3 | Data And Locales</h3>
+  <p>Generated pages use separated data and localized copy.</p>
+  <ul class="link-list"><li>
+  <a href="../locales/zh-CN.json">Chinese Locale</a>
+  <span>Default web copy</span>
+</li><li>
+  <a href="../locales/en.json">English Locale</a>
+  <span>Future language switching</span>
+</li><li>
+  <a href="../characters/qingyou.json">Qingyou Config</a>
+  <span>Palette, layout, asset slots</span>
+</li><li>
+  <a href="../characters/arisu.json">Arisu Config</a>
+  <span>Palette, layout, asset slots</span>
+</li><li>
+  <a href="../project_data/knowledge_base.json">Knowledge Data</a>
+  <span>Archive hierarchy, pages, anchors, and migration status</span>
+</li><li>
+  <a href="../project_data/luo_sisters_overview.json">Earlier Overview Data</a>
+  <span>Retained structured content</span>
+</li></ul>
+</article><article class="link-group">
+  <h3>4 | Production Memory</h3>
+  <p>Workflow, parallel-agent rules, logs, and reusable issue memory.</p>
+  <ul class="link-list"><li>
+  <a href="../workflows/asset_generation_workflow.md">Asset Workflow</a>
+  <span>Includes full-sheet fallback rule</span>
+</li><li>
+  <a href="../workflows/agent_parallel_guide.md">Parallel Agent Guide</a>
+  <span>Ownership and handoff rules</span>
+</li><li>
+  <a href="../docs/content_map.md">Content Map</a>
+  <span>Where content moved</span>
+</li><li>
+  <a href="../logs/progress_updates.csv">Progress CSV</a>
+  <span>Work log</span>
+</li><li>
+  <a href="../logs/issue_memory.csv">Issue Memory CSV</a>
+  <span>Pitfalls and mitigations</span>
+</li><li>
+  <a href="../logs/asset_registry.csv">Asset Registry CSV</a>
+  <span>Asset statuses</span>
+</li></ul>
+</article></div>
+  </section>
+
+  <section class="section" id="story">
+    <div class="section-head">
+      <div><p class="eyebrow">Story</p><h2>Story Outline</h2></div>
+      <p><strong>The sisters prepare a Rabbit Hole Tea Party together.</strong><br>The surface is a sweet daily-life tea party project. The middle layer is order versus disorder. The deep layer reflects on value, companionship, advice, and generated content in the AIGC era.</p>
+    </div>
+    <ol class="story-list"><li class="story-item"><strong>Act 1: Leave a Page for the Dream</strong><span>Arisu proposes a tea party for people who get lost. Qingyou writes it into her journal.</span></li><li class="story-item"><strong>Act 2: The Dream Becomes Faster</strong><span>Classmates generate posters and plans with AI. Qingyou feels displaced, while Arisu is drawn to perfect Alice imagery.</span></li><li class="story-item"><strong>Act 3: Even Getting Lost Is Scheduled</strong><span>Qingyou over-optimizes the invitation and process. Arisu feels her strange sentences have been flattened.</span></li><li class="story-item"><strong>Act 4: Choose the Door Again</strong><span>Both admit their fears and reassign AI to repetitive work while they keep direction and relationships.</span></li><li class="story-item"><strong>Finale: An Imperfect Tea Party</strong><span>Rain, lateness, soft-focus photos, and blank journal space make the day truly theirs.</span></li></ol>
+  </section>
+
+  <p class="footer">HTML / CSS / asset workflow generated from structured data. Public pages are Chinese-first with an English mirror and locale separation.</p>
+</main>
+</body>
+</html>

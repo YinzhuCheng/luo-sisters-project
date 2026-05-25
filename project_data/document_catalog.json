@@ -1,0 +1,144 @@
+{
+  "version": "0.1-doc-governance",
+  "entry_chain": [
+    "AGENTS.md",
+    "README.md",
+    "docs/document_governance.md",
+    "docs/content_map.md",
+    "knowledge/index.html",
+    "linked child page or archive anchor"
+  ],
+  "rules": [
+    "Markdown and HTML are both documentation.",
+    "Internal maintenance documents are English.",
+    "Public web copy is localized through locale or data files.",
+    "Read HTML progressively with the project-doc-governance reader before opening raw HTML.",
+    "Generated HTML is output, not the long-term editing source."
+  ],
+  "documents": [
+    {
+      "path": "AGENTS.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "agent entrypoint",
+      "read_strategy": "read first",
+      "children": ["README.md", "docs/document_governance.md", "docs/content_map.md"]
+    },
+    {
+      "path": "README.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "human quick start",
+      "read_strategy": "read after AGENTS.md",
+      "children": ["docs/document_governance.md", "knowledge/index.html"]
+    },
+    {
+      "path": "docs/document_governance.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "documentation governance law",
+      "read_strategy": "read before changing docs",
+      "children": ["docs/content_map.md", "project_data/document_catalog.json"]
+    },
+    {
+      "path": "docs/content_map.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "content hierarchy map",
+      "read_strategy": "read before assuming content is missing",
+      "children": ["knowledge/index.html", "docs/luo_sisters_project_guide_v2.html"]
+    },
+    {
+      "path": "skills/project-doc-governance/SKILL.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "project skill entrypoint",
+      "read_strategy": "use for doc inspection and governance tasks",
+      "children": ["skills/project-doc-governance/references/document_governance.md"]
+    },
+    {
+      "path": "index.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "locales/zh-CN.json",
+      "role": "Chinese public showcase",
+      "read_strategy": "summarize with read_html_doc.py",
+      "children": ["character_sheets/qingyou.html", "character_sheets/arisu.html", "knowledge/index.html"]
+    },
+    {
+      "path": "en/index.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "locales/en.json",
+      "role": "English public showcase mirror",
+      "read_strategy": "summarize with read_html_doc.py",
+      "children": ["en/character_sheets/qingyou.html", "en/character_sheets/arisu.html", "en/knowledge/index.html"]
+    },
+    {
+      "path": "knowledge/index.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": true,
+      "source": "project_data/knowledge_base.json",
+      "role": "Chinese structured knowledge index",
+      "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
+      "children": ["knowledge/characters.html", "knowledge/story.html", "knowledge/visual.html", "knowledge/workflow.html"]
+    },
+    {
+      "path": "en/knowledge/index.html",
+      "type": "html",
+      "language": "en",
+      "generated": true,
+      "source": "project_data/knowledge_base.en.json",
+      "role": "English structured knowledge index",
+      "read_strategy": "summarize with read_html_doc.py; follow one link at a time",
+      "children": ["en/knowledge/characters.html", "en/knowledge/story.html", "en/knowledge/visual.html", "en/knowledge/workflow.html"]
+    },
+    {
+      "path": "docs/luo_sisters_project_guide_v2.html",
+      "type": "html",
+      "language": "zh-CN",
+      "generated": false,
+      "role": "preserved historical archive",
+      "read_strategy": "summarize one anchor with read_html_doc.py before opening raw HTML",
+      "children": ["#characters", "#story", "#visual", "#workflow", "#asset-list", "#next"]
+    },
+    {
+      "path": "workflows/asset_generation_workflow.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "asset production workflow",
+      "read_strategy": "read before generating or validating assets",
+      "children": ["workflows/agent_parallel_guide.md", "tools/validate_assets.py"]
+    },
+    {
+      "path": "workflows/agent_parallel_guide.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "parallel-agent ownership guide",
+      "read_strategy": "read before assigning asset scopes",
+      "children": ["logs/progress_updates.csv", "logs/issue_memory.csv", "logs/asset_registry.csv"]
+    },
+    {
+      "path": "prompts/character_sheet_prompt_notes.md",
+      "type": "markdown",
+      "language": "en",
+      "generated": false,
+      "role": "character sheet prompt rules",
+      "read_strategy": "read before writing or revising character prompts",
+      "children": [
+        "assets/characters/qingyou/prompts/asset_prompts.md",
+        "assets/characters/arisu/prompts/asset_prompts.md"
+      ]
+    }
+  ]
+}

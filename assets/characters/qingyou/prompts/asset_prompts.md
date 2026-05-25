@@ -1,6 +1,6 @@
-# Luo Qingyou Asset Prompts
+﻿# Luo Qingyou Asset Prompts
 
-These prompts are project-bound working notes. The final public pages stay Chinese-first, while prompts may use English for generation stability.
+These prompts are project-bound working notes. The public pages are locale-driven with a Chinese root site and an English mirror; prompts may use English for generation stability.
 
 ## Shared Rules
 

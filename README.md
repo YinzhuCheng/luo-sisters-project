@@ -1,33 +1,33 @@
-# 洛青悠 × 洛有栖角色企划包
+# Luo Qingyou x Luo Arisu Character Project
 
-这是一个面向后续 Codex / 多 agent 协作维护的原创角色企划包。当前阶段重点是把两张整版人设图拆成稳定网页、结构化资产目录、参考截图工作流与可复用日志。
+This repository is an original anime-style character project designed for long-running Codex and multi-agent collaboration. The current system turns full character sheets into structured web pages, strict asset folders, reference-crop workflows, bilingual public pages, and reusable documentation memory.
 
-## 快速入口
+## Quick Entry
 
-1. 打开 `index.html` 查看项目总览。
-2. 打开 `character_sheets/qingyou.html` 查看洛青悠 HTML 设定页。
-3. 打开 `character_sheets/arisu.html` 查看洛有栖 HTML 设定页。
-4. 打开 `knowledge/index.html` 查看旧归档拆分后的二级知识库。
-5. 阅读 `AGENTS.md` 获取维护规则。
-6. 阅读 `docs/content_map.md` 确认第一版长内容的位置与层级入口。
-7. 阅读 `workflows/asset_generation_workflow.md` 获取截图到透明资产的流程。
-8. 阅读 `workflows/agent_parallel_guide.md` 获取多 agent 并行规则。
+1. Read `AGENTS.md` for agent rules.
+2. Read `docs/document_governance.md` for documentation policy.
+3. Read `docs/content_map.md` for the content hierarchy.
+4. Open `index.html` for the Chinese public showcase.
+5. Open `en/index.html` for the English mirror.
+6. Open `knowledge/index.html` or `en/knowledge/index.html` for structured knowledge pages.
+7. Use `skills/project-doc-governance/scripts/read_html_doc.py` before reading large HTML files.
 
-## 生成网页
+## Build The Website
 
-建议使用当前 Codex 工作区的 bundled Python：
-
-```powershell
-& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\build_project_html.py
-```
-
-普通 Python 环境可用时也可以运行：
+Build all public locales:
 
 ```bash
 python tools/build_project_html.py
 ```
 
-生成结果：
+Build one locale:
+
+```bash
+python tools/build_project_html.py --locale zh-CN
+python tools/build_project_html.py --locale en
+```
+
+Generated outputs:
 
 - `index.html`
 - `character_sheets/qingyou.html`
@@ -37,17 +37,44 @@ python tools/build_project_html.py
 - `knowledge/story.html`
 - `knowledge/visual.html`
 - `knowledge/workflow.html`
+- `en/index.html`
+- `en/character_sheets/qingyou.html`
+- `en/character_sheets/arisu.html`
+- `en/knowledge/*.html`
 
-## 结构化资产目录
+## Low-Token HTML Reading
 
-每个角色严格独立：
+Do not open large HTML files directly unless the task is layout debugging. Summarize one page or one anchor first:
+
+```bash
+python skills/project-doc-governance/scripts/read_html_doc.py index.html
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/visual.html --anchor prompt-base
+python skills/project-doc-governance/scripts/read_html_doc.py docs/luo_sisters_project_guide_v2.html#characters
+```
+
+The reader hides scripts, styles, navigation, headers, footers, SVG/canvas decoration, and image payloads. Images are represented as placeholders until visual inspection is needed.
+
+## Data And Localization
+
+- `locales/zh-CN.json`: Chinese public UI and page copy.
+- `locales/en.json`: English public UI and page copy.
+- `project_data/knowledge_base.json`: Chinese generated knowledge content.
+- `project_data/knowledge_base.en.json`: English generated knowledge content.
+- `characters/qingyou.json`, `characters/arisu.json`: character asset slots, palettes, layout, and paths.
+- `project_data/document_catalog.json`: machine-readable documentation registry.
+
+Keep internal maintenance docs in English. Keep public display copy in locale or data files. Do not hardcode public-facing copy in Python templates.
+
+## Asset Structure
+
+Each character has an isolated root:
 
 ```text
 assets/characters/qingyou/
 assets/characters/arisu/
 ```
 
-每个角色内部保持同构目录：
+Each root keeps the same structure:
 
 ```text
 source_sheet/
@@ -59,7 +86,7 @@ prompts/
 workflow/
 ```
 
-当前资产类型：
+Current asset types:
 
 - `standing`
 - `expressions`
@@ -70,58 +97,42 @@ workflow/
 - `details`
 - `cg`
 
-## 图像工作流
+## Image Workflow
 
-1. 从 `source_sheet/` 裁出参考截图：
+1. Crop references from `source_sheet/`:
 
 ```bash
 python tools/crop_from_sheet.py --character all --force
 ```
 
-2. 以 `crops/` 中的截图作为参考图重新生成无文字、无边框、纯 `#ff00ff` 背景图。
-3. 如果截图歪、过紧或信息不足，直接回看 `source_sheet/` 中的完整设定图，把完整设定图作为第二参考；只有反复影响生产时才返工 `crop_manifest.csv`。
-4. 把生成图放入 `generated/chroma/<asset_type>/`。
-5. 批量抠图生成透明 PNG：
+2. Use each crop as a reference to regenerate a clean, textless, borderless image on flat `#ff00ff`.
+3. If a crop is skewed or lacks context, inspect the full `source_sheet/` image before changing the crop manifest.
+4. Save chroma sources under `generated/chroma/<asset_type>/`.
+5. Remove background:
 
 ```bash
 python tools/remove_chroma_batch.py --character qingyou --asset-type props
 ```
 
-6. 验证目录、路径边界和透明图：
+6. Validate:
 
 ```bash
 python tools/validate_assets.py
 ```
 
-## 数据与语言
+## Content Preservation
 
-- `characters/qingyou.json` 与 `characters/arisu.json`：角色资产槽位、色卡、版式、路径。
-- `locales/zh-CN.json`：中文网页文案，当前默认。
-- `locales/en.json`：英文文案骨架，供后续语言切换使用。
-- `project_data/knowledge_base.json`：第一版归档拆分后的知识库层级、页面、锚点、摘要与迁移状态。
-- `assets/styles/luo_sisters.css`：首页与角色页共享样式。
+- `index.html` is a lightweight public showcase, not the complete long-form archive.
+- `knowledge/*.html` and `en/knowledge/*.html` are generated structured knowledge pages.
+- `docs/luo_sisters_project_guide_v2.html` is the preserved historical Chinese archive.
+- `docs/content_map.md` explains where old and new content live.
 
-## 内容层级与保全
+## Project Memory
 
-- `index.html` 是当前轻量展示入口，不承载第一版的全部长文。
-- `knowledge/index.html` 与 `knowledge/*.html` 是第一版长内容的结构化二级知识库入口。
-- `docs/luo_sisters_project_guide_v2.html` 保留第一版完整内容，包括人设八层、故事推进、AIGC 节奏、提示词组、制作规范、资产清单和下一步。
-- `docs/content_map.md` 记录当前网页、第一版归档、结构化数据、工作流和日志之间的层级关系。
-- 已核对 `docs/luo_sisters_project_guide_v2.html` 与 `D:\original\luo_sisters_project_files\luo_sisters_project_files\docs\luo_sisters_project_guide_v2.html` 哈希一致，确认旧版长内容没有删除。
+All agents should maintain CSV logs:
 
-## 日志与项目记忆
+- `logs/progress_updates.csv`: work progress.
+- `logs/asset_registry.csv`: asset status registry.
+- `logs/issue_memory.csv`: reusable pitfalls and mitigations.
 
-所有 agent 工作时都应追加 CSV：
-
-- `logs/progress_updates.csv`：进度更新。
-- `logs/asset_registry.csv`：资产登记与状态。
-- `logs/issue_memory.csv`：遇到的坑、原因、规避方式和可复用规则。
-
-这些 CSV 是后续沉淀 skill 的材料，不要只把经验留在聊天记录里。
-
-## 当前整版参考图
-
-- `assets/images/luo_qingyou_character_sheet_v2.png`
-- `assets/images/luo_arisu_character_sheet_v1.png`
-
-两张图也复制到了各自角色目录的 `source_sheet/`，用于裁切参考，不覆盖原始历史资产。
+These logs are future skill material.

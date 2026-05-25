@@ -14,3 +14,4 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-25,Codex,project,content_map,created content preservation and hierarchy map,done,docs/content_map.md,Confirmed first-version archive and original backup hashes match
 2026-05-25,Codex,project,web,added hierarchical content links to generated index,done,index.html,Links now expose current pages archive data workflow and logs
 2026-05-25,Codex,project,knowledge_base,structured old archive into generated knowledge pages,done,knowledge/index.html,Added knowledge_base JSON plus characters story visual workflow pages with old archive anchors
+2026-05-25,Codex,project,doc_governance,added project documentation governance skill and bilingual build,done,skills/project-doc-governance,Internal docs are English and public pages now build Chinese root plus English mirror

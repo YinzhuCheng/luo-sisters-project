@@ -3,7 +3,9 @@
     "language": "en",
     "dir": "ltr",
     "title": "Luo Qingyou x Luo Arisu | Character Project",
-    "version": "0.4-html-sheets"
+    "version": "0.5-doc-governance",
+    "site_dir": "en",
+    "alternate_locale": "zh-CN"
   },
   "ui": {
     "brand": "Luo Sisters Project",
@@ -12,7 +14,9 @@
     "story": "Story",
     "workflow": "Workflow",
     "knowledge": "Knowledge",
+    "language_switch": "中文",
     "assets": "Assets",
+    "asset_expansion": "Asset Expansion",
     "open_sheet": "Open Sheet",
     "open_source": "Open Source Sheet",
     "source_reference": "Source Sheet",
@@ -33,12 +37,22 @@
     "reference_note": "The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.",
     "back_home": "Back Home",
     "content_map": "Content Map",
-    "archive": "Full Archive"
+    "archive": "Full Archive",
+    "site_footer": "HTML / CSS / asset workflow generated from structured data. Public pages are Chinese-first with an English mirror and locale separation.",
+    "knowledge_pages_eyebrow": "Knowledge Pages",
+    "knowledge_pages_title": "Structured Entries",
+    "knowledge_pages_summary": "Each page keeps source archive anchors and migration status so later agents can verify what moved where.",
+    "migration_rule_eyebrow": "Migration Rule",
+    "migration_rule_title": "Migration Rules",
+    "structured_content": "Structured Content",
+    "migration_status": "Migration Status",
+    "source_anchors": "Source Archive Anchors"
   },
   "home": {
     "eyebrow": "Character Bible · HTML Sheet System",
     "title": "Luo Qingyou x Luo Arisu",
     "subtitle": "Build the website as a stable display window first, then regenerate clothing, accessories, expressions, and props as transparent reusable assets.",
+    "summary_eyebrow": "Stage 01",
     "summary_title": "Current Goal",
     "summary": "This stage separates the original full-sheet images into structured web pages and an asset pipeline. HTML/CSS owns text, frames, palettes, and labels; generated images own characters, outfits, accessories, and props.",
     "theme_title": "Three Layers",

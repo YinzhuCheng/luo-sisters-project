@@ -3,7 +3,9 @@
     "language": "zh-CN",
     "dir": "ltr",
     "title": "洛青悠 × 洛有栖｜角色企划导航",
-    "version": "0.4-html-sheets"
+    "version": "0.5-doc-governance",
+    "site_dir": "",
+    "alternate_locale": "en"
   },
   "ui": {
     "brand": "洛氏姐妹企划",
@@ -12,7 +14,9 @@
     "story": "故事",
     "workflow": "工作流",
     "knowledge": "知识库",
+    "language_switch": "English",
     "assets": "资产",
+    "asset_expansion": "资产扩展",
     "open_sheet": "打开设定页",
     "open_source": "查看整版参考图",
     "source_reference": "整版参考图",
@@ -33,12 +37,22 @@
     "reference_note": "当前页面先用参考截图和占位槽稳定版式；透明 PNG 生成后会自动替换进入对应槽位。",
     "back_home": "返回总览",
     "content_map": "资料地图",
-    "archive": "完整归档"
+    "archive": "完整归档",
+    "site_footer": "HTML / CSS / asset workflow generated from structured data. Public pages are Chinese-first with an English mirror and locale separation.",
+    "knowledge_pages_eyebrow": "Knowledge Pages",
+    "knowledge_pages_title": "结构化入口",
+    "knowledge_pages_summary": "每页都保留原归档锚点和迁移状态，方便后续核对与逐页精修。",
+    "migration_rule_eyebrow": "Migration Rule",
+    "migration_rule_title": "迁移原则",
+    "structured_content": "当前结构化内容",
+    "migration_status": "迁移状态",
+    "source_anchors": "原归档锚点"
   },
   "home": {
     "eyebrow": "Character Bible · HTML Sheet System",
     "title": "洛青悠 × 洛有栖",
     "subtitle": "先让网页成为稳定、美观的展示窗口，再把每一个服饰、配饰、表情和物件拆成可复用透明资产。",
+    "summary_eyebrow": "Stage 01",
     "summary_title": "项目当前目标",
     "summary": "本阶段把整版设定图拆成结构化网页与资产流水线：文字、边框、色卡和标签交给 HTML/CSS；角色、服饰、配饰和道具使用参考截图重新生成透明 PNG。",
     "theme_title": "三层主题",

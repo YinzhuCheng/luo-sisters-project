@@ -1,0 +1,382 @@
+{
+  "version": "0.1-archive-skeleton",
+  "eyebrow": "Structured Archive",
+  "title": "Luo Sisters Knowledge Base",
+  "summary": "The first long archive is split into a navigable, generated, auditable knowledge layer. Showcase pages stay visual; knowledge pages carry the content depth; the old archive remains the source record.",
+  "archive_path": "docs/luo_sisters_project_guide_v2.html",
+  "hierarchy": [
+    "index.html",
+    "knowledge/index.html",
+    "knowledge/*.html",
+    "docs/luo_sisters_project_guide_v2.html#anchor"
+  ],
+  "status_labels": {
+    "skeleton-linked": "Skeleton migrated; source anchors linked",
+    "source-preserved": "Source archive preserved",
+    "ready-for-refine": "Ready for page-level refinement"
+  },
+  "intro_cards": [
+    {
+      "title": "Showcase And Knowledge Separation",
+      "text": "The index and character sheets stay lightweight, attractive, and responsive. Knowledge pages carry character, story, prompt, workflow, and asset-planning depth. The old archive stays intact as the source record.",
+      "tone": "green"
+    },
+    {
+      "title": "Migration Is Not Verbatim Copying",
+      "text": "The first pass builds full navigation, summaries, and source anchors. Later passes can expand individual pages without losing the original archive.",
+      "tone": "gold"
+    },
+    {
+      "title": "Prevent False Content Loss",
+      "text": "Each knowledge page shows structured content, migration status, and old archive anchors. If something looks missing, check knowledge pages, then the old archive, then docs/content_map.md.",
+      "tone": "blue"
+    }
+  ],
+  "pages": [
+    {
+      "id": "characters",
+      "href": "knowledge/characters.html",
+      "eyebrow": "Knowledge 01",
+      "title": "Characters And Persona Layer",
+      "summary": "The sisters' eight-layer personas, relationship formula, interaction examples, and reusable character memory points.",
+      "structured_content": "Eight-layer personas, sister relationship formula, relationship progression, interaction example",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "Old archive #characters", "href": "docs/luo_sisters_project_guide_v2.html#characters" }
+      ],
+      "sections": [
+        {
+          "id": "overview",
+          "type": "cards",
+          "eyebrow": "Role Frame",
+          "title": "Character Positioning",
+          "summary": "Make the characters work as people first, then let the theme grow out of their choices.",
+          "items": [
+            {
+              "title": "Luo Qingyou",
+              "text": "Planner, recorder, reality anchor, Chinese-inspired classic Lolita. She protects dreams through order.",
+              "tone": "green"
+            },
+            {
+              "title": "Luo Arisu",
+              "text": "Imagination, doorway, Alice motif, JK Lolita. She searches for dreams through disorder.",
+              "tone": "blue"
+            },
+            {
+              "title": "Relationship Formula",
+              "text": "Arisu gives Qingyou a dream; Qingyou gives Arisu a path. One supplies arrival, the other supplies the reason to depart.",
+              "tone": "gold"
+            }
+          ]
+        },
+        {
+          "id": "eight-layers",
+          "type": "details",
+          "eyebrow": "Eight Layers",
+          "title": "Eight-Layer Personas",
+          "summary": "Expandable details preserve the depth of the old archive while keeping the page easy to scan.",
+          "groups": [
+            {
+              "title": "Luo Qingyou | Protecting Dreams Through Order",
+              "intro": "Her anchors are sage classic Lolita styling, project journals, cameras, tea, old streets, cloud collars, frog buttons, and celadon green.",
+              "tone": "green",
+              "items": [
+                { "title": "1. First Impression", "text": "Sage Chinese-inspired classic Lolita, scholar-like mood, cloud collar, frog buttons, lace, old camera, journal, tea snacks. Her first impression is gentle reliability.", "open": true },
+                { "title": "2. Daily Layer", "text": "Arrives early, carries clips, bandages, tape, sticky notes, and scissors. Checks the light before people when taking photos." },
+                { "title": "3. Behavioral Memory", "text": "When Arisu proposes an idea, Qingyou opens her journal before answering. When tense, she adjusts cuffs or camera straps and leaves an 'unexpected' column in plans." },
+                { "title": "4. Ability Layer", "text": "Planning, coordination, aesthetic judgment, archival work, photography, execution, and risk planning." },
+                { "title": "5. Relationship Layer", "text": "Arisu's imagination is the brightest surprise in Qingyou's life. Qingyou protects and prepares, but must learn to leave room for Arisu's dream to breathe." },
+                { "title": "6. Anxiety Response", "text": "Qingyou uses order against anxiety. Her kindness carries fatigue because she often turns care into responsibility." },
+                { "title": "7. Hidden Conflict", "text": "AIGC shakes her value: if tools can plan, organize, and optimize, what remains of the skills she relied on?" },
+                { "title": "8. Growth Layer", "text": "She moves from doing every step by hand to choosing what must stay human: judgment, relationships, aesthetics, and shared experience." }
+              ]
+            },
+            {
+              "title": "Luo Arisu | Searching For Dreams Through Disorder",
+              "intro": "Her anchors are blue-white JK Lolita styling, keys, rabbits, pocket watches, old libraries, secret doors, daisies, and Alice motifs.",
+              "tone": "blue",
+              "items": [
+                { "title": "1. First Impression", "text": "Blue-white JK Lolita, blouse, pinafore, bow, daisy, key necklace, rabbit charm, pocket-watch bag, and old books. She feels like an Alice figure searching for a rabbit hole at school.", "open": true },
+                { "title": "2. Daily Layer", "text": "Stops at hallway doors, gives names to charms and objects, and writes diary entries like story openings." },
+                { "title": "3. Behavioral Memory", "text": "Touches her key necklace while thinking and her bow when nervous. She notices doors, mirrors, stairs, and windows longer than other people do." },
+                { "title": "4. Ability Layer", "text": "Concept creation, mood naming, fairy-tale expression, and noticing strange feelings inside ordinary life." },
+                { "title": "5. Relationship Layer", "text": "She depends on Qingyou's execution, but needs her odd ideas to be preserved rather than normalized." },
+                { "title": "6. Anxiety Response", "text": "Arisu uses exploration against anxiety. Detours, daydreaming, and strange sentences delay pressure until she can face it." },
+                { "title": "7. Hidden Conflict", "text": "She fears reality will not match imagination. Perfect generated Wonderlands attract her because they keep dreams beautiful and risk-free." },
+                { "title": "8. Growth Layer", "text": "She moves from waiting for the white rabbit to choosing the door herself, keeping wonder while accepting consequences." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "relationship",
+          "type": "cards",
+          "eyebrow": "Relationship",
+          "title": "Relationship Progression",
+          "summary": "Turn complementarity, conflict, and repair into scenes that can be written or illustrated.",
+          "items": [
+            { "title": "Progression", "text": "Early: light comedic complementarity. Middle: cute habits become pressure. Late: one learns to leave blanks; the other learns to choose.", "tone": "gold" },
+            { "title": "Interaction Example", "text": "Arisu proposes a tea party only lost people can attend. Qingyou answers by giving the dream a date. Their conflict is how to plan getting lost without closing the door.", "tone": "green" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "href": "knowledge/story.html",
+      "eyebrow": "Knowledge 02",
+      "title": "Story Outline And Theme Layer",
+      "summary": "Rabbit Hole Tea Party plot, chapter progression, AIGC rhythm, supporting character functions, and key scene hooks.",
+      "structured_content": "Three story lines, chapter table, AIGC rhythm, supporting cast functions, scene hooks",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "Old archive #story", "href": "docs/luo_sisters_project_guide_v2.html#story" }
+      ],
+      "sections": [
+        {
+          "id": "story-lines",
+          "type": "cards",
+          "eyebrow": "Three Lines",
+          "title": "Three Story Lines",
+          "summary": "The surface is the tea party, the middle is the sister relationship, and the deeper layer is anxiety and choice in the AIGC era.",
+          "items": [
+            { "title": "Surface Line", "text": "The sisters prepare a small Alice-flavored tea party: venue, outfits, invitations, photos, sweets, entry route, and decorations.", "tone": "green" },
+            { "title": "Emotional Line", "text": "Qingyou wants the dream to land safely; Arisu wants the door to keep glowing.", "tone": "blue" },
+            { "title": "Era Line", "text": "AIGC gradually appears as tool, companion, adviser, and recommender. It helps the characters and amplifies their coping habits.", "tone": "gold" }
+          ]
+        },
+        {
+          "id": "chapters",
+          "type": "table",
+          "eyebrow": "Chapter Table",
+          "title": "Chapter Progression",
+          "summary": "Preserve public events, character changes, and AIGC exposure in a compact expansion table.",
+          "headers": ["Stage", "Visible Event", "Character Change", "AIGC Exposure"],
+          "rows": [
+            ["Opening", "Arisu proposes the lost-person tea party; Qingyou starts recording.", "The sisters' complementarity is established.", "AI poster generation appears as casual school life."],
+            ["Early Prep", "They search for the old library, draft invitations, and design blue-white and sage-green outfits.", "Reliability and imagination both shine.", "The White Rabbit system offers reference images and route suggestions."],
+            ["Small Sting", "Qingyou's handmade draft is easily outperformed by an AI version.", "Her value anxiety is seeded.", "AIGC becomes an efficiency contrast."],
+            ["Split", "Qingyou uses an LLM to optimize the invitation and flattens Arisu's fairy-tale sentence.", "Arisu feels her door has closed; Qingyou feels misunderstood.", "The tool triggers the misunderstanding."],
+            ["Middle Crisis", "The tea party becomes more perfect and more empty; Arisu sinks into generated Wonderland.", "Qingyou is trapped in task lists; Arisu is trapped in a perfect dream.", "Generation, companionship, and advice all surface."],
+            ["Turn", "Both admit their fears.", "They begin writing prompts and boundaries together.", "AI returns to an assistant role."],
+            ["Ending", "A rainy tea party begins and the accidental parts become the memory.", "Qingyou leaves blanks; Arisu chooses.", "Tools fade into the background."]
+          ]
+        },
+        {
+          "id": "aigc-rhythm",
+          "type": "cards",
+          "eyebrow": "AIGC Rhythm",
+          "title": "AIGC Appearance Rhythm",
+          "summary": "AIGC should not steal the visible story; it becomes an anxiety amplifier in the middle and late phases.",
+          "items": [
+            { "title": "Early | 5%", "text": "Background air: posters, references, schedules." },
+            { "title": "Early-Mid | 15%", "text": "Efficiency contrast: Qingyou feels a small sting." },
+            { "title": "Middle | 35%", "text": "Side characters show companion, adviser, and generator uses." },
+            { "title": "Mid-Late | 45%", "text": "AIGC directly amplifies the sisters' conflict." },
+            { "title": "Late | 20%", "text": "The tool returns to the background while real experience closes the theme." }
+          ]
+        },
+        {
+          "id": "supporting-cast",
+          "type": "cards",
+          "eyebrow": "Cast Function",
+          "title": "Supporting Cast And AI Use Styles",
+          "summary": "Side characters carry companionship, advice, and system-entry dimensions.",
+          "items": [
+            { "title": "Nanxing | AI As Companion", "text": "A long-term chat companion gives stable memory and comfort. Her growth is toward slight risk in real relationships.", "tone": "blue" },
+            { "title": "Mingxia | AI As Adviser", "text": "A student-council type who asks systems to rate risk, traffic, and routes. She represents the temptation of optimal answers.", "tone": "green" },
+            { "title": "White Rabbit System | Era Entry", "text": "A bundle of recommendation, generation, reminders, and guidance. Useful, cheerful, and always a little too urgent.", "tone": "gold" }
+          ]
+        },
+        {
+          "id": "hooks",
+          "type": "checklist",
+          "eyebrow": "Scene Hooks",
+          "title": "Key Scene Hooks",
+          "summary": "Reusable memory points for chapters, key visuals, and future web displays.",
+          "items": [
+            "Arisu writes an invitation asking guests to bring one piece of getting lost before the tea cools.",
+            "An LLM makes the invitation clearer and more formal; Arisu says it closed her door.",
+            "Arisu tells Qingyou that she even scheduled getting lost.",
+            "Qingyou admits she is afraid of becoming unnecessary if everything she is good at can be replaced.",
+            "The sisters rewrite prompts together: preserve the feeling of getting lost while ensuring guests can return safely.",
+            "Rain, puddles, umbrellas, wrong turns, and laughter become the real memory."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visual",
+      "href": "knowledge/visual.html",
+      "eyebrow": "Knowledge 03",
+      "title": "Visual Direction And Prompt Library",
+      "summary": "Art direction, post-layout text rules, expression rules, duo key visual, and prompt groups for both sisters.",
+      "structured_content": "Art direction, prompt groups, expression rules, duo key visual",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "Old archive #visual", "href": "docs/luo_sisters_project_guide_v2.html#visual" }
+      ],
+      "sections": [
+        {
+          "id": "art-direction",
+          "type": "cards",
+          "eyebrow": "Art Direction",
+          "title": "Unified Art Direction",
+          "summary": "Images serve character identity and reproducibility first; final text belongs to web or post-layout tools.",
+          "items": [
+            { "title": "Style", "text": "Japanese anime character sheet, clean lineart, soft cel shading, clear detail, low-saturation colors, light-novel cover and production-reference mood.", "tone": "gold" },
+            { "title": "Image Control", "text": "Readable outfit construction, reusable accessories, stable hair silhouettes, and clear color roles.", "tone": "green" },
+            { "title": "Text Rule", "text": "Generate characters, outfits, ornaments, and blank layout space first. Add titles, labels, and long copy through HTML, SVG, or PIL.", "tone": "blue" },
+            { "title": "Expression Rule", "text": "Every expression must visibly change brows, eyes, mouth, head angle, gesture, or shoulders.", "tone": "gold" }
+          ]
+        },
+        {
+          "id": "prompt-base",
+          "type": "prompts",
+          "eyebrow": "Prompt Base",
+          "title": "General Prompt Base",
+          "summary": "Prompt content uses code blocks for copying, versioning, and later refinement.",
+          "items": [
+            {
+              "title": "General Base Prompt",
+              "source_id": "base-prompt",
+              "code": "Japanese anime character design sheet, clean precise lineart, soft cel shading, elegant pastel color palette, high detail outfit construction, readable accessories, full body, balanced proportions, expressive eyes, gentle light, character reference sheet style, white or warm neutral background, clear silhouette, organized layout, production-ready design"
+            }
+          ]
+        },
+        {
+          "id": "qingyou-prompts",
+          "type": "prompts",
+          "eyebrow": "Luo Qingyou",
+          "title": "Luo Qingyou Prompt Group",
+          "summary": "Sage, ivory, celadon, Chinese-inspired classic Lolita, cloud collar, frog buttons, lace, plum branch, old camera, project journal, tea set.",
+          "items": [
+            { "title": "Line Exploration", "source_id": "qy-line", "code": "Luo Qingyou, gentle older sister character, Chinese-inspired classic Lolita, sage green and ivory outfit, yun-jian collar capelet, frog buttons, lace sleeves, long dark hair, small plum blossom hairpin, vintage camera strap, project journal in hand, clean black and white lineart, three silhouette variations, fashion design exploration sheet, readable garment layers" },
+            { "title": "Standard Standing", "source_id": "qy-stand", "code": "Luo Qingyou full body standard standing pose, Chinese classic Lolita dress, sage green skirt, ivory blouse, delicate lace cuffs, cloud shoulder inspired collar, subtle embroidery, vintage camera at her side, green project journal, warm calm smile, elegant and reliable aura, Japanese anime character reference, soft cel shading, clean background, production-ready character sheet" },
+            { "title": "Turnaround", "source_id": "qy-turnaround", "code": "Luo Qingyou character turnaround sheet, front view side view back view, Chinese-inspired classic Lolita outfit, consistent hairstyle and accessories, visible cloud collar structure, frog buttons, skirt layers, camera strap placement, journal pouch, clean lineart with flat color, annotation-friendly layout" },
+            { "title": "Expressions", "source_id": "qy-exp", "code": "Luo Qingyou expression sheet, 8 clearly distinct bust expressions with consistent long dark hair, sage ornament, Chinese classic Lolita collar and ivory blouse. Vary brows, eyes, mouth, head angle, and gesture: gentle listening, closed-eye smile, focused recording, sideways thinking, slight surprise, troubled smile, tired gentleness, relief after rain." },
+            { "title": "Props", "source_id": "qy-props", "code": "Luo Qingyou prop sheet, vintage camera, sage green project journal, dried flower bookmark, plum blossom hairpin, small tea cup, invitation card, lace ribbon, spare hair clips, camera strap details, clean object design sheet, labeled layout, soft colors" },
+            { "title": "Key Art | Old Street Light", "source_id": "qy-cg1", "code": "Luo Qingyou in an old street tea shop, warm afternoon light through wooden window lattice, sage green Chinese classic Lolita dress, vintage camera raised gently, project journal open on the table with dried flowers, calm reliable expression, cinematic anime illustration, soft nostalgic atmosphere, detailed but readable background" },
+            { "title": "Key Art | Rain Plan Blank", "source_id": "qy-cg2", "code": "Luo Qingyou under a transparent umbrella on a rainy tea party day, holding a green journal with an empty section titled unexpected, gentle smile after accepting the rain, Chinese classic Lolita outfit with lace and cloud collar, wet stone path, warm lantern reflections, emotional anime key visual" }
+          ]
+        },
+        {
+          "id": "arisu-prompts",
+          "type": "prompts",
+          "eyebrow": "Luo Arisu",
+          "title": "Luo Arisu Prompt Group",
+          "summary": "Blue-white, JK Lolita, blouse, pinafore, bow, daisy, key necklace, rabbit charm, pocket-watch bag, old books.",
+          "items": [
+            { "title": "Line Exploration", "source_id": "ar-line", "code": "Luo Arisu, blue white JK Lolita girl, Alice motif, white blouse, blue pinafore dress, school ribbon tie, key necklace, rabbit charm bag, pocket watch accessory, daisy hair ornament, long dark hair with soft braids, clean black and white lineart, three silhouette variations, fashion design exploration sheet" },
+            { "title": "Standard Standing", "source_id": "ar-stand", "code": "Luo Arisu full body standard standing pose, blue and white JK Lolita outfit, white blouse, blue pinafore skirt with soft volume, school ribbon, daisy hair accessory, key necklace, rabbit pocket watch bag, white socks and mary jane shoes, curious gentle expression, Japanese anime character reference, soft cel shading, clean background" },
+            { "title": "Turnaround", "source_id": "ar-turnaround", "code": "Luo Arisu character turnaround sheet, front view side view back view, blue white JK Lolita outfit, consistent key necklace, rabbit bag, ribbon tie, skirt volume, socks and shoes, readable back bow and school bag details, clean lineart with flat color, annotation-friendly layout" },
+            { "title": "Expressions", "source_id": "ar-exp", "code": "Luo Arisu expression sheet, curious smile, surprised discovery, dreamy gaze, shy hesitation, nervous while holding key necklace, playful secret, almost crying, brave determined smile, Japanese anime expression reference, consistent face and hairstyle, cropped busts" },
+            { "title": "Props", "source_id": "ar-props", "code": "Luo Arisu prop sheet, key necklace, rabbit charm, pocket watch bag, small old storybook, music box, daisy hairpin, blue ribbon, tea cup charm, playing card hair clip, school bag with many charms, clean object design sheet, labeled layout, pastel blue palette" },
+            { "title": "Key Art | Corridor Door", "source_id": "ar-cg1", "code": "Luo Arisu standing in a quiet school corridor after class, blue white JK Lolita outfit, holding a key necklace, looking at an ordinary door glowing softly, rabbit charm swinging from her bag, dreamy Alice-inspired atmosphere, gentle curiosity, cinematic anime illustration, soft blue light" },
+            { "title": "Key Art | Before Tea Cools", "source_id": "ar-cg2", "code": "Luo Arisu writing a strange tea party invitation, text mood says bring one piece of getting lost before the tea turns cold, blue white JK Lolita outfit, old books, keys, rabbit and pocket watch motifs on the desk, warm lamp and cool evening window, emotional anime key visual" }
+          ]
+        },
+        {
+          "id": "duo-kv",
+          "type": "prompts",
+          "eyebrow": "Key Visual",
+          "title": "Duo Key Visual Prompt",
+          "summary": "Keep 'Door And Journal' as the first priority duo key visual.",
+          "items": [
+            { "title": "Duo KV | Door And Journal", "source_id": "duo-kv", "code": "Two girls, Luo Qingyou and Luo Arisu, sister-like pair, one in sage green Chinese classic Lolita holding a project journal and vintage camera, one in blue white JK Lolita holding a key necklace and rabbit pocket watch bag, standing before a half-open door to a tea party garden, warm rain afterglow, balance of order and wonder, Japanese anime key visual, elegant composition, detailed outfits, emotional storytelling" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "href": "knowledge/workflow.html",
+      "eyebrow": "Knowledge 04",
+      "title": "Production Rules And Asset Planning",
+      "summary": "Japanese anime character-project production flow, asset list, unified checklist, and next-step suggestions.",
+      "structured_content": "Production flow, asset list, unified checklist, next steps",
+      "migration_status": "skeleton-linked",
+      "source_anchors": [
+        { "label": "Old archive #workflow", "href": "docs/luo_sisters_project_guide_v2.html#workflow" },
+        { "label": "Old archive #asset-list", "href": "docs/luo_sisters_project_guide_v2.html#asset-list" },
+        { "label": "Old archive #next", "href": "docs/luo_sisters_project_guide_v2.html#next" }
+      ],
+      "sections": [
+        {
+          "id": "production-flow",
+          "type": "table",
+          "eyebrow": "Production Workflow",
+          "title": "Anime Character Project Production Flow",
+          "summary": "Move through concept, line exploration, standing art, reference sheet, key art, and application assets.",
+          "headers": ["Stage", "Output", "Check"],
+          "rows": [
+            ["0. Character Bible", "Name, signature line, theme role, relationships, fixed identity marks.", "One sentence explains who she is; three memory points stay stable."],
+            ["1. Moodboard", "Outfit, hair, palette, material, props, scene references.", "Qingyou leans sage-classic-tea; Arisu leans blue-school-Alice."],
+            ["2. Silhouettes", "3-6 small silhouettes per character.", "They remain distinct when detail is hidden."],
+            ["3. Line Exploration", "Hair, skirt, collar, cuffs, socks, shoes, bags.", "Outfit layers and accessory positions are clear."],
+            ["4. Color Roughs", "Three palette and lighting tests.", "Main, secondary, and accent colors have clear jobs."],
+            ["5. Standard Standing", "Full-body front standing art.", "Usable as the parent image for later work."],
+            ["6. Turnaround", "Front, side, back, with key structure notes.", "Skirt, hair ornaments, straps, socks, shoes, and back bow are complete."],
+            ["7. Expressions", "8-12 expressions per character.", "Brows, eyes, mouth, head angle, and gesture visibly differ."],
+            ["8. Pose Sheet", "Standing, sitting, photographing, journaling, door-looking, invitation-giving.", "Actions serve character, not just beauty."],
+            ["9. Outfit Variants", "Standard, casual, tea-party, rainy-day, winter, light campus outfits.", "Core identity marks survive the outfit change."],
+            ["10. Props", "Camera, journal, key, pocket-watch bag, invitation, tea cup, school bag.", "Each prop can tell story on its own."],
+            ["11. Key Art", "Two solo key arts each and one or two duo key visuals.", "Key art expresses theme, relationship, and growth."],
+            ["12. Application Assets", "Avatars, chibi art, stickers, banners, Live2D rough splits.", "Used for promotion and iteration."]
+          ]
+        },
+        {
+          "id": "asset-list",
+          "type": "cards",
+          "eyebrow": "Asset List",
+          "title": "Old Archive Asset List",
+          "summary": "The first pass links the old asset list into the new hierarchy; later passes can split it into asset_registry.csv and character slots.",
+          "items": [
+            { "title": "Luo Qingyou Asset List", "text": "Standard standing art, turnaround, expressions, photographing/journaling/serving tea/umbrella/adjusting bow poses, old camera, sage journal, tea cup, dried flower bookmark, spare clips, old street tea-shop light, rainy plan blank.", "tone": "green" },
+            { "title": "Luo Arisu Asset List", "text": "Standard standing art, turnaround, curious/surprised/dreamy/shy/hurt/brave expressions, door-looking/key-holding/invitation-writing/charm-swinging/threshold poses, key necklace, pocket-watch bag, rabbit charm, old book, music box, blue ink, corridor door, before-tea-cools scene.", "tone": "blue" }
+          ]
+        },
+        {
+          "id": "checklist",
+          "type": "checklist",
+          "eyebrow": "Unified Checklist",
+          "title": "Unified Checklist",
+          "summary": "Reuse these rules during generation, filing, and web linking.",
+          "items": [
+            "When Qingyou changes outfits, preserve sage green, journal or camera, and Chinese-inspired structure cues.",
+            "When Arisu changes outfits, preserve blue-white, key or rabbit, and campus/Alice cues.",
+            "Every image should answer: does this make the character clearer?",
+            "Every prop needs narrative function: relationship, personality, or theme.",
+            "Prefer key art that captures an event over pure standing display.",
+            "If a crop is skewed, tight, or unclear, consult the full source_sheet before editing crop_manifest."
+          ]
+        },
+        {
+          "id": "next",
+          "type": "cards",
+          "eyebrow": "Next Step",
+          "title": "Next-Step Suggestions",
+          "summary": "Standardize references before generation and manual correction.",
+          "items": [
+            { "title": "1. Fix Character Cards", "text": "Confirm age, height, birthday, school or club, family relation, speech style, and common props." },
+            { "title": "2. Make First Turnarounds", "text": "Start with line art or low-color roughs, inspect silhouette and structure, then add material detail." },
+            { "title": "3. Choose First Duo Key Visual", "text": "Start with Door And Journal: Arisu finds the door, Qingyou records and prepares the path back." }
+          ]
+        },
+        {
+          "id": "related-workflows",
+          "type": "links",
+          "eyebrow": "Related Files",
+          "title": "Related Production Files",
+          "summary": "Knowledge pages carry the old archive structure; production still follows workflows, scripts, and CSV logs.",
+          "items": [
+            { "label": "Asset Generation Workflow", "href": "workflows/asset_generation_workflow.md", "note": "Crop-to-transparent-asset process" },
+            { "label": "Parallel Agent Guide", "href": "workflows/agent_parallel_guide.md", "note": "Strict character and asset-type ownership" },
+            { "label": "Asset Registry CSV", "href": "logs/asset_registry.csv", "note": "Asset source, prompt, output, and status" },
+            { "label": "Issue Memory CSV", "href": "logs/issue_memory.csv", "note": "Reusable mitigation rules" }
+          ]
+        }
+      ]
+    }
+  ]
+}

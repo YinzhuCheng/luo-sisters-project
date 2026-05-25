@@ -1,6 +1,6 @@
 # Asset Generation Workflow
 
-This workflow is the source of truth for turning the existing full character sheets into reusable transparent assets.
+This workflow is the source of truth for turning the existing full character sheets into reusable transparent assets. Internal workflow documentation is English; public page copy is localized through data files.
 
 ## 1. Start From The Character Folder
 
@@ -36,6 +36,12 @@ Each crop is controlled by:
 - `assets/characters/arisu/workflow/crop_manifest.csv`
 
 If you adjust crop coordinates, update the manifest and append a row to `logs/progress_updates.csv`.
+
+Before reading generated HTML pages for context, use:
+
+```bash
+python skills/project-doc-governance/scripts/read_html_doc.py knowledge/workflow.html
+```
 
 ## 3. Crop Accuracy And Full-Sheet Fallback
 
@@ -118,6 +124,8 @@ python tools/validate_assets.py
 ```
 
 Use `--strict` only when the phase requires every transparent PNG to exist.
+
+The default HTML build writes the Chinese root site and the English mirror under `en/`.
 
 ## 8. Preserve Learnings
 

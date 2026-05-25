@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Doc Governance"
+  short_description: "Read and govern repo docs with low-token HTML summaries."
+  default_prompt: "Use the project-doc-governance skill to inspect this repository's documentation entrypoints, read HTML pages progressively, and update documentation governance rules."
