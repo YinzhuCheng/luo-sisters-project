@@ -165,13 +165,16 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Validate structured assets and transparent PNGs.")
     parser.add_argument("--character", choices=(*CHARACTER_IDS, "all"), default="all")
     parser.add_argument("--strict", action="store_true", help="Treat missing transparent assets as errors.")
+    parser.add_argument("--json-out", help="Optional JSON report path.")
     args = parser.parse_args()
 
     characters = CHARACTER_IDS if args.character == "all" else (args.character,)
     all_errors: list[str] = []
     all_warnings: list[str] = []
+    per_character: dict[str, dict[str, list[str]]] = {}
     for character in characters:
         errors, warnings = validate_character(character, strict=args.strict)
+        per_character[character] = {"errors": errors, "warnings": warnings}
         all_errors.extend(errors)
         all_warnings.extend(warnings)
 
@@ -179,6 +182,18 @@ def main() -> None:
         print(f"WARN {warning}")
     for error in all_errors:
         print(f"ERROR {error}")
+
+    payload = {
+        "status": "failed" if all_errors else "passed",
+        "characters": list(characters),
+        "warnings": all_warnings,
+        "errors": all_errors,
+        "per_character": per_character
+    }
+    if args.json_out:
+        json_path = Path(args.json_out).resolve()
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     if all_errors:
         raise SystemExit(1)

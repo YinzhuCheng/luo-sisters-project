@@ -919,6 +919,7 @@ def build(locale_code: str) -> list[Path]:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build Luo sisters static HTML pages.")
     parser.add_argument("--locale", help="Locale JSON name in locales/. Omit to build all public locales.")
+    parser.add_argument("--json-out", help="Optional JSON report path.")
     args = parser.parse_args()
     locales = (args.locale,) if args.locale else DEFAULT_LOCALES
     outputs: list[Path] = []
@@ -926,6 +927,15 @@ def main() -> None:
         outputs.extend(build(locale_code))
     for path in outputs:
         print(f"Wrote {path}")
+    if args.json_out:
+        payload = {
+            "status": "passed",
+            "locales": list(locales),
+            "outputs": [str(path) for path in outputs]
+        }
+        json_path = Path(args.json_out).resolve()
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 if __name__ == "__main__":

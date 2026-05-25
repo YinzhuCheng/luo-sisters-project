@@ -76,6 +76,14 @@ If Windows resolves `python` to the Microsoft Store shim, use the bundled runtim
 & 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\build_project_html.py
 ```
 
+Run harness stages:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py preflight harness\task_templates\task_packet.example.json
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py verify harness\task_templates\task_packet.example.json
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py bundle harness\task_templates\task_packet.example.json
+```
+
 Validate assets:
 
 ```bash

@@ -103,6 +103,18 @@ Harness engineering assets live under `harness/`.
 
 The harness is the machine-readable governance layer; Markdown docs explain it, but future execution should rely on harness metadata.
 
+## Harness CLI
+
+The first harness execution entrypoint is:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py preflight harness\task_templates\task_packet.example.json
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py verify harness\task_templates\task_packet.example.json
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py bundle harness\task_templates\task_packet.example.json
+```
+
+Harness run artifacts write to `logs/harness_runs/<timestamp>-<task-id>/`.
+
 ## Asset Structure
 
 Each character has an isolated root:

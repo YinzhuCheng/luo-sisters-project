@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -23,6 +24,7 @@ def main() -> int:
     parser.add_argument("--width", type=int, default=1440, help="Viewport width.")
     parser.add_argument("--height", type=int, default=2200, help="Viewport height.")
     parser.add_argument("--wait-ms", type=int, default=1200, help="Extra wait after load.")
+    parser.add_argument("--json-out", help="Optional JSON report path.")
     args = parser.parse_args()
 
     target = normalize_target(args.target)
@@ -38,9 +40,19 @@ def main() -> int:
         page.screenshot(path=str(output_path), full_page=True)
         browser.close()
 
-    print(f"target={target}")
-    print(f"title={title}")
-    print(f"screenshot={output_path}")
+    payload = {
+        "target": target,
+        "title": title,
+        "screenshot": str(output_path),
+        "viewport": {"width": args.width, "height": args.height}
+    }
+    if args.json_out:
+        json_path = Path(args.json_out).resolve()
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print(f"target={payload['target']}")
+    print(f"title={payload['title']}")
+    print(f"screenshot={payload['screenshot']}")
     return 0
 
 

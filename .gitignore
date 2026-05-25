@@ -9,3 +9,5 @@ Thumbs.db
 *.bak
 .env
 .env.*
+logs/browser-smoke-*.png
+logs/harness_runs/

@@ -49,6 +49,9 @@
   ],
   "metadata": {
     "owner_domain": "docs-knowledge",
-    "check_profile": "harness/check_profiles/docs.json"
+    "check_profile": "harness/check_profiles/docs.json",
+    "reader_targets": [
+      "knowledge/navigation.html"
+    ]
   }
 }

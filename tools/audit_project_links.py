@@ -2,6 +2,7 @@
 """Audit project links, asset references, and forbidden legacy entrypoints."""
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import re
@@ -135,6 +136,9 @@ def audit_registry() -> list[str]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Audit repository links and structured asset references.")
+    parser.add_argument("--json-out", help="Optional JSON report path.")
+    args = parser.parse_args()
     errors: list[str] = []
     for path in ROOT.rglob("*"):
         if path.is_file() and path.suffix in TEXT_EXTENSIONS:
@@ -145,6 +149,15 @@ def main() -> None:
     errors.extend(audit_document_catalog())
     errors.extend(audit_character_configs())
     errors.extend(audit_registry())
+
+    payload = {
+        "status": "failed" if errors else "passed",
+        "errors": errors
+    }
+    if args.json_out:
+        json_path = Path(args.json_out).resolve()
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     if errors:
         for error in errors:

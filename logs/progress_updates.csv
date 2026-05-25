@@ -11,6 +11,7 @@ date,agent,character,asset_type,task,status,output_path,notes
 2026-05-26,Codex,project,browser_automation,installed Playwright Chromium runtime and added smoke-check script,done,tools/browser_smoke_check.py,Visual QA can now run through bundled Python plus docs/browser_automation.md
 2026-05-26,Codex,project,knowledge,removed migration and source-anchor wording from knowledge surfaces,done,project_data/knowledge_base.json,Knowledge pages now describe current structure only and no longer foreground archive-era migration status
 2026-05-26,Codex,project,harness,created harness control-plane structure and machine-readable governance schemas,done,harness,Phase 1 adds ownership boundaries task packet schema check profiles and entry-doc links
+2026-05-26,Codex,project,harness,added harness CLI and machine-readable tool reports,done,tools/harness_cli.py,Phase 2 adds preflight verify bundle score plus JSON sidecars for build link audit asset validation and browser smoke
 2026-05-25,Codex,project,web,built index and character sheets,done,index.html,Generated index plus qingyou and arisu character_sheets
 2026-05-25,Codex,project,validation,ran asset validation,passed,tools/validate_assets.py,Transparent assets are still planned and placeholders are expected
 2026-05-25,Codex,project,responsive_css,fixed asset grid overflow,done,assets/styles/luo_sisters.css,Reset figure margins after browser QA found minor overflow
