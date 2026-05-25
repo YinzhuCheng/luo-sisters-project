@@ -1,38 +1,98 @@
 {
-  "version": "1.0",
-  "status": "baseline",
-  "last_updated": null,
-  "total_score": 0,
+  "version": "1.1",
+  "status": "passing",
+  "last_updated": "2026-05-26T02:01:30",
+  "last_run": "logs\\harness_runs\\20260526-020105-harness-maintenance",
+  "total_score": 99,
   "dimensions": {
     "doc_legibility": {
-      "score": 0,
-      "status": "unknown",
-      "notes": "Not scored yet."
+      "score": 20,
+      "status": "strong",
+      "notes": [
+        "Entry documents are present.",
+        "HTML reading skill and CI guide are present.",
+        "Document catalog registers navigation, assets, and CI guide.",
+        "docs-governance-maintenance: passed"
+      ]
     },
     "task_packet_coverage": {
-      "score": 0,
-      "status": "unknown",
-      "notes": "Not scored yet."
+      "score": 20,
+      "status": "strong",
+      "notes": [
+        "7/7 expected task packets are present."
+      ]
     },
     "page_qa_coverage": {
-      "score": 0,
-      "status": "unknown",
-      "notes": "Not scored yet."
+      "score": 20,
+      "status": "strong",
+      "notes": [
+        "Browser automation tooling is present.",
+        "Docs and page workflows are configured.",
+        "knowledge-page-structure: passed",
+        "site-smoke-check: passed"
+      ]
     },
     "asset_lineage_completeness": {
-      "score": 0,
-      "status": "unknown",
-      "notes": "Not scored yet."
+      "score": 19,
+      "status": "strong",
+      "notes": [
+        "Character config, registry, and crop manifests are present.",
+        "Character and shared asset packets are present.",
+        "qingyou-asset-batch: passed with warnings",
+        "arisu-asset-batch: passed with warnings",
+        "asset-registry-sync: passed with warnings"
+      ]
     },
     "policy_compliance": {
-      "score": 0,
-      "status": "unknown",
-      "notes": "Not scored yet."
+      "score": 20,
+      "status": "strong",
+      "notes": [
+        "Core governance policy files are present.",
+        "All harness delivery-loop workflows are present.",
+        "Issue memory exposes trace fields for policy and verify mapping.",
+        "harness-maintenance: passed",
+        "No pending promotion suggestions from issue memory."
+      ]
     }
   },
   "scoring_defaults": {
     "max_per_dimension": 20,
     "passing_total": 75,
     "warning_total": 55
+  },
+  "latest_reports": {
+    "docs-governance-maintenance": {
+      "run_dir": "logs\\harness_runs\\20260526-014546-docs-governance-maintenance",
+      "status": "passed"
+    },
+    "knowledge-page-structure": {
+      "run_dir": "logs\\harness_runs\\20260526-014546-knowledge-page-structure",
+      "status": "passed"
+    },
+    "site-smoke-check": {
+      "run_dir": "logs\\harness_runs\\20260525-175157-site-smoke-check",
+      "status": "passed"
+    },
+    "qingyou-asset-batch": {
+      "run_dir": "logs\\harness_runs\\20260526-014546-qingyou-asset-batch",
+      "status": "passed_with_warnings"
+    },
+    "arisu-asset-batch": {
+      "run_dir": "logs\\harness_runs\\20260525-175857-arisu-asset-batch",
+      "status": "passed_with_warnings"
+    },
+    "asset-registry-sync": {
+      "run_dir": "logs\\harness_runs\\20260525-175857-asset-registry-sync",
+      "status": "passed_with_warnings"
+    },
+    "harness-maintenance": {
+      "run_dir": "logs\\harness_runs\\20260526-020105-harness-maintenance",
+      "status": "passed"
+    }
+  },
+  "maintenance_summary": {
+    "issue_rows": 16,
+    "unique_issue_keys": 16,
+    "suggestions": []
   }
 }

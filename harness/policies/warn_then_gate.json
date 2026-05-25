@@ -19,5 +19,17 @@
     "issue_to_policy_after_occurrences": 2,
     "issue_to_verify_after_occurrences": 3,
     "issue_to_blocking_gate": "repeat regressions after policy and verify coverage exist"
-  }
+  },
+  "issue_trace_fields": [
+    "issue_key",
+    "policy_ref",
+    "check_ref",
+    "promotion_level"
+  ],
+  "promotion_levels": [
+    "note",
+    "policy",
+    "verify",
+    "blocking"
+  ]
 }

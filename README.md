@@ -114,6 +114,7 @@ GitHub Actions runs the harness delivery loop through:
 - `.github/workflows/harness-maintenance.yml`
 
 Use `docs/harness_ci.md` when a run fails or warns. Start with the uploaded `report.json`, then `summary.md`, then the packet and check profile referenced by the report.
+Maintenance runs also refresh `harness/quality_score.json` and emit `score.json` inside the uploaded run bundle.
 
 ## Harness CLI
 
@@ -131,6 +132,7 @@ For one-step local execution, use:
 
 ```powershell
 & 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\run_harness_task.py harness\tasks\site-smoke-check.json
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py score
 ```
 
 ## Asset Structure

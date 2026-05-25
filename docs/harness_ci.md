@@ -25,6 +25,12 @@ The wrapper creates one stable run directory, then runs:
 3. `bundle`
 4. optional `score`
 
+You can also recompute the repository quality snapshot directly:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\harness_cli.py score
+```
+
 ## Warn Then Gate
 
 The default policy lives in `harness/policies/warn_then_gate.json`.
@@ -43,6 +49,21 @@ Warnings:
 - evidence gaps on non-critical maintenance work
 - docs or page coverage gaps
 - planned asset outputs that are not produced yet
+
+## Issue Promotion
+
+`logs/issue_memory.csv` now tracks:
+
+- `issue_key`
+- `policy_ref`
+- `check_ref`
+- `promotion_level`
+
+The maintenance harness scans those fields and applies the promotion ladder from `harness/policies/warn_then_gate.json`:
+
+1. repeated issue -> policy reference
+2. repeated again -> verify coverage
+3. repeated after verify coverage -> review for blocking gate
 
 ## Failure Reading Order
 

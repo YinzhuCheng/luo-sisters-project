@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 
@@ -46,7 +46,7 @@ def main() -> int:
     if not packet_path.is_absolute():
         packet_path = (ROOT / args.packet).resolve()
     task_id = read_packet_id(packet_path)
-    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     run_dir = ROOT / "logs" / "harness_runs" / f"{timestamp}-{task_id}"
     run_dir.mkdir(parents=True, exist_ok=True)
     write_github_output(args.github_output, run_dir, task_id)

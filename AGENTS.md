@@ -138,6 +138,7 @@ Run a browser smoke check:
 - Append `logs/progress_updates.csv` for meaningful work progress.
 - Update or append `logs/asset_registry.csv` when an asset changes status.
 - Append `logs/issue_memory.csv` for reusable traps, causes, and mitigations.
+- Keep `issue_key`, `policy_ref`, `check_ref`, and `promotion_level` filled when `logs/issue_memory.csv` changes.
 - CSV logs are source material for future skills; do not leave reusable knowledge only in chat.
 
 ## Recommended Next Tasks
