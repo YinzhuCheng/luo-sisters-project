@@ -1,0 +1,29 @@
+asset_type,asset_name,version,source_sheet,x,y,width,height,output_path,purpose
+standing,standard-full,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,390,65,205,520,assets/characters/arisu/crops/standing-standard-full-v1.png,large reference for full-body regeneration
+expressions,gentle,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,145,800,135,185,assets/characters/arisu/crops/expression-gentle-v1.png,expression crop for transparent bust asset
+expressions,smile,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,290,800,135,185,assets/characters/arisu/crops/expression-smile-v1.png,expression crop for transparent bust asset
+expressions,curious,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,435,800,135,185,assets/characters/arisu/crops/expression-curious-v1.png,expression crop for transparent bust asset
+expressions,surprised,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,580,800,135,185,assets/characters/arisu/crops/expression-surprised-v1.png,expression crop for transparent bust asset
+expressions,thinking,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,725,800,135,185,assets/characters/arisu/crops/expression-thinking-v1.png,expression crop for transparent bust asset
+expressions,troubled,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,870,800,135,185,assets/characters/arisu/crops/expression-troubled-v1.png,expression crop for transparent bust asset
+expressions,shy,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,1015,800,135,185,assets/characters/arisu/crops/expression-shy-v1.png,expression crop for transparent bust asset
+expressions,relieved,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,1160,800,135,185,assets/characters/arisu/crops/expression-relieved-v1.png,expression crop for transparent bust asset
+turnaround,front,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,390,65,205,520,assets/characters/arisu/crops/turnaround-front-v1.png,front view reference
+turnaround,side,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,600,65,190,520,assets/characters/arisu/crops/turnaround-side-v1.png,side view reference
+turnaround,back,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,790,65,190,520,assets/characters/arisu/crops/turnaround-back-v1.png,back view reference
+clothing,jk-lolita-dress,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,405,150,180,360,assets/characters/arisu/crops/clothing-jk-lolita-dress-v1.png,main dress silhouette reference
+clothing,daily-cardigan,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,965,90,180,470,assets/characters/arisu/crops/clothing-daily-cardigan-v1.png,daily cardigan outfit reference
+clothing,blue-pinafore,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,430,210,140,260,assets/characters/arisu/crops/clothing-blue-pinafore-v1.png,blue pinafore reference
+accessories,key-necklace,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,660,610,95,140,assets/characters/arisu/crops/accessory-key-necklace-v1.png,key necklace reference
+accessories,daisy-hairpin,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,450,80,95,95,assets/characters/arisu/crops/accessory-daisy-hairpin-v1.png,daisy hairpin reference
+accessories,ribbon-tie,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,440,155,105,90,assets/characters/arisu/crops/accessory-ribbon-tie-v1.png,ribbon tie reference
+props,storybook,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,410,600,105,140,assets/characters/arisu/crops/prop-storybook-v1.png,storybook prop reference
+props,key,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,650,600,105,150,assets/characters/arisu/crops/prop-key-v1.png,key prop reference
+props,pocket-watch,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,760,600,105,150,assets/characters/arisu/crops/prop-pocket-watch-v1.png,pocket watch prop reference
+props,rabbit-charm,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,870,600,105,150,assets/characters/arisu/crops/prop-rabbit-charm-v1.png,rabbit charm prop reference
+props,notebook,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,980,600,110,150,assets/characters/arisu/crops/prop-notebook-v1.png,notebook prop reference
+props,school-bag,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,1090,595,130,160,assets/characters/arisu/crops/prop-school-bag-v1.png,school bag prop reference
+details,braid-detail,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,600,95,110,250,assets/characters/arisu/crops/detail-braid-v1.png,braid detail reference
+details,skirt-detail,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,420,310,160,180,assets/characters/arisu/crops/detail-skirt-v1.png,skirt pleat detail reference
+details,sock-shoe-detail,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,430,480,145,100,assets/characters/arisu/crops/detail-sock-shoe-v1.png,sock and shoe reference
+details,daisy-detail,v1,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,445,80,100,95,assets/characters/arisu/crops/detail-daisy-v1.png,daisy motif reference

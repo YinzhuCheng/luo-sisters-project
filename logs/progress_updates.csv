@@ -1,0 +1,12 @@
+date,agent,character,asset_type,task,status,output_path,notes
+2026-05-25,Codex,project,structure,created strict character asset folders,done,assets/characters,Separate qingyou and arisu roots are ready for parallel work
+2026-05-25,Codex,project,web,created locale-separated HTML sheet builder,done,tools/build_project_html.py,Chinese is default and English locale is prepared for future pages
+2026-05-25,Codex,project,workflow,created crop chroma and validation scripts,done,tools,Use bundled Python runtime if python resolves to Windows Store shim
+2026-05-25,Codex,qingyou,source_sheet,copied whole sheet into character root,done,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,Legacy asset remains in assets/images
+2026-05-25,Codex,arisu,source_sheet,copied whole sheet into character root,done,assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png,Legacy asset remains in assets/images
+2026-05-25,Codex,qingyou,crops,generated first reference crops,done,assets/characters/qingyou/crops,28 crops generated from manifest
+2026-05-25,Codex,arisu,crops,generated first reference crops,done,assets/characters/arisu/crops,28 crops generated from manifest
+2026-05-25,Codex,project,web,built index and character sheets,done,index.html,Generated index plus qingyou and arisu character_sheets
+2026-05-25,Codex,project,validation,ran asset validation,passed,tools/validate_assets.py,Transparent assets are still planned and placeholders are expected
+2026-05-25,Codex,project,responsive_css,fixed asset grid overflow,done,assets/styles/luo_sisters.css,Reset figure margins after browser QA found minor overflow
+2026-05-25,Codex,project,browser_qa,removed lazy loading from generated pages,done,tools/build_project_html.py,Avoid false broken-image reports during mobile visual QA

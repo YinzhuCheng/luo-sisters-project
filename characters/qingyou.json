@@ -1,0 +1,96 @@
+{
+  "id": "qingyou",
+  "theme": "qingyou",
+  "layout": "journal-board",
+  "asset_root": "assets/characters/qingyou",
+  "source_sheet": "assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png",
+  "legacy_sheet": "assets/images/luo_qingyou_character_sheet_v2.png",
+  "crop_manifest": "assets/characters/qingyou/workflow/crop_manifest.csv",
+  "palette": [
+    { "name_key": "palette.moss", "hex": "#6B8E65" },
+    { "name_key": "palette.sage", "hex": "#A9BEA3" },
+    { "name_key": "palette.mist", "hex": "#E8F0E6" },
+    { "name_key": "palette.paper", "hex": "#F6F1E6" },
+    { "name_key": "palette.apricot", "hex": "#E3D8C3" },
+    { "name_key": "palette.gold", "hex": "#D9C49C" },
+    { "name_key": "palette.umber", "hex": "#8B6B4D" }
+  ],
+  "asset_groups": [
+    {
+      "id": "standing",
+      "items": [
+        {
+          "id": "standard-full",
+          "label_key": "qingyou.asset.standard_full",
+          "crop": "assets/characters/qingyou/crops/standing-standard-full-v1.png",
+          "transparent": "assets/characters/qingyou/generated/transparent/standing/standard-full-v1.png",
+          "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#standard-full"
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "items": [
+        { "id": "gentle", "label_key": "qingyou.asset.expression_gentle", "crop": "assets/characters/qingyou/crops/expression-gentle-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/gentle-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "smile", "label_key": "qingyou.asset.expression_smile", "crop": "assets/characters/qingyou/crops/expression-smile-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/smile-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "serious", "label_key": "qingyou.asset.expression_serious", "crop": "assets/characters/qingyou/crops/expression-serious-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/serious-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "thinking", "label_key": "qingyou.asset.expression_thinking", "crop": "assets/characters/qingyou/crops/expression-thinking-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/thinking-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "surprised", "label_key": "qingyou.asset.expression_surprised", "crop": "assets/characters/qingyou/crops/expression-surprised-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/surprised-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "troubled", "label_key": "qingyou.asset.expression_troubled", "crop": "assets/characters/qingyou/crops/expression-troubled-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/troubled-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "tired", "label_key": "qingyou.asset.expression_tired", "crop": "assets/characters/qingyou/crops/expression-tired-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/tired-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" },
+        { "id": "relieved", "label_key": "qingyou.asset.expression_relieved", "crop": "assets/characters/qingyou/crops/expression-relieved-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/expressions/relieved-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#expressions" }
+      ]
+    },
+    {
+      "id": "turnaround",
+      "items": [
+        { "id": "front", "label_key": "asset.front_view", "crop": "assets/characters/qingyou/crops/turnaround-front-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/turnaround/front-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#turnaround" },
+        { "id": "side", "label_key": "asset.side_view", "crop": "assets/characters/qingyou/crops/turnaround-side-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/turnaround/side-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#turnaround" },
+        { "id": "back", "label_key": "asset.back_view", "crop": "assets/characters/qingyou/crops/turnaround-back-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/turnaround/back-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#turnaround" }
+      ]
+    },
+    {
+      "id": "clothing",
+      "items": [
+        { "id": "classic-lolita-dress", "label_key": "qingyou.asset.classic_lolita_dress", "crop": "assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/clothing/classic-lolita-dress-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#clothing" },
+        { "id": "cloud-collar", "label_key": "qingyou.asset.cloud_collar", "crop": "assets/characters/qingyou/crops/clothing-cloud-collar-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/clothing/cloud-collar-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#clothing" },
+        { "id": "embroidered-skirt", "label_key": "qingyou.asset.embroidered_skirt", "crop": "assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/clothing/embroidered-skirt-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#clothing" }
+      ]
+    },
+    {
+      "id": "accessories",
+      "items": [
+        { "id": "plum-hairpin", "label_key": "qingyou.asset.plum_hairpin", "crop": "assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/accessories/plum-hairpin-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#accessories" },
+        { "id": "frog-buttons", "label_key": "qingyou.asset.frog_buttons", "crop": "assets/characters/qingyou/crops/accessory-frog-buttons-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/accessories/frog-buttons-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#accessories" },
+        { "id": "lace-cuffs", "label_key": "qingyou.asset.lace_cuffs", "crop": "assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/accessories/lace-cuffs-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#accessories" }
+      ]
+    },
+    {
+      "id": "props",
+      "items": [
+        { "id": "journal", "label_key": "qingyou.asset.journal", "crop": "assets/characters/qingyou/crops/prop-journal-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/journal-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" },
+        { "id": "camera", "label_key": "qingyou.asset.camera", "crop": "assets/characters/qingyou/crops/prop-camera-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/camera-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" },
+        { "id": "tea-cup", "label_key": "qingyou.asset.tea_cup", "crop": "assets/characters/qingyou/crops/prop-tea-cup-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" },
+        { "id": "portable-bag", "label_key": "qingyou.asset.portable_bag", "crop": "assets/characters/qingyou/crops/prop-portable-bag-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" },
+        { "id": "pen", "label_key": "qingyou.asset.pen", "crop": "assets/characters/qingyou/crops/prop-pen-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/pen-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" },
+        { "id": "bookmark", "label_key": "qingyou.asset.bookmark", "crop": "assets/characters/qingyou/crops/prop-bookmark-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/props/bookmark-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#props" }
+      ]
+    },
+    {
+      "id": "details",
+      "items": [
+        { "id": "hair-detail", "label_key": "qingyou.asset.hair_detail", "crop": "assets/characters/qingyou/crops/detail-hair-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/details/hair-detail-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#details" },
+        { "id": "fabric-detail", "label_key": "qingyou.asset.fabric_detail", "crop": "assets/characters/qingyou/crops/detail-fabric-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/details/fabric-detail-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#details" },
+        { "id": "waist-detail", "label_key": "qingyou.asset.waist_detail", "crop": "assets/characters/qingyou/crops/detail-waist-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/details/waist-detail-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#details" },
+        { "id": "sleeve-detail", "label_key": "qingyou.asset.sleeve_detail", "crop": "assets/characters/qingyou/crops/detail-sleeve-v1.png", "transparent": "assets/characters/qingyou/generated/transparent/details/sleeve-detail-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#details" }
+      ]
+    },
+    {
+      "id": "cg",
+      "items": [
+        { "id": "old-street-light", "label_key": "qingyou.asset.cg_old_street", "crop": "", "transparent": "assets/characters/qingyou/generated/transparent/cg/old-street-light-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#cg" },
+        { "id": "rain-plan-blank", "label_key": "qingyou.asset.cg_rain_plan", "crop": "", "transparent": "assets/characters/qingyou/generated/transparent/cg/rain-plan-blank-v1.png", "prompt": "assets/characters/qingyou/prompts/asset_prompts.md#cg" }
+      ]
+    }
+  ]
+}

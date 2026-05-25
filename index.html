@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>洛青悠 × 洛有栖</title>
+  <link rel="stylesheet" href="assets/styles/luo_sisters.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">洛氏姐妹企划</a>
+    <nav class="nav-links" aria-label="角色页">
+      <a href="index.html" aria-current="page">总览</a>
+      <a href="character_sheets/qingyou.html">洛青悠</a>
+      <a href="character_sheets/arisu.html">洛有栖</a>
+      <a href="workflows/asset_generation_workflow.md">工作流</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <section class="hero" id="overview">
+    <div>
+      <p class="eyebrow">Character Bible · HTML Sheet System · 0.4-html-sheets</p>
+      <h1>洛青悠 × 洛有栖</h1>
+      <p class="lead">先让网页成为稳定、美观的展示窗口，再把每一个服饰、配饰、表情和物件拆成可复用透明资产。</p>
+      <div class="hero-actions">
+        <a class="action-link" href="character_sheets/qingyou.html">洛青悠</a>
+        <a class="action-link" href="character_sheets/arisu.html">洛有栖</a>
+      </div>
+    </div>
+    <div class="source-duo" aria-label="整版参考图">
+      <figure class="source-card">
+        <img src="assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png" alt="洛青悠">
+        <figcaption><b>洛青悠</b></figcaption>
+      </figure>
+      <figure class="source-card">
+        <img src="assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png" alt="洛有栖">
+        <figcaption><b>洛有栖</b></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><p class="eyebrow">Stage 01</p><h2>项目当前目标</h2></div>
+      <p>本阶段把整版设定图拆成结构化网页与资产流水线：文字、边框、色卡和标签交给 HTML/CSS；角色、服饰、配饰和道具使用参考截图重新生成透明 PNG。</p>
+    </div>
+    <div class="grid"><article class="panel"><h3>台前主题</h3><p>姐妹筹备一场“兔子洞茶会”，通过服装、手账、摄影、旧图书室、邀请函和小物件展现少女日常。</p></article><article class="panel"><h3>人物主题</h3><p>青悠用秩序保护梦想，有栖用探索寻找梦想。两人的相处从互补走向冲突，再走向共同创造。</p></article><article class="panel"><h3>深层主题</h3><p>AIGC 在中后期逐渐浮现，放大“被替代”“完美梦境”“选择外包”等焦虑。最终工具回到工具位置，人物把方向、取舍和关系握回自己手中。</p></article></div>
+  </section>
+
+  <section class="section" id="characters">
+    <div class="section-head">
+      <div><p class="eyebrow">Character Sheets</p><h2>角色页</h2></div>
+      <p>当前页面先用参考截图和占位槽稳定版式；透明 PNG 生成后会自动替换进入对应槽位。</p>
+    </div>
+    <div class="grid two"><a class="character-link" href="character_sheets/qingyou.html">
+  <div class="character-thumb"><img src="assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png" alt="洛青悠"></div>
+  <div class="character-summary">
+    <p class="eyebrow">古风 Lolita｜规划者｜记录者｜温柔姐姐</p>
+    <h3>洛青悠<span class="roman">Luo Qingyou</span></h3>
+    <p>用秩序保护梦想的人。她把梦写进手账，给冒险准备茶、伞与回程路。</p>
+    <div class="tag-row"><span class="tag">青绿色古风 Lolita</span><span class="tag">手账与复古相机</span><span class="tag">云肩、盘扣、蕾丝、青瓷色</span><span class="tag">旧街、茶会、窗影、梅枝</span></div>
+    <span class="action-link">打开设定页</span>
+  </div>
+</a><a class="character-link" href="character_sheets/arisu.html">
+  <div class="character-thumb"><img src="assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png" alt="洛有栖"></div>
+  <div class="character-summary">
+    <p class="eyebrow">JK Lolita｜Alice 母题｜探索者｜梦境入口</p>
+    <h3>洛有栖<span class="roman">Luo Arisu</span></h3>
+    <p>用无序寻找梦想的人。她在校园日常里看见门、钥匙、白兔和未命名的可能性。</p>
+    <div class="tag-row"><span class="tag blue">蓝白 JK Lolita</span><span class="tag blue">钥匙项链、白兔挂件、怀表</span><span class="tag blue">雏菊、旧书、书包、茶杯</span><span class="tag blue">校园走廊、旧图书室、秘密门</span></div>
+    <span class="action-link">打开设定页</span>
+  </div>
+</a></div>
+  </section>
+
+  <section class="section" id="workflow">
+    <div class="section-head">
+      <div><p class="eyebrow">Pipeline</p><h2>网页与资产流水线</h2></div>
+    </div>
+    <article class="panel"><ul class="ordered-list"><li>先完成首页与两张角色 HTML 设定页，让视觉风格稳定下来。</li><li>从现有整版设定图裁出参考截图，按角色和资产类型严格归档。</li><li>用参考截图重新生成无文字、无边框、纯色背景版本。</li><li>通过本地抠图得到透明 PNG，并写入资产登记 CSV。</li><li>透明资产替换网页占位槽，网页继续承担中文排版、边框和标签。</li></ul></article>
+  </section>
+
+  <section class="section" id="story">
+    <div class="section-head">
+      <div><p class="eyebrow">Story</p><h2>故事梗概</h2></div>
+      <p><strong>姐妹共同筹备一场“兔子洞茶会”。</strong><br>表层是少女日常与茶会企划，中层是生活的秩序与无序、计划与探索的冲突，深层是 AIGC 时代对价值、陪伴、顾问和生成内容的再思考。</p>
+    </div>
+    <ol class="story-list"><li class="story-item"><strong>第一幕：把梦留一页</strong><span>有栖提出“只有迷路的人才能参加的茶会”，青悠把它写进手账。两人寻找场地、试穿服装、设计邀请函，AI 只是校园里自然存在的新工具。</span></li><li class="story-item"><strong>第二幕：梦被变快</strong><span>同学用 AI 快速生成海报和方案。青悠开始不舒服，有栖被完美 Alice 图景吸引。两人的可爱差异逐渐变成冲突。</span></li><li class="story-item"><strong>第三幕：把迷路也安排好</strong><span>青悠误用 AI 优化邀请函与流程，有栖的奇怪句子被抹平。茶会越来越完整，也越来越失去心跳。</span></li><li class="story-item"><strong>第四幕：重新选择门</strong><span>青悠承认自己害怕失去价值，有栖承认自己害怕打开门。两人重新合作：AI 负责重复劳动，人物负责方向、保留、删改和关系。</span></li><li class="story-item"><strong>终幕：不完美的茶会</strong><span>茶会如期发生，也发生意外。雨、迟到、失焦照片和手账里的空白让这一天成为真正属于她们的记忆。</span></li></ol>
+  </section>
+
+  <p class="footer">HTML / CSS / asset workflow generated from structured JSON. Final public pages are Chinese-first with locale separation for future languages.</p>
+</main>
+</body>
+</html>

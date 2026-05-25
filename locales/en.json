@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "language": "en",
+    "dir": "ltr",
+    "title": "Luo Qingyou x Luo Arisu | Character Project",
+    "version": "0.4-html-sheets"
+  },
+  "ui": {
+    "brand": "Luo Sisters Project",
+    "home": "Overview",
+    "characters": "Character Sheets",
+    "story": "Story",
+    "workflow": "Workflow",
+    "assets": "Assets",
+    "open_sheet": "Open Sheet",
+    "open_source": "Open Source Sheet",
+    "source_reference": "Source Sheet",
+    "reference_crop": "Reference Crop",
+    "transparent_target": "Transparent PNG Target",
+    "planned": "Planned",
+    "ready": "Ready",
+    "missing": "Missing",
+    "asset_slots": "Asset Slots",
+    "profile": "Profile",
+    "quote": "Signature Line",
+    "tags": "Tags",
+    "palette": "Palette",
+    "visual_points": "Visual Anchors",
+    "daily": "Daily Details",
+    "growth": "Growth",
+    "conflict": "Hidden Conflict",
+    "reference_note": "The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.",
+    "back_home": "Back Home"
+  },
+  "home": {
+    "eyebrow": "Character Bible · HTML Sheet System",
+    "title": "Luo Qingyou x Luo Arisu",
+    "subtitle": "Build the website as a stable display window first, then regenerate clothing, accessories, expressions, and props as transparent reusable assets.",
+    "summary_title": "Current Goal",
+    "summary": "This stage separates the original full-sheet images into structured web pages and an asset pipeline. HTML/CSS owns text, frames, palettes, and labels; generated images own characters, outfits, accessories, and props.",
+    "theme_title": "Three Layers",
+    "theme_layers": [
+      { "name": "Surface", "text": "The sisters prepare a Rabbit Hole Tea Party through outfits, journals, photography, old libraries, invitations, and small props." },
+      { "name": "Character", "text": "Qingyou protects dreams through order; Arisu searches for dreams through exploration. Their complementarity becomes conflict and then co-creation." },
+      { "name": "Core", "text": "AIGC gradually amplifies anxieties about replacement, perfect dreams, and outsourced choices. The ending returns tools to their proper place while people keep direction, judgment, and relationships." }
+    ],
+    "pipeline_title": "Web And Asset Pipeline",
+    "pipeline_steps": [
+      "Build the index page and two HTML character sheets first.",
+      "Crop references from the existing full character sheets into strict character folders.",
+      "Regenerate textless, borderless, solid-background versions from those crops.",
+      "Remove the chroma key locally to produce transparent PNG assets and log them in CSV.",
+      "Replace page placeholders with transparent assets while the web layer keeps final typography and labels."
+    ],
+    "story_title": "Story Outline",
+    "story_surface": "The sisters prepare a Rabbit Hole Tea Party together.",
+    "story_summary": "The surface is a sweet daily-life tea party project. The middle layer is order versus disorder. The deep layer reflects on value, companionship, advice, and generated content in the AIGC era.",
+    "acts": [
+      { "title": "Act 1: Leave a Page for the Dream", "text": "Arisu proposes a tea party for people who get lost. Qingyou writes it into her journal." },
+      { "title": "Act 2: The Dream Becomes Faster", "text": "Classmates generate posters and plans with AI. Qingyou feels displaced, while Arisu is drawn to perfect Alice imagery." },
+      { "title": "Act 3: Even Getting Lost Is Scheduled", "text": "Qingyou over-optimizes the invitation and process. Arisu feels her strange sentences have been flattened." },
+      { "title": "Act 4: Choose the Door Again", "text": "Both admit their fears and reassign AI to repetitive work while they keep direction and relationships." },
+      { "title": "Finale: An Imperfect Tea Party", "text": "Rain, lateness, soft-focus photos, and blank journal space make the day truly theirs." }
+    ]
+  },
+  "asset_groups": {
+    "standing": "Standing",
+    "expressions": "Expressions",
+    "turnaround": "Turnaround",
+    "clothing": "Clothing",
+    "accessories": "Accessories",
+    "props": "Props",
+    "details": "Details",
+    "cg": "Key Art"
+  },
+  "labels": {
+    "palette.moss": "Moss",
+    "palette.sage": "Sage",
+    "palette.mist": "Mist",
+    "palette.paper": "Paper",
+    "palette.apricot": "Apricot",
+    "palette.gold": "Old Gold",
+    "palette.umber": "Tea Umber",
+    "palette.midnight_blue": "Midnight Blue",
+    "palette.royal_blue": "Story Blue",
+    "palette.misty_blue": "Misty Blue",
+    "palette.white_tea": "White Tea",
+    "palette.shell": "Shell",
+    "palette.taupe": "Taupe",
+    "palette.cocoa": "Cocoa",
+    "palette.ink": "Ink Blue",
+    "asset.front_view": "Front",
+    "asset.side_view": "Side",
+    "asset.back_view": "Back"
+  },
+  "characters": {
+    "qingyou": {
+      "name": "Luo Qingyou",
+      "roman": "Luo Qingyou",
+      "role": "Classic Lolita | Planner | Archivist | Gentle Older Sister",
+      "short": "A person who protects dreams through order.",
+      "quote": "Then let us give this dream a date.",
+      "support_quote": "I will prepare the tea, and the way back.",
+      "board_title": "Journal-Style Character Sheet",
+      "profile": [
+        { "label": "Name", "value": "Luo Qingyou" },
+        { "label": "Age", "value": "19" },
+        { "label": "Birthday", "value": "March 24" },
+        { "label": "Height", "value": "167 cm" },
+        { "label": "Role", "value": "College student" },
+        { "label": "Style", "value": "Sage Chinese classic Lolita" }
+      ],
+      "visual": ["Sage classic Lolita", "Journal and vintage camera", "Cloud collar, frog buttons, lace", "Old street, tea party, window light"],
+      "daily": ["Arrives early and carries clips, tape, notes, and bandages.", "Checks the light before taking photos.", "Leaves one page for inspiration and one column for accidents.", "Opens her journal before answering Arisu's new ideas."],
+      "tags": ["Gentle", "Reliable", "Detailed", "Independent", "Archivist", "Planner"],
+      "conflict": "She treats doing things well as proof of value, so generative tools shake her confidence.",
+      "growth": "She learns to use tools for repeated work while keeping judgment, care, and relationships in her own hands."
+    },
+    "arisu": {
+      "name": "Luo Arisu",
+      "roman": "Luo Arisu",
+      "role": "JK Lolita | Alice Motif | Explorer | Doorway to Dreams",
+      "short": "A person who searches for dreams through disorder.",
+      "quote": "Sister, do you feel like this door is different today?",
+      "support_quote": "The key is still here, so the door must be here too.",
+      "board_title": "Blue Alice Character Sheet",
+      "profile": [
+        { "label": "Name", "value": "Luo Arisu" },
+        { "label": "Age", "value": "18" },
+        { "label": "Birthday", "value": "April 7" },
+        { "label": "Height", "value": "162 cm" },
+        { "label": "Role", "value": "College freshman" },
+        { "label": "Style", "value": "JK Lolita / Alice mood" }
+      ],
+      "visual": ["Blue-white JK Lolita", "Key necklace, rabbit charm, pocket watch", "Daisy, old books, school bag", "School hallway, old library, secret door"],
+      "daily": ["Her bag charms make a small sound when she walks.", "Names keys, rabbit dolls, and music boxes.", "Writes diaries like story openings.", "When anxious, she takes detours and touches her key necklace."],
+      "tags": ["Curious", "Dreamy", "Observant", "Exploratory", "Fairy-tale mood"],
+      "conflict": "She believes in other possibilities but fears opening the door and finding reality less beautiful than imagination.",
+      "growth": "She stops waiting for the dream to appear and starts opening the door herself."
+    }
+  }
+}

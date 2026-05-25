@@ -1,0 +1,97 @@
+{
+  "id": "arisu",
+  "theme": "arisu",
+  "layout": "alice-board",
+  "asset_root": "assets/characters/arisu",
+  "source_sheet": "assets/characters/arisu/source_sheet/luo_arisu_character_sheet_v1.png",
+  "legacy_sheet": "assets/images/luo_arisu_character_sheet_v1.png",
+  "crop_manifest": "assets/characters/arisu/workflow/crop_manifest.csv",
+  "palette": [
+    { "name_key": "palette.midnight_blue", "hex": "#153B70" },
+    { "name_key": "palette.royal_blue", "hex": "#2F66A8" },
+    { "name_key": "palette.misty_blue", "hex": "#BFD0E8" },
+    { "name_key": "palette.white_tea", "hex": "#F8F6F0" },
+    { "name_key": "palette.shell", "hex": "#EDE5DA" },
+    { "name_key": "palette.taupe", "hex": "#BBAA9E" },
+    { "name_key": "palette.cocoa", "hex": "#8B6E5A" },
+    { "name_key": "palette.ink", "hex": "#2F3B48" }
+  ],
+  "asset_groups": [
+    {
+      "id": "standing",
+      "items": [
+        {
+          "id": "standard-full",
+          "label_key": "arisu.asset.standard_full",
+          "crop": "assets/characters/arisu/crops/standing-standard-full-v1.png",
+          "transparent": "assets/characters/arisu/generated/transparent/standing/standard-full-v1.png",
+          "prompt": "assets/characters/arisu/prompts/asset_prompts.md#standard-full"
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "items": [
+        { "id": "gentle", "label_key": "arisu.asset.expression_gentle", "crop": "assets/characters/arisu/crops/expression-gentle-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/gentle-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "smile", "label_key": "arisu.asset.expression_smile", "crop": "assets/characters/arisu/crops/expression-smile-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/smile-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "curious", "label_key": "arisu.asset.expression_curious", "crop": "assets/characters/arisu/crops/expression-curious-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/curious-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "surprised", "label_key": "arisu.asset.expression_surprised", "crop": "assets/characters/arisu/crops/expression-surprised-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/surprised-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "thinking", "label_key": "arisu.asset.expression_thinking", "crop": "assets/characters/arisu/crops/expression-thinking-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/thinking-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "troubled", "label_key": "arisu.asset.expression_troubled", "crop": "assets/characters/arisu/crops/expression-troubled-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/troubled-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "shy", "label_key": "arisu.asset.expression_shy", "crop": "assets/characters/arisu/crops/expression-shy-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/shy-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" },
+        { "id": "relieved", "label_key": "arisu.asset.expression_relieved", "crop": "assets/characters/arisu/crops/expression-relieved-v1.png", "transparent": "assets/characters/arisu/generated/transparent/expressions/relieved-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#expressions" }
+      ]
+    },
+    {
+      "id": "turnaround",
+      "items": [
+        { "id": "front", "label_key": "asset.front_view", "crop": "assets/characters/arisu/crops/turnaround-front-v1.png", "transparent": "assets/characters/arisu/generated/transparent/turnaround/front-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#turnaround" },
+        { "id": "side", "label_key": "asset.side_view", "crop": "assets/characters/arisu/crops/turnaround-side-v1.png", "transparent": "assets/characters/arisu/generated/transparent/turnaround/side-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#turnaround" },
+        { "id": "back", "label_key": "asset.back_view", "crop": "assets/characters/arisu/crops/turnaround-back-v1.png", "transparent": "assets/characters/arisu/generated/transparent/turnaround/back-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#turnaround" }
+      ]
+    },
+    {
+      "id": "clothing",
+      "items": [
+        { "id": "jk-lolita-dress", "label_key": "arisu.asset.jk_lolita_dress", "crop": "assets/characters/arisu/crops/clothing-jk-lolita-dress-v1.png", "transparent": "assets/characters/arisu/generated/transparent/clothing/jk-lolita-dress-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#clothing" },
+        { "id": "daily-cardigan", "label_key": "arisu.asset.daily_cardigan", "crop": "assets/characters/arisu/crops/clothing-daily-cardigan-v1.png", "transparent": "assets/characters/arisu/generated/transparent/clothing/daily-cardigan-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#clothing" },
+        { "id": "blue-pinafore", "label_key": "arisu.asset.blue_pinafore", "crop": "assets/characters/arisu/crops/clothing-blue-pinafore-v1.png", "transparent": "assets/characters/arisu/generated/transparent/clothing/blue-pinafore-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#clothing" }
+      ]
+    },
+    {
+      "id": "accessories",
+      "items": [
+        { "id": "key-necklace", "label_key": "arisu.asset.key_necklace", "crop": "assets/characters/arisu/crops/accessory-key-necklace-v1.png", "transparent": "assets/characters/arisu/generated/transparent/accessories/key-necklace-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#accessories" },
+        { "id": "daisy-hairpin", "label_key": "arisu.asset.daisy_hairpin", "crop": "assets/characters/arisu/crops/accessory-daisy-hairpin-v1.png", "transparent": "assets/characters/arisu/generated/transparent/accessories/daisy-hairpin-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#accessories" },
+        { "id": "ribbon-tie", "label_key": "arisu.asset.ribbon_tie", "crop": "assets/characters/arisu/crops/accessory-ribbon-tie-v1.png", "transparent": "assets/characters/arisu/generated/transparent/accessories/ribbon-tie-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#accessories" }
+      ]
+    },
+    {
+      "id": "props",
+      "items": [
+        { "id": "key", "label_key": "arisu.asset.key", "crop": "assets/characters/arisu/crops/prop-key-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/key-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "pocket-watch", "label_key": "arisu.asset.pocket_watch", "crop": "assets/characters/arisu/crops/prop-pocket-watch-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "rabbit-charm", "label_key": "arisu.asset.rabbit_charm", "crop": "assets/characters/arisu/crops/prop-rabbit-charm-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "notebook", "label_key": "arisu.asset.notebook", "crop": "assets/characters/arisu/crops/prop-notebook-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/notebook-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "school-bag", "label_key": "arisu.asset.school_bag", "crop": "assets/characters/arisu/crops/prop-school-bag-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/school-bag-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" },
+        { "id": "storybook", "label_key": "arisu.asset.storybook", "crop": "assets/characters/arisu/crops/prop-storybook-v1.png", "transparent": "assets/characters/arisu/generated/transparent/props/storybook-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#props" }
+      ]
+    },
+    {
+      "id": "details",
+      "items": [
+        { "id": "braid-detail", "label_key": "arisu.asset.braid_detail", "crop": "assets/characters/arisu/crops/detail-braid-v1.png", "transparent": "assets/characters/arisu/generated/transparent/details/braid-detail-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#details" },
+        { "id": "skirt-detail", "label_key": "arisu.asset.skirt_detail", "crop": "assets/characters/arisu/crops/detail-skirt-v1.png", "transparent": "assets/characters/arisu/generated/transparent/details/skirt-detail-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#details" },
+        { "id": "sock-shoe-detail", "label_key": "arisu.asset.sock_shoe_detail", "crop": "assets/characters/arisu/crops/detail-sock-shoe-v1.png", "transparent": "assets/characters/arisu/generated/transparent/details/sock-shoe-detail-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#details" },
+        { "id": "daisy-detail", "label_key": "arisu.asset.daisy_detail", "crop": "assets/characters/arisu/crops/detail-daisy-v1.png", "transparent": "assets/characters/arisu/generated/transparent/details/daisy-detail-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#details" }
+      ]
+    },
+    {
+      "id": "cg",
+      "items": [
+        { "id": "corridor-door", "label_key": "arisu.asset.cg_corridor_door", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/cg/corridor-door-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#cg" },
+        { "id": "before-tea-cools", "label_key": "arisu.asset.cg_before_tea_cools", "crop": "", "transparent": "assets/characters/arisu/generated/transparent/cg/before-tea-cools-v1.png", "prompt": "assets/characters/arisu/prompts/asset_prompts.md#cg" }
+      ]
+    }
+  ]
+}

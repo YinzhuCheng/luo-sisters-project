@@ -1,0 +1,29 @@
+asset_type,asset_name,version,source_sheet,x,y,width,height,output_path,purpose
+standing,standard-full,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,18,20,415,800,assets/characters/qingyou/crops/standing-standard-full-v1.png,large reference for full-body regeneration
+expressions,gentle,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,780,70,145,125,assets/characters/qingyou/crops/expression-gentle-v1.png,expression crop for transparent bust asset
+expressions,smile,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,950,70,145,125,assets/characters/qingyou/crops/expression-smile-v1.png,expression crop for transparent bust asset
+expressions,serious,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1125,70,145,125,assets/characters/qingyou/crops/expression-serious-v1.png,expression crop for transparent bust asset
+expressions,thinking,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1300,70,145,125,assets/characters/qingyou/crops/expression-thinking-v1.png,expression crop for transparent bust asset
+expressions,surprised,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,780,238,145,125,assets/characters/qingyou/crops/expression-surprised-v1.png,expression crop for transparent bust asset
+expressions,troubled,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,950,238,145,125,assets/characters/qingyou/crops/expression-troubled-v1.png,expression crop for transparent bust asset
+expressions,tired,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1125,238,145,125,assets/characters/qingyou/crops/expression-tired-v1.png,expression crop for transparent bust asset
+expressions,relieved,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1300,238,145,125,assets/characters/qingyou/crops/expression-relieved-v1.png,expression crop for transparent bust asset
+turnaround,front,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,700,470,145,330,assets/characters/qingyou/crops/turnaround-front-v1.png,front view reference
+turnaround,side,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,875,470,145,330,assets/characters/qingyou/crops/turnaround-side-v1.png,side view reference
+turnaround,back,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1035,470,150,330,assets/characters/qingyou/crops/turnaround-back-v1.png,back view reference
+clothing,classic-lolita-dress,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,120,200,280,540,assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png,main dress silhouette reference
+clothing,cloud-collar,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,220,120,170,170,assets/characters/qingyou/crops/clothing-cloud-collar-v1.png,cloud collar and upper body reference
+clothing,embroidered-skirt,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,90,420,300,260,assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png,skirt embroidery reference
+accessories,plum-hairpin,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,500,875,100,90,assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png,plum hair ornament reference
+accessories,frog-buttons,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,665,875,90,90,assets/characters/qingyou/crops/accessory-frog-buttons-v1.png,frog button reference
+accessories,lace-cuffs,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,900,875,115,90,assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png,lace cuff reference
+props,journal,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1222,432,120,120,assets/characters/qingyou/crops/prop-journal-v1.png,journal prop reference
+props,camera,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1360,430,135,120,assets/characters/qingyou/crops/prop-camera-v1.png,vintage camera prop reference
+props,portable-bag,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1215,590,140,105,assets/characters/qingyou/crops/prop-portable-bag-v1.png,portable bag prop reference
+props,tea-cup,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1360,585,135,105,assets/characters/qingyou/crops/prop-tea-cup-v1.png,tea cup prop reference
+props,pen,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1215,725,130,90,assets/characters/qingyou/crops/prop-pen-v1.png,pen prop reference
+props,bookmark,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1360,720,120,100,assets/characters/qingyou/crops/prop-bookmark-v1.png,bookmark prop reference
+details,hair-detail,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,500,875,100,90,assets/characters/qingyou/crops/detail-hair-v1.png,hair detail reference
+details,fabric-detail,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,635,875,110,90,assets/characters/qingyou/crops/detail-fabric-v1.png,fabric detail reference
+details,waist-detail,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,770,875,115,90,assets/characters/qingyou/crops/detail-waist-v1.png,waist accessory reference
+details,sleeve-detail,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,900,875,115,90,assets/characters/qingyou/crops/detail-sleeve-v1.png,sleeve detail reference
