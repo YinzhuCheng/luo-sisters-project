@@ -29,20 +29,20 @@ Blue-white JK LolitaKey necklace, rabbit charm, pocket watchDaisy, old books, sc
 ## Signature Line
 Sister, do you feel like this door is different today?The key is still here, so the door must be here too.
 ## Props
-[image placeholder: alt="key Reference Crop" src="../../../assets/characters/arisu/crops/prop-key-v1.png"]
-keyReference Crop
-[image placeholder: alt="pocket-watch Reference Crop" src="../../../assets/characters/arisu/crops/prop-pocket-watch-v1.png"]
-pocket-watchReference Crop
+[image placeholder: alt="key" src="../../../assets/characters/arisu/generated/transparent/props/key-v1.png"]
+keyReady
+[image placeholder: alt="pocket-watch" src="../../../assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png"]
+pocket-watchReady
 Plannedassets/characters/arisu/generated/transparent/props/pocket-watch-bag-v1.png
 pocket-watch-bagPlanned
-[image placeholder: alt="rabbit-charm Reference Crop" src="../../../assets/characters/arisu/crops/prop-rabbit-charm-v1.png"]
-rabbit-charmReference Crop
-[image placeholder: alt="notebook Reference Crop" src="../../../assets/characters/arisu/crops/prop-notebook-v1.png"]
-notebookReference Crop
+[image placeholder: alt="rabbit-charm" src="../../../assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png"]
+rabbit-charmReady
+[image placeholder: alt="notebook" src="../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png"]
+notebookReady
 [image placeholder: alt="school-bag Reference Crop" src="../../../assets/characters/arisu/crops/prop-school-bag-v1.png"]
 school-bagReference Crop
-[image placeholder: alt="storybook Reference Crop" src="../../../assets/characters/arisu/crops/prop-storybook-v1.png"]
-storybookReference Crop
+[image placeholder: alt="storybook" src="../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png"]
+storybookReady
 Plannedassets/characters/arisu/generated/transparent/props/music-box-v1.png
 music-boxPlanned
 Plannedassets/characters/arisu/generated/transparent/props/blue-ink-v1.png
@@ -122,20 +122,20 @@ daisy-hairpinReference Crop
 [image placeholder: alt="ribbon-tie Reference Crop" src="../../../assets/characters/arisu/crops/accessory-ribbon-tie-v1.png"]
 ribbon-tieReference Crop
 ## Props
-[image placeholder: alt="key Reference Crop" src="../../../assets/characters/arisu/crops/prop-key-v1.png"]
-keyReference Crop
-[image placeholder: alt="pocket-watch Reference Crop" src="../../../assets/characters/arisu/crops/prop-pocket-watch-v1.png"]
-pocket-watchReference Crop
+[image placeholder: alt="key" src="../../../assets/characters/arisu/generated/transparent/props/key-v1.png"]
+keyReady
+[image placeholder: alt="pocket-watch" src="../../../assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png"]
+pocket-watchReady
 Plannedassets/characters/arisu/generated/transparent/props/pocket-watch-bag-v1.png
 pocket-watch-bagPlanned
-[image placeholder: alt="rabbit-charm Reference Crop" src="../../../assets/characters/arisu/crops/prop-rabbit-charm-v1.png"]
-rabbit-charmReference Crop
-[image placeholder: alt="notebook Reference Crop" src="../../../assets/characters/arisu/crops/prop-notebook-v1.png"]
-notebookReference Crop
+[image placeholder: alt="rabbit-charm" src="../../../assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png"]
+rabbit-charmReady
+[image placeholder: alt="notebook" src="../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png"]
+notebookReady
 [image placeholder: alt="school-bag Reference Crop" src="../../../assets/characters/arisu/crops/prop-school-bag-v1.png"]
 school-bagReference Crop
-[image placeholder: alt="storybook Reference Crop" src="../../../assets/characters/arisu/crops/prop-storybook-v1.png"]
-storybookReference Crop
+[image placeholder: alt="storybook" src="../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png"]
+storybookReady
 Plannedassets/characters/arisu/generated/transparent/props/music-box-v1.png
 music-boxPlanned
 Plannedassets/characters/arisu/generated/transparent/props/blue-ink-v1.png
@@ -193,12 +193,12 @@ assets/characters/arisu | assets/characters/arisu/workflow/crop_manifest.csv
 - `asset | ok` ../../../assets/characters/arisu/crops/turnaround-front-v1.png alt="Front Reference Crop"
 - `asset | ok` ../../../assets/characters/arisu/crops/turnaround-side-v1.png alt="Side Reference Crop"
 - `asset | ok` ../../../assets/characters/arisu/crops/turnaround-back-v1.png alt="Back Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-key-v1.png alt="key Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-pocket-watch-v1.png alt="pocket-watch Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-rabbit-charm-v1.png alt="rabbit-charm Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-notebook-v1.png alt="notebook Reference Crop"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/key-v1.png alt="key"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png alt="pocket-watch"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png alt="rabbit-charm"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png alt="notebook"
 - `asset | ok` ../../../assets/characters/arisu/crops/prop-school-bag-v1.png alt="school-bag Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-storybook-v1.png alt="storybook Reference Crop"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png alt="storybook"
 - `asset | ok` ../../../assets/characters/arisu/crops/standing-standard-full-v1.png alt="standard-full Reference Crop"
 - `asset | ok` ../../../assets/characters/arisu/crops/expression-gentle-v1.png alt="gentle Reference Crop"
 - `asset | ok` ../../../assets/characters/arisu/crops/expression-smile-v1.png alt="smile Reference Crop"

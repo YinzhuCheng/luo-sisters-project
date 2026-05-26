@@ -99,18 +99,18 @@ Source HTML: `character_sheets/qingyou.html`
 待生成assets/characters/qingyou/generated/transparent/accessories/spare-hairclip-v1.png
 备用发夹待生成
 ## 常用物件
-[image placeholder: alt="手账本 参考截图" src="../../assets/characters/qingyou/crops/prop-journal-v1.png"]
-手账本参考截图
-[image placeholder: alt="复古相机 参考截图" src="../../assets/characters/qingyou/crops/prop-camera-v1.png"]
-复古相机参考截图
-[image placeholder: alt="茶杯 参考截图" src="../../assets/characters/qingyou/crops/prop-tea-cup-v1.png"]
-茶杯参考截图
-[image placeholder: alt="便携收纳包 参考截图" src="../../assets/characters/qingyou/crops/prop-portable-bag-v1.png"]
-便携收纳包参考截图
+[image placeholder: alt="手账本" src="../../assets/characters/qingyou/generated/transparent/props/journal-v1.png"]
+手账本已就绪
+[image placeholder: alt="复古相机" src="../../assets/characters/qingyou/generated/transparent/props/camera-v1.png"]
+复古相机已就绪
+[image placeholder: alt="茶杯" src="../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png"]
+茶杯已就绪
+[image placeholder: alt="便携收纳包" src="../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png"]
+便携收纳包已就绪
 [image placeholder: alt="钢笔 参考截图" src="../../assets/characters/qingyou/crops/prop-pen-v1.png"]
 钢笔参考截图
-[image placeholder: alt="书签 参考截图" src="../../assets/characters/qingyou/crops/prop-bookmark-v1.png"]
-书签参考截图
+[image placeholder: alt="书签" src="../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png"]
+书签已就绪
 ## 姿势设定
 待生成assets/characters/qingyou/generated/transparent/poses/photo-taking-v1.png
 拍照姿势待生成
@@ -184,9 +184,9 @@ assets/characters/qingyou | assets/characters/qingyou/workflow/crop_manifest.csv
 - `asset | ok` ../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png alt="梅花发饰 参考截图"
 - `asset | ok` ../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png alt="盘扣 参考截图"
 - `asset | ok` ../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png alt="蕾丝袖口 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-journal-v1.png alt="手账本 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-camera-v1.png alt="复古相机 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-tea-cup-v1.png alt="茶杯 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-portable-bag-v1.png alt="便携收纳包 参考截图"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/journal-v1.png alt="手账本"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/camera-v1.png alt="复古相机"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png alt="茶杯"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png alt="便携收纳包"
 - `asset | ok` ../../assets/characters/qingyou/crops/prop-pen-v1.png alt="钢笔 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-bookmark-v1.png alt="书签 参考截图"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png alt="书签"

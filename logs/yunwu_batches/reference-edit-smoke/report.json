@@ -1,0 +1,88 @@
+{
+  "created_at": "2026-05-26T08:20:38",
+  "base_url": "https://yunwu.ai",
+  "model": "gpt-image-2",
+  "concurrency": 1,
+  "quality": "low",
+  "size": "1024x1024",
+  "format": "png",
+  "results": [
+    {
+      "asset": "qingyou:props:bookmark:v1",
+      "source_crop": "assets/characters/qingyou/crops/prop-bookmark-v1.png",
+      "prompt": "Use the uploaded reference crop as the primary visual guide. Regenerate the referenced subject as a cleaner reusable asset, not as a full sheet crop.\nPolished 2D Japanese anime character-design asset; clean confident lineart; delicate hand-painted watercolor texture; soft cel shading; warm diffuse highlights; crisp readable silhouette; source-sheet-consistent proportions; gentle storybook-lolita mood; refined textile and metal details; not photorealistic, not 3D, not chibi.\nLuo Qingyou: sage/celadon/ivory/antique-gold Chinese classic Lolita older sister; long dark hair; plum or gold-green hair ornament; cloud collar, frog buttons, lace cuffs, fine embroidery; calm tea-and-planner mood.\nAsset request: delicate dry-flower bookmark prop, pressed flower, slim paper tag, antique gold cord.\nSingle complete object only, centered, generous padding, complete silhouette. No text, no labels, no watermark, no border, no frame, no card, no unrelated objects, no cast shadow. Perfectly flat solid #ff",
+      "prompt_chars": 1000,
+      "request": {
+        "base_url": "https://yunwu.ai",
+        "model": "gpt-image-2",
+        "size": "1024x1024",
+        "quality": "low",
+        "format": "png",
+        "reference_mode": "edit; uploaded source_crop as multipart image",
+        "reference_images": [
+          "assets\\characters\\qingyou\\crops\\prop-bookmark-v1.png"
+        ]
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "elapsed_ms": 57859,
+        "headers": {
+          "X-Api-Request-Id": "20260526081939115762743hbk8wnLY",
+          "X-Oneapi-Request-Id": "20260526081939150945342lTZzmmha"
+        },
+        "usage": {
+          "total_tokens": 2037,
+          "input_tokens": 281,
+          "output_tokens": 1756,
+          "input_tokens_details": {
+            "text_tokens": 225,
+            "image_tokens": 56
+          },
+          "output_tokens_details": {
+            "image_tokens": 1756
+          }
+        },
+        "text_preview": null
+      },
+      "chroma_path": "assets\\characters\\qingyou\\generated\\chroma\\props\\bookmark-v1.png",
+      "transparent_path": "assets\\characters\\qingyou\\generated\\transparent\\props\\bookmark-v1.png",
+      "response_source": "b64_json",
+      "remove_chroma": {
+        "returncode": 0,
+        "stdout": "Wrote D:\\luo_sisters_project_files\\luo_sisters_project_files\\assets\\characters\\qingyou\\generated\\transparent\\props\\bookmark-v1.png\nKey color: #fdd202\nTransparent pixels: 742585/1048576\nPartially transparent pixels: 125591/1048576\n",
+        "stderr": ""
+      },
+      "alpha": {
+        "size": [
+          1024,
+          1024
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_bbox": [
+          323,
+          35,
+          862,
+          985
+        ],
+        "opaque_magenta_pixels": 0,
+        "passed": true
+      },
+      "status": "transparent-ready"
+    }
+  ],
+  "cost_summary": {
+    "usage_fields_present": true,
+    "header_cost_fields": [
+      {
+        "X-Api-Request-Id": "20260526081939115762743hbk8wnLY",
+        "X-Oneapi-Request-Id": "20260526081939150945342lTZzmmha"
+      }
+    ]
+  }
+}

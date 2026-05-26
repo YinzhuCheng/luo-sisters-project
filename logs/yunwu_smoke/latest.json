@@ -1,0 +1,68 @@
+{
+  "base_url": "https://yunwu.ai",
+  "model": "gpt-image-2",
+  "key_present": true,
+  "tests": {
+    "models": {
+      "status": 200,
+      "elapsed_ms": 983,
+      "summary": {
+        "model_count": 12,
+        "target_model_listed": true,
+        "image_related_sample": [
+          "gpt-image-2"
+        ]
+      },
+      "error_preview": null
+    },
+    "image_route_no_generation": {
+      "status": null,
+      "elapsed_ms": 45796,
+      "connected": false,
+      "error_preview": "The read operation timed out"
+    },
+    "billing_candidates": [
+      {
+        "path": "/v1/billing/usage",
+        "status": 404,
+        "elapsed_ms": 1266,
+        "summary": {
+          "has_structured_balance": false,
+          "top_level_keys": [
+            "error"
+          ]
+        },
+        "error_preview": "{\"error\":{\"message\":\"Invalid URL (GET /v1/billing/usage)\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":\"\"}}"
+      },
+      {
+        "path": "/v1/dashboard/billing/credit_grants",
+        "status": 404,
+        "elapsed_ms": 1125,
+        "summary": {
+          "has_structured_balance": true,
+          "top_level_keys": [
+            "error"
+          ]
+        },
+        "error_preview": "{\"error\":{\"message\":\"Invalid URL (GET /v1/dashboard/billing/credit_grants)\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":\"\"}}"
+      },
+      {
+        "path": "/dashboard/billing/credit_grants",
+        "status": 200,
+        "elapsed_ms": 1141,
+        "summary": {
+          "has_structured_balance": false
+        },
+        "error_preview": null
+      }
+    ],
+    "generate_smoke": {
+      "status": 200,
+      "elapsed_ms": 37703,
+      "output_refs": [
+        "logs\\yunwu_smoke\\artifacts\\yunwu-smoke-1.png"
+      ],
+      "error_preview": null
+    }
+  }
+}

@@ -11,6 +11,22 @@ These prompts are project-bound working notes. The public pages are locale-drive
 - Keep generous padding around long hair, ribbon, key, rabbit charm, and skirt edges.
 - Preserve identity: blue-white JK Lolita, Alice motif, long dark hair, daisy hair ornament, gentle curious expression.
 
+## Shared Style Anchor
+
+Use this block in every Arisu generation prompt before the asset-specific section:
+
+```text
+Polished 2D Japanese anime character-design asset, clean confident lineart, delicate hand-painted watercolor texture, soft cel shading, warm diffuse highlights, crisp readable silhouette, source-sheet-consistent proportions, high detail without photorealism, gentle storybook-lolita mood, refined textile and metal details, no 3D render, no toy-catalog plastic, no heavy oil-paint texture, no thick western cartoon outline, no chibi deformation unless requested.
+```
+
+## Arisu Character Style Anchor
+
+Use this block in every Arisu generation prompt after the shared style anchor:
+
+```text
+Luo Arisu style anchor: blue-white JK Lolita with Alice motif, clear porcelain white, royal and misty blue, shell beige, small cocoa accents, and clean ink details; curious younger-sister presence; long dark hair; daisy hair ornament; blue ribbons, key necklace, rabbit charm, pocket-watch motifs, lace socks, mary jane shoes, school-corridor-to-Wonderland atmosphere. Keep her line weight, face language, ribbon rendering, daisy/key motif density, and soft youthful proportions consistent with the source sheet.
+```
+
 ## standard-full
 
 Use case: stylized-concept  

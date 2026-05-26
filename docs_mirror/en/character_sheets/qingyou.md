@@ -99,18 +99,18 @@ lace-cuffsReference Crop
 Plannedassets/characters/qingyou/generated/transparent/accessories/spare-hairclip-v1.png
 spare-hairclipPlanned
 ## Props
-[image placeholder: alt="journal Reference Crop" src="../../../assets/characters/qingyou/crops/prop-journal-v1.png"]
-journalReference Crop
-[image placeholder: alt="camera Reference Crop" src="../../../assets/characters/qingyou/crops/prop-camera-v1.png"]
-cameraReference Crop
-[image placeholder: alt="tea-cup Reference Crop" src="../../../assets/characters/qingyou/crops/prop-tea-cup-v1.png"]
-tea-cupReference Crop
-[image placeholder: alt="portable-bag Reference Crop" src="../../../assets/characters/qingyou/crops/prop-portable-bag-v1.png"]
-portable-bagReference Crop
+[image placeholder: alt="journal" src="../../../assets/characters/qingyou/generated/transparent/props/journal-v1.png"]
+journalReady
+[image placeholder: alt="camera" src="../../../assets/characters/qingyou/generated/transparent/props/camera-v1.png"]
+cameraReady
+[image placeholder: alt="tea-cup" src="../../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png"]
+tea-cupReady
+[image placeholder: alt="portable-bag" src="../../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png"]
+portable-bagReady
 [image placeholder: alt="pen Reference Crop" src="../../../assets/characters/qingyou/crops/prop-pen-v1.png"]
 penReference Crop
-[image placeholder: alt="bookmark Reference Crop" src="../../../assets/characters/qingyou/crops/prop-bookmark-v1.png"]
-bookmarkReference Crop
+[image placeholder: alt="bookmark" src="../../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png"]
+bookmarkReady
 ## Poses
 Plannedassets/characters/qingyou/generated/transparent/poses/photo-taking-v1.png
 photo-takingPlanned
@@ -184,9 +184,9 @@ assets/characters/qingyou | assets/characters/qingyou/workflow/crop_manifest.csv
 - `asset | ok` ../../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png alt="plum-hairpin Reference Crop"
 - `asset | ok` ../../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png alt="frog-buttons Reference Crop"
 - `asset | ok` ../../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png alt="lace-cuffs Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-journal-v1.png alt="journal Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-camera-v1.png alt="camera Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-tea-cup-v1.png alt="tea-cup Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-portable-bag-v1.png alt="portable-bag Reference Crop"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/journal-v1.png alt="journal"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/camera-v1.png alt="camera"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png alt="tea-cup"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png alt="portable-bag"
 - `asset | ok` ../../../assets/characters/qingyou/crops/prop-pen-v1.png alt="pen Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-bookmark-v1.png alt="bookmark Reference Crop"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png alt="bookmark"

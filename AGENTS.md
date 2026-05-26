@@ -56,6 +56,9 @@ Read one HTML page or anchor at a time. Treat images as placeholders until visua
 - `skills/harness-task-execution/`: use for packet preflight, verify, bundle, score, and CI-oriented harness reading.
 - `tools/build_project_html.py`: generates the Chinese root site and English `en/` mirror.
 - `tools/build_html_markdown_mirror.py`: generates tracked Markdown mirrors from project HTML.
+- `tools/build_crop_review.py`: generates a lightweight crop QA board before transparent asset generation.
+- `tools/yunwu_api_smoke.py`: smoke-tests the external image API key and base URL without printing secrets.
+- `tools/yunwu_generate_assets.py`: generates registered assets through Yunwu `gpt-image-2` edit batches with crop references.
 - `locales/zh-CN.json`, `locales/en.json`: public UI and page copy.
 - `project_data/knowledge_base.json`, `project_data/knowledge_base.en.json`: generated knowledge-page content.
 - `characters/qingyou.json`, `characters/arisu.json`: character asset slots, palettes, layout, and paths.
@@ -143,6 +146,8 @@ Run a browser smoke check:
 - New character assets must live under `assets/characters/<character>/`.
 - Qingyou and Arisu folders must remain strictly isolated for parallel-agent work.
 - Generation route: crop from full sheet -> regenerate clean `#ff00ff` chroma image -> remove background locally -> save transparent PNG.
+- When an external image key is available, default to `https://yunwu.ai` with model `gpt-image-2`, `/v1/images/edits`, crop-reference upload, `moderation=low`, and batch concurrency `5`; never commit or print the key.
+- Use `tools/build_crop_review.py` for a lightweight crop QA pass and only fix obvious bad crops first.
 - Crops are working handles, not the visual truth. If a crop is skewed, tight, or missing context, inspect the full `source_sheet/` image before changing manifests.
 - Planned assets can exist without crops; track them in `characters/*.json` and `logs/asset_registry.csv` until reference crops are created.
 - Finished transparent PNGs go to `generated/transparent/<asset_type>/`.

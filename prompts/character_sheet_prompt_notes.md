@@ -7,6 +7,23 @@
 - During image generation, leave dense labels and long text out of the image. Render readable Chinese and English copy with HTML, SVG, or PIL later.
 - Preserve stable identity marks across versions. Adjust expression, pose, framing, and details without losing the core visual symbols.
 
+## Global Style Anchor
+
+Use this style anchor for every generated character, prop, clothing, accessory, and detail asset unless a task explicitly asks for a different look.
+
+```text
+Polished 2D Japanese anime character-design asset, clean confident lineart, delicate hand-painted watercolor texture, soft cel shading, warm diffuse highlights, crisp readable silhouette, source-sheet-consistent proportions, high detail without photorealism, gentle storybook-lolita mood, refined textile and metal details, no 3D render, no toy-catalog plastic, no heavy oil-paint texture, no thick western cartoon outline, no chibi deformation unless requested.
+```
+
+Every generation prompt should be composed in this order:
+
+1. visible reference crop directive
+2. global style anchor
+3. character-specific style anchor
+4. asset-slot subject request
+5. composition and cutout requirements
+6. negative constraints and chroma-key output requirement
+
 ## Expression Difference Rules
 
 To avoid expression sheets where only labels change, every expression must specify visible changes in:

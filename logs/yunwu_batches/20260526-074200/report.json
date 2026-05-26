@@ -1,0 +1,182 @@
+{
+  "created_at": "2026-05-26T07:43:07",
+  "base_url": "https://yunwu.ai",
+  "model": "gpt-image-2",
+  "concurrency": 3,
+  "quality": "low",
+  "size": "1024x1024",
+  "format": "png",
+  "results": [
+    {
+      "asset": "arisu:props:pocket-watch:v1",
+      "source_crop": "assets/characters/arisu/crops/prop-pocket-watch-v1.png",
+      "prompt": "Polished 2D Japanese anime character-design asset; clean confident lineart; delicate hand-painted watercolor texture; soft cel shading; warm diffuse highlights; crisp readable silhouette; source-sheet-consistent proportions; gentle storybook-lolita mood; refined textile and metal details; not photorealistic, not 3D, not chibi.\nLuo Arisu: blue-white JK Lolita Alice motif; long dark hair; daisy hairpin; blue ribbons, key necklace, rabbit and pocket-watch motifs, lace socks; curious younger sister; soft youthful proportions.\nAsset request: antique gold pocket watch prop with blue ribbon, simple unnumbered clock face, Alice motif, small daisy/key detail.\nSingle complete object only, centered, generous padding, complete silhouette. No text, no labels, no watermark, no border, no frame, no card, no unrelated objects, no cast shadow. Perfectly flat solid #ff00ff chroma-key background only, no gradient, no texture, no floor plane.",
+      "prompt_chars": 936,
+      "request": {
+        "base_url": "https://yunwu.ai",
+        "model": "gpt-image-2",
+        "size": "1024x1024",
+        "quality": "low",
+        "format": "png",
+        "reference_mode": "text-only; crop path recorded but not uploaded"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "elapsed_ms": 64030,
+        "headers": {
+          "X-Api-Request-Id": "20260526074201794433754evhlXdZF",
+          "X-Oneapi-Request-Id": "20260526074201830262541EQ2EGJro"
+        },
+        "usage": {
+          "total_tokens": 1956,
+          "input_tokens": 200,
+          "output_tokens": 1756,
+          "input_tokens_details": {
+            "text_tokens": 200
+          },
+          "output_tokens_details": {
+            "image_tokens": 1756
+          }
+        },
+        "text_preview": null
+      },
+      "chroma_path": "assets\\characters\\arisu\\generated\\chroma\\props\\pocket-watch-v1.png",
+      "transparent_path": "assets\\characters\\arisu\\generated\\transparent\\props\\pocket-watch-v1.png",
+      "response_source": "b64_json",
+      "remove_chroma": {
+        "returncode": 0,
+        "stdout": "Wrote D:\\luo_sisters_project_files\\luo_sisters_project_files\\assets\\characters\\arisu\\generated\\transparent\\props\\pocket-watch-v1.png\nKey color: #fc02fa\nTransparent pixels: 655906/1048576\nPartially transparent pixels: 8296/1048576\n",
+        "stderr": ""
+      },
+      "alpha": {
+        "size": [
+          1024,
+          1024
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_bbox": [
+          75,
+          49,
+          937,
+          979
+        ],
+        "opaque_magenta_pixels": 0,
+        "passed": true
+      },
+      "status": "transparent-ready"
+    },
+    {
+      "asset": "qingyou:props:camera:v1",
+      "source_crop": "assets/characters/qingyou/crops/prop-camera-v1.png",
+      "prompt": "Polished 2D Japanese anime character-design asset; clean confident lineart; delicate hand-painted watercolor texture; soft cel shading; warm diffuse highlights; crisp readable silhouette; source-sheet-consistent proportions; gentle storybook-lolita mood; refined textile and metal details; not photorealistic, not 3D, not chibi.\nLuo Qingyou: sage/celadon/ivory/antique-gold Chinese classic Lolita older sister; long dark hair; plum or gold-green hair ornament; cloud collar, frog buttons, lace cuffs, fine embroidery; calm tea-and-planner mood.\nAsset request: vintage compact camera prop with sage strap, ivory body, antique brass details, planner-recording mood.\nSingle complete object only, centered, generous padding, complete silhouette. No text, no labels, no watermark, no border, no frame, no card, no unrelated objects, no cast shadow. Perfectly flat solid #ff00ff chroma-key background only, no gradient, no texture, no floor plane.",
+      "prompt_chars": 941,
+      "request": {
+        "base_url": "https://yunwu.ai",
+        "model": "gpt-image-2",
+        "size": "1024x1024",
+        "quality": "low",
+        "format": "png",
+        "reference_mode": "text-only; crop path recorded but not uploaded"
+      },
+      "response": {
+        "ok": false,
+        "status": 429,
+        "elapsed_ms": 4842,
+        "headers": {
+          "X-Api-Request-Id": "202605260742018064170404TcCaY7e"
+        },
+        "usage": null,
+        "text_preview": "{\"error\":{\"message\":\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID a65f7a78-52a1-489b-81fb-7f1ee49cbebf. (request id: 202605260742018064170404TcCaY7e)\",\"type\":\"image_generation_user_error\",\"param\":\"\",\"code\":\"moderation_blocked\"}}"
+      },
+      "chroma_path": "assets\\characters\\qingyou\\generated\\chroma\\props\\camera-v1.png",
+      "transparent_path": "assets\\characters\\qingyou\\generated\\transparent\\props\\camera-v1.png",
+      "status": "request-failed"
+    },
+    {
+      "asset": "qingyou:props:journal:v1",
+      "source_crop": "assets/characters/qingyou/crops/prop-journal-v1.png",
+      "prompt": "Polished 2D Japanese anime character-design asset; clean confident lineart; delicate hand-painted watercolor texture; soft cel shading; warm diffuse highlights; crisp readable silhouette; source-sheet-consistent proportions; gentle storybook-lolita mood; refined textile and metal details; not photorealistic, not 3D, not chibi.\nLuo Qingyou: sage/celadon/ivory/antique-gold Chinese classic Lolita older sister; long dark hair; plum or gold-green hair ornament; cloud collar, frog buttons, lace cuffs, fine embroidery; calm tea-and-planner mood.\nAsset request: sage project journal notebook prop, paper texture, ribbon bookmark, subtle gold floral motif, tidy planner feeling.\nSingle complete object only, centered, generous padding, complete silhouette. No text, no labels, no watermark, no border, no frame, no card, no unrelated objects, no cast shadow. Perfectly flat solid #ff00ff chroma-key background only, no gradient, no texture, no floor plane.",
+      "prompt_chars": 953,
+      "request": {
+        "base_url": "https://yunwu.ai",
+        "model": "gpt-image-2",
+        "size": "1024x1024",
+        "quality": "low",
+        "format": "png",
+        "reference_mode": "text-only; crop path recorded but not uploaded"
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "elapsed_ms": 53733,
+        "headers": {
+          "X-Api-Request-Id": "20260526074201784608691aouUQ8aX",
+          "X-Oneapi-Request-Id": "20260526074201821761069p3BwVc9z"
+        },
+        "usage": {
+          "total_tokens": 1969,
+          "input_tokens": 213,
+          "output_tokens": 1756,
+          "input_tokens_details": {
+            "text_tokens": 213
+          },
+          "output_tokens_details": {
+            "image_tokens": 1756
+          }
+        },
+        "text_preview": null
+      },
+      "chroma_path": "assets\\characters\\qingyou\\generated\\chroma\\props\\journal-v1.png",
+      "transparent_path": "assets\\characters\\qingyou\\generated\\transparent\\props\\journal-v1.png",
+      "response_source": "b64_json",
+      "remove_chroma": {
+        "returncode": 0,
+        "stdout": "Wrote D:\\luo_sisters_project_files\\luo_sisters_project_files\\assets\\characters\\qingyou\\generated\\transparent\\props\\journal-v1.png\nKey color: #f903f4\nTransparent pixels: 518480/1048576\nPartially transparent pixels: 3070/1048576\n",
+        "stderr": ""
+      },
+      "alpha": {
+        "size": [
+          1024,
+          1024
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "alpha_bbox": [
+          198,
+          61,
+          848,
+          992
+        ],
+        "opaque_magenta_pixels": 0,
+        "passed": true
+      },
+      "status": "transparent-ready"
+    }
+  ],
+  "cost_summary": {
+    "usage_fields_present": true,
+    "header_cost_fields": [
+      {
+        "X-Api-Request-Id": "20260526074201794433754evhlXdZF",
+        "X-Oneapi-Request-Id": "20260526074201830262541EQ2EGJro"
+      },
+      {
+        "X-Api-Request-Id": "202605260742018064170404TcCaY7e"
+      },
+      {
+        "X-Api-Request-Id": "20260526074201784608691aouUQ8aX",
+        "X-Oneapi-Request-Id": "20260526074201821761069p3BwVc9z"
+      }
+    ]
+  }
+}

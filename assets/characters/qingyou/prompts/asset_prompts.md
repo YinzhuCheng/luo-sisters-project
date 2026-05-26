@@ -11,6 +11,22 @@ These prompts are project-bound working notes. The public pages are locale-drive
 - Keep generous padding around hair, lace, skirt, and accessories.
 - Preserve identity: long dark hair, sage green classic Lolita, warm older-sister expression, plum or gold-green hair ornament.
 
+## Shared Style Anchor
+
+Use this block in every Qingyou generation prompt before the asset-specific section:
+
+```text
+Polished 2D Japanese anime character-design asset, clean confident lineart, delicate hand-painted watercolor texture, soft cel shading, warm diffuse highlights, crisp readable silhouette, source-sheet-consistent proportions, high detail without photorealism, gentle storybook-lolita mood, refined textile and metal details, no 3D render, no toy-catalog plastic, no heavy oil-paint texture, no thick western cartoon outline, no chibi deformation unless requested.
+```
+
+## Qingyou Character Style Anchor
+
+Use this block in every Qingyou generation prompt after the shared style anchor:
+
+```text
+Luo Qingyou style anchor: elegant Chinese-inspired classic Lolita with sage green, celadon, ivory, warm paper, antique gold, and soft umber palette; calm older-sister presence; graceful long dark hair; restrained facial features; plum or gold-green hair ornament; cloud collar, frog buttons, lace cuffs, layered skirt, fine embroidery, planner-and-tea atmosphere. Keep her line weight, face language, fabric rendering, and ornament density consistent with the source sheet.
+```
+
 ## standard-full
 
 Use case: stylized-concept  

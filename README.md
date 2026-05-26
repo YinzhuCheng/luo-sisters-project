@@ -197,22 +197,38 @@ Current asset types:
 1. Crop references from `source_sheet/`:
 
 ```bash
+python tools/build_crop_review.py
 python tools/crop_from_sheet.py --character all --force
 ```
 
-2. Use each crop as a reference to regenerate a clean, textless, borderless image on flat `#ff00ff`.
-3. If a crop is skewed or lacks context, inspect the full `source_sheet/` image before changing the crop manifest.
-4. Save chroma sources under `generated/chroma/<asset_type>/`.
-5. Remove background:
+2. Use the crop review board for a lightweight pre-generation QA pass and fix only obvious failures first.
+3. Use each crop as a reference to regenerate a clean, textless, borderless image on flat `#ff00ff`.
+4. If a crop is skewed or lacks context, inspect the full `source_sheet/` image before changing the crop manifest.
+5. Save chroma sources under `generated/chroma/<asset_type>/`.
+6. Remove background:
 
 ```bash
 python tools/remove_chroma_batch.py --character qingyou --asset-type props
 ```
 
-6. Validate:
+7. Validate:
 
 ```bash
 python tools/validate_assets.py
+```
+
+External image API smoke test:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\yunwu_api_smoke.py --key-file C:\Users\cyz19\Desktop\gptimg2.txt
+```
+
+The current default for external reference batches is `https://yunwu.ai`, model `gpt-image-2`, `/v1/images/edits`, crop upload, `moderation=low`, and concurrency `5`. Keep keys outside the repository and only use `--generate-smoke` when spending one low-quality test generation is acceptable.
+
+Generate registered assets with crop references:
+
+```powershell
+& 'C:\Users\cyz19\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' tools\yunwu_generate_assets.py --key-file C:\Users\cyz19\Desktop\gptimg2.txt --asset qingyou:props:bookmark --reference-mode edit --concurrency 5 --max-attempts 2 --quality low --size 1024x1024
 ```
 
 ## Content Preservation

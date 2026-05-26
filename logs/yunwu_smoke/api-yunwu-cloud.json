@@ -1,0 +1,58 @@
+{
+  "base_url": "https://api.yunwu.cloud",
+  "model": "gpt-image-2",
+  "key_present": true,
+  "tests": {
+    "models": {
+      "status": 403,
+      "elapsed_ms": 1858,
+      "summary": {
+        "model_count": 0,
+        "target_model_listed": false,
+        "image_related_sample": []
+      },
+      "error_preview": "{\"error\":{\"message\":\"无效的 KEY，请检查 BASE_URL (request id: 20260526071417535916915hsdkamOk)\",\"type\":\"new_api_error\"}}"
+    },
+    "image_route_no_generation": {
+      "status": 403,
+      "elapsed_ms": 1125,
+      "connected": false,
+      "error_preview": "{\"error\":{\"message\":\"无效的 KEY，请检查 BASE_URL (request id: 20260526071418958694149LhfAYdpM)\",\"type\":\"new_api_error\"}}"
+    },
+    "billing_candidates": [
+      {
+        "path": "/v1/billing/usage",
+        "status": 404,
+        "elapsed_ms": 1125,
+        "summary": {
+          "has_structured_balance": false,
+          "top_level_keys": [
+            "error"
+          ]
+        },
+        "error_preview": "{\"error\":{\"message\":\"Invalid URL (GET /v1/billing/usage)\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":\"\"}}"
+      },
+      {
+        "path": "/v1/dashboard/billing/credit_grants",
+        "status": 404,
+        "elapsed_ms": 1108,
+        "summary": {
+          "has_structured_balance": true,
+          "top_level_keys": [
+            "error"
+          ]
+        },
+        "error_preview": "{\"error\":{\"message\":\"Invalid URL (GET /v1/dashboard/billing/credit_grants)\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":\"\"}}"
+      },
+      {
+        "path": "/dashboard/billing/credit_grants",
+        "status": 200,
+        "elapsed_ms": 1109,
+        "summary": {
+          "has_structured_balance": false
+        },
+        "error_preview": null
+      }
+    ]
+  }
+}

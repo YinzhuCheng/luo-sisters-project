@@ -36,6 +36,7 @@ This document is the repo-local skill index for the Luo Sisters project. Prefer 
   - `workflows/asset_generation_workflow.md`
   - `characters/<character>.json`
   - `logs/asset_registry.csv`
+  - `python tools/build_crop_review.py`
   - `python tools/crop_from_sheet.py --character all --force`
   - `python tools/remove_chroma_batch.py --character <character> --asset-type <type>`
   - `python tools/validate_assets.py`

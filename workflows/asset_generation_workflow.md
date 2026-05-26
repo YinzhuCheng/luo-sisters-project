@@ -37,6 +37,14 @@ Each crop is controlled by:
 
 If you adjust crop coordinates, update the manifest and append a row to `logs/progress_updates.csv`.
 
+For a lightweight QA pass before generation, build the crop review board:
+
+```bash
+python tools/build_crop_review.py
+```
+
+Open `logs/crop_review/index.html` and review only obvious failures first: clipped silhouette, cropped-out prop tips, strong neighbor bleed, or clearly off-target boxes. Do not force a full crop refactor before generation.
+
 Before reading generated HTML pages for context, use:
 
 ```bash
@@ -61,10 +69,44 @@ This rule exists because the goal is stable asset production. Crops are useful h
 
 Use each crop as a reference image. The generation target is a clean, textless, borderless asset on a flat `#ff00ff` background.
 
+When an external API key is available, the default provider for production batches is:
+
+- base URL: `https://yunwu.ai`
+- model: `gpt-image-2`
+- default reference-batch concurrency: `5`
+- request route for crop references: `POST /v1/images/edits`
+- request setting: `moderation=low`
+
+Keep API keys outside the repository. Read them from a local key file or environment variable, and never print the full key in logs. Before using a key for batch production, run:
+
+```bash
+python tools/yunwu_api_smoke.py --key-file C:\Users\cyz19\Desktop\gptimg2.txt
+```
+
+Use `--generate-smoke` only when a real low-quality test image is acceptable, because it can consume credit. The `https://api.yunwu.cloud` base URL may reject keys created for `https://yunwu.ai`; trust the smoke-test result for the specific key.
+
+Run reference-image batches with:
+
+```bash
+python tools/yunwu_generate_assets.py --key-file C:\Users\cyz19\Desktop\gptimg2.txt --asset qingyou:props:bookmark --asset arisu:props:notebook --reference-mode edit --concurrency 5 --max-attempts 2 --quality low --size 1024x1024
+```
+
+The batch script uploads each registry `source_crop` as multipart `image`, uses the full prompt sections from the prompt Markdown files, sends `moderation=low`, retries failed assets, saves chroma images, removes background locally, updates `asset_registry.csv`, and appends progress rows. Do not hard-truncate prompts; the `#ff00ff` output rule must remain intact at the end of the prompt.
+
 Prompt notes live in:
 
 - `assets/characters/qingyou/prompts/asset_prompts.md`
 - `assets/characters/arisu/prompts/asset_prompts.md`
+- `prompts/character_sheet_prompt_notes.md`
+
+Every generation prompt must include the style layer. Compose prompts in this order:
+
+1. Reference directive: use the visible crop as the visual reference.
+2. Global style anchor from `prompts/character_sheet_prompt_notes.md`.
+3. Character style anchor from the character prompt file.
+4. Asset-slot subject request from the matching section, such as `props`, `clothing`, or `expressions`.
+5. Composition requirements: one object or one character view, centered, complete silhouette, generous padding.
+6. Negative and output constraints: no text, no labels, no frame, no unrelated objects, flat chroma-key background.
 
 Generated pre-alpha images must be saved under:
 
@@ -85,6 +127,12 @@ Run:
 
 ```bash
 python tools/remove_chroma_batch.py --character qingyou --asset-type props
+```
+
+Built-in image generation can produce a near-magenta background instead of exact `#ff00ff`. If the default batch remover leaves nonzero alpha in the four corners, rerun the single image through the system chroma helper with border auto-key sampling:
+
+```bash
+python C:\Users\cyz19\.codex\skills\.system\imagegen\scripts\remove_chroma_key.py --input assets/characters/<character>/generated/chroma/<asset_type>/<name>.png --out assets/characters/<character>/generated/transparent/<asset_type>/<name>.png --auto-key border --soft-matte --transparent-threshold 42 --opaque-threshold 132 --despill --force
 ```
 
 The output is mirrored into:

@@ -9,8 +9,8 @@ expressions,troubled,v1,assets/characters/qingyou/source_sheet/luo_qingyou_chara
 expressions,tired,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1125,238,145,125,assets/characters/qingyou/crops/expression-tired-v1.png,expression crop for transparent bust asset
 expressions,relieved,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1300,238,145,125,assets/characters/qingyou/crops/expression-relieved-v1.png,expression crop for transparent bust asset
 turnaround,front,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,700,470,145,330,assets/characters/qingyou/crops/turnaround-front-v1.png,front view reference
-turnaround,side,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,875,470,145,330,assets/characters/qingyou/crops/turnaround-side-v1.png,side view reference
-turnaround,back,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1035,470,150,330,assets/characters/qingyou/crops/turnaround-back-v1.png,back view reference
+turnaround,side,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,870,470,125,330,assets/characters/qingyou/crops/turnaround-side-v1.png,side view reference
+turnaround,back,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,1030,470,130,330,assets/characters/qingyou/crops/turnaround-back-v1.png,back view reference
 clothing,classic-lolita-dress,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,120,200,280,540,assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png,main dress silhouette reference
 clothing,cloud-collar,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,220,120,170,170,assets/characters/qingyou/crops/clothing-cloud-collar-v1.png,cloud collar and upper body reference
 clothing,embroidered-skirt,v1,assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png,90,420,300,260,assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png,skirt embroidery reference
