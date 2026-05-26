@@ -22,22 +22,22 @@ Source HTML: `character_sheets/qingyou.html`
 [image placeholder: alt="标准全身立绘 参考截图" src="../../assets/characters/qingyou/crops/standing-standard-full-v1.png"]
 标准全身立绘参考截图
 ## 表情差分
-[image placeholder: alt="温柔 参考截图" src="../../assets/characters/qingyou/crops/expression-gentle-v1.png"]
-温柔参考截图
-[image placeholder: alt="微笑 参考截图" src="../../assets/characters/qingyou/crops/expression-smile-v1.png"]
-微笑参考截图
-[image placeholder: alt="认真 参考截图" src="../../assets/characters/qingyou/crops/expression-serious-v1.png"]
-认真参考截图
-[image placeholder: alt="思索 参考截图" src="../../assets/characters/qingyou/crops/expression-thinking-v1.png"]
-思索参考截图
-[image placeholder: alt="惊讶 参考截图" src="../../assets/characters/qingyou/crops/expression-surprised-v1.png"]
-惊讶参考截图
-[image placeholder: alt="困扰 参考截图" src="../../assets/characters/qingyou/crops/expression-troubled-v1.png"]
-困扰参考截图
-[image placeholder: alt="疲惫 参考截图" src="../../assets/characters/qingyou/crops/expression-tired-v1.png"]
-疲惫参考截图
-[image placeholder: alt="释然 参考截图" src="../../assets/characters/qingyou/crops/expression-relieved-v1.png"]
-释然参考截图
+[image placeholder: alt="温柔" src="../../assets/characters/qingyou/generated/transparent/expressions/gentle-v1.png"]
+温柔已就绪
+[image placeholder: alt="微笑" src="../../assets/characters/qingyou/generated/transparent/expressions/smile-v1.png"]
+微笑已就绪
+[image placeholder: alt="认真" src="../../assets/characters/qingyou/generated/transparent/expressions/serious-v1.png"]
+认真已就绪
+[image placeholder: alt="思索" src="../../assets/characters/qingyou/generated/transparent/expressions/thinking-v1.png"]
+思索已就绪
+[image placeholder: alt="惊讶" src="../../assets/characters/qingyou/generated/transparent/expressions/surprised-v1.png"]
+惊讶已就绪
+[image placeholder: alt="困扰" src="../../assets/characters/qingyou/generated/transparent/expressions/troubled-v1.png"]
+困扰已就绪
+[image placeholder: alt="疲惫" src="../../assets/characters/qingyou/generated/transparent/expressions/tired-v1.png"]
+疲惫已就绪
+[image placeholder: alt="释然" src="../../assets/characters/qingyou/generated/transparent/expressions/relieved-v1.png"]
+释然已就绪
 待生成assets/characters/qingyou/generated/transparent/expressions/light-scold-v1.png
 轻责备待生成
 ## 姿势设定
@@ -52,10 +52,10 @@ Source HTML: `character_sheets/qingyou.html`
 待生成assets/characters/qingyou/generated/transparent/poses/adjust-bow-tie-v1.png
 整理领结姿势待生成
 ## 三视图
-[image placeholder: alt="正面 参考截图" src="../../assets/characters/qingyou/crops/turnaround-front-v1.png"]
-正面参考截图
-[image placeholder: alt="侧面 参考截图" src="../../assets/characters/qingyou/crops/turnaround-side-v1.png"]
-侧面参考截图
+[image placeholder: alt="正面" src="../../assets/characters/qingyou/generated/transparent/turnaround/front-v1.png"]
+正面已就绪
+[image placeholder: alt="侧面" src="../../assets/characters/qingyou/generated/transparent/turnaround/side-v1.png"]
+侧面已就绪
 [image placeholder: alt="背面 参考截图" src="../../assets/characters/qingyou/crops/turnaround-back-v1.png"]
 背面参考截图
 ## 角色色卡
@@ -67,14 +67,14 @@ Source HTML: `character_sheets/qingyou.html`
 旧金#D9C49C
 茶褐#8B6B4D
 ## 细节展示
-[image placeholder: alt="发饰细节 参考截图" src="../../assets/characters/qingyou/crops/detail-hair-v1.png"]
-发饰细节参考截图
-[image placeholder: alt="服装刺绣 参考截图" src="../../assets/characters/qingyou/crops/detail-fabric-v1.png"]
-服装刺绣参考截图
-[image placeholder: alt="腰带挂饰 参考截图" src="../../assets/characters/qingyou/crops/detail-waist-v1.png"]
-腰带挂饰参考截图
-[image placeholder: alt="袖口花纹 参考截图" src="../../assets/characters/qingyou/crops/detail-sleeve-v1.png"]
-袖口花纹参考截图
+[image placeholder: alt="发饰细节" src="../../assets/characters/qingyou/generated/transparent/details/hair-detail-v1.png"]
+发饰细节已就绪
+[image placeholder: alt="服装刺绣" src="../../assets/characters/qingyou/generated/transparent/details/fabric-detail-v1.png"]
+服装刺绣已就绪
+[image placeholder: alt="腰带挂饰" src="../../assets/characters/qingyou/generated/transparent/details/waist-detail-v1.png"]
+腰带挂饰已就绪
+[image placeholder: alt="袖口花纹" src="../../assets/characters/qingyou/generated/transparent/details/sleeve-detail-v1.png"]
+袖口花纹已就绪
 ## 记忆句
 那就给这场梦订个日期吧。茶和退路，我来准备。
 ## 人物标签
@@ -83,19 +83,19 @@ Source HTML: `character_sheets/qingyou.html`
 ## 资产槽位
 当前页面先用参考截图和占位槽稳定版式；透明 PNG 生成后会自动替换进入对应槽位。
 ## 服饰拆解
-[image placeholder: alt="古风 Lolita 主裙 参考截图" src="../../assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png"]
-古风 Lolita 主裙参考截图
-[image placeholder: alt="云肩结构 参考截图" src="../../assets/characters/qingyou/crops/clothing-cloud-collar-v1.png"]
-云肩结构参考截图
-[image placeholder: alt="刺绣裙摆 参考截图" src="../../assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png"]
-刺绣裙摆参考截图
+[image placeholder: alt="古风 Lolita 主裙" src="../../assets/characters/qingyou/generated/transparent/clothing/classic-lolita-dress-v1.png"]
+古风 Lolita 主裙已就绪
+[image placeholder: alt="云肩结构" src="../../assets/characters/qingyou/generated/transparent/clothing/cloud-collar-v1.png"]
+云肩结构已就绪
+[image placeholder: alt="刺绣裙摆" src="../../assets/characters/qingyou/generated/transparent/clothing/embroidered-skirt-v1.png"]
+刺绣裙摆已就绪
 ## 穿戴配饰
-[image placeholder: alt="梅花发饰 参考截图" src="../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png"]
-梅花发饰参考截图
-[image placeholder: alt="盘扣 参考截图" src="../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png"]
-盘扣参考截图
-[image placeholder: alt="蕾丝袖口 参考截图" src="../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png"]
-蕾丝袖口参考截图
+[image placeholder: alt="梅花发饰" src="../../assets/characters/qingyou/generated/transparent/accessories/plum-hairpin-v1.png"]
+梅花发饰已就绪
+[image placeholder: alt="盘扣" src="../../assets/characters/qingyou/generated/transparent/accessories/frog-buttons-v1.png"]
+盘扣已就绪
+[image placeholder: alt="蕾丝袖口" src="../../assets/characters/qingyou/generated/transparent/accessories/lace-cuffs-v1.png"]
+蕾丝袖口已就绪
 待生成assets/characters/qingyou/generated/transparent/accessories/spare-hairclip-v1.png
 备用发夹待生成
 ## 常用物件
@@ -107,8 +107,8 @@ Source HTML: `character_sheets/qingyou.html`
 茶杯已就绪
 [image placeholder: alt="便携收纳包" src="../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png"]
 便携收纳包已就绪
-[image placeholder: alt="钢笔 参考截图" src="../../assets/characters/qingyou/crops/prop-pen-v1.png"]
-钢笔参考截图
+[image placeholder: alt="钢笔" src="../../assets/characters/qingyou/generated/transparent/props/pen-v1.png"]
+钢笔已就绪
 [image placeholder: alt="书签" src="../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png"]
 书签已就绪
 ## 姿势设定
@@ -163,30 +163,30 @@ assets/characters/qingyou | assets/characters/qingyou/workflow/crop_manifest.csv
 ## Resource References
 - `asset | ok` ../../assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png alt="整版参考图"
 - `asset | ok` ../../assets/characters/qingyou/crops/standing-standard-full-v1.png alt="标准全身立绘 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-gentle-v1.png alt="温柔 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-smile-v1.png alt="微笑 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-serious-v1.png alt="认真 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-thinking-v1.png alt="思索 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-surprised-v1.png alt="惊讶 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-troubled-v1.png alt="困扰 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-tired-v1.png alt="疲惫 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/expression-relieved-v1.png alt="释然 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/turnaround-front-v1.png alt="正面 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/turnaround-side-v1.png alt="侧面 参考截图"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/gentle-v1.png alt="温柔"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/smile-v1.png alt="微笑"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/serious-v1.png alt="认真"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/thinking-v1.png alt="思索"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/surprised-v1.png alt="惊讶"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/troubled-v1.png alt="困扰"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/tired-v1.png alt="疲惫"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/expressions/relieved-v1.png alt="释然"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/turnaround/front-v1.png alt="正面"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/turnaround/side-v1.png alt="侧面"
 - `asset | ok` ../../assets/characters/qingyou/crops/turnaround-back-v1.png alt="背面 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/detail-hair-v1.png alt="发饰细节 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/detail-fabric-v1.png alt="服装刺绣 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/detail-waist-v1.png alt="腰带挂饰 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/detail-sleeve-v1.png alt="袖口花纹 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png alt="古风 Lolita 主裙 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/clothing-cloud-collar-v1.png alt="云肩结构 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png alt="刺绣裙摆 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png alt="梅花发饰 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png alt="盘扣 参考截图"
-- `asset | ok` ../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png alt="蕾丝袖口 参考截图"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/details/hair-detail-v1.png alt="发饰细节"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/details/fabric-detail-v1.png alt="服装刺绣"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/details/waist-detail-v1.png alt="腰带挂饰"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/details/sleeve-detail-v1.png alt="袖口花纹"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/clothing/classic-lolita-dress-v1.png alt="古风 Lolita 主裙"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/clothing/cloud-collar-v1.png alt="云肩结构"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/clothing/embroidered-skirt-v1.png alt="刺绣裙摆"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/accessories/plum-hairpin-v1.png alt="梅花发饰"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/accessories/frog-buttons-v1.png alt="盘扣"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/accessories/lace-cuffs-v1.png alt="蕾丝袖口"
 - `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/journal-v1.png alt="手账本"
 - `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/camera-v1.png alt="复古相机"
 - `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png alt="茶杯"
 - `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png alt="便携收纳包"
-- `asset | ok` ../../assets/characters/qingyou/crops/prop-pen-v1.png alt="钢笔 参考截图"
+- `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/pen-v1.png alt="钢笔"
 - `asset | ok` ../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png alt="书签"

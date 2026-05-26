@@ -22,22 +22,22 @@ StyleSage Chinese classic Lolita
 [image placeholder: alt="standard-full Reference Crop" src="../../../assets/characters/qingyou/crops/standing-standard-full-v1.png"]
 standard-fullReference Crop
 ## Expressions
-[image placeholder: alt="gentle Reference Crop" src="../../../assets/characters/qingyou/crops/expression-gentle-v1.png"]
-gentleReference Crop
-[image placeholder: alt="smile Reference Crop" src="../../../assets/characters/qingyou/crops/expression-smile-v1.png"]
-smileReference Crop
-[image placeholder: alt="serious Reference Crop" src="../../../assets/characters/qingyou/crops/expression-serious-v1.png"]
-seriousReference Crop
-[image placeholder: alt="thinking Reference Crop" src="../../../assets/characters/qingyou/crops/expression-thinking-v1.png"]
-thinkingReference Crop
-[image placeholder: alt="surprised Reference Crop" src="../../../assets/characters/qingyou/crops/expression-surprised-v1.png"]
-surprisedReference Crop
-[image placeholder: alt="troubled Reference Crop" src="../../../assets/characters/qingyou/crops/expression-troubled-v1.png"]
-troubledReference Crop
-[image placeholder: alt="tired Reference Crop" src="../../../assets/characters/qingyou/crops/expression-tired-v1.png"]
-tiredReference Crop
-[image placeholder: alt="relieved Reference Crop" src="../../../assets/characters/qingyou/crops/expression-relieved-v1.png"]
-relievedReference Crop
+[image placeholder: alt="gentle" src="../../../assets/characters/qingyou/generated/transparent/expressions/gentle-v1.png"]
+gentleReady
+[image placeholder: alt="smile" src="../../../assets/characters/qingyou/generated/transparent/expressions/smile-v1.png"]
+smileReady
+[image placeholder: alt="serious" src="../../../assets/characters/qingyou/generated/transparent/expressions/serious-v1.png"]
+seriousReady
+[image placeholder: alt="thinking" src="../../../assets/characters/qingyou/generated/transparent/expressions/thinking-v1.png"]
+thinkingReady
+[image placeholder: alt="surprised" src="../../../assets/characters/qingyou/generated/transparent/expressions/surprised-v1.png"]
+surprisedReady
+[image placeholder: alt="troubled" src="../../../assets/characters/qingyou/generated/transparent/expressions/troubled-v1.png"]
+troubledReady
+[image placeholder: alt="tired" src="../../../assets/characters/qingyou/generated/transparent/expressions/tired-v1.png"]
+tiredReady
+[image placeholder: alt="relieved" src="../../../assets/characters/qingyou/generated/transparent/expressions/relieved-v1.png"]
+relievedReady
 Plannedassets/characters/qingyou/generated/transparent/expressions/light-scold-v1.png
 light-scoldPlanned
 ## Poses
@@ -52,10 +52,10 @@ prepare-umbrellaPlanned
 Plannedassets/characters/qingyou/generated/transparent/poses/adjust-bow-tie-v1.png
 adjust-bow-tiePlanned
 ## Turnaround
-[image placeholder: alt="Front Reference Crop" src="../../../assets/characters/qingyou/crops/turnaround-front-v1.png"]
-FrontReference Crop
-[image placeholder: alt="Side Reference Crop" src="../../../assets/characters/qingyou/crops/turnaround-side-v1.png"]
-SideReference Crop
+[image placeholder: alt="Front" src="../../../assets/characters/qingyou/generated/transparent/turnaround/front-v1.png"]
+FrontReady
+[image placeholder: alt="Side" src="../../../assets/characters/qingyou/generated/transparent/turnaround/side-v1.png"]
+SideReady
 [image placeholder: alt="Back Reference Crop" src="../../../assets/characters/qingyou/crops/turnaround-back-v1.png"]
 BackReference Crop
 ## Palette
@@ -67,14 +67,14 @@ Apricot#E3D8C3
 Old Gold#D9C49C
 Tea Umber#8B6B4D
 ## Details
-[image placeholder: alt="hair-detail Reference Crop" src="../../../assets/characters/qingyou/crops/detail-hair-v1.png"]
-hair-detailReference Crop
-[image placeholder: alt="fabric-detail Reference Crop" src="../../../assets/characters/qingyou/crops/detail-fabric-v1.png"]
-fabric-detailReference Crop
-[image placeholder: alt="waist-detail Reference Crop" src="../../../assets/characters/qingyou/crops/detail-waist-v1.png"]
-waist-detailReference Crop
-[image placeholder: alt="sleeve-detail Reference Crop" src="../../../assets/characters/qingyou/crops/detail-sleeve-v1.png"]
-sleeve-detailReference Crop
+[image placeholder: alt="hair-detail" src="../../../assets/characters/qingyou/generated/transparent/details/hair-detail-v1.png"]
+hair-detailReady
+[image placeholder: alt="fabric-detail" src="../../../assets/characters/qingyou/generated/transparent/details/fabric-detail-v1.png"]
+fabric-detailReady
+[image placeholder: alt="waist-detail" src="../../../assets/characters/qingyou/generated/transparent/details/waist-detail-v1.png"]
+waist-detailReady
+[image placeholder: alt="sleeve-detail" src="../../../assets/characters/qingyou/generated/transparent/details/sleeve-detail-v1.png"]
+sleeve-detailReady
 ## Signature Line
 Then let us give this dream a date.I will prepare the tea, and the way back.
 ## Tags
@@ -83,19 +83,19 @@ Asset Expansion
 ## Asset Slots
 The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.
 ## Clothing
-[image placeholder: alt="classic-lolita-dress Reference Crop" src="../../../assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png"]
-classic-lolita-dressReference Crop
-[image placeholder: alt="cloud-collar Reference Crop" src="../../../assets/characters/qingyou/crops/clothing-cloud-collar-v1.png"]
-cloud-collarReference Crop
-[image placeholder: alt="embroidered-skirt Reference Crop" src="../../../assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png"]
-embroidered-skirtReference Crop
+[image placeholder: alt="classic-lolita-dress" src="../../../assets/characters/qingyou/generated/transparent/clothing/classic-lolita-dress-v1.png"]
+classic-lolita-dressReady
+[image placeholder: alt="cloud-collar" src="../../../assets/characters/qingyou/generated/transparent/clothing/cloud-collar-v1.png"]
+cloud-collarReady
+[image placeholder: alt="embroidered-skirt" src="../../../assets/characters/qingyou/generated/transparent/clothing/embroidered-skirt-v1.png"]
+embroidered-skirtReady
 ## Accessories
-[image placeholder: alt="plum-hairpin Reference Crop" src="../../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png"]
-plum-hairpinReference Crop
-[image placeholder: alt="frog-buttons Reference Crop" src="../../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png"]
-frog-buttonsReference Crop
-[image placeholder: alt="lace-cuffs Reference Crop" src="../../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png"]
-lace-cuffsReference Crop
+[image placeholder: alt="plum-hairpin" src="../../../assets/characters/qingyou/generated/transparent/accessories/plum-hairpin-v1.png"]
+plum-hairpinReady
+[image placeholder: alt="frog-buttons" src="../../../assets/characters/qingyou/generated/transparent/accessories/frog-buttons-v1.png"]
+frog-buttonsReady
+[image placeholder: alt="lace-cuffs" src="../../../assets/characters/qingyou/generated/transparent/accessories/lace-cuffs-v1.png"]
+lace-cuffsReady
 Plannedassets/characters/qingyou/generated/transparent/accessories/spare-hairclip-v1.png
 spare-hairclipPlanned
 ## Props
@@ -107,8 +107,8 @@ cameraReady
 tea-cupReady
 [image placeholder: alt="portable-bag" src="../../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png"]
 portable-bagReady
-[image placeholder: alt="pen Reference Crop" src="../../../assets/characters/qingyou/crops/prop-pen-v1.png"]
-penReference Crop
+[image placeholder: alt="pen" src="../../../assets/characters/qingyou/generated/transparent/props/pen-v1.png"]
+penReady
 [image placeholder: alt="bookmark" src="../../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png"]
 bookmarkReady
 ## Poses
@@ -163,30 +163,30 @@ assets/characters/qingyou | assets/characters/qingyou/workflow/crop_manifest.csv
 ## Resource References
 - `asset | ok` ../../../assets/characters/qingyou/source_sheet/luo_qingyou_character_sheet_v2.png alt="Source Sheet"
 - `asset | ok` ../../../assets/characters/qingyou/crops/standing-standard-full-v1.png alt="standard-full Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-gentle-v1.png alt="gentle Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-smile-v1.png alt="smile Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-serious-v1.png alt="serious Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-thinking-v1.png alt="thinking Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-surprised-v1.png alt="surprised Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-troubled-v1.png alt="troubled Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-tired-v1.png alt="tired Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/expression-relieved-v1.png alt="relieved Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/turnaround-front-v1.png alt="Front Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/turnaround-side-v1.png alt="Side Reference Crop"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/gentle-v1.png alt="gentle"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/smile-v1.png alt="smile"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/serious-v1.png alt="serious"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/thinking-v1.png alt="thinking"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/surprised-v1.png alt="surprised"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/troubled-v1.png alt="troubled"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/tired-v1.png alt="tired"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/expressions/relieved-v1.png alt="relieved"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/turnaround/front-v1.png alt="Front"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/turnaround/side-v1.png alt="Side"
 - `asset | ok` ../../../assets/characters/qingyou/crops/turnaround-back-v1.png alt="Back Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/detail-hair-v1.png alt="hair-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/detail-fabric-v1.png alt="fabric-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/detail-waist-v1.png alt="waist-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/detail-sleeve-v1.png alt="sleeve-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/clothing-classic-lolita-dress-v1.png alt="classic-lolita-dress Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/clothing-cloud-collar-v1.png alt="cloud-collar Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/clothing-embroidered-skirt-v1.png alt="embroidered-skirt Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/accessory-plum-hairpin-v1.png alt="plum-hairpin Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/accessory-frog-buttons-v1.png alt="frog-buttons Reference Crop"
-- `asset | ok` ../../../assets/characters/qingyou/crops/accessory-lace-cuffs-v1.png alt="lace-cuffs Reference Crop"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/details/hair-detail-v1.png alt="hair-detail"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/details/fabric-detail-v1.png alt="fabric-detail"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/details/waist-detail-v1.png alt="waist-detail"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/details/sleeve-detail-v1.png alt="sleeve-detail"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/clothing/classic-lolita-dress-v1.png alt="classic-lolita-dress"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/clothing/cloud-collar-v1.png alt="cloud-collar"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/clothing/embroidered-skirt-v1.png alt="embroidered-skirt"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/accessories/plum-hairpin-v1.png alt="plum-hairpin"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/accessories/frog-buttons-v1.png alt="frog-buttons"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/accessories/lace-cuffs-v1.png alt="lace-cuffs"
 - `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/journal-v1.png alt="journal"
 - `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/camera-v1.png alt="camera"
 - `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/tea-cup-v1.png alt="tea-cup"
 - `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/portable-bag-v1.png alt="portable-bag"
-- `asset | ok` ../../../assets/characters/qingyou/crops/prop-pen-v1.png alt="pen Reference Crop"
+- `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/pen-v1.png alt="pen"
 - `asset | ok` ../../../assets/characters/qingyou/generated/transparent/props/bookmark-v1.png alt="bookmark"

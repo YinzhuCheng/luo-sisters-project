@@ -18,10 +18,10 @@ StyleJK Lolita / Alice mood
 ## Turnaround
 [image placeholder: alt="Front Reference Crop" src="../../../assets/characters/arisu/crops/turnaround-front-v1.png"]
 FrontReference Crop
-[image placeholder: alt="Side Reference Crop" src="../../../assets/characters/arisu/crops/turnaround-side-v1.png"]
-SideReference Crop
-[image placeholder: alt="Back Reference Crop" src="../../../assets/characters/arisu/crops/turnaround-back-v1.png"]
-BackReference Crop
+[image placeholder: alt="Side" src="../../../assets/characters/arisu/generated/transparent/turnaround/side-v1.png"]
+SideReady
+[image placeholder: alt="Back" src="../../../assets/characters/arisu/generated/transparent/turnaround/back-v1.png"]
+BackReady
 ## Hidden Conflict
 She believes in other possibilities but fears opening the door and finding reality less beautiful than imagination.
 ## Visual Anchors
@@ -39,8 +39,8 @@ pocket-watch-bagPlanned
 rabbit-charmReady
 [image placeholder: alt="notebook" src="../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png"]
 notebookReady
-[image placeholder: alt="school-bag Reference Crop" src="../../../assets/characters/arisu/crops/prop-school-bag-v1.png"]
-school-bagReference Crop
+[image placeholder: alt="school-bag" src="../../../assets/characters/arisu/generated/transparent/props/school-bag-v1.png"]
+school-bagReady
 [image placeholder: alt="storybook" src="../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png"]
 storybookReady
 Plannedassets/characters/arisu/generated/transparent/props/music-box-v1.png
@@ -48,25 +48,25 @@ music-boxPlanned
 Plannedassets/characters/arisu/generated/transparent/props/blue-ink-v1.png
 blue-inkPlanned
 ## Standing
-[image placeholder: alt="standard-full Reference Crop" src="../../../assets/characters/arisu/crops/standing-standard-full-v1.png"]
-standard-fullReference Crop
+[image placeholder: alt="standard-full" src="../../../assets/characters/arisu/generated/transparent/standing/standard-full-v1.png"]
+standard-fullReady
 ## Expressions
-[image placeholder: alt="gentle Reference Crop" src="../../../assets/characters/arisu/crops/expression-gentle-v1.png"]
-gentleReference Crop
-[image placeholder: alt="smile Reference Crop" src="../../../assets/characters/arisu/crops/expression-smile-v1.png"]
-smileReference Crop
-[image placeholder: alt="curious Reference Crop" src="../../../assets/characters/arisu/crops/expression-curious-v1.png"]
-curiousReference Crop
-[image placeholder: alt="surprised Reference Crop" src="../../../assets/characters/arisu/crops/expression-surprised-v1.png"]
-surprisedReference Crop
-[image placeholder: alt="thinking Reference Crop" src="../../../assets/characters/arisu/crops/expression-thinking-v1.png"]
-thinkingReference Crop
-[image placeholder: alt="troubled Reference Crop" src="../../../assets/characters/arisu/crops/expression-troubled-v1.png"]
-troubledReference Crop
-[image placeholder: alt="shy Reference Crop" src="../../../assets/characters/arisu/crops/expression-shy-v1.png"]
-shyReference Crop
-[image placeholder: alt="relieved Reference Crop" src="../../../assets/characters/arisu/crops/expression-relieved-v1.png"]
-relievedReference Crop
+[image placeholder: alt="gentle" src="../../../assets/characters/arisu/generated/transparent/expressions/gentle-v1.png"]
+gentleReady
+[image placeholder: alt="smile" src="../../../assets/characters/arisu/generated/transparent/expressions/smile-v1.png"]
+smileReady
+[image placeholder: alt="curious" src="../../../assets/characters/arisu/generated/transparent/expressions/curious-v1.png"]
+curiousReady
+[image placeholder: alt="surprised" src="../../../assets/characters/arisu/generated/transparent/expressions/surprised-v1.png"]
+surprisedReady
+[image placeholder: alt="thinking" src="../../../assets/characters/arisu/generated/transparent/expressions/thinking-v1.png"]
+thinkingReady
+[image placeholder: alt="troubled" src="../../../assets/characters/arisu/generated/transparent/expressions/troubled-v1.png"]
+troubledReady
+[image placeholder: alt="shy" src="../../../assets/characters/arisu/generated/transparent/expressions/shy-v1.png"]
+shyReady
+[image placeholder: alt="relieved" src="../../../assets/characters/arisu/generated/transparent/expressions/relieved-v1.png"]
+relievedReady
 Plannedassets/characters/arisu/generated/transparent/expressions/sleepwalking-v1.png
 sleepwalkingPlanned
 Plannedassets/characters/arisu/generated/transparent/expressions/aggrieved-v1.png
@@ -96,31 +96,31 @@ Ink Blue#2F3B48
 ## Tags
 CuriousDreamyObservantExploratoryFairy-tale mood
 ## Details
-[image placeholder: alt="braid-detail Reference Crop" src="../../../assets/characters/arisu/crops/detail-braid-v1.png"]
-braid-detailReference Crop
-[image placeholder: alt="skirt-detail Reference Crop" src="../../../assets/characters/arisu/crops/detail-skirt-v1.png"]
-skirt-detailReference Crop
-[image placeholder: alt="sock-shoe-detail Reference Crop" src="../../../assets/characters/arisu/crops/detail-sock-shoe-v1.png"]
-sock-shoe-detailReference Crop
-[image placeholder: alt="daisy-detail Reference Crop" src="../../../assets/characters/arisu/crops/detail-daisy-v1.png"]
-daisy-detailReference Crop
+[image placeholder: alt="braid-detail" src="../../../assets/characters/arisu/generated/transparent/details/braid-detail-v1.png"]
+braid-detailReady
+[image placeholder: alt="skirt-detail" src="../../../assets/characters/arisu/generated/transparent/details/skirt-detail-v1.png"]
+skirt-detailReady
+[image placeholder: alt="sock-shoe-detail" src="../../../assets/characters/arisu/generated/transparent/details/sock-shoe-detail-v1.png"]
+sock-shoe-detailReady
+[image placeholder: alt="daisy-detail" src="../../../assets/characters/arisu/generated/transparent/details/daisy-detail-v1.png"]
+daisy-detailReady
 Asset Expansion
 ## Asset Slots
 The page uses reference crops and stable placeholders first. Finished transparent PNG assets will replace their slots automatically.
 ## Clothing
-[image placeholder: alt="jk-lolita-dress Reference Crop" src="../../../assets/characters/arisu/crops/clothing-jk-lolita-dress-v1.png"]
-jk-lolita-dressReference Crop
-[image placeholder: alt="daily-cardigan Reference Crop" src="../../../assets/characters/arisu/crops/clothing-daily-cardigan-v1.png"]
-daily-cardiganReference Crop
-[image placeholder: alt="blue-pinafore Reference Crop" src="../../../assets/characters/arisu/crops/clothing-blue-pinafore-v1.png"]
-blue-pinaforeReference Crop
+[image placeholder: alt="jk-lolita-dress" src="../../../assets/characters/arisu/generated/transparent/clothing/jk-lolita-dress-v1.png"]
+jk-lolita-dressReady
+[image placeholder: alt="daily-cardigan" src="../../../assets/characters/arisu/generated/transparent/clothing/daily-cardigan-v1.png"]
+daily-cardiganReady
+[image placeholder: alt="blue-pinafore" src="../../../assets/characters/arisu/generated/transparent/clothing/blue-pinafore-v1.png"]
+blue-pinaforeReady
 ## Accessories
-[image placeholder: alt="key-necklace Reference Crop" src="../../../assets/characters/arisu/crops/accessory-key-necklace-v1.png"]
-key-necklaceReference Crop
-[image placeholder: alt="daisy-hairpin Reference Crop" src="../../../assets/characters/arisu/crops/accessory-daisy-hairpin-v1.png"]
-daisy-hairpinReference Crop
-[image placeholder: alt="ribbon-tie Reference Crop" src="../../../assets/characters/arisu/crops/accessory-ribbon-tie-v1.png"]
-ribbon-tieReference Crop
+[image placeholder: alt="key-necklace" src="../../../assets/characters/arisu/generated/transparent/accessories/key-necklace-v1.png"]
+key-necklaceReady
+[image placeholder: alt="daisy-hairpin" src="../../../assets/characters/arisu/generated/transparent/accessories/daisy-hairpin-v1.png"]
+daisy-hairpinReady
+[image placeholder: alt="ribbon-tie" src="../../../assets/characters/arisu/generated/transparent/accessories/ribbon-tie-v1.png"]
+ribbon-tieReady
 ## Props
 [image placeholder: alt="key" src="../../../assets/characters/arisu/generated/transparent/props/key-v1.png"]
 keyReady
@@ -132,8 +132,8 @@ pocket-watch-bagPlanned
 rabbit-charmReady
 [image placeholder: alt="notebook" src="../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png"]
 notebookReady
-[image placeholder: alt="school-bag Reference Crop" src="../../../assets/characters/arisu/crops/prop-school-bag-v1.png"]
-school-bagReference Crop
+[image placeholder: alt="school-bag" src="../../../assets/characters/arisu/generated/transparent/props/school-bag-v1.png"]
+school-bagReady
 [image placeholder: alt="storybook" src="../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png"]
 storybookReady
 Plannedassets/characters/arisu/generated/transparent/props/music-box-v1.png
@@ -191,30 +191,30 @@ assets/characters/arisu | assets/characters/arisu/workflow/crop_manifest.csv
 
 ## Resource References
 - `asset | ok` ../../../assets/characters/arisu/crops/turnaround-front-v1.png alt="Front Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/turnaround-side-v1.png alt="Side Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/turnaround-back-v1.png alt="Back Reference Crop"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/turnaround/side-v1.png alt="Side"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/turnaround/back-v1.png alt="Back"
 - `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/key-v1.png alt="key"
 - `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/pocket-watch-v1.png alt="pocket-watch"
 - `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/rabbit-charm-v1.png alt="rabbit-charm"
 - `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/notebook-v1.png alt="notebook"
-- `asset | ok` ../../../assets/characters/arisu/crops/prop-school-bag-v1.png alt="school-bag Reference Crop"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/school-bag-v1.png alt="school-bag"
 - `asset | ok` ../../../assets/characters/arisu/generated/transparent/props/storybook-v1.png alt="storybook"
-- `asset | ok` ../../../assets/characters/arisu/crops/standing-standard-full-v1.png alt="standard-full Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-gentle-v1.png alt="gentle Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-smile-v1.png alt="smile Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-curious-v1.png alt="curious Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-surprised-v1.png alt="surprised Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-thinking-v1.png alt="thinking Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-troubled-v1.png alt="troubled Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-shy-v1.png alt="shy Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/expression-relieved-v1.png alt="relieved Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/detail-braid-v1.png alt="braid-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/detail-skirt-v1.png alt="skirt-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/detail-sock-shoe-v1.png alt="sock-shoe-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/detail-daisy-v1.png alt="daisy-detail Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/clothing-jk-lolita-dress-v1.png alt="jk-lolita-dress Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/clothing-daily-cardigan-v1.png alt="daily-cardigan Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/clothing-blue-pinafore-v1.png alt="blue-pinafore Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/accessory-key-necklace-v1.png alt="key-necklace Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/accessory-daisy-hairpin-v1.png alt="daisy-hairpin Reference Crop"
-- `asset | ok` ../../../assets/characters/arisu/crops/accessory-ribbon-tie-v1.png alt="ribbon-tie Reference Crop"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/standing/standard-full-v1.png alt="standard-full"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/gentle-v1.png alt="gentle"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/smile-v1.png alt="smile"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/curious-v1.png alt="curious"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/surprised-v1.png alt="surprised"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/thinking-v1.png alt="thinking"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/troubled-v1.png alt="troubled"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/shy-v1.png alt="shy"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/expressions/relieved-v1.png alt="relieved"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/details/braid-detail-v1.png alt="braid-detail"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/details/skirt-detail-v1.png alt="skirt-detail"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/details/sock-shoe-detail-v1.png alt="sock-shoe-detail"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/details/daisy-detail-v1.png alt="daisy-detail"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/clothing/jk-lolita-dress-v1.png alt="jk-lolita-dress"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/clothing/daily-cardigan-v1.png alt="daily-cardigan"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/clothing/blue-pinafore-v1.png alt="blue-pinafore"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/accessories/key-necklace-v1.png alt="key-necklace"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/accessories/daisy-hairpin-v1.png alt="daisy-hairpin"
+- `asset | ok` ../../../assets/characters/arisu/generated/transparent/accessories/ribbon-tie-v1.png alt="ribbon-tie"
